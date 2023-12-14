@@ -285,6 +285,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/is-prop-valid@npm:^0.8.2":
+  version: 0.8.8
+  resolution: "@emotion/is-prop-valid@npm:0.8.8"
+  dependencies:
+    "@emotion/memoize": "npm:0.7.4"
+  checksum: f6be625f067c7fa56a12a4edaf090715616dc4fc7803c87212831f38c969350107b9709b1be54100e53153b18d9fa068eb4bf4f9ac66a37a8edf1bac9b64e279
+  languageName: node
+  linkType: hard
+
+"@emotion/memoize@npm:0.7.4":
+  version: 0.7.4
+  resolution: "@emotion/memoize@npm:0.7.4"
+  checksum: b2376548fc147b43afd1ff005a80a1a025bd7eb4fb759fdb23e96e5ff290ee8ba16628a332848d600fb91c3cdc319eee5395fa33d8875e5d5a8c4ce18cddc18e
+  languageName: node
+  linkType: hard
+
 "@esbuild/android-arm64@npm:0.18.20":
   version: 0.18.20
   resolution: "@esbuild/android-arm64@npm:0.18.20"
@@ -1612,6 +1628,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+"embla-carousel-autoplay@npm:^8.0.0-rc15":
+  version: 8.0.0-rc15
+  resolution: "embla-carousel-autoplay@npm:8.0.0-rc15"
+  peerDependencies:
+    embla-carousel: 8.0.0-rc15
+  checksum: 47460145dbd0534931864df68fd4291c832234bf94367bb9c3c0401adb61c46bcb8df0d5c2a7e600b799eb1bbdc0b6e36f4bd2cb4932de3eb93f7e248dc88e43
+  languageName: node
+  linkType: hard
+
+"embla-carousel-react@npm:^8.0.0-rc15":
+  version: 8.0.0-rc15
+  resolution: "embla-carousel-react@npm:8.0.0-rc15"
+  dependencies:
+    embla-carousel: "npm:8.0.0-rc15"
+    embla-carousel-reactive-utils: "npm:8.0.0-rc15"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.1 || ^18.0.0
+  checksum: 9478bcbce6e38f7504a7419cc0e4b97e187ebb89f321e7ab9b928c617a34b54e5abbbf130485bebb0a26441acd39aa56424aadeae2a2f532f3e5b6011e220b6d
+  languageName: node
+  linkType: hard
+
+"embla-carousel-reactive-utils@npm:8.0.0-rc15":
+  version: 8.0.0-rc15
+  resolution: "embla-carousel-reactive-utils@npm:8.0.0-rc15"
+  peerDependencies:
+    embla-carousel: 8.0.0-rc15
+  checksum: 0132665448077db2b01414dcdcb234323eabb6c247677bf9f2fa99d96b2b0673ed3e458f85691f3f1edf382cb8e819508920788fdb1dc49ca4d117771d0f3e79
+  languageName: node
+  linkType: hard
+
+"embla-carousel@npm:8.0.0-rc15":
+  version: 8.0.0-rc15
+  resolution: "embla-carousel@npm:8.0.0-rc15"
+  checksum: 277e57a93c446330d7e6745bef89f5359348ac7e13262c7b7517865bc7cd9984210a8a9773ffa79ffeefd7a5a2266f86ad431094f7e1c427ae8e2149021ea51b
+  languageName: node
+  linkType: hard
+
 "emoji-regex@npm:^8.0.0":
   version: 8.0.0
   resolution: "emoji-regex@npm:8.0.0"
@@ -1999,6 +2052,27 @@ __metadata:
     cross-spawn: "npm:^7.0.0"
     signal-exit: "npm:^4.0.1"
   checksum: 9700a0285628abaeb37007c9a4d92bd49f67210f09067638774338e146c8e9c825c5c877f072b2f75f41dc6a2d0be8664f79ffc03f6576649f54a84fb9b47de0
+  languageName: node
+  linkType: hard
+
+"framer-motion@npm:^10.16.16":
+  version: 10.16.16
+  resolution: "framer-motion@npm:10.16.16"
+  dependencies:
+    "@emotion/is-prop-valid": "npm:^0.8.2"
+    tslib: "npm:^2.4.0"
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  dependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 4cd620971e6ac044461783ee94d8fe39dafd11d658f1b2fb06f025c0c502d022bb3bf24dd95b9486325fce27e437ce575b8f033c7770539b4fb3af62a5742e71
   languageName: node
   linkType: hard
 
@@ -2810,6 +2884,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"odometer@npm:^0.4.8":
+  version: 0.4.8
+  resolution: "odometer@npm:0.4.8"
+  checksum: 46c40bccf248e663c90ad731c26aacff9c25fc845ab552193f5f67c17f7d5ca5cbf75b10a4ab0b65a2e18fa30d3bd0c80d039725a478460a796a3cfa1aeb2658
+  languageName: node
+  linkType: hard
+
 "once@npm:^1.3.0":
   version: 1.4.0
   resolution: "once@npm:1.4.0"
@@ -3141,6 +3222,18 @@ __metadata:
     react: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
     react-dom: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
   checksum: 9e37698ab3d8224fd6cf5a69845c0308720d04de8459757031de0304379cfd2c0c897834cc9f62869933c4702a97888ba51abeb6490b7282e237a4c19a5fab04
+  languageName: node
+  linkType: hard
+
+"react-odometerjs@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "react-odometerjs@npm:3.1.0"
+  dependencies:
+    odometer: "npm:^0.4.8"
+  peerDependencies:
+    react: ">= 16.8.0"
+    react-dom: ">= 16.8.0"
+  checksum: 589c33667cf00afd4a9f90b49f2965a8920f9955a56eb1b4080f81b2cf828d60c6ff9eaca12fbdf97448a338927804ff2ac3bd6a68bbe4685cf61934ace214d5
   languageName: node
   linkType: hard
 
@@ -3750,6 +3843,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:^2.4.0":
+  version: 2.6.2
+  resolution: "tslib@npm:2.6.2"
+  checksum: e03a8a4271152c8b26604ed45535954c0a45296e32445b4b87f8a5abdb2421f40b59b4ca437c4346af0f28179780d604094eb64546bee2019d903d01c6c19bdb
+  languageName: node
+  linkType: hard
+
 "type-check@npm:^0.4.0, type-check@npm:~0.4.0":
   version: 0.4.0
   resolution: "type-check@npm:0.4.0"
@@ -3928,15 +4028,19 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^6.9.1"
     "@typescript-eslint/parser": "npm:^6.9.1"
     "@vitejs/plugin-react": "npm:^4.1.1"
+    embla-carousel-autoplay: "npm:^8.0.0-rc15"
+    embla-carousel-react: "npm:^8.0.0-rc15"
     eslint: "npm:^8.53.0"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-refresh: "npm:^0.4.4"
+    framer-motion: "npm:^10.16.16"
     postcss: "npm:^8.4.31"
     postcss-preset-mantine: "npm:1.11.1"
     postcss-simple-vars: "npm:^7.0.1"
     prettier: "npm:^3.1.1"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
+    react-odometerjs: "npm:^3.1.0"
     tabler: "npm:1.0.0-alpha.8"
     typescript: "npm:^5.2.2"
     vite: "npm:^4.5.0"

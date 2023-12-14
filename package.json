@@ -22,9 +22,13 @@
         "@mantinex/mantine-meta": "^1.0.1",
         "@mantinex/shiki": "^1.0.2",
         "@tabler/icons-react": "^2.44.0",
+        "embla-carousel-autoplay": "^8.0.0-rc15",
+        "embla-carousel-react": "^8.0.0-rc15",
+        "framer-motion": "^10.16.16",
         "prettier": "^3.1.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-odometerjs": "^3.1.0",
         "tabler": "1.0.0-alpha.8"
     },
     "devDependencies": {
