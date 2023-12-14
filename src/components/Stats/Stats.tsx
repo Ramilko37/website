@@ -1,7 +1,5 @@
 import { Text } from '@mantine/core';
 import classes from './Stats.module.css';
-import { useRef, useState } from 'react';
-
 
 const data = [
   {

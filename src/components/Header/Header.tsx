@@ -62,7 +62,7 @@ const mockdata = [
 ]
 
 export const Header = () => {
-    const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
+    const [drawerOpened, { close: closeDrawer }] =
         useDisclosure(false)
     const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false)
     const theme = useMantineTheme()
