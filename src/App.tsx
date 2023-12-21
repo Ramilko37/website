@@ -7,6 +7,9 @@ import { GridSection } from './components/GridSection/GridSection'
 import { Footer } from './components/Footer/Footer'
 import Stats from './components/Stats/Stats'
 import { FeaturesGrid } from './components/FeaturesGrid/FeaturesGrid'
+import { Map } from './components/Map/Map'
+
+
 
 export default function App() {
    
@@ -17,7 +20,7 @@ export default function App() {
             <GridSection />
             <Stats />
             <FeaturesGrid />
-          
+            <Map />
             <Footer />
         </MantineProvider>
     )

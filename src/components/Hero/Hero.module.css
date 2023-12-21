@@ -1,19 +1,22 @@
 .hero {
     position: relative;
-    background-image: url('../../../public//images/bgImage.jpg');
+
     background-size: cover;
     background-position: center;
 }
 
 .container {
+    margin: 0;
+    padding: 50px;
     height: rem(700px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     gap: 24px;
     z-index: 1;
     position: relative;
+    background: transparent;
 
     @media (max-width: 48em) {
         height: rem(500px);

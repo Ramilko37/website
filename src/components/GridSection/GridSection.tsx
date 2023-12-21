@@ -18,9 +18,8 @@ export const GridSection = () => {
                     <Flex direction={'column'} gap={'20px'}
                         style={{
                             height: 'fit-content',
-                            background: 'gainsboro',
-                            // border: '3px solid #33bbff',
-                           
+                            background: 'transparent',
+                            borderRight: '1px solid #1f1f1f',
                             padding: '24px',
                         }}
                     >
@@ -32,44 +31,30 @@ export const GridSection = () => {
                         </Flex>
                 </Grid.Col>
 
-                {/* Second column with two rows */}
-                <Grid.Col style={{ gap: '16px' }} span={6}>
-                    <Box
+            <Grid.Col span={6}>
+                    <Flex direction={'column'} gap={'20px'}
                         style={{
-                            display: 'block',
-                            height: 'fit-content',
-                            background: 'gainsboro',
-                            // border: '3px solid #33bbff',
-                            marginBottom: '24px',
-                            // borderRadius: '18px',
+                            height: '100%',
+                            background: 'transparent',
+                            borderRight: '1px solid #1f1f1f',
                             padding: '24px',
                         }}
                     >
-                        <Image w={'200px'}  h={'200px'} mr={'20px'} style={{ float: 'right' }} src={campusImage}/>
-                        <Text w={'100%'}>
-
-                        После определения состава объекта пришло время выбора подходящего земельного участка, что является не простой задачей, учитывая, что территория застройки должна составлять не менее 131 тыс. м2 и находиться, при этом, в черте города, чтобы студенты и граждане спокойно добирались до кампуса. 
-Решение властей по земельному вопросу оказалось крайне удачным: подходящий земельный участок нашли в Камской долине – почти неосвоенного микрорайона, расположенного в правобережной части города. Выбор именно этого участка решит для властей сразу 2 задачи: (1) минимизирует время в пути до кампуса студентов и горожан, (2) начать освоение всего микрорайона вокруг такого якорного проекта (включая строительство новых жилых кварталов, благоустройство района, создание новых предприятий).
-
-Рис. 2: схема расположения Пермского кампуса
-
-                        </Text>
-                    </Box>
-                    <Box
-                        style={{
-                            height: 'fit-content',
-                            background: 'gainsboro',
-                            // border: '3px solid #33bbff',
-                            // borderRadius: '18px',
-                            padding: '24px',
-                            gap: '16px'
-                        }}
-                    >
-                      <Text> После определения состава объекта пришло время выбора подходящего земельного участка, что является не простой задачей, учитывая, что территория застройки должна составлять не менее 131 тыс. м2 и находиться, при этом, в черте города, чтобы студенты и граждане спокойно добирались до кампуса. Решение властей по земельному вопросу оказалось крайне удачным: подходящий земельный участок нашли в Камской долине – почти неосвоенного микрорайона, расположенного в правобережной части города. Выбор именно этого участка решит для властей сразу 2 задачи: (1) минимизирует время в пути до кампуса студентов и горожан, (2) начать освоение всего микрорайона вокруг такого якорного проекта (включая строительство новых жилых кварталов,</Text>
-                        <Image w={'100%'} h={'200px'} fit={'cover'} src={buildingsImage2} />
-                    </Box>
-                  
+                         <Box
+            style={{
+              display: 'block',
+              height: '100%',
+              background: 'transparent',
+              marginBottom: '24px',
+              padding: '24px',
+            }}
+          >
+            <iframe width="100%" height="700px" src="https://www.youtube.com/embed/lequ7JhwFqo?si=moWiwamCW_Lmsu30" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+          </Box>
+                      
+                        </Flex>
                 </Grid.Col>
+                
             </Grid>
         </Container>
     )
