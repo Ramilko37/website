@@ -1,4 +1,4 @@
-import { Overlay, Container, Title, Button, Text, Flex } from '@mantine/core'
+import { Container, Title, Text, Flex } from '@mantine/core'
 import classes from './Hero.module.css'
 import { Achievment } from '../Achievment/Achievment'
 import video from '../../../public/images/bg_video.mp4'
@@ -58,14 +58,6 @@ export default function HeroBlock() {
                     />
                 </Flex>
 
-                <Button
-                    variant="gradient"
-                    size="xl"
-                    radius="xl"
-                    className={classes.control}
-                >
-                    Заявка на сотрудничество
-                </Button>
             </Container>
         </div>
     )

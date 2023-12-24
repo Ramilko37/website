@@ -1,7 +1,5 @@
 import { Box, Container, Flex, Grid, Image, Text } from '@mantine/core'
-import campusImage from '../../../public/images/campus.png'
 import buildingsImage from '../../../public/images/buildings.jpg'
-import buildingsImage2 from '../../../public/images/construct2.jpeg'
 
 export const GridSection = () => {
     return (

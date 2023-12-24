@@ -1,5 +1,5 @@
-import { Center, Flex } from '@mantine/core';
-import React, { useEffect, useRef } from 'react';
+import { Flex } from '@mantine/core';
+import { useEffect, useRef } from 'react';
 import styles from './map.module.css';
 
 export const Map = () => {
@@ -1133,14 +1133,14 @@ export const Map = () => {
                     <g className="region-group" id="CRIMEA">            </g> 
 					
 					
-					<g id="map_citywork18" className="map_city capital" transform="translate(208,420)" rel="work18">
+					<g id="map_citywork18" className="map_city capital" transform="translate(208,420)">
                             <text color='white' style={{ color: '#fff' }} y="15" x="22">Москва</text>
                             <circle fill='red' r="8" cx="10" cy="10" className="map_co"></circle>
                             <circle r="6" cx="10" cy="10" className="map_ci"></circle>
                             <desc><ul>                                    <li><a href="/projects/item/stroitelstvo-i-ekspluatatsiya-avtodorogi-vinogradovo-boltino-tarasovka/">Мытищинская скоростная хорда (а/д Виноградово – Болтино – Тарасовка)</a></li>                                    <li><a href="/projects/item/proektirovanie-i-stroitelstvo-baz-avariyno-vosstanovitelnykh-poezdov-upravleniy-magistralnykh-gazopr/">Базы аварийно-восстановительных поездов управлений магистральных газопроводов (УМГ) ООО «Газпром трансгаз Москва»</a></li>                                    <li><a href="/projects/item/ochistnye-sooruzheniya-kashira/">Очистные сооружения в Кашире</a></li>                                    <li><a href="/projects/item/rekonstruktsiya-afanasovskogo-shosse-g-moskva/">Реконструкция Афанасовского шоссе</a></li>                                    <li><a href="/projects/item/ochistnye-sooruzheniya-moskovskaya-oblast/">Очистные сооружения в Солнечногорске</a></li>                            </ul></desc>
                         </g> 
 					
-					<g id="map_citywork11" className="map_city" transform="translate(354,465)" rel="work11">
+					<g id="map_citywork11" className="map_city" transform="translate(354,465)">
                             <text y="15" x="20">Пермь</text>
                             <circle r="5" cx="10" cy="10" className="map_co"></circle>
                             <circle r="3" cx="10" cy="10" className="map_ci"></circle>
