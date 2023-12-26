@@ -1,6 +1,5 @@
-import { Container, Title, Text, Flex } from '@mantine/core'
+import { Container, Title, Text } from '@mantine/core'
 import classes from './Hero.module.css'
-import { Achievment } from '../Achievment/Achievment'
 import video from '../../../public/images/bg_video.mp4'
 import { animated, useSpring } from 'react-spring';
 

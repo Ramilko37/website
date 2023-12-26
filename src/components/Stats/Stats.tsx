@@ -1,7 +1,6 @@
 import { Flex, Text } from '@mantine/core';
 import classes from './style.module.css';
-import React, { useState } from 'react';
-import { useSpring, animated } from 'react-spring';
+
 
 const data = [
   {

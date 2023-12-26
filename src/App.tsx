@@ -8,7 +8,6 @@ import { Footer } from './components/Footer/Footer'
 import { StatsGroup } from './components/Stats/Stats'
 import { FeaturesGrid } from './components/FeaturesGrid/FeaturesGrid'
 import { RussianMap } from './components/RussianMap/RussianMap'
-import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 import { YandexMaps } from './components/YandexMaps/YandexMaps'
 
 
