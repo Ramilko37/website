@@ -1,27 +1,27 @@
-import { Text } from '@mantine/core';
-import classes from './Stats.module.css';
+import { Flex, Text } from '@mantine/core';
+import classes from './style.module.css';
+import React, { useState } from 'react';
+import { useSpring, animated } from 'react-spring';
 
 const data = [
   {
-    title: 'LOREM IPSUM',
+    title: 'Page views',
     stats: '456,133',
-    description: '24% Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+    description: '24% more than in the same month last year, 33% more that two years ago',
   },
   {
-    title: 'LOREM IPSUM',
+    title: 'New users',
     stats: '2,175',
-    description: '13% Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+    description: '13% less compared to last month, new user engagement up by 6%',
   },
   {
-    title: 'LOREM IPSUM',
+    title: 'Completed orders',
     stats: '1,994',
-    description: '1994 Lorem ipsum dolor sit amet, consectetur adipiscing elit. ',
+    description: '1994 orders were completed this month, 97% satisfaction rate',
   },
 ];
 
-const Stats = () => {
-
-  
+export function StatsGroup() {
   const stats = data.map((stat) => (
     <div key={stat.title} className={classes.stat}>
       <Text className={classes.count}>{stat.stats}</Text>
@@ -29,7 +29,7 @@ const Stats = () => {
       <Text className={classes.description}>{stat.description}</Text>
     </div>
   ));
-  return <div className={classes.root}>{stats}</div>;
+  return <Flex m={'auto'} w={'70vw'} className={classes.root}>{stats}</Flex>;
 }
 
-export default Stats
+

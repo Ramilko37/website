@@ -25,11 +25,11 @@
 
 .title {
     color: var(--mantine-color-white);
-    font-size: rem(60px);
+    font-size: rem(90px);
     font-weight: 900;
     line-height: 1.1;
 
-    @media (max-width: 48em) {
+    @media (max-width: 60em) {
         font-size: rem(40px);
         line-height: 1.2;
     }

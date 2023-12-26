@@ -2,7 +2,7 @@ import { Flex } from '@mantine/core';
 import { useEffect, useRef } from 'react';
 import styles from './map.module.css';
 
-export const Map = () => {
+export const RussianMap = () => {
   const perm = useRef<any>(null);
 
   useEffect(() => {

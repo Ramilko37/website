@@ -21,6 +21,7 @@
         "@mantinex/mantine-logo": "^1.0.1",
         "@mantinex/mantine-meta": "^1.0.1",
         "@mantinex/shiki": "^1.0.2",
+        "@pbe/react-yandex-maps": "^1.2.5",
         "@tabler/icons-react": "^2.44.0",
         "embla-carousel-autoplay": "^8.0.0-rc15",
         "embla-carousel-react": "^8.0.0-rc15",
@@ -30,6 +31,7 @@
         "react-dom": "^18.2.0",
         "react-odometerjs": "^3.1.0",
         "react-russian-map": "^0.0.4",
+        "react-spring": "^9.7.3",
         "tabler": "1.0.0-alpha.8"
     },
     "devDependencies": {

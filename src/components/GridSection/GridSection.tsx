@@ -1,5 +1,7 @@
 import { Box, Container, Flex, Grid, Image, Text } from '@mantine/core'
 import buildingsImage from '../../../public/images/buildings.jpg'
+import AnimatedLines from '../AnimatedLines/AnimatedLines'
+
 
 export const GridSection = () => {
     return (
@@ -10,6 +12,7 @@ export const GridSection = () => {
             my="xl"
             h={'fit-content'}
         >
+            <AnimatedLines />
             <Grid w={'97vw'} gutter="md" bg={'grainsboro'}>
                 {/* First column with 1 row */}
                 <Grid.Col span={6}>

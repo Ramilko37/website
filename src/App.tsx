@@ -5,9 +5,11 @@ import { Header } from './components/Header/Header'
 import HeroBlock from './components/Hero/HeroBlock'
 import { GridSection } from './components/GridSection/GridSection'
 import { Footer } from './components/Footer/Footer'
-import Stats from './components/Stats/Stats'
+import { StatsGroup } from './components/Stats/Stats'
 import { FeaturesGrid } from './components/FeaturesGrid/FeaturesGrid'
-import { Map } from './components/Map/Map'
+import { RussianMap } from './components/RussianMap/RussianMap'
+import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
+import { YandexMaps } from './components/YandexMaps/YandexMaps'
 
 
 
@@ -18,10 +20,11 @@ export default function App() {
             <Header />
             <HeroBlock />
             <GridSection />
-            <Stats />
+            <StatsGroup />
             <FeaturesGrid />
-            <Map />
+            <RussianMap />
+            <YandexMaps /> 
             <Footer />
-        </MantineProvider>
+            </MantineProvider>
     )
 }
