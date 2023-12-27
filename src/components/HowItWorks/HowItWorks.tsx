@@ -3,30 +3,37 @@ import { Flex, Image, Title } from '@mantine/core'
 
 import classes from "./HowItWorks.module.css";
 
+import image1 from "../../images/perm1.jpg"
+import image2 from "../../images/perm2.jpg"
+import image3 from "../../images/perm3.jpg"
+import image4 from "../../images/perm4.jpg"
+import image5 from "../../images/perm5.jpg"
+import image6 from "../../images/perm6.jpg"
+
 
 const imagesPerm = [
   {
-    image: '../../../public/images/perm1.jpg',
+    image: image1,
     title: 'title'
   },
   {
-    image: '../../../public/images/perm2.jpg',
+    image: image2,
     title: 'title'
   },
   {
-    image: '../../../public/images/perm3.jpg',
+    image: image3,
     title: 'title'
   },
   {
-    image: '../../../public/images/perm4.jpg',
+    image: image4,
     title: 'title'
   },
   {
-    image: '../../../public/images/perm5.jpg',
+    image: image5,
     title: 'title'
   },
   {
-    image: '../../../public/images/perm6.jpg',
+    image: image6,
     title: 'title'
   },
 ]

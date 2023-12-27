@@ -1,5 +1,5 @@
 import { Container, Flex, Grid, Image, Text } from '@mantine/core'
-import buildingsImage from '../../../public/images/buildings.jpg'
+import buildingsImage from '../images/buildings.jpg'
 import AnimatedLines from '../AnimatedLines/AnimatedLines'
 import { useScroll, animated } from "react-spring";
 import { useState } from 'react'

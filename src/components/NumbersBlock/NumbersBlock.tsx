@@ -1,6 +1,6 @@
 import { FC } from "react";
 import classes from "./styles.module.css";
-import building from "../../../public/images/buildings.jpg"
+import building from "../../images/buildings.jpg"
 import { Flex, Box, Image } from "@mantine/core";
 
 const initialNumbers = [
