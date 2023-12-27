@@ -8,6 +8,8 @@ import { FeaturesGrid } from './components/FeaturesGrid/FeaturesGrid'
 import { RussianMap } from './components/RussianMap/RussianMap'
 import { YandexMaps } from './components/YandexMaps/YandexMaps'
 import NumbersBlock from './components/NumbersBlock/NumbersBlock'
+import HowItWorks from './components/HowItWorks/HowItWorks'
+
 
 
 
@@ -21,6 +23,8 @@ export default function App() {
                 {/* <GridSection /> */}
 
                 <NumbersBlock />
+
+                <HowItWorks />
                 {/* <StatsGroup /> */}
                 <FeaturesGrid />
 

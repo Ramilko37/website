@@ -61,7 +61,7 @@
 }
 .icon {
   aspect-ratio: 1 / 1;
-  width: 1.666666666666667vw;
+  width: 64px;
 }
 .icon > img {
   aspect-ratio: 1 / 1;

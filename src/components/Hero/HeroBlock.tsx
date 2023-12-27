@@ -8,6 +8,7 @@ export default function HeroBlock() {
 
 
   const titleAnimation = useSpring({
+    maxWidth: '900px',
     opacity: 1,
     transform: 'translateX(0)',
     from: { opacity: 0, transform: 'translateX(-100%)' },
@@ -50,14 +51,12 @@ export default function HeroBlock() {
 
               <animated.div style={titleAnimation}>
                 <Title className={classes.title} >
-                    Эталон Кампус - лидирующий игрок на рынке 
+                  ЭТАЛОН КАМПУС - Федеральный девелопер, входящий в группу «Эталон»
                 </Title>
                 </animated.div>
                 <animated.div style={textAnimation}>
                 <Text fs={'28px'} className={classes.description} mt="xl">
-                    Лидер на российском рынке инфраструктурных инвестиций.
-                    Команда профессионалов и профессионалы в команде. Инвесторы
-                    в инвестициях.
+                    Комплексный подход к реализации крупных инфраструктурных проектов
                 </Text>
                 </animated.div>
 
