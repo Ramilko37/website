@@ -4,10 +4,10 @@ import { theme } from './theme'
 import { Header } from './components/Header/Header'
 import HeroBlock from './components/Hero/HeroBlock'
 import { Footer } from './components/Footer/Footer'
-import { StatsGroup } from './components/Stats/Stats'
 import { FeaturesGrid } from './components/FeaturesGrid/FeaturesGrid'
 import { RussianMap } from './components/RussianMap/RussianMap'
 import { YandexMaps } from './components/YandexMaps/YandexMaps'
+import NumbersBlock from './components/NumbersBlock/NumbersBlock'
 
 
 
@@ -20,8 +20,8 @@ export default function App() {
                 <HeroBlock />
                 {/* <GridSection /> */}
 
-
-                <StatsGroup />
+                <NumbersBlock />
+                {/* <StatsGroup /> */}
                 <FeaturesGrid />
 
 
