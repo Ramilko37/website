@@ -7,7 +7,6 @@ interface IAchievmentProps {
     description: string
 }
 export const Achievment = ({
-    classes,
     title,
     text,
     description,
@@ -20,7 +19,7 @@ export const Achievment = ({
             w={'300px'}
         >
             <Flex justify={'center'}>
-                <Title c={'#00AAFF'} className={classes.title}>
+                <Title c={'#00AAFF'} fz={'120px'} fw={900} lh={'120px'}>
                     {title}
                 </Title>
                 <Flex justify={'center'} direction={'column'}>

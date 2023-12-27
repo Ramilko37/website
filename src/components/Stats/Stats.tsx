@@ -1,5 +1,6 @@
-import { Flex, Text } from '@mantine/core';
+import { Flex } from '@mantine/core';
 import classes from './style.module.css';
+import { Achievment } from '../Achievment/Achievment';
 
 
 const data = [
@@ -22,13 +23,30 @@ const data = [
 
 export function StatsGroup() {
   const stats = data.map((stat) => (
-    <div key={stat.title} className={classes.stat}>
-      <Text className={classes.count}>{stat.stats}</Text>
-      <Text className={classes.title}>{stat.title}</Text>
-      <Text className={classes.description}>{stat.description}</Text>
-    </div>
+    <Flex key={stat.title} className={classes.stat} >
+        <Flex gap={'24px'}>
+                    <Achievment
+                        title={'1'}
+                        text={'млн рублей'}
+                        description={'российских и иностранных инвестиций '}
+                        classes={classes}
+                    />
+                    <Achievment
+                        title={'500'}
+                        text={'проектов'}
+                        description={'во всех регионах России'}
+                        classes={classes}
+                    />
+                    <Achievment
+                        title={'100'}
+                        text={'сотрудников'}
+                        description={'по всему миру'}
+                        classes={classes}
+                    />
+                </Flex>
+    </Flex>
   ));
-  return <Flex m={'auto'} w={'70vw'} className={classes.root}>{stats}</Flex>;
+  return <Flex m={'auto'} w={'90vw'} h={'400px'} className={classes.root}>{stats}</Flex>;
 }
 
 

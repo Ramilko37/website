@@ -60,7 +60,7 @@ export const FeaturesGrid = () => {
   const features = MOCKDATA.map((feature, index) => <Feature {...feature} key={index} />);
 
   return (
-    <Container className={classes.wrapper}>
+    <Container mt={'200px'} className={classes.wrapper}>
       <Title className={classes.title}>Комплексный подход
 к реализации крупных инфраструктурных проектов</Title>
 

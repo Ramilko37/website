@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    /* max-width: 100vw; */
+    /* overflow-x: hidden; */
+    height: 100%;
+    height: 100dvh;
+}
+
+span,
+h1,
+h2,
+h3,
+h4 {
+    cursor: default;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden-visibility {
+    visibility: hidden;
+    height: 0;
+}
+
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    width: 10px;
+    background: #FFD1E4;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #EFA7C4;
+    border-radius: 0;
+}
+
+@keyframes onAutoFillStart {
+    0% {
+        background-color: inherit;
+    }
+}
+
+input:-webkit-autofill {
+    animation-name: onAutoFillStart;
+}

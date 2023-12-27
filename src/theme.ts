@@ -8,4 +8,5 @@ export const theme = createTheme({
         lg: '74em',
         xl: '90em',
     },
+    fontFamily: 'Gilroy-Regular' 
 })

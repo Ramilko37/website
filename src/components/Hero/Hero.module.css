@@ -3,6 +3,8 @@
 
     background-size: cover;
     background-position: center;
+    height: 100dvh;
+    margin-bottom: 200px;
 }
 
 .container {
@@ -42,7 +44,8 @@
 
 .description {
     color: var(--mantine-color-white);
-    max-width: rem(600px);
+    max-width: rem(1000px);
+    font-size: 28px;
 
     @media (max-width: 48em) {
         max-width: 100%;

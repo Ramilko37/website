@@ -4,9 +4,7 @@ import {
     Button,
     UnstyledButton,
     Text,
-    SimpleGrid,
     ThemeIcon,
-    Anchor,
     Divider,
     Center,
     Box,
@@ -15,6 +13,7 @@ import {
     ScrollArea,
     rem,
     useMantineTheme,
+    Portal,
 } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import {
@@ -27,6 +26,7 @@ import {
     IconChevronDown,
 } from '@tabler/icons-react'
 import classes from './Header.module.css'
+import { useHeadroom } from '@mantine/hooks';
 
 const mockdata = [
     {
@@ -66,6 +66,7 @@ export const Header = () => {
         useDisclosure(false)
     const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false)
     const theme = useMantineTheme()
+    const pinned = useHeadroom({ fixedAt: 700 });
 
     const links = mockdata.map((item) => (
         <UnstyledButton className={classes.subLink} key={item.title}>
@@ -89,10 +90,24 @@ export const Header = () => {
     ))
 
     return (
-        <Box>
+       <Portal>
+        <Box
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            padding: 'var(--mantine-spacing-xs)',
+            height: rem(60),
+            zIndex: 1000000,
+            transform: `translate3d(0, ${pinned ? 0 : rem(-110)}, 0)`,
+            transition: 'transform 400ms ease',
+            background: 'transparent',
+          }}
+        >
             <header className={classes.header}>
-                <Group justify="center" h="100%">
-                    <Group h="100%" gap={0} visibleFrom="sm">
+                <Group w={'100%'} h="100%">
+                    <Group justify="flex-end"  w={'100%'} h="100%" gap={0} visibleFrom="sm">
                         <a href="#" className={classes.link}>
                             Главная
                         </a>
@@ -103,54 +118,8 @@ export const Header = () => {
                             shadow="md"
                             withinPortal
                         >
-                            <HoverCard.Target>
-                                <a href="#" className={classes.link}>
-                                    <Center inline>
-                                        <Box component="span" mr={5}>
-                                            О компании
-                                        </Box>
-                                        <IconChevronDown
-                                            style={{
-                                                width: rem(16),
-                                                height: rem(16),
-                                            }}
-                                            color={theme.colors.blue[6]}
-                                        />
-                                    </Center>
-                                </a>
-                            </HoverCard.Target>
-
-                            <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
-                                <Group justify="space-between" px="md">
-                                    <Text fw={500}>Features</Text>
-                                    <Anchor href="#" fz="xs">
-                                        View all
-                                    </Anchor>
-                                </Group>
-
-                                <Divider my="sm" />
-
-                                <SimpleGrid cols={2} spacing={0}>
-                                    {links}
-                                </SimpleGrid>
-
-                                <div className={classes.dropdownFooter}>
-                                    <Group justify="space-between">
-                                        <div>
-                                            <Text fw={500} fz="sm">
-                                                Get started
-                                            </Text>
-                                            <Text size="xs" c="dimmed">
-                                                Their food sources have
-                                                decreased, and their numbers
-                                            </Text>
-                                        </div>
-                                        <Button variant="default">
-                                            Get started
-                                        </Button>
-                                    </Group>
-                                </div>
-                            </HoverCard.Dropdown>
+                     
+                          
                         </HoverCard>
                         <a href="#" className={classes.link}>
                             Проекты
@@ -207,6 +176,8 @@ export const Header = () => {
                     </Group>
                 </ScrollArea>
             </Drawer>
-        </Box>
+              </Box>
+      </Portal>
+
     )
 }
