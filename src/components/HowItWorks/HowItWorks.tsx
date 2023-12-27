@@ -6,27 +6,27 @@ import classes from "./HowItWorks.module.css";
 
 const imagesPerm = [
   {
-    image: '../../../public/images/perm_1.jpg',
+    image: '../../../public/images/perm1.jpg',
     title: 'title'
   },
   {
-    image: '../../../public/images/perm_2.jpg',
+    image: '../../../public/images/perm2.jpg',
     title: 'title'
   },
   {
-    image: '../../../public/images/perm_3.jpg',
+    image: '../../../public/images/perm3.jpg',
     title: 'title'
   },
   {
-    image: '../../../public/images/perm_4.jpg',
+    image: '../../../public/images/perm4.jpg',
     title: 'title'
   },
   {
-    image: '../../../public/images/perm_5.jpg',
+    image: '../../../public/images/perm5.jpg',
     title: 'title'
   },
   {
-    image: '../../../public/images/perm_6.jpg',
+    image: '../../../public/images/perm6.jpg',
     title: 'title'
   },
 ]
