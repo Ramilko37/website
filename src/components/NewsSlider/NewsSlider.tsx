@@ -1,5 +1,4 @@
 import { Flex } from '@mantine/core';
-import classes from './styles.module.css'
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css'
 
@@ -50,9 +49,7 @@ export const NewsSlider = () => {
    
   return (
     <Flex h={'100%'} direction={'column'} w={'80vw'} m={'0 auto'} justify={'center'} style={{ border: '1px solid red' }}>
-     
        <Carousel
-      
         height="100%" 
         style={{ width: '70vw', padding: '40px', display: 'flex', justifyContent: 'center', margin: '0 auto' }}
         slideSize={{ base: '40%'}}
@@ -63,7 +60,6 @@ export const NewsSlider = () => {
       >
       {slides}
       </Carousel>
-
     </Flex>
   );
 } 
