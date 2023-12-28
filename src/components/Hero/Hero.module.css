@@ -1,6 +1,5 @@
 .hero {
     position: relative;
-
     background-size: cover;
     background-position: center;
     height: 100dvh;
@@ -26,8 +25,8 @@
 }
 
 .title {
-    color: var(--mantine-color-white);
-    font-size: rem(90px);
+    color:var(--mantine-color-white);
+    font-size: 44px;
     font-weight: 900;
     line-height: 1.1;
 

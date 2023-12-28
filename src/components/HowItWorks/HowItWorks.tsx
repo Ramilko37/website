@@ -8,34 +8,28 @@ import image2 from "../../images/perm2.jpg"
 import image3 from "../../images/perm3.jpg"
 import image4 from "../../images/perm4.jpg"
 import image5 from "../../images/perm5.jpg"
-import image6 from "../../images/perm6.jpg"
 
 
 const imagesPerm = [
   {
     image: image1,
-    title: 'title'
   },
   {
     image: image2,
-    title: 'title'
+
   },
   {
     image: image3,
-    title: 'title'
+  
   },
   {
     image: image4,
-    title: 'title'
+
   },
   {
     image: image5,
-    title: 'title'
-  },
-  {
-    image: image6,
-    title: 'title'
-  },
+
+  }
 ]
 
 
@@ -63,16 +57,23 @@ const HowItWorks: FC = () => {
   const stickyRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
- const handleNavClick = (index: number) => {
-  const targetElement = document.getElementById(`how-image-${index}`);
-  if (targetElement) {
-    targetElement.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
-  }
-};
+  const handleNavClick = (index: number) => {
+    if (
+      window.innerWidth > 1024 &&
+      sectionRef &&
+      sectionRef.current &&
+      stickyRef &&
+      stickyRef.current
+    ) {
+      window.scrollTo({
+        top:
+          sectionRef.current.offsetTop +
+          stickyRef.current.offsetTop +
+          window.innerHeight * 3 * (index / 4),
+        behavior: "smooth",
+      });
+    }
+  };
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -150,13 +151,13 @@ const HowItWorks: FC = () => {
   }, []);
   return (
     <section className={classes.howitworks} ref={sectionRef} id="howitworks">
-        <Title style={{ textAlign: 'center' }} m={'0 auto'} variant="h2">Кампус НИУ ВШЭ в Перми</Title>
+      <Title style={{ textAlign: 'center', color: '#002F6D' }} m={'0 auto'} variant="h2">Кампус НИУ ВШЭ в Перми</Title>
 
       <div className="container">
         <div className={classes.content} ref={stickyRef}>
 
           <nav style={{ display: 'flex', paddingLeft: '100px', justifyItems: 'center', height: '300px', width: '80vw', justifyContent: 'center', zIndex: 1000 }} >
-           
+
             <Flex w={'100%'} gap={'20px'}>
               {imagesPerm.map(
                 (item, index) => (
@@ -171,11 +172,11 @@ const HowItWorks: FC = () => {
                   >
 
                     <Image
-                      style={{ opacity: activeIndex === index ? 0.7 : ''}}
+                      style={{ opacity: activeIndex === index ? 0.7 : '' }}
                       src={item.image}
                       width={'100%'}
                       height={'100%'}
-                      title={item.title}
+                  
                       fit={'contain'}
                     />
 
@@ -187,7 +188,7 @@ const HowItWorks: FC = () => {
               )}
             </Flex>
           </nav>
-          <Flex px={'24px'} className={classes.sticky}>
+          <Flex w={'100%'} px={'24px'} className={classes.sticky}>
             <div className={classes.texts}>
               {textContent.map(
                 (item, index) => (
@@ -206,6 +207,7 @@ const HowItWorks: FC = () => {
                 (item, index) => (
                   <div
                     key={`how-image-${index}`}
+                    id={`how-image-${index}`}
                     className={`${classes.image} ${activeIndex === index ? classes.selected : ""
                       }`}
                   >
@@ -213,8 +215,7 @@ const HowItWorks: FC = () => {
                       src={item.image}
                       width={1302}
                       height={813}
-                      alt={item.title}
-                      title={item.title}
+                      
                     />
                   </div>
                 )
@@ -232,22 +233,18 @@ const HowItWorks: FC = () => {
                       src={item.image}
                       width={24}
                       height={24}
-                      alt={item.title}
-                      title={item.title}
+                    
                     />
                   </span>
-                  <span className={`fw500 ${classes.label}`}>
-                    {item.title}
-                  </span>
+                
                 </div>
-                <p className="fw450">{item.title}</p>
+              
                 <div className={classes.tblt}>
                   <Image
                     src={item.image}
                     width={1440}
                     height={900}
-                    alt={item.title}
-                    title={item.title}
+                   
                   />
                 </div>
                 <div className={classes.device}>
@@ -255,8 +252,7 @@ const HowItWorks: FC = () => {
                     src={item.image}
                     width={410}
                     height={834}
-                    alt={item.title}
-                    title={item.title}
+          
                   />
                 </div>
               </div>

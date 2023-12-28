@@ -1,12 +1,14 @@
 .wrapper {
-    padding-top: calc(var(--mantine-spacing-xl) * 4);
-    padding-bottom: calc(var(--mantine-spacing-xl) * 4);
+    width: 100%;
+    display: flex;
+    border: 1px solid red;
+    margin: 0;
+    background-color: gray;
   }
   
   .title {
-    font-family:
-      Greycliff CF,
-      var(--mantine-font-family);
+    color: #002F6D;
+    font-size: '50px';
     font-weight: 900;
     margin-bottom: var(--mantine-spacing-md);
     text-align: center;
@@ -19,7 +21,7 @@
   
   .description {
     text-align: center;
-  
+    color: #002F6D;
     @media (max-width: 350px) {
       text-align: left;
     }

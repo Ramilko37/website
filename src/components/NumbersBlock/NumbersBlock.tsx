@@ -39,7 +39,7 @@ const NumbersBlock: FC = () => {
             <div className={classes.right}>
               <div className={classes.list}>
                 {initialNumbers.map((item, index) => {
-                    console.log(item, 43)
+              
                return (
                   <div key={`join-${index}`} className={classes.item}>
                      <div className={classes.icon}>

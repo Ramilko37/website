@@ -703,9 +703,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:7.3.1":
-  version: 7.3.1
-  resolution: "@mantine/core@npm:7.3.1"
+"@mantine/core@npm:^7.2.2":
+  version: 7.3.2
+  resolution: "@mantine/core@npm:7.3.2"
   dependencies:
     "@floating-ui/react": "npm:^0.24.8"
     clsx: "npm:2.0.0"
@@ -714,10 +714,10 @@ __metadata:
     react-textarea-autosize: "npm:8.5.3"
     type-fest: "npm:^3.13.1"
   peerDependencies:
-    "@mantine/hooks": 7.3.1
+    "@mantine/hooks": 7.3.2
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: be091bb4fda9f52a95e2951eca8860059a40d278c927c10b6087120a8bcb95c9b008181df0cc9b23d8d9c6a0b202bf8821468b054ddde42e8239295d199d5028
+  checksum: 9f4b67345617562e2f59121e75743d3ad1d99c09f3f62f62268e8d5a491d85ca3aedaae59a2c0f928ef67975a84a65dba445a3b1556c42d59129476c34949140
   languageName: node
   linkType: hard
 
@@ -747,12 +747,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:7.3.1":
-  version: 7.3.1
-  resolution: "@mantine/hooks@npm:7.3.1"
+"@mantine/hooks@npm:^7.2.2":
+  version: 7.3.2
+  resolution: "@mantine/hooks@npm:7.3.2"
   peerDependencies:
     react: ^18.2.0
-  checksum: 948acf6a668419997e4a6c577007c96f25d1bb7a8f1d5d63f3ad9d85a2c1a9ab70f8736a05cd15a8a3ea5317943308785b067d5cde676ec937c88903b1506be2
+  checksum: 9dce135264a0c6199df9887aa4456312007973ffc4aaca4219d9339509f52e07c26927c61cdf2bfd6df4bc934ce5b6abb784565e512455b0e36038bcec969c80
   languageName: node
   linkType: hard
 
@@ -1686,6 +1686,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"csstype@npm:3.0.10":
+  version: 3.0.10
+  resolution: "csstype@npm:3.0.10"
+  checksum: f0fff671ab368a863946859ad96be0be66afeb83566215d6494be840ffedfaef4945b48d1b0ce1a19f9983af772e0ce38c7be91a1ad46fe7ecd641937c5a99f7
+  languageName: node
+  linkType: hard
+
 "csstype@npm:^3.0.2":
   version: 3.1.2
   resolution: "csstype@npm:3.1.2"
@@ -1777,31 +1784,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"embla-carousel-react@npm:^8.0.0-rc15":
-  version: 8.0.0-rc15
-  resolution: "embla-carousel-react@npm:8.0.0-rc15"
+"embla-carousel-react@npm:^7.0.0":
+  version: 7.1.0
+  resolution: "embla-carousel-react@npm:7.1.0"
   dependencies:
-    embla-carousel: "npm:8.0.0-rc15"
-    embla-carousel-reactive-utils: "npm:8.0.0-rc15"
+    embla-carousel: "npm:7.1.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.1 || ^18.0.0
-  checksum: 9478bcbce6e38f7504a7419cc0e4b97e187ebb89f321e7ab9b928c617a34b54e5abbbf130485bebb0a26441acd39aa56424aadeae2a2f532f3e5b6011e220b6d
+  checksum: 05e33fdb1062fde0164a0685163a5212f8e8f343fbe28e9a8e2348c989d8825d80fdcecfed485c7617d27f8f5d72b393612a3dd13ef9cffc02ef0cf21109ba51
   languageName: node
   linkType: hard
 
-"embla-carousel-reactive-utils@npm:8.0.0-rc15":
-  version: 8.0.0-rc15
-  resolution: "embla-carousel-reactive-utils@npm:8.0.0-rc15"
-  peerDependencies:
-    embla-carousel: 8.0.0-rc15
-  checksum: 0132665448077db2b01414dcdcb234323eabb6c247677bf9f2fa99d96b2b0673ed3e458f85691f3f1edf382cb8e819508920788fdb1dc49ca4d117771d0f3e79
-  languageName: node
-  linkType: hard
-
-"embla-carousel@npm:8.0.0-rc15":
-  version: 8.0.0-rc15
-  resolution: "embla-carousel@npm:8.0.0-rc15"
-  checksum: 277e57a93c446330d7e6745bef89f5359348ac7e13262c7b7517865bc7cd9984210a8a9773ffa79ffeefd7a5a2266f86ad431094f7e1c427ae8e2149021ea51b
+"embla-carousel@npm:7.1.0":
+  version: 7.1.0
+  resolution: "embla-carousel@npm:7.1.0"
+  checksum: 3fcfe5b287c5d09d35dac76b6612567cf6f15abdae0bbf7d10754db9f732dd90cdfdf5bc7405d8fb3f65542bdead09971e93e024a0db9b3f1fcc653a70e733bc
   languageName: node
   linkType: hard
 
@@ -2213,6 +2210,13 @@ __metadata:
     react-dom:
       optional: true
   checksum: 4cd620971e6ac044461783ee94d8fe39dafd11d658f1b2fb06f025c0c502d022bb3bf24dd95b9486325fce27e437ce575b8f033c7770539b4fb3af62a5742e71
+  languageName: node
+  linkType: hard
+
+"free-style@npm:3.1.0":
+  version: 3.1.0
+  resolution: "free-style@npm:3.1.0"
+  checksum: 0d50e734efcfe0f30c74f22ff0bad5810980e049be8e1a518596ee25b484ed60a15d7b8b2bf842ddcad1bb7866e1d2f4553155f990a04f1b760719c83720cd15
   languageName: node
   linkType: hard
 
@@ -3498,6 +3502,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rerousel@npm:^0.1.9":
+  version: 0.1.9
+  resolution: "rerousel@npm:0.1.9"
+  dependencies:
+    typestyle: "npm:^2.1.0"
+  peerDependencies:
+    react: ">=16.12.0"
+    react-dom: ">=16.12.0"
+  checksum: 86efde5e4478ef85bd474b96f03f5d3f0600a092d1eafe57fc6afcfa0d075a31d9d52105c15b71d782cb7270aaede90dfbd618ad8b65e1a29aea45291a22c0ab
+  languageName: node
+  linkType: hard
+
 "resolve-from@npm:^4.0.0":
   version: 4.0.0
   resolution: "resolve-from@npm:4.0.0"
@@ -4057,6 +4073,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typestyle@npm:^2.1.0":
+  version: 2.4.0
+  resolution: "typestyle@npm:2.4.0"
+  dependencies:
+    csstype: "npm:3.0.10"
+    free-style: "npm:3.1.0"
+  checksum: f86b73cf39b2d8e35ce37dcbe9b0c3693a7238895bde24232215506ad28ec315f2508a28dfbff8a68e1826785cfac078212c5dd16c13fd6ef25654747e6a956a
+  languageName: node
+  linkType: hard
+
 "unique-filename@npm:^3.0.0":
   version: 3.0.0
   resolution: "unique-filename@npm:3.0.0"
@@ -4176,10 +4202,10 @@ __metadata:
   resolution: "vite-min-template@workspace:."
   dependencies:
     "@mantine/carousel": "npm:7.2.2"
-    "@mantine/core": "npm:7.3.1"
+    "@mantine/core": "npm:^7.2.2"
     "@mantine/dropzone": "npm:7.2.2"
     "@mantine/form": "npm:7.2.2"
-    "@mantine/hooks": "npm:7.3.1"
+    "@mantine/hooks": "npm:^7.2.2"
     "@mantine/spotlight": "npm:7.2.2"
     "@mantinex/dev-icons": "npm:^1.0.1"
     "@mantinex/mantine-header": "npm:^1.0.1"
@@ -4194,7 +4220,7 @@ __metadata:
     "@typescript-eslint/parser": "npm:^6.9.1"
     "@vitejs/plugin-react": "npm:^4.1.1"
     embla-carousel-autoplay: "npm:^8.0.0-rc15"
-    embla-carousel-react: "npm:^8.0.0-rc15"
+    embla-carousel-react: "npm:^7.0.0"
     eslint: "npm:^8.53.0"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-react-refresh: "npm:^0.4.4"
@@ -4208,6 +4234,7 @@ __metadata:
     react-odometerjs: "npm:^3.1.0"
     react-russian-map: "npm:^0.0.4"
     react-spring: "npm:^9.7.3"
+    rerousel: "npm:^0.1.9"
     tabler: "npm:1.0.0-alpha.8"
     typescript: "npm:^5.2.2"
     vite: "npm:^4.5.0"

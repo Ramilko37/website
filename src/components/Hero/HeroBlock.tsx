@@ -42,13 +42,13 @@ export default function HeroBlock() {
           objectFit: 'cover',
           position: 'absolute',
           zIndex: 10,
+          filter: 'brightness(80%)'
         }}
       >
        
     
       </video>
             <Container style={{ zIndex: 20 }} className={classes.container} size="md">
-
               <animated.div style={titleAnimation}>
                 <Title className={classes.title} >
                   ЭТАЛОН КАМПУС - Федеральный девелопер, входящий в группу «Эталон»
@@ -59,8 +59,6 @@ export default function HeroBlock() {
                     Комплексный подход к реализации крупных инфраструктурных проектов
                 </Text>
                 </animated.div>
-
-
             </Container>
         </div>
     )

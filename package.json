@@ -11,10 +11,10 @@
     },
     "dependencies": {
         "@mantine/carousel": "7.2.2",
-        "@mantine/core": "7.3.1",
+        "@mantine/core": "^7.2.2",
         "@mantine/dropzone": "7.2.2",
         "@mantine/form": "7.2.2",
-        "@mantine/hooks": "7.3.1",
+        "@mantine/hooks": "^7.2.2",
         "@mantine/spotlight": "7.2.2",
         "@mantinex/dev-icons": "^1.0.1",
         "@mantinex/mantine-header": "^1.0.1",
@@ -24,7 +24,7 @@
         "@pbe/react-yandex-maps": "^1.2.5",
         "@tabler/icons-react": "^2.44.0",
         "embla-carousel-autoplay": "^8.0.0-rc15",
-        "embla-carousel-react": "^8.0.0-rc15",
+        "embla-carousel-react": "^7.0.0",
         "framer-motion": "^10.16.16",
         "prettier": "^3.1.1",
         "react": "^18.2.0",
@@ -32,6 +32,7 @@
         "react-odometerjs": "^3.1.0",
         "react-russian-map": "^0.0.4",
         "react-spring": "^9.7.3",
+        "rerousel": "^0.1.9",
         "tabler": "1.0.0-alpha.8"
     },
     "devDependencies": {
