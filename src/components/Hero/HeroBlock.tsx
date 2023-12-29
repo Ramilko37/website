@@ -1,4 +1,4 @@
-import { Container, Title, Text } from '@mantine/core'
+import { Container, Title, Text, Flex } from '@mantine/core'
 import classes from './Hero.module.css'
 import video from '../../images/bg_video.mp4'
 import { animated, useSpring } from 'react-spring';
@@ -25,7 +25,7 @@ export default function HeroBlock() {
   })
   
     return (
-        <div className={classes.hero}>
+        <Flex bg={'#f9fafc'} direction={'column'} className={classes.hero}>
             {/* <Overlay
                 gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, .15) 90%)"
                 opacity={1}
@@ -60,6 +60,6 @@ export default function HeroBlock() {
                 </Text>
                 </animated.div>
             </Container>
-        </div>
+        </Flex>
     )
 }

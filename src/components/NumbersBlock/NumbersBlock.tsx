@@ -29,7 +29,7 @@ const initialNumbers = [
 const NumbersBlock: FC = () => { 
   
   return (
-    <Flex direction={'column'} p={'24px'} className={classes.join}>
+    <Flex bg={'#f9fafc'} direction={'column'} p={'24px'} className={classes.join}>
       <Box className="container">
         <div className={classes.content}>
           <div className={classes.cards}>

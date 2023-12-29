@@ -7,6 +7,7 @@ import { NewsCard } from '../NewsCard/NewsCard';
 import vettaNewsImg from '../../images/vetta.png'
 import businessClassNews from '../../images/businessClassNews.png'
 import kommersant from '../../images/kommersant.png'
+import { useMediaQuery } from '@mantine/hooks';
 
 
 
@@ -36,10 +37,13 @@ export const MOCKDATA = [
 
 
 
-export const NewsSlider = () => {                 
+export const NewsSlider = () => {    
+   const isMobile = useMediaQuery('(max-width: 560px)');
+  
+
   const slides = MOCKDATA.map((feature, index) => {
     return (
-        <Carousel.Slide key={index} style={{ height: '100%', padding: '24px' }}>
+        <Carousel.Slide key={index} style={{ height: '', padding: '24px' }}>
               <NewsCard linkProps={feature.linkProps} image={feature.image} title={feature.title}
                  description={feature.description} key={index} />
         </Carousel.Slide>
@@ -48,15 +52,16 @@ export const NewsSlider = () => {
 
    
   return (
-    <Flex h={'100%'} direction={'column'} w={'80vw'} m={'0 auto'} justify={'center'} style={{ border: '1px solid red' }}>
+    <Flex h={'100%'} direction={'column'} w={'80vw'} m={'0 auto'} justify={'center'}>
        <Carousel
-        height="100%" 
-        style={{ width: '70vw', padding: '40px', display: 'flex', justifyContent: 'center', margin: '0 auto' }}
-        slideSize={{ base: '40%'}}
+        height={ isMobile ? '400px' : '100%'}
+        style={{ width: '80vw', padding: isMobile ? 0 : '40px', display: 'flex', justifyContent: 'center', margin: '0 auto' }}
+        slideSize={{ base: '50%'}}
         slideGap="xl"
         align="center"
-        slidesToScroll={1}
-        loop
+        slidesToScroll={2}
+        loop={true}
+        orientation={'horizontal'}
       >
       {slides}
       </Carousel>

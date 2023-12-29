@@ -10,6 +10,7 @@ import { YandexMaps } from './components/YandexMaps/YandexMaps'
 import NumbersBlock from './components/NumbersBlock/NumbersBlock'
 import HowItWorks from './components/HowItWorks/HowItWorks'
 import { NewsSlider } from './components/NewsSlider/NewsSlider'
+import { ProjectsGallery } from './components/PojectsGallery/ProjectsGallery'
 
 
 
@@ -18,19 +19,12 @@ export default function App() {
 
     return (
         <MantineProvider theme={theme}>
-            <Flex direction={'column'} w={'100vw'}>
+            <Flex bg={'#f9fafc'} direction={'column'} w={'100vw'}>
                 <Header />
                 <HeroBlock />
-               
-
                 <NumbersBlock />
-
-                <HowItWorks />
-              
+                <ProjectsGallery />
                 <NewsSlider />
-         
-
-
                 <RussianMap />
                 <YandexMaps />
                 <Footer />
