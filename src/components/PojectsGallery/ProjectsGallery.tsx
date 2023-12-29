@@ -1,4 +1,4 @@
-import { Flex, Title, Image, Text, Badge } from '@mantine/core'
+import { Flex, Title, Text, Badge } from '@mantine/core'
 
 import permTitleImage from "../../images/campus.png"
 import perm1 from "../../images/perm1.jpg"
@@ -64,7 +64,7 @@ const projectsNavBarData = [
 
 export const ProjectsGallery = () => {
     const [galleryType, setGalleryType] = useState<ProjectsGalleryType>(ProjectsGalleryType.Perm)
-     const { hovered, ref } = useHover();
+     const { ref } = useHover();
 
     const galleryTypeClickHandler = (type: ProjectsGalleryType) => {
         setGalleryType(type)
