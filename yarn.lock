@@ -1779,6 +1779,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dynamic-marquee-react@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "dynamic-marquee-react@npm:1.0.2"
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  checksum: b843ef2da38be1c7bcb21f6a290dad69b7f071524085f3c1f8db4462d9c172ef5e8b709e21424651124df40b838b15decbdef0aff7dfe887ee9dd0250a691cc4
+  languageName: node
+  linkType: hard
+
 "eastasianwidth@npm:^0.2.0":
   version: 0.2.0
   resolution: "eastasianwidth@npm:0.2.0"
@@ -1793,12 +1803,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"embla-carousel-autoplay@npm:^8.0.0-rc15":
-  version: 8.0.0-rc15
-  resolution: "embla-carousel-autoplay@npm:8.0.0-rc15"
+"embla-carousel-autoplay@npm:^7.1.0":
+  version: 7.1.0
+  resolution: "embla-carousel-autoplay@npm:7.1.0"
   peerDependencies:
-    embla-carousel: 8.0.0-rc15
-  checksum: 47460145dbd0534931864df68fd4291c832234bf94367bb9c3c0401adb61c46bcb8df0d5c2a7e600b799eb1bbdc0b6e36f4bd2cb4932de3eb93f7e248dc88e43
+    embla-carousel: 7.1.0
+  checksum: 27b80fceee448c6e62144d68cd474f62d388feb93f61adcb00e4a12c80595235cd0e865e3dd305eef28591bfc5ffd40181aa8fa29ce6f85bd3331fecada071bc
   languageName: node
   linkType: hard
 
@@ -4289,7 +4299,8 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^6.9.1"
     "@typescript-eslint/parser": "npm:^6.9.1"
     "@vitejs/plugin-react": "npm:^4.1.1"
-    embla-carousel-autoplay: "npm:^8.0.0-rc15"
+    dynamic-marquee-react: "npm:^1.0.2"
+    embla-carousel-autoplay: "npm:^7.1.0"
     embla-carousel-react: "npm:^7.0.0"
     eslint: "npm:^8.53.0"
     eslint-plugin-react-hooks: "npm:^4.6.0"

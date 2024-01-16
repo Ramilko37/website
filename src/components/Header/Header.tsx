@@ -2,7 +2,7 @@ import { Box, rem, Portal, Burger, Menu } from '@mantine/core'
 import classes from './Header.module.css'
 import { useHeadroom } from '@mantine/hooks'
 import { Link } from 'react-scroll'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const linksData = [
     { id: 'numbers', title: 'О нас' },

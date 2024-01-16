@@ -39,8 +39,8 @@
 }
 
 .item {
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
   aspect-ratio: 1 / 1;
   border-radius: 1.666666666666667vw;
   box-sizing: border-box;
@@ -69,6 +69,24 @@
 .item:nth-child(4) {
   background-color: #002F6D;
   color: white;
+}
+
+.itemBack {
+  width: 400px;
+  height: 400px;
+  aspect-ratio: 1 / 1;
+  border: 6px solid #002F6D;
+  border-radius: 1.666666666666667vw;
+  box-sizing: border-box;
+  flex: 0 0 calc(50% - 0.555555555555556vw);
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 0.277777777777778vw;
+  padding: 2.777777777777778vw;
+  background-color: #fff;
+  color: #002F6D;
 }
 
 .icon {

@@ -1,4 +1,4 @@
-import { Flex } from '@mantine/core'
+import { Flex, Title } from '@mantine/core'
 import '@mantine/core/styles.css'
 import '@mantine/carousel/styles.css'
 
@@ -7,7 +7,6 @@ import { NewsCard } from '../NewsCard/NewsCard'
 import vettaNewsImg from '../../images/vetta.png'
 import businessClassNews from '../../images/businessClassNews.png'
 import kommersant from '../../images/kommersant.png'
-import { useMediaQuery } from '@mantine/hooks'
 
 export const MOCKDATA = [
     {
@@ -47,14 +46,9 @@ export const MOCKDATA = [
 ]
 
 export const NewsSlider = () => {
-    const isMobile = useMediaQuery('(max-width: 560px)')
-
     const slides = MOCKDATA.map((feature, index) => {
         return (
-            <Carousel.Slide
-                key={index}
-                style={{ padding: '100px', border: '1px solid red' }}
-            >
+            <Carousel.Slide key={index} style={{ padding: '100px 100px 0px' }}>
                 <NewsCard
                     linkProps={feature.linkProps}
                     image={feature.image}
@@ -74,8 +68,16 @@ export const NewsSlider = () => {
             w={'80vw'}
             m={'0 auto'}
             justify={'center'}
-            style={{ border: '1px solid red' }}
+            // style={{ border: '1px solid red' }}
         >
+            <Title
+                style={{ textAlign: 'center' }}
+                w={'100%'}
+                mt={'20px'}
+                c={'#002F6D'}
+            >
+                Пресса о нас
+            </Title>
             <Carousel slidesToScroll={3} slideSize={'33%'} loop>
                 {slides}
             </Carousel>

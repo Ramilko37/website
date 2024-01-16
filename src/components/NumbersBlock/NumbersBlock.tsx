@@ -1,12 +1,12 @@
 import { FC, useState } from 'react'
 import classes from './styles.module.css'
-import building from '../../images/buildings.jpg'
-import { Flex, Box, Image } from '@mantine/core'
+import { Flex, Box } from '@mantine/core'
 import ReactCardFlip from 'react-card-flip'
 import { RussianMap } from '../RussianMap/RussianMap'
 
 const initialNumbers = [
     {
+        id: 'perm',
         num: '100k',
         icon: (
             <svg width="64px" height="64px" viewBox="0 0 64 64" fill="none">
@@ -21,6 +21,7 @@ const initialNumbers = [
         label: 'квадратных метров',
     },
     {
+        id: 'ufa',
         num: '25+',
         icon: (
             <svg
@@ -41,6 +42,7 @@ const initialNumbers = [
         label: 'млрд рублей инвестиций в федеральные проекты',
     },
     {
+        id: 'arkhangelsk',
         num: '20га',
         icon: (
             <svg
@@ -63,6 +65,7 @@ const initialNumbers = [
         label: 'застраиваемых площадей',
     },
     {
+        id: 'tumen',
         num: '5к+',
         icon: (
             <svg
@@ -87,7 +90,12 @@ const initialNumbers = [
 ]
 
 const NumbersBlock: FC = () => {
-    const [isFlipped, setIsflippedIndex] = useState<boolean>(false)
+    const [isFlipped, setIsflipped] = useState<string | undefined>(undefined)
+
+    const cardFlipHandler = (id: string) => () => {
+        console.log('set os flipped')
+        setIsflipped(id)
+    }
 
     return (
         <Flex
@@ -97,22 +105,25 @@ const NumbersBlock: FC = () => {
             p={'24px'}
             className={classes.join}
         >
-            <Box className="container">
+            <Box>
                 <div className={classes.content}>
                     <div className={classes.cards}>
-                        <div className={classes.left}>
-                            <RussianMap />
-                        </div>
+                        <Flex className={classes.left}>
+                            <RussianMap setIsflipped={setIsflipped} />
+                        </Flex>
                         <div className={classes.right}>
                             <div className={classes.list}>
                                 {initialNumbers.map((item, index) => {
                                     return (
                                         <ReactCardFlip
                                             key={index}
-                                            isFlipped={isFlipped}
-                                            flipDirection="vertical"
+                                            isFlipped={isFlipped === item.id}
+                                            flipDirection="horizontal"
                                         >
                                             <div
+                                                onClick={cardFlipHandler(
+                                                    item.id
+                                                )}
                                                 key={`join-${index}`}
                                                 className={classes.item}
                                             >
@@ -137,7 +148,7 @@ const NumbersBlock: FC = () => {
 
                                             <div
                                                 key={`join-${index}`}
-                                                className={classes.item}
+                                                className={classes.itemBack}
                                             >
                                                 <div className={classes.icon}>
                                                     {item.icon}
