@@ -185,14 +185,15 @@ export const ProjectsGallery = () => {
                 gap={'20px'}
             >
                 <Title
-                    lh={'59px'}
-                    fs={'46px'}
-                    c={'#002f6d'}
-                    mb={'16px'}
-                    style={{ textAlign: 'center' }}
+                    style={{ textAlign: 'start' }}
+                    ml={'250px'}
+                    mb={'40px'}
+                    w={'100%'}
+                    c={'#002F6D'}
+                    fz={'60px'}
+                    fw={'100'}
                 >
-                    {' '}
-                    Проекты компании{' '}
+                    ПРОЕКТЫ КОМПАНИИ
                 </Title>
                 <Flex w={'70%'} px={'20px'} m={'0 auto'} gap={'20px'}>
                     {projectsNavBarData.map((project, index) => {

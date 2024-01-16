@@ -5,17 +5,21 @@ export const PartnersCarousel = () => {
     return (
         <div
             id="marquee"
-            style={{ height: 'fit-content', backgroundColor: '#f9fafc' }}
+            style={{
+                height: 'fit-content',
+                backgroundColor: '#f9fafc',
+                padding: '100px',
+            }}
         >
-            <Title
+            {/* <Title
                 style={{ textAlign: 'center' }}
                 w={'100%'}
                 m={'0 auto 50px'}
                 c={'#002F6D'}
             >
                 Наши Партнеры
-            </Title>
-            <Marquee rate={-100}>
+            </Title> */}
+            <Marquee rate={-80}>
                 <Box w={'170px'} h={'170px'} mr={'100px'}>
                     <Image
                         w={'100%'}
