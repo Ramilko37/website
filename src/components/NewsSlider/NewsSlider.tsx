@@ -34,14 +34,14 @@ export const MOCKDATA = [
     },
     {
         linkProps: {
-            href: 'https://www.business-class.su/news/2023/07/30/koncessioner-mezhvuzovkogo-kampusa-v-permi-pereshel-v-strukturu-krupnogo-federalnogo-developera',
+            href: 'https://vetta.tv/news/society/v-permi-moskovskaya-kompaniya-postroit-mezhvuzovskiy-kampus/',
             target: '_blank',
             rel: 'noopener noreferrer',
         },
         image: businessClassNews,
         title: '​Концессионер межвузовcкого кампуса в Перми перешел в структуру федерального девелопера',
         description:
-            'Учредителем ООО «Кампус «Парма», концессионера строительства межвузовского кампуса в Перми, стала компания ООО «Эталон Кампус» (входит в структуру группы «Эталон»). Факт зафиксирован в ЕГРЮЛ 24 июля.',
+            'Федеральный девелопер «Эталон Кампус», входящий в группу «Эталон», стал единственным учредителем ООО «Кампус «Парма» - к«Эталон Кампус» (входит в структуру группы «Эталон»). Факт зафиксирован в ЕГРЮЛ 24 июля.',
     },
     {
         linkProps: {
@@ -56,7 +56,7 @@ export const MOCKDATA = [
     },
     {
         linkProps: {
-            href: 'https://www.kommersant.ru/doc/6135368',
+            href: 'https://vetta.tv/news/society/v-permi-moskovskaya-kompaniya-postroit-mezhvuzovskiy-kampus/',
             target: '_blank',
             rel: 'noopener noreferrer',
         },
@@ -71,7 +71,11 @@ export const MOCKDATA = [
 export const NewsSlider = () => {
     const slides = MOCKDATA.map((feature, index) => {
         return (
-            <Carousel.Slide key={index} style={{ padding: '100px 100px 0px' }}>
+            <Carousel.Slide
+                key={index}
+                style={{ padding: '100px 100px 0px' }}
+                mb={'20px'}
+            >
                 <NewsCard
                     linkProps={feature.linkProps}
                     image={feature.image}
@@ -87,24 +91,28 @@ export const NewsSlider = () => {
         <Flex
             id={'news'}
             h={'100dvh'}
+            mih={'500px'}
             direction={'column'}
             w={'80vw'}
             m={'0 auto'}
             justify={'center'}
-            // style={{ border: '1px solid red' }}
         >
             <Title
                 style={{ textAlign: 'start' }}
-                ml={'250px'}
-                mb={'40px'}
-                w={'100%'}
+                ml={'100px'}
+                mb={'0'}
                 c={'#002F6D'}
                 fz={'60px'}
                 fw={'100'}
             >
                 ПРЕССА О НАС
             </Title>
-            <Carousel slidesToScroll={3} slideSize={'33%'} loop>
+            <Carousel
+                h={'fit-content'}
+                slidesToScroll={3}
+                slideSize={'33%'}
+                loop
+            >
                 {slides}
             </Carousel>
         </Flex>

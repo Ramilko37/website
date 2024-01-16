@@ -188,7 +188,6 @@ export const ProjectsGallery = () => {
                     style={{ textAlign: 'start' }}
                     ml={'250px'}
                     mb={'40px'}
-                    w={'100%'}
                     c={'#002F6D'}
                     fz={'60px'}
                     fw={'100'}

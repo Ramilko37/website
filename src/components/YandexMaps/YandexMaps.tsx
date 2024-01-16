@@ -39,14 +39,16 @@ export const YandexMaps = () => {
                             style={{
                                 zIndex: 100,
                                 borderRadius: '20px',
-                                backgroundImage: `linear-gradient(-60deg,var(--mantine-color-blue-4) 0,var(--mantine-color-blue-7) 100%)`,
+                                backgroundColor: `#f9fafc`,
+                                border: '3px solid #002F6D',
+                                color: '#002F6D',
                             }}
                         >
                             <Text
                                 fz="lg"
                                 fw={700}
                                 className={classes.title}
-                                c="#fff"
+                                c={'#002F6D'}
                             >
                                 Контактная информация
                             </Text>

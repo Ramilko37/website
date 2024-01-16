@@ -9,11 +9,11 @@ const linksData = [
     { id: 'projects', title: 'Проекты' },
     { id: 'news', title: 'Новости' },
     { id: 'contacts', title: 'Контакты' },
-    { id: 'partners', title: 'Партнеры' },
+    { id: 'marquee', title: 'Партнеры' },
 ]
 
 export const Header = () => {
-    const pinned = useHeadroom({ fixedAt: 700 })
+    const pinned = useHeadroom({ fixedAt: 600 })
     const [opened, setOpened] = useState<boolean>(false)
 
     return (

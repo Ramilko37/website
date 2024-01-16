@@ -31,6 +31,7 @@
         "react": "^18.2.0",
         "react-card-flip": "^1.2.2",
         "react-dom": "^18.2.0",
+        "react-fast-marquee": "^1.6.2",
         "react-flippy": "^1.1.0",
         "react-odometerjs": "^3.1.0",
         "react-russian-map": "^0.0.4",

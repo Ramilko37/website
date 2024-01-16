@@ -1,7 +1,7 @@
 .wrapper {
   display: flex;
   align-items: center;
-  color: var(--mantine-color-white);
+  color: '#002F6D',
 }
 
 .icon {
@@ -10,9 +10,9 @@
 }
 
 .title {
-  color: var(--mantine-color-blue-0);
+  color: '#002F6D',
 }
 
 .description {
-  color: var(--mantine-color-white);
+  color: '#002F6D',
 }

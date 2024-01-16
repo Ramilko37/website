@@ -3395,6 +3395,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-fast-marquee@npm:^1.6.2":
+  version: 1.6.2
+  resolution: "react-fast-marquee@npm:1.6.2"
+  peerDependencies:
+    react: ">= 16.8.0 || 18.0.0"
+    react-dom: ">= 16.8.0 || 18.0.0"
+  checksum: 4baddd8e81f4ca746d08f748f443cc49dc6d18cb2c4bd152e8bd5b0a74165756ad83cfd9f5ad45d553b40b6cc4ca1cd4ddbd1e904133dddaca6194ed180d8e30
+  languageName: node
+  linkType: hard
+
 "react-flippy@npm:^1.1.0":
   version: 1.1.0
   resolution: "react-flippy@npm:1.1.0"
@@ -4313,6 +4323,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-card-flip: "npm:^1.2.2"
     react-dom: "npm:^18.2.0"
+    react-fast-marquee: "npm:^1.6.2"
     react-flippy: "npm:^1.1.0"
     react-odometerjs: "npm:^3.1.0"
     react-russian-map: "npm:^0.0.4"
