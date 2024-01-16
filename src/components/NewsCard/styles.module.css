@@ -4,10 +4,8 @@
    
 
 
-&:hover {
-        
+&:hover { 
         transform: scale(1.05);
-     
         box-shadow: var(--mantine-shadow-xl);
     }
 }

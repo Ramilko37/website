@@ -1,183 +1,90 @@
-import {
-    HoverCard,
-    Group,
-    Button,
-    UnstyledButton,
-    Text,
-    ThemeIcon,
-    Divider,
-    Center,
-    Box,
-    Drawer,
-    Collapse,
-    ScrollArea,
-    rem,
-    useMantineTheme,
-    Portal,
-} from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks'
-import {
-    IconNotification,
-    IconCode,
-    IconBook,
-    IconChartPie3,
-    IconFingerprint,
-    IconCoin,
-    IconChevronDown,
-} from '@tabler/icons-react'
+import { Box, rem, Portal, Burger, Menu } from '@mantine/core'
 import classes from './Header.module.css'
-import { useHeadroom } from '@mantine/hooks';
+import { useHeadroom } from '@mantine/hooks'
+import { Link } from 'react-scroll'
+import { useEffect, useState } from 'react'
 
-const mockdata = [
-    {
-        icon: IconCode,
-        title: 'Open source',
-        description: 'This Pokémon’s cry is very loud and distracting',
-    },
-    {
-        icon: IconCoin,
-        title: 'Free for everyone',
-        description: 'The fluid of Smeargle’s tail secretions changes',
-    },
-    {
-        icon: IconBook,
-        title: 'Documentation',
-        description: 'Yanma is capable of seeing 360 degrees without',
-    },
-    {
-        icon: IconFingerprint,
-        title: 'Security',
-        description: 'The shell’s rounded shape and the grooves on its.',
-    },
-    {
-        icon: IconChartPie3,
-        title: 'Analytics',
-        description: 'This Pokémon uses its flying ability to quickly chase',
-    },
-    {
-        icon: IconNotification,
-        title: 'Notifications',
-        description: 'Combusken battles with the intensely hot flames it spews',
-    },
+const linksData = [
+    { id: 'numbers', title: 'О нас' },
+    { id: 'projects', title: 'Проекты' },
+    { id: 'news', title: 'Новости' },
+    { id: 'contacts', title: 'Контакты' },
+    { id: 'partners', title: 'Партнеры' },
 ]
 
 export const Header = () => {
-    const [drawerOpened, { close: closeDrawer }] =
-        useDisclosure(false)
-    const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false)
-    const theme = useMantineTheme()
-    const pinned = useHeadroom({ fixedAt: 700 });
-
-    const links = mockdata.map((item) => (
-        <UnstyledButton className={classes.subLink} key={item.title}>
-            <Group wrap="nowrap" align="flex-start">
-                <ThemeIcon size={34} variant="default" radius="md">
-                    <item.icon
-                        style={{ width: rem(22), height: rem(22) }}
-                        color={theme.colors.blue[6]}
-                    />
-                </ThemeIcon>
-                <div>
-                    <Text size="sm" fw={500}>
-                        {item.title}
-                    </Text>
-                    <Text size="xs" c="dimmed">
-                        {item.description}
-                    </Text>
-                </div>
-            </Group>
-        </UnstyledButton>
-    ))
+    const pinned = useHeadroom({ fixedAt: 700 })
+    const [opened, setOpened] = useState<boolean>(false)
 
     return (
-       <Portal>
-        <Box
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            padding: 'var(--mantine-spacing-xs)',
-            height: rem(60),
-            zIndex: 1000000,
-            transform: `translate3d(0, ${pinned ? 0 : rem(-110)}, 0)`,
-            transition: 'transform 400ms ease',
-            background: 'transparent',
-          }}
-        >
-            <header className={classes.header}>
-                <Group w={'100%'} h="100%">
-                    <Group justify="flex-end"  w={'100%'} h="100%" gap={0} visibleFrom="sm">
-                        <a href="#" className={classes.link}>
-                            Главная
-                        </a>
-                        <HoverCard
-                            width={'100%'}
-                            position="bottom"
-                            radius="md"
-                            shadow="md"
-                            withinPortal
-                        >
-                     
-                          
-                        </HoverCard>
-                        <a href="#" className={classes.link}>
-                            Проекты
-                        </a>
-                        <a href="#" className={classes.link}>
-                            Контакты
-                        </a>
-                    </Group>
-                </Group>
-            </header>
-
-            <Drawer
-                opened={drawerOpened}
-                onClose={closeDrawer}
-                size="100%"
-                padding="md"
-                title="Navigation"
-                hiddenFrom="sm"
-                zIndex={1000000}
+        <Portal>
+            <Box
+                style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    padding: 'var(--mantine-spacing-xs)',
+                    height: rem(60),
+                    zIndex: 1000000,
+                    transform: `translate3d(0, ${pinned ? 0 : rem(-110)}, 0)`,
+                    transition: 'transform 400ms ease',
+                    background: 'transparent',
+                }}
             >
-                <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
-                    <Divider my="sm" />
-
-                    <a href="#" className={classes.link}>
-                        Home
-                    </a>
-                    <UnstyledButton
-                        className={classes.link}
-                        onClick={toggleLinks}
+                <header
+                    className={classes.header}
+                    style={{
+                        position: 'relative',
+                        display: pinned ? 'flex' : 'none',
+                        transition: 'display 1s ease-in-out',
+                    }}
+                >
+                    <Menu
+                        shadow="none"
+                        width={200}
+                        closeOnItemClick={true}
+                        closeOnClickOutside
+                        opened={opened}
+                        onChange={() => setOpened(!opened)}
                     >
-                        <Center inline>
-                            <Box component="span" mr={5}>
-                                Features
-                            </Box>
-                            <IconChevronDown
-                                style={{ width: rem(16), height: rem(16) }}
-                                color={theme.colors.blue[6]}
+                        <Menu.Target>
+                            <Burger
+                                size="xl"
+                                color="#fff"
+                                opened={opened}
+                                onClick={() => setOpened(!opened)}
+                                aria-label="Toggle navigation"
                             />
-                        </Center>
-                    </UnstyledButton>
-                    <Collapse in={linksOpened}>{links}</Collapse>
-                    <a href="#" className={classes.link}>
-                        Learn
-                    </a>
-                    <a href="#" className={classes.link}>
-                        Academy
-                    </a>
+                        </Menu.Target>
 
-                    <Divider my="sm" />
-
-                    <Group justify="center" grow pb="xl" px="md">
-                        <Button variant="default">Log in</Button>
-                        <Button>Sign up</Button>
-                    </Group>
-                </ScrollArea>
-            </Drawer>
-              </Box>
-      </Portal>
-
+                        <Menu.Dropdown
+                            bg={'transparent'}
+                            style={{ border: 'none' }}
+                        >
+                            {linksData.map((link) => (
+                                <Menu.Item
+                                    key={link.id}
+                                    className={classes.link}
+                                    closeMenuOnClick={true}
+                                >
+                                    <Link
+                                        onClick={() => {
+                                            setOpened(!opened)
+                                        }}
+                                        className={classes.link}
+                                        smooth
+                                        spy
+                                        to={link.id}
+                                    >
+                                        {link.title}
+                                    </Link>
+                                </Menu.Item>
+                            ))}
+                        </Menu.Dropdown>
+                    </Menu>
+                </header>
+            </Box>
+        </Portal>
     )
 }

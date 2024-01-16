@@ -7,6 +7,7 @@ import {
   Flex,
 } from '@mantine/core';
 import classes from './styles.module.css';
+import { useHover } from '@mantine/hooks';
 
 interface INewsCardProps {
   linkProps: { href: string, target: string, rel: string}
@@ -18,12 +19,14 @@ interface INewsCardProps {
 
 export function NewsCard({ linkProps, image, title, description }: INewsCardProps) {
 
+  const { hovered, ref} = useHover()
+
   const buttonClickHandler = () => {
     window.open(linkProps.href, "_blank")
   }
 
   return (
-    <Card h={'fit-content'} withBorder radius="md" className={classes.card} pos={'relative'}>
+    <Card withBorder radius="md" className={classes.card} pos={'relative'}>
       <Card.Section withBorder >
         <a {...linkProps}>
           <Image fit={'contain'} src={image} height={180} />
@@ -42,7 +45,7 @@ export function NewsCard({ linkProps, image, title, description }: INewsCardProp
       </Flex>
 
       <Group mt="xs" bottom={0}>
-        <Button onClick={buttonClickHandler} bg={'#002F6D'} radius="md" style={{ flex: 1 }}>
+        <Button ref={ref as any} onClick={buttonClickHandler} bg={hovered ? '#b455a0' : '#002F6D'} radius="md" style={{ flex: 1 }}>
           К новости
         </Button>
 

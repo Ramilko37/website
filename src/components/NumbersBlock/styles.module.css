@@ -2,12 +2,14 @@
 .join {
   padding: 6.944444444444444vw 0;
 }
+
 .cards {
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
   margin: 0 -0.277777777777778vw 4.166666666666667vw;
 }
+
 .left {
   border-radius: 1.666666666666667vw;
   flex: 0 0 calc(50% - 0.555555555555556vw);
@@ -15,16 +17,19 @@
   overflow: hidden;
   position: relative;
 }
-.left > img {
+
+.left>img {
   display: block;
   height: 100% !important;
   object-fit: cover;
   width: 100% !important;
 }
+
 .right {
   flex: 0 0 calc(50% - 0.555555555555556vw);
   margin: 0 0.277777777777778vw;
 }
+
 .list {
   display: flex;
   align-items: stretch;
@@ -32,7 +37,10 @@
   flex-wrap: wrap;
   margin: -0.277777777777778vw;
 }
+
 .item {
+  width: 350px;
+  height: 350px;
   aspect-ratio: 1 / 1;
   border-radius: 1.666666666666667vw;
   box-sizing: border-box;
@@ -45,36 +53,44 @@
   padding: 2.777777777777778vw;
   background-color: var(--mantine-color-ethalonBlue);
 }
+
 .item:nth-child(1) {
   background-color: #002F6D;
   color: #fff;
 }
+
 .item:nth-child(2),
 .item:nth-child(3) {
   background-color: #fff;
   color: #002F6D;
   border: 6px solid #002F6D;
 }
+
 .item:nth-child(4) {
   background-color: #002F6D;
   color: white;
 }
+
 .icon {
   aspect-ratio: 1 / 1;
   width: 64px;
 }
-.icon > img {
+
+.icon>img {
   aspect-ratio: 1 / 1;
   display: block;
   height: auto !important;
   width: 100% !important;
 }
+
 .label {
   color: var(--black-3);
 }
+
 .item:nth-child(4) .label {
   color: rgba(255, 255, 255, 0.56);
 }
+
 .number {
   font-size: 6.111111111111111vw;
   line-height: 90%;
@@ -86,30 +102,37 @@
   .join {
     padding: 80px 0;
   }
+
   .cards {
     margin: 0 -4px 56px;
   }
+
   .left {
     border-radius: 20px;
     flex: 0 0 calc(50% - 8px);
     margin: 0 4px;
   }
+
   .right {
     flex: 0 0 calc(50% - 8px);
     margin: 0 4px;
   }
+
   .list {
     margin: -4px;
   }
+
   .item {
     border-radius: 20px;
     flex: 0 0 calc(50% - 8px);
     margin: 4px;
     padding: 24px;
   }
+
   .icon {
     width: 24px;
   }
+
   .number {
     font-size: 48px;
     margin-top: 4px;
@@ -121,29 +144,36 @@
   .join {
     padding: 60px 0;
   }
+
   .cards {
     display: block;
     margin: 0 0 52px;
   }
+
   .left {
     border-radius: 16px;
     margin: 0 0 10px;
   }
+
   .right {
     margin: 0;
   }
+
   .list {
     margin: -5px;
   }
+
   .item {
     border-radius: 16px;
     flex: 0 0 calc(50% - 10px);
     margin: 5px;
     padding: 18px;
   }
+
   .icon {
     width: 24px;
   }
+
   .number {
     font-size: 46px;
   }
