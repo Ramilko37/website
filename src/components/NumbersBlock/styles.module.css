@@ -92,6 +92,7 @@
 .icon {
   aspect-ratio: 1 / 1;
   width: 64px;
+  height: 30px;
 }
 
 .icon>img {
@@ -113,6 +114,26 @@
   font-size: 6.111111111111111vw;
   line-height: 90%;
   margin-top: 0.555555555555556vw;
+}
+
+@media (max-width: 1680px) {
+  .item {
+    width: 250px;
+    height: 250px;
+    padding-bottom: 20px;
+  }
+
+  .itemBack {
+    width: 250px;
+    height: 250px;
+
+  }
+
+  .number {
+    font-size: 4vw;
+    line-height: 80%;
+
+  }
 }
 
 /* 768 - 1024 */
@@ -141,10 +162,17 @@
   }
 
   .item {
+    width: 200px;
+    height: 200px;
     border-radius: 20px;
     flex: 0 0 calc(50% - 8px);
     margin: 4px;
     padding: 24px;
+  }
+
+  .itemBack {
+    width: 200px;
+    height: 200px;
   }
 
   .icon {
