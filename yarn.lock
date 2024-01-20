@@ -4023,6 +4023,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"swiper@npm:^11.0.5":
+  version: 11.0.5
+  resolution: "swiper@npm:11.0.5"
+  checksum: 443d147cdca55708dcf0fd174edfd68f6b55166578a9aedc7c636687c071f520e0bb626dd4ea9fb83feb21d61e4e6e4beda8d1f4b7e664077ebda9e22398d815
+  languageName: node
+  linkType: hard
+
 "tabbable@npm:^6.0.1":
   version: 6.1.2
   resolution: "tabbable@npm:6.1.2"
@@ -4331,6 +4338,7 @@ __metadata:
     react-spring: "npm:^9.7.3"
     reactjs-flip-card: "npm:^2.0.3"
     rerousel: "npm:^0.1.9"
+    swiper: "npm:^11.0.5"
     tabler: "npm:1.0.0-alpha.8"
     typescript: "npm:^5.2.2"
     vite: "npm:^4.5.0"
