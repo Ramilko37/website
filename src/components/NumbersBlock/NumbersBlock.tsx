@@ -3,6 +3,7 @@ import classes from './styles.module.css'
 import { Flex, Box, Title } from '@mantine/core'
 import ReactCardFlip from 'react-card-flip'
 import { RussianMap } from '../RussianMap/RussianMap'
+import { useMediaQuery } from '@mantine/hooks'
 
 const initialNumbers = [
     {
@@ -91,6 +92,7 @@ const initialNumbers = [
 
 const NumbersBlock: FC = () => {
     const [isFlipped, setIsflipped] = useState<string | undefined>(undefined)
+    const isMobile = useMediaQuery(`(max-width: 580px)`)
 
     const cardFlipHandler = (id: string) => () => {
         console.log('set os flipped')
@@ -100,20 +102,22 @@ const NumbersBlock: FC = () => {
     return (
         <Flex
             id={'numbers'}
-            bg={'#f9fafc'}
+            bg={'rgba(0, 0, 0, 0.03)'}
             direction={'column'}
             p={'24px'}
             className={classes.join}
         >
             <Title
-                style={{ textAlign: 'start' }}
-                ml={'250px'}
+                style={{ textAlign: 'center' }}
+                m={'0 auto'}
                 mb={'40px'}
                 c={'#002F6D'}
-                fz={'60px'}
+                fz={'40px'}
                 fw={'100'}
+                w={'100%'}
+                mt={isMobile ? '-20px' : 0}
             >
-                О НАС
+                ОБЪЕКТЫ
             </Title>
             <Box>
                 <div className={classes.content}>

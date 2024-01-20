@@ -1,4 +1,4 @@
-import { Flex, Title, Text, Badge } from '@mantine/core'
+import { Flex, Title, Text, Badge, Image as Img } from '@mantine/core'
 
 import permTitleImage from '../../images/campus.png'
 import perm1 from '../../images/perm1.jpg'
@@ -26,7 +26,7 @@ import arhangelskImage from '../../images/arhangelsk2.jpg'
 import arhangelskImage2 from '../../images/arhangelsk3.jpg'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Carousel } from '@mantine/carousel'
-import { useHover } from '@mantine/hooks'
+import { useHover, useMediaQuery } from '@mantine/hooks'
 
 enum ProjectsGalleryType {
     Perm,
@@ -59,6 +59,7 @@ const projectsNavBarData = [
 ]
 
 export const ProjectsGallery = () => {
+    const isMobile = useMediaQuery(`(max-width: 580px)`)
     const [galleryType, setGalleryType] = useState<ProjectsGalleryType>(
         ProjectsGalleryType.Perm
     )
@@ -68,6 +69,29 @@ export const ProjectsGallery = () => {
     const galleryTypeClickHandler = (type: ProjectsGalleryType) => {
         setGalleryType(type)
     }
+
+    const mobileProjectsData = [
+        {
+            name: 'Perm',
+            image: perm1,
+            text: 'Федеральный девелопер «Эталон Кампус», входящий в группу «Эталон», стал единственным учредителем ООО «Кампус «Парма»',
+        },
+        {
+            name: 'Ufa',
+            image: ufa1,
+            text: 'Федеральный девелопер «Эталон Кампус», входящий в группу «Эталон», стал единственным учредителем ООО «Кампус «Парма»',
+        },
+        {
+            name: 'Arkhangelsk',
+            image: arhangelskTitleImage,
+            text: 'Федеральный девелопер «Эталон Кампус», входящий в группу «Эталон», стал единственным учредителем ООО «Кампус «Парма»',
+        },
+        {
+            name: 'Tumen',
+            image: tumen,
+            text: 'Федеральный девелопер «Эталон Кампус», входящий в группу «Эталон», стал единственным учредителем ООО «Кампус «Парма»',
+        },
+    ]
 
     const projectsData = useMemo(() => {
         switch (galleryType) {
@@ -165,11 +189,69 @@ export const ProjectsGallery = () => {
         ))
     }, [galleryType, projectsData])
 
+    const mobileSlides = useMemo(() => {
+        return mobileProjectsData.map((project, index) => (
+            <Carousel.Slide key={index}>
+                <Flex
+                    direction={'column'}
+                    justify={'center'}
+                    m={'0 auto'}
+                    w={'90%'}
+                    h={'100%'}
+                >
+                    <Img
+                        fit={'contain'}
+                        w={'100%'}
+                        h={'auto'}
+                        src={project.image}
+                    />
+                    <Text
+                        w={'100%'}
+                        c={'#002f6d'}
+                        style={{
+                            fontSize: '24px',
+                            lineHeight: '140%',
+                            color: '#000000',
+                            textAlign: 'center',
+                            justifyContent: 'flex-start',
+                        }}
+                    >
+                        {project.text}
+                    </Text>
+                </Flex>
+            </Carousel.Slide>
+        ))
+    }, [galleryType, projectsData])
+
+    if (isMobile) {
+        return (
+            <Flex
+                direction={'column'}
+                w={'100%'}
+                h={isMobile ? '100%' : '100dvh'}
+                justify={'center'}
+            >
+                <Title
+                    style={{ textAlign: 'center' }}
+                    m={'0 auto'}
+                    mb={'40px'}
+                    c={'#002F6D'}
+                    fz={'40px'}
+                    fw={'100'}
+                    w={'100%'}
+                >
+                    НАШИ ПРОЕКТЫ
+                </Title>
+                <Carousel includeGapInSize={false} loop={true}>
+                    {mobileSlides}
+                </Carousel>
+            </Flex>
+        )
+    }
+
     return (
         <Flex
             id={'projects'}
-            m={'90px 0 90px'}
-            p={'0 40px 0'}
             w={'100vw'}
             h={'100dvh'}
             gap={'24px'}
@@ -183,16 +265,18 @@ export const ProjectsGallery = () => {
                 justify={'center'}
                 m={'0 auto'}
                 gap={'20px'}
+                pt={isMobile ? '40px' : 0}
             >
                 <Title
-                    style={{ textAlign: 'start' }}
-                    ml={'250px'}
+                    style={{ textAlign: 'center' }}
+                    m={'0 auto'}
                     mb={'40px'}
                     c={'#002F6D'}
-                    fz={'60px'}
+                    fz={'40px'}
                     fw={'100'}
+                    w={'100%'}
                 >
-                    ПРОЕКТЫ КОМПАНИИ
+                    НАШИ ПРОЕКТЫ
                 </Title>
                 <Flex w={'70%'} px={'20px'} m={'0 auto'} gap={'20px'}>
                     {projectsNavBarData.map((project, index) => {
@@ -216,6 +300,7 @@ export const ProjectsGallery = () => {
                                         project.type === galleryType
                                             ? 'drop-shadow(16px 16px 20px gray)'
                                             : '',
+                                    transition: 'all 0.3s ease', // Smooth transition for resizing
                                 }}
                             >
                                 <Badge
@@ -230,7 +315,13 @@ export const ProjectsGallery = () => {
                                             'background-color 0.5s ease',
                                     }}
                                 >
-                                    <Text c={'#fff'}>{project.title}</Text>
+                                    <Text
+                                        c={'#fff'}
+                                        fz={isMobile ? 'sm' : 'md'}
+                                    >
+                                        {' '}
+                                        {project.title}
+                                    </Text>
                                 </Badge>
                             </Flex>
                         )

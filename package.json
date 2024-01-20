@@ -39,6 +39,7 @@
         "react-spring": "^9.7.3",
         "reactjs-flip-card": "^2.0.3",
         "rerousel": "^0.1.9",
+        "swiper": "^11.0.5",
         "tabler": "1.0.0-alpha.8"
     },
     "devDependencies": {

@@ -1,6 +1,6 @@
-import { Box, rem, Portal, Burger, Menu } from '@mantine/core'
+import { Box, rem, Portal, Burger, Menu, Drawer } from '@mantine/core'
 import classes from './Header.module.css'
-import { useHeadroom } from '@mantine/hooks'
+import { useHeadroom, useMediaQuery } from '@mantine/hooks'
 import { Link } from 'react-scroll'
 import { useState } from 'react'
 
@@ -15,6 +15,7 @@ const linksData = [
 export const Header = () => {
     const pinned = useHeadroom({ fixedAt: 600 })
     const [opened, setOpened] = useState<boolean>(false)
+    const isMobile = useMediaQuery('(max-width: 580px)')
 
     return (
         <Portal>
@@ -58,30 +59,64 @@ export const Header = () => {
                             />
                         </Menu.Target>
 
-                        <Menu.Dropdown
-                            bg={'transparent'}
-                            style={{ border: 'none' }}
-                        >
-                            {linksData.map((link) => (
-                                <Menu.Item
-                                    key={link.id}
-                                    className={classes.link}
-                                    closeMenuOnClick={true}
-                                >
-                                    <Link
-                                        onClick={() => {
-                                            setOpened(!opened)
-                                        }}
+                        {isMobile ? (
+                            <Drawer
+                                opened={opened}
+                                onClose={() => setOpened(!opened)}
+                                closeButtonProps={{
+                                    size: 'xl',
+                                    w: '90px',
+                                    h: '110px',
+                                }}
+                            >
+                                <Drawer.Body>
+                                    {linksData.map((link) => (
+                                        <Menu.Item
+                                            key={link.id}
+                                            className={classes.link}
+                                            closeMenuOnClick={true}
+                                        >
+                                            <Link
+                                                onClick={() => {
+                                                    setOpened(!opened)
+                                                }}
+                                                className={classes.linkMobile}
+                                                smooth
+                                                spy
+                                                to={link.id}
+                                            >
+                                                {link.title}
+                                            </Link>
+                                        </Menu.Item>
+                                    ))}
+                                </Drawer.Body>
+                            </Drawer>
+                        ) : (
+                            <Menu.Dropdown
+                                bg={'transparent'}
+                                style={{ border: 'none' }}
+                            >
+                                {linksData.map((link) => (
+                                    <Menu.Item
+                                        key={link.id}
                                         className={classes.link}
-                                        smooth
-                                        spy
-                                        to={link.id}
+                                        closeMenuOnClick={true}
                                     >
-                                        {link.title}
-                                    </Link>
-                                </Menu.Item>
-                            ))}
-                        </Menu.Dropdown>
+                                        <Link
+                                            onClick={() => {
+                                                setOpened(!opened)
+                                            }}
+                                            className={classes.link}
+                                            smooth
+                                            spy
+                                            to={link.id}
+                                        >
+                                            {link.title}
+                                        </Link>
+                                    </Menu.Item>
+                                ))}
+                            </Menu.Dropdown>
+                        )}
                     </Menu>
                 </header>
             </Box>

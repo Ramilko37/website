@@ -1,6 +1,6 @@
 import { Container, Title, Text, Flex } from '@mantine/core'
 import classes from './Hero.module.css'
-import video from '../../images/bg_video.mp4'
+import video from '../../images/hero_bg.mp4'
 import { animated, useSpring } from 'react-spring'
 
 export default function HeroBlock() {
@@ -44,7 +44,7 @@ export default function HeroBlock() {
                     objectFit: 'cover',
                     position: 'absolute',
                     zIndex: 10,
-                    filter: 'brightness(80%)',
+                    filter: 'brightness(50%)',
                 }}
             ></video>
             <Container

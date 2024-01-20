@@ -7,6 +7,11 @@ import { NewsCard } from '../NewsCard/NewsCard'
 import vettaNewsImg from '../../images/vetta.png'
 import businessClassNews from '../../images/businessClassNews.png'
 import kommersant from '../../images/kommersant.png'
+import { useMediaQuery } from '@mantine/hooks'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
 
 export const MOCKDATA = [
     {
@@ -69,12 +74,14 @@ export const MOCKDATA = [
 ]
 
 export const NewsSlider = () => {
+    const isMobile = useMediaQuery(`(max-width: 580px)`)
     const slides = MOCKDATA.map((feature, index) => {
         return (
             <Carousel.Slide
                 key={index}
-                style={{ padding: '100px 100px 0px' }}
+                style={{ padding: isMobile ? '0' : '100px 100px 0px' }}
                 mb={'20px'}
+                w={isMobile ? '100%' : '33%'}
             >
                 <NewsCard
                     linkProps={feature.linkProps}
@@ -98,23 +105,34 @@ export const NewsSlider = () => {
             justify={'center'}
         >
             <Title
-                style={{ textAlign: 'start' }}
-                ml={'100px'}
-                mb={'0'}
+                style={{ textAlign: 'center' }}
+                m={'0 auto'}
+                mb={'40px'}
                 c={'#002F6D'}
-                fz={'60px'}
+                fz={'40px'}
                 fw={'100'}
+                w={'100%'}
             >
                 ПРЕССА О НАС
             </Title>
-            <Carousel
-                h={'fit-content'}
-                slidesToScroll={3}
-                slideSize={'33%'}
-                loop
+            <Swiper
+                modules={[Navigation]}
+                style={{ width: '100%' }}
+                spaceBetween={50}
+                navigation={true}
+                slidesPerView={isMobile ? 1 : 3}
             >
-                {slides}
-            </Carousel>
+                {MOCKDATA.map((feature, index) => (
+                    <SwiperSlide key={index}>
+                        <NewsCard
+                            linkProps={feature.linkProps}
+                            image={feature.image}
+                            title={feature.title}
+                            description={feature.description}
+                        />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         </Flex>
     )
 }

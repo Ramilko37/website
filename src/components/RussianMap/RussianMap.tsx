@@ -28,9 +28,19 @@ export const RussianMap = ({ setIsflipped }: IRussianMapProps) => {
             setIsflipped(id)
         }
 
+        const handleTouchStart = (ref: any, id: string) => {
+            ref.style.fill = '#fff'
+            console.log(id, 21)
+            setIsflipped(id)
+        }
+
+        const handleTouchEnd = (ref: any) => {
+            ref.style.fill = '#b455a0'
+            setIsflipped(undefined)
+        }
+
         const handleMouseOut = (ref: any) => {
             ref.style.fill = '#b455a0'
-            ref.style.transition = 'fill 0.7s ease-in-out'
             setIsflipped(undefined)
         }
 
@@ -63,6 +73,40 @@ export const RussianMap = ({ setIsflipped }: IRussianMapProps) => {
             handleMouseOut(ufa.current)
         )
 
+        perm.current.addEventListener('touchstart', (event: any) => {
+            handleTouchStart(perm.current, 'perm')
+            event.preventDefault() // Prevents page scrolling on touch devices
+        })
+        arkhangelsk.current.addEventListener('touchstart', (event: any) => {
+            handleTouchStart(arkhangelsk.current, 'arkhangelsk')
+            event.preventDefault()
+        })
+        tumen.current.addEventListener('touchstart', (event: any) => {
+            handleTouchStart(tumen.current, 'tumen')
+            event.preventDefault()
+        })
+        ufa.current.addEventListener('touchstart', (event: any) => {
+            handleTouchStart(ufa.current, 'ufa')
+            event.preventDefault()
+        })
+
+        perm.current.addEventListener('touchend', (event: any) => {
+            handleTouchEnd(perm.current)
+            event.preventDefault()
+        })
+        arkhangelsk.current.addEventListener('touchend', (event: any) => {
+            handleTouchEnd(arkhangelsk.current)
+            event.preventDefault()
+        })
+        tumen.current.addEventListener('touchend', (event: any) => {
+            handleTouchEnd(tumen.current)
+            event.preventDefault()
+        })
+        ufa.current.addEventListener('touchend', (event: any) => {
+            handleTouchEnd(ufa.current)
+            event.preventDefault()
+        })
+
         return () => {
             perm.current.removeEventListener('mouseover', handleMouseOver)
             perm.current.removeEventListener('mouseout', handleMouseOut)
@@ -71,6 +115,19 @@ export const RussianMap = ({ setIsflipped }: IRussianMapProps) => {
                 handleMouseOver
             )
             arkhangelsk.current.removeEventListener('mouseout', handleMouseOut)
+
+            // Remove touch event listeners
+            perm.current.removeEventListener('touchstart', handleTouchStart)
+            perm.current.removeEventListener('touchend', handleTouchEnd)
+            arkhangelsk.current.removeEventListener(
+                'touchstart',
+                handleTouchStart
+            )
+            arkhangelsk.current.removeEventListener('touchend', handleTouchEnd)
+            tumen.current.removeEventListener('touchstart', handleTouchStart)
+            tumen.current.removeEventListener('touchend', handleTouchEnd)
+            ufa.current.removeEventListener('touchstart', handleTouchStart)
+            ufa.current.removeEventListener('touchend', handleTouchEnd)
         }
     }, [])
 

@@ -12,7 +12,7 @@ import { PartnersCarousel } from './components/PartnersCarousel/PartnersCarousel
 export default function App() {
     return (
         <MantineProvider theme={theme}>
-            <Flex bg={'#f9fafc'} direction={'column'} w={'100vw'}>
+            <Flex bg={'rgba(0, 0, 0, 0.03)'} direction={'column'} w={'100vw'}>
                 <Header />
                 <HeroBlock />
                 <NumbersBlock />
