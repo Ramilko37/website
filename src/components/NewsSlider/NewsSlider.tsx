@@ -1,15 +1,13 @@
 import { Flex, Title } from '@mantine/core'
 import '@mantine/core/styles.css'
 import '@mantine/carousel/styles.css'
-
-import { Carousel } from '@mantine/carousel'
 import { NewsCard } from '../NewsCard/NewsCard'
 import vettaNewsImg from '../../images/vetta.png'
 import businessClassNews from '../../images/businessClassNews.png'
 import kommersant from '../../images/kommersant.png'
 import { useMediaQuery } from '@mantine/hooks'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
+import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 
@@ -75,24 +73,6 @@ export const MOCKDATA = [
 
 export const NewsSlider = () => {
     const isMobile = useMediaQuery(`(max-width: 580px)`)
-    const slides = MOCKDATA.map((feature, index) => {
-        return (
-            <Carousel.Slide
-                key={index}
-                style={{ padding: isMobile ? '0' : '100px 100px 0px' }}
-                mb={'20px'}
-                w={isMobile ? '100%' : '33%'}
-            >
-                <NewsCard
-                    linkProps={feature.linkProps}
-                    image={feature.image}
-                    title={feature.title}
-                    description={feature.description}
-                    key={index}
-                />
-            </Carousel.Slide>
-        )
-    })
 
     return (
         <Flex
