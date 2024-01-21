@@ -5,10 +5,6 @@
 
 }
 
-.join {
-  padding: 6.944444444444444vw 0;
-}
-
 .cards {
   display: flex;
   align-items: stretch;
@@ -120,6 +116,19 @@
   font-size: 6.111111111111111vw;
   line-height: 90%;
   margin-top: 0.555555555555556vw;
+}
+
+@media (min-width: 2400px) and (max-width: 3840px) {
+  .item {
+    width: 600px;
+    height: 600px;
+    padding-bottom: 20px;
+  }
+
+  .itemBack {
+    width: 600px;
+    height: 600px;
+  }
 }
 
 @media (max-width: 1680px) {

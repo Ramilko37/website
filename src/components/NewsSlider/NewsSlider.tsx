@@ -77,17 +77,17 @@ export const NewsSlider = () => {
     return (
         <Flex
             id={'news'}
-            h={'100dvh'}
+            h={isMobile ? 'fit-content' : '900px'}
             mih={'500px'}
             direction={'column'}
             w={'80vw'}
             m={'0 auto'}
             justify={'center'}
+            align={'center'}
         >
             <Title
                 style={{ textAlign: 'center' }}
-                m={'0 auto'}
-                mb={'40px'}
+                m={'40px auto 80px'}
                 c={'#002F6D'}
                 fz={'40px'}
                 fw={'100'}
@@ -97,7 +97,7 @@ export const NewsSlider = () => {
             </Title>
             <Swiper
                 modules={[Navigation]}
-                style={{ width: '100%' }}
+                style={{ width: '100%', height: '90%' }}
                 spaceBetween={50}
                 navigation={true}
                 slidesPerView={isMobile ? 1 : 3}

@@ -212,8 +212,9 @@ export const ProjectsGallery = () => {
                             fontSize: '24px',
                             lineHeight: '140%',
                             color: '#000000',
-                            textAlign: 'center',
+                            textAlign: 'start',
                             justifyContent: 'flex-start',
+                            marginTop: '20px'
                         }}
                     >
                         {project.text}
@@ -233,7 +234,7 @@ export const ProjectsGallery = () => {
             >
                 <Title
                     style={{ textAlign: 'center' }}
-                    m={'0 auto'}
+                    m={'40px auto'}
                     mb={'40px'}
                     c={'#002F6D'}
                     fz={'40px'}
@@ -265,7 +266,7 @@ export const ProjectsGallery = () => {
                 justify={'center'}
                 m={'0 auto'}
                 gap={'20px'}
-                pt={isMobile ? '40px' : 0}
+                pt={isMobile ? '40px' : '120px'}
             >
                 <Title
                     style={{ textAlign: 'center' }}

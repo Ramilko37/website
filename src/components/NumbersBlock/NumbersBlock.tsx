@@ -104,8 +104,8 @@ const NumbersBlock: FC = () => {
             id={'numbers'}
             bg={'rgba(0, 0, 0, 0.03)'}
             direction={'column'}
-            p={'24px'}
-            className={classes.join}
+            p={'40px 24px 0'}
+
         >
             <Title
                 style={{ textAlign: 'center' }}
