@@ -2,8 +2,11 @@ import { Box, Flex, Text } from '@mantine/core'
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps'
 import { ContactIconsList } from '../ContactIconsList/ContactIconsList'
 import classes from './styles.module.css'
+import { useMediaQuery } from '@mantine/hooks'
 
 export const YandexMaps = () => {
+    const isMobile = useMediaQuery(`(max-width: 580px)`)
+
     return (
         <Flex id={'contacts'} w={'100vw'} mt={'40px'} h={'600px'}>
             <YMaps>
@@ -34,7 +37,7 @@ export const YandexMaps = () => {
                             direction={'column'}
                             pos={'absolute'}
                             top={20}
-                            right={'30%'}
+                            right={isMobile ? '10%' : '30%'}
                             className={classes.contacts}
                             style={{
                                 zIndex: 100,

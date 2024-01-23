@@ -1,4 +1,4 @@
-import { createTheme,  } from '@mantine/core'
+import { createTheme } from '@mantine/core'
 
 export const theme = createTheme({
     breakpoints: {
@@ -8,8 +8,8 @@ export const theme = createTheme({
         lg: '74em',
         xl: '90em',
     },
-    fontFamily: 'Gilroy-Regular' ,
-     colors: {
-    ethalonBlue: ['#002F6D'] as any,
-  },
+    fontFamily: 'Geologica',
+    colors: {
+        ethalonBlue: ['#002F6D'] as any,
+    },
 })

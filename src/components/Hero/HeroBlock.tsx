@@ -1,9 +1,12 @@
 import { Container, Title, Text, Flex } from '@mantine/core'
 import classes from './Hero.module.css'
 import video from '../../images/hero_bg.mp4'
+import videoMobile from '../../images/bg_video_mobile.mp4'
 import { animated, useSpring } from 'react-spring'
+import { useMediaQuery } from '@mantine/hooks'
 
 export default function HeroBlock() {
+    const isMobile = useMediaQuery(`(max-width: 580px)`)
     const titleAnimation = useSpring({
         maxWidth: '900px',
         opacity: 1,
@@ -34,7 +37,7 @@ export default function HeroBlock() {
                 zIndex={1000}
             /> */}
             <video
-                src={video}
+                src={isMobile ? videoMobile : video}
                 autoPlay
                 muted
                 loop

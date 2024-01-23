@@ -1,32 +1,40 @@
-import { Flex, Title, Text, Badge, Image as Img } from '@mantine/core'
+import {
+    Flex,
+    Title,
+    Text,
+    Badge,
+    Image as Img,
+    ActionIcon,
+    Group,
+} from '@mantine/core'
 
 import permTitleImage from '../../images/campus.png'
-import perm1 from '../../images/perm1.jpg'
-import perm2 from '../../images/perm2.jpg'
-import perm3 from '../../images/perm3.jpg'
-import perm4 from '../../images/perm4.jpg'
-import perm5 from '../../images/perm5.jpg'
-import perm6 from '../../images/perm6.jpg'
-import ufa1 from '../../images/ufa1.jpg'
-import ufa2 from '../../images/ufa2.jpg'
-import ufa3 from '../../images/ufa3.jpg'
-import ufa4 from '../../images/ufa4.jpg'
-import ufa5 from '../../images/ufa5.jpg'
-import ufa6 from '../../images/ufa6.jpg'
-import ufa7 from '../../images/ufa7.jpg'
-import tumen from '../../images/tumen.jpg'
-import tumen2 from '../../images/tumen2.jpg'
-import tumen3 from '../../images/tumen3.jpg'
-import tumen4 from '../../images/tumen4.jpg'
-import tumen5 from '../../images/tumen5.jpg'
-import ufaTitleImage from '../../images/ufa1.jpg'
-import tumenTitleImage from '../../images/tumen.jpg'
-import arhangelskTitleImage from '../../images/arhangelsk.jpg'
-import arhangelskImage from '../../images/arhangelsk2.jpg'
-import arhangelskImage2 from '../../images/arhangelsk3.jpg'
+import perm1 from '../../images/perm1.webp'
+import perm2 from '../../images/perm2.webp'
+import perm3 from '../../images/perm3.webp'
+import perm4 from '../../images/perm4.webp'
+import perm5 from '../../images/perm5.webp'
+import perm6 from '../../images/perm6.webp'
+import ufa1 from '../../images/ufa1.webp'
+import ufa2 from '../../images/ufa2.webp'
+import ufa3 from '../../images/ufa3.webp'
+import ufa4 from '../../images/ufa4.webp'
+import ufa5 from '../../images/ufa5.webp'
+import ufa6 from '../../images/ufa6.webp'
+import ufa7 from '../../images/ufa7.webp'
+import tumen from '../../images/tumen.webp'
+import tumen2 from '../../images/tumen2.webp'
+import tumen3 from '../../images/tumen3.webp'
+import tumen4 from '../../images/tumen4.webp'
+import ufaTitleImage from '../../images/ufa1.webp'
+import tumenTitleImage from '../../images/tumen.webp'
+import arhangelskTitleImage from '../../images/arhangelsk.webp'
+import arhangelskImage from '../../images/arhangelsk2.webp'
+import arhangelskImage2 from '../../images/arhangelsk3.webp'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Carousel } from '@mantine/carousel'
+import { Carousel, Embla } from '@mantine/carousel'
 import { useHover, useMediaQuery } from '@mantine/hooks'
+import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
 
 enum ProjectsGalleryType {
     Perm,
@@ -120,7 +128,6 @@ export const ProjectsGallery = () => {
                     { text: 'Project', image: tumen2 },
                     { text: 'ProjectImage', image: tumen3 },
                     { text: 'ProjectImage', image: tumen4 },
-                    { text: 'ProjectImage', image: tumen5 },
                 ]
             case ProjectsGalleryType.Arhangelsk:
                 return [
@@ -214,7 +221,7 @@ export const ProjectsGallery = () => {
                             color: '#000000',
                             textAlign: 'start',
                             justifyContent: 'flex-start',
-                            marginTop: '20px'
+                            marginTop: '20px',
                         }}
                     >
                         {project.text}
@@ -232,7 +239,7 @@ export const ProjectsGallery = () => {
                 h={isMobile ? '100%' : '100dvh'}
                 justify={'center'}
             >
-                <Title
+                {/* <Title
                     style={{ textAlign: 'center' }}
                     m={'40px auto'}
                     mb={'40px'}
@@ -242,7 +249,8 @@ export const ProjectsGallery = () => {
                     w={'100%'}
                 >
                     НАШИ ПРОЕКТЫ
-                </Title>
+                </Title> */}
+
                 <Carousel includeGapInSize={false} loop={true}>
                     {mobileSlides}
                 </Carousel>
@@ -266,9 +274,9 @@ export const ProjectsGallery = () => {
                 justify={'center'}
                 m={'0 auto'}
                 gap={'20px'}
-                pt={isMobile ? '40px' : '120px'}
+                pt={isMobile ? '120px' : '120px'}
             >
-                <Title
+                {/* <Title
                     style={{ textAlign: 'center' }}
                     m={'0 auto'}
                     mb={'40px'}
@@ -278,8 +286,14 @@ export const ProjectsGallery = () => {
                     w={'100%'}
                 >
                     НАШИ ПРОЕКТЫ
-                </Title>
-                <Flex w={'70%'} px={'20px'} m={'0 auto'} gap={'20px'}>
+                </Title> */}
+                <Flex
+                    w={'70%'}
+                    px={'20px'}
+                    m={'0 auto'}
+                    mt={'120px'}
+                    gap={'20px'}
+                >
                     {projectsNavBarData.map((project, index) => {
                         return (
                             <Flex

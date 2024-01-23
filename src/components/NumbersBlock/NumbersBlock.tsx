@@ -105,7 +105,7 @@ const NumbersBlock: FC = () => {
             bg={'rgba(0, 0, 0, 0.03)'}
             direction={'column'}
             p={'40px 24px 0'}
-
+            h={isMobile ? '100dvh' : 'auto'}
         >
             <Title
                 style={{ textAlign: 'center' }}

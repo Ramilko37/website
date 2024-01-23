@@ -22,7 +22,13 @@ export function NewsCard({
     }
 
     return (
-        <Card withBorder radius="md" className={classes.card} pos={'relative'}>
+        <Card
+            h={'500px'}
+            withBorder
+            radius="md"
+            className={classes.card}
+            pos={'relative'}
+        >
             <Card.Section withBorder>
                 <a {...linkProps}>
                     <Image fit={'contain'} src={image} height={180} />

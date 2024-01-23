@@ -27,3 +27,31 @@
     text-align: left;
   }
 }
+
+
+.swiper {
+
+
+  .swiperButtonNext,
+  .swiperButtonPrev {
+    background-color: #002F6D;
+    /* Example: Change the background color */
+    color: white;
+    /* Example: Change the arrow color */
+    border-radius: 50%;
+    /* Example: Make the buttons circular */
+    width: 40px;
+    /* Adjust the width as needed */
+    height: 40px;
+    /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .swiperButtonNext::after,
+  .swiperButtonPrev::after {
+    font-size: 20px;
+    /* Adjust the size of the arrow icons */
+  }
+}

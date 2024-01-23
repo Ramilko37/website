@@ -1,4 +1,4 @@
-import { Flex, Title } from '@mantine/core'
+import { Flex, Title, Button } from '@mantine/core'
 import '@mantine/core/styles.css'
 import '@mantine/carousel/styles.css'
 import { NewsCard } from '../NewsCard/NewsCard'
@@ -9,7 +9,10 @@ import { useMediaQuery } from '@mantine/hooks'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
-import 'swiper/css/navigation'
+
+import { IconArrowLeft } from '@tabler/icons-react'
+import {} from '@tabler/icons-react'
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
 export const MOCKDATA = [
     {
@@ -84,6 +87,8 @@ export const NewsSlider = () => {
             m={'0 auto'}
             justify={'center'}
             align={'center'}
+            pt={{ base: '40x', md: '160px' }}
+            pos={'relative'}
         >
             <Title
                 style={{ textAlign: 'center' }}
@@ -97,13 +102,21 @@ export const NewsSlider = () => {
             </Title>
             <Swiper
                 modules={[Navigation]}
-                style={{ width: '100%', height: '90%' }}
+                style={{ width: '100%', height: '100%' }}
                 spaceBetween={50}
-                navigation={true}
+                navigation={{
+                    nextEl: '.image-swiper-button-next',
+                    prevEl: '.image-swiper-button-prev',
+                    disabledClass: 'swiper-button-disabled',
+                }}
                 slidesPerView={isMobile ? 1 : 3}
+                autoHeight={true}
             >
                 {MOCKDATA.map((feature, index) => (
-                    <SwiperSlide key={index}>
+                    <SwiperSlide
+                        style={{ height: 'fit-content', padding: '20px' }}
+                        key={index}
+                    >
                         <NewsCard
                             linkProps={feature.linkProps}
                             image={feature.image}
@@ -113,6 +126,38 @@ export const NewsSlider = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
+            <div
+                style={{
+                    position: 'absolute',
+                    top: isMobile ? '45%' : '53%',
+                    left: isMobile ? '-12%' : '-7%',
+                    zIndex: 100,
+                }}
+                className="swiper-button image-swiper-button-next"
+            >
+                <IoIosArrowBack
+                    fill={'#002F6D'}
+                    size={'70px'}
+                    width={'100px'}
+                    height={'100px'}
+                />
+            </div>
+            <div
+                style={{
+                    position: 'absolute',
+                    top: isMobile ? '45%' : '53%',
+                    right: isMobile ? '-12%' : '-7%',
+                    zIndex: 100,
+                }}
+                className="swiper-button image-swiper-button-prev"
+            >
+                <IoIosArrowForward
+                    fill={'#002F6D'}
+                    size={'70px'}
+                    width={'100px'}
+                    height={'100px'}
+                />
+            </div>
         </Flex>
     )
 }
