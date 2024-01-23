@@ -1,4 +1,4 @@
-import { Flex, Title, Button } from '@mantine/core'
+import { Flex, Title } from '@mantine/core'
 import '@mantine/core/styles.css'
 import '@mantine/carousel/styles.css'
 import { NewsCard } from '../NewsCard/NewsCard'
@@ -10,7 +10,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
 
-import { IconArrowLeft } from '@tabler/icons-react'
 import {} from '@tabler/icons-react'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 

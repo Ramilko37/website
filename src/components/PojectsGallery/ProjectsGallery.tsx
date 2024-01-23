@@ -1,12 +1,4 @@
-import {
-    Flex,
-    Title,
-    Text,
-    Badge,
-    Image as Img,
-    ActionIcon,
-    Group,
-} from '@mantine/core'
+import { Flex, Text, Badge, Image as Img } from '@mantine/core'
 
 import permTitleImage from '../../images/campus.png'
 import perm1 from '../../images/perm1.webp'
@@ -32,9 +24,8 @@ import arhangelskTitleImage from '../../images/arhangelsk.webp'
 import arhangelskImage from '../../images/arhangelsk2.webp'
 import arhangelskImage2 from '../../images/arhangelsk3.webp'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Carousel, Embla } from '@mantine/carousel'
+import { Carousel } from '@mantine/carousel'
 import { useHover, useMediaQuery } from '@mantine/hooks'
-import { TbChevronLeft, TbChevronRight } from 'react-icons/tb'
 
 enum ProjectsGalleryType {
     Perm,
