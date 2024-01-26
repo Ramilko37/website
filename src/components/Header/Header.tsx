@@ -17,7 +17,7 @@ const linksData = [
 export const Header = () => {
     const pinned = useHeadroom({ fixedAt: 600 })
     const [opened, setOpened] = useState<boolean>(false)
-    const isMobile = useMediaQuery('(max-width: 580px)')
+    const isMobile = useMediaQuery('(max-width: 640px)')
 
     return (
         <Portal>
@@ -76,7 +76,7 @@ export const Header = () => {
                                         link.id === 'team' ? (
                                             <Menu.Item
                                                 key={link.id}
-                                                className={classes.link}
+                                                className={classes.linkMobile}
                                                 closeMenuOnClick={true}
                                             >
                                                 <RouterLink
@@ -125,7 +125,7 @@ export const Header = () => {
                                             closeMenuOnClick={true}
                                         >
                                             <RouterLink
-                                                className={classes.linkMobile}
+                                                className={classes.link}
                                                 to={link.id}
                                             >
                                                 {link.title}

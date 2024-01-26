@@ -74,7 +74,7 @@ export const MOCKDATA = [
 ]
 
 export const NewsSlider = () => {
-    const isMobile = useMediaQuery(`(max-width: 580px)`)
+    const isMobile = useMediaQuery(`(max-width: 640px)`)
 
     return (
         <Flex

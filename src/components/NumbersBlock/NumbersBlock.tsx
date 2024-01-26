@@ -92,7 +92,7 @@ const initialNumbers = [
 
 const NumbersBlock: FC = () => {
     const [isFlipped, setIsflipped] = useState<string | undefined>(undefined)
-    const isMobile = useMediaQuery(`(max-width: 580px)`)
+    const isMobile = useMediaQuery(`(max-width: 640px)`)
 
     const cardFlipHandler = (id: string) => () => {
         console.log('set os flipped')

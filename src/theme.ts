@@ -10,6 +10,8 @@ export const theme = createTheme({
     },
     fontFamily: 'Geologica',
     colors: {
-        ethalonBlue: ['#002F6D'] as any,
+        ethalonBlue: [
+            ' linear-gradient(-60deg,var(--mantine-color-blue-4) 0%, #002F6D 100%);',
+        ] as any,
     },
 })

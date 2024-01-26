@@ -6,7 +6,7 @@ import { animated, useSpring } from 'react-spring'
 import { useMediaQuery } from '@mantine/hooks'
 
 export default function HeroBlock() {
-    const isMobile = useMediaQuery(`(max-width: 580px)`)
+    const isMobile = useMediaQuery(`(max-width: 640px)`)
     const titleAnimation = useSpring({
         maxWidth: '900px',
         opacity: 1,

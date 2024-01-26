@@ -1,4 +1,4 @@
-import { Flex, Text, Badge, Image as Img } from '@mantine/core'
+import { Flex, Text, Badge, Image as Img, Box } from '@mantine/core'
 import permTitleImage from '../../images/campus.png'
 import perm1 from '../../images/perm1.webp'
 import perm2 from '../../images/perm2.webp'
@@ -57,7 +57,7 @@ const projectsNavBarData = [
 ]
 
 export const ProjectsGallery = () => {
-    const isMobile = useMediaQuery(`(max-width: 580px)`)
+    const isMobile = useMediaQuery(`(max-width: 640px)`)
     const [galleryType, setGalleryType] = useState<ProjectsGalleryType>(
         ProjectsGalleryType.Perm
     )
@@ -156,7 +156,7 @@ export const ProjectsGallery = () => {
                     >
                         <Text
                             w={'100%'}
-                            c={'#002f6d'}
+                            c={'#002F6D'}
                             style={{
                                 fontSize: '1.388888888888889vw',
                                 lineHeight: '140%',
@@ -313,11 +313,12 @@ export const ProjectsGallery = () => {
                                     bg={
                                         project.type === galleryType
                                             ? '#b455a0'
-                                            : '#002f6d'
+                                            : 'linear-gradient(90deg, var(--mantine-color-blue-4), #002F6D 100%)'
                                     }
                                     style={{
                                         transition:
                                             'background-color 0.5s ease',
+                                        padding: 0,
                                     }}
                                 >
                                     <Text

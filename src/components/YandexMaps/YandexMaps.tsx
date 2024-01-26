@@ -5,7 +5,7 @@ import classes from './styles.module.css'
 import { useMediaQuery } from '@mantine/hooks'
 
 export const YandexMaps = () => {
-    const isMobile = useMediaQuery(`(max-width: 580px)`)
+    const isMobile = useMediaQuery(`(max-width: 640px)`)
 
     return (
         <Flex id={'contacts'} w={'100vw'} mt={'40px'} h={'600px'}>
