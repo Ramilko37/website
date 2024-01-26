@@ -72,22 +72,22 @@ export const ProjectsGallery = () => {
         {
             name: 'Perm',
             image: perm1,
-            text: 'Федеральный девелопер «Эталон Кампус», входящий в группу «Эталон», стал единственным учредителем ООО «Кампус «Парма»',
+            text: 'Проект кампуса в г. Пермь',
         },
         {
             name: 'Ufa',
             image: ufa1,
-            text: 'Федеральный девелопер «Эталон Кампус», входящий в группу «Эталон», стал единственным учредителем ООО «Кампус «Парма»',
+            text: 'Проект кампуса в г. Уфа',
         },
         {
             name: 'Arkhangelsk',
             image: arhangelskTitleImage,
-            text: 'Федеральный девелопер «Эталон Кампус», входящий в группу «Эталон», стал единственным учредителем ООО «Кампус «Парма»',
+            text: 'Проект кампуса в г. Архангельск',
         },
         {
             name: 'Tumen',
             image: tumen,
-            text: 'Федеральный девелопер «Эталон Кампус», входящий в группу «Эталон», стал единственным учредителем ООО «Кампус «Парма»',
+            text: 'Проект кампуса в г. Тюмень',
         },
     ]
 
@@ -95,35 +95,150 @@ export const ProjectsGallery = () => {
         switch (galleryType) {
             case ProjectsGalleryType.Perm:
                 return [
-                    { text: 'Project', image: perm1 },
-                    { text: 'Project', image: perm2 },
-                    { text: 'ProjectImage', image: perm3 },
-                    { text: 'ProjectImage', image: perm4 },
-                    { text: 'ProjectImage', image: perm5 },
-                    { text: 'ProjectImage', image: perm6 },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: perm1,
+                    },
+                    {
+                        title: 'Вместимость',
+                        bullet1: 'Кол-во мест в общежитиях – 4 980 мест',
+                        bullet2: 'Кол-во мест в гостинице – 120 мест',
+                        bullet3: '',
+                        image: perm2,
+                    },
+                    {
+                        title: 'Потребность в инвестициях – 32 203 млн руб',
+                        bullet1: 'Капитальный грант – 21 408 млн руб.',
+                        bullet2: 'Старший долг – 9 042 млн руб.',
+                        bullet3: 'Акционерный заем – 1 753 млн руб',
+                        image: perm3,
+                    },
+                    {
+                        title: 'Потребность в инвестициях – 32 203 млн руб',
+                        bullet1: 'Проектирование – 1 год.',
+                        bullet2: 'Строительство – 3 года',
+                        bullet3: 'Эксплуатация – 18 лет',
+                        image: perm4,
+                    },
+                    {
+                        title: 'Экспертиза Прокампус',
+                        bullet1: 'Финансовая экспертиза – 100 баллов',
+                        bullet2: 'Юридическая экспертиза – 100 баллов',
+                        bullet3: 'Строительная экспертиза – 56 баллов',
+                        image: perm5,
+                    },
+                    // { text: 'ProjectImage', image: perm5 },
+                    // { text: 'ProjectImage', image: perm6 },
                 ]
             case ProjectsGalleryType.Ufa:
                 return [
-                    { text: 'Project', image: ufa1 },
-                    { text: 'Project', image: ufa2 },
-                    { text: 'ProjectImage', image: ufa3 },
-                    { text: 'ProjectImage', image: ufa4 },
-                    { text: 'ProjectImage', image: ufa5 },
-                    { text: 'ProjectImage', image: ufa6 },
-                    { text: 'ProjectImage', image: ufa7 },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: ufa1,
+                    },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: ufa2,
+                    },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: ufa3,
+                    },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: ufa4,
+                    },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: ufa5,
+                    },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: ufa6,
+                    },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: ufa7,
+                    },
                 ]
             case ProjectsGalleryType.Tumen:
                 return [
-                    { text: 'Project', image: tumen },
-                    { text: 'Project', image: tumen2 },
-                    { text: 'ProjectImage', image: tumen3 },
-                    { text: 'ProjectImage', image: tumen4 },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: tumen,
+                    },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: tumen2,
+                    },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: tumen3,
+                    },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: tumen4,
+                    },
                 ]
             case ProjectsGalleryType.Arhangelsk:
                 return [
-                    { text: 'Project', image: arhangelskTitleImage },
-                    { text: 'Project', image: arhangelskImage },
-                    { text: 'ProjectImage', image: arhangelskImage2 },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: arhangelskTitleImage,
+                    },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: arhangelskImage,
+                    },
+                    {
+                        title: 'Площадь объекта',
+                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
+                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet3: '',
+                        image: arhangelskImage2,
+                    },
                 ]
         }
     }, [galleryType])
@@ -148,9 +263,12 @@ export const ProjectsGallery = () => {
                     <Flex
                         p={'24px'}
                         style={{
+                            flexDirection: 'column',
                             flex: '0 1 40%',
                             height: '100%',
                             position: 'relative',
+                            alignItems: 'center',
+                            justifyContent: 'center',
                         }}
                         align={'center'}
                     >
@@ -163,11 +281,58 @@ export const ProjectsGallery = () => {
                                 color: '#000000',
                                 textAlign: 'center',
                                 justifyContent: 'flex-start',
+                                borderBottom: '3px solid #002F6D',
                             }}
+                            size="xl"
+                            fz={'32px'}
+                            mb={'20px'}
                         >
-                            Федеральный девелопер «Эталон Кампус», входящий в
-                            группу «Эталон», стал единственным учредителем ООО
-                            «Кампус «Парма»
+                            {project.title}
+                        </Text>
+                        <Text
+                            w={'100%'}
+                            c={'#002F6D'}
+                            style={{
+                                fontSize: '1.388888888888889vw',
+                                lineHeight: '140%',
+                                color: '#000000',
+                                textAlign: 'center',
+                                justifyContent: 'flex-start',
+                            }}
+                            size="xl"
+                            fz={'22px'}
+                        >
+                            {project.bullet1}
+                        </Text>
+                        <Text
+                            w={'100%'}
+                            c={'#002F6D'}
+                            style={{
+                                fontSize: '1.388888888888889vw',
+                                lineHeight: '140%',
+                                color: '#000000',
+                                textAlign: 'center',
+                                justifyContent: 'flex-start',
+                            }}
+                            size="xl"
+                            fz={'22px'}
+                        >
+                            {project.bullet2}
+                        </Text>
+                        <Text
+                            w={'100%'}
+                            c={'#002F6D'}
+                            style={{
+                                fontSize: '1.388888888888889vw',
+                                lineHeight: '140%',
+                                color: '#000000',
+                                textAlign: 'center',
+                                justifyContent: 'flex-start',
+                            }}
+                            size="xl"
+                            fz={'22px'}
+                        >
+                            {project.bullet3}
                         </Text>
                     </Flex>
                     {/* <Image fit={'contain'} w={'auto'} h={'100%'} src={project.image} /> */}
