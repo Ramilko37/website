@@ -374,7 +374,7 @@ export const ProjectsGallery = () => {
                             fontSize: '24px',
                             lineHeight: '140%',
                             color: '#000000',
-                            textAlign: 'start',
+                            textAlign: 'center',
                             justifyContent: 'flex-start',
                             marginTop: '20px',
                         }}
