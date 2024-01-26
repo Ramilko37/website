@@ -3,6 +3,7 @@ import classes from './Header.module.css'
 import { useHeadroom, useMediaQuery } from '@mantine/hooks'
 import { Link } from 'react-scroll'
 import { useState } from 'react'
+import { Route, Link as RouterLink } from 'react-router-dom'
 
 const linksData = [
     { id: 'numbers', title: 'О нас' },
@@ -10,6 +11,7 @@ const linksData = [
     { id: 'news', title: 'Новости' },
     { id: 'contacts', title: 'Контакты' },
     { id: 'marquee', title: 'Партнеры' },
+    { id: 'team', title: 'Команда' },
 ]
 
 export const Header = () => {
@@ -70,7 +72,66 @@ export const Header = () => {
                                 }}
                             >
                                 <Drawer.Body>
-                                    {linksData.map((link) => (
+                                    {linksData.map((link) =>
+                                        link.id === 'team' ? (
+                                            <Menu.Item
+                                                key={link.id}
+                                                className={classes.link}
+                                                closeMenuOnClick={true}
+                                            >
+                                                <RouterLink
+                                                    className={
+                                                        classes.linkMobile
+                                                    }
+                                                    to={link.id}
+                                                >
+                                                    {link.title}
+                                                </RouterLink>
+                                            </Menu.Item>
+                                        ) : (
+                                            <Menu.Item
+                                                key={link.id}
+                                                className={classes.link}
+                                                closeMenuOnClick={true}
+                                            >
+                                                <Link
+                                                    onClick={() => {
+                                                        setOpened(!opened)
+                                                    }}
+                                                    className={
+                                                        classes.linkMobile
+                                                    }
+                                                    smooth
+                                                    spy
+                                                    to={link.id}
+                                                >
+                                                    {link.title}
+                                                </Link>
+                                            </Menu.Item>
+                                        )
+                                    )}
+                                </Drawer.Body>
+                            </Drawer>
+                        ) : (
+                            <Menu.Dropdown
+                                bg={'transparent'}
+                                style={{ border: 'none' }}
+                            >
+                                {linksData.map((link) =>
+                                    link.id === 'team' ? (
+                                        <Menu.Item
+                                            key={link.id}
+                                            className={classes.link}
+                                            closeMenuOnClick={true}
+                                        >
+                                            <RouterLink
+                                                className={classes.linkMobile}
+                                                to={link.id}
+                                            >
+                                                {link.title}
+                                            </RouterLink>
+                                        </Menu.Item>
+                                    ) : (
                                         <Menu.Item
                                             key={link.id}
                                             className={classes.link}
@@ -79,8 +140,10 @@ export const Header = () => {
                                             <Link
                                                 onClick={() => {
                                                     setOpened(!opened)
+                                                    if (link.id === 'team') {
+                                                    }
                                                 }}
-                                                className={classes.linkMobile}
+                                                className={classes.link}
                                                 smooth
                                                 spy
                                                 to={link.id}
@@ -88,33 +151,8 @@ export const Header = () => {
                                                 {link.title}
                                             </Link>
                                         </Menu.Item>
-                                    ))}
-                                </Drawer.Body>
-                            </Drawer>
-                        ) : (
-                            <Menu.Dropdown
-                                bg={'transparent'}
-                                style={{ border: 'none' }}
-                            >
-                                {linksData.map((link) => (
-                                    <Menu.Item
-                                        key={link.id}
-                                        className={classes.link}
-                                        closeMenuOnClick={true}
-                                    >
-                                        <Link
-                                            onClick={() => {
-                                                setOpened(!opened)
-                                            }}
-                                            className={classes.link}
-                                            smooth
-                                            spy
-                                            to={link.id}
-                                        >
-                                            {link.title}
-                                        </Link>
-                                    </Menu.Item>
-                                ))}
+                                    )
+                                )}
                             </Menu.Dropdown>
                         )}
                     </Menu>

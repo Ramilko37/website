@@ -1,26 +1,12 @@
 import '@mantine/core/styles.css'
-import { Flex, MantineProvider } from '@mantine/core'
+import { MantineProvider } from '@mantine/core'
 import { theme } from './theme'
-import { Header } from './components/Header/Header'
-import HeroBlock from './components/Hero/HeroBlock'
-import { YandexMaps } from './components/YandexMaps/YandexMaps'
-import NumbersBlock from './components/NumbersBlock/NumbersBlock'
-import { NewsSlider } from './components/NewsSlider/NewsSlider'
-import { ProjectsGallery } from './components/PojectsGallery/ProjectsGallery'
-import { PartnersCarousel } from './components/PartnersCarousel/PartnersCarousel'
+import { Router } from './Router'
 
 export default function App() {
     return (
         <MantineProvider theme={theme}>
-            <Flex bg={'rgba(0, 0, 0, 0.03)'} direction={'column'} w={'100vw'}>
-                <Header />
-                <HeroBlock />
-                <NumbersBlock />
-                <ProjectsGallery />
-                <NewsSlider />
-                <YandexMaps />
-                <PartnersCarousel />
-            </Flex>
+            <Router />
         </MantineProvider>
     )
 }

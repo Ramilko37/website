@@ -1,5 +1,4 @@
 import { Flex, Text, Badge, Image as Img } from '@mantine/core'
-
 import permTitleImage from '../../images/campus.png'
 import perm1 from '../../images/perm1.webp'
 import perm2 from '../../images/perm2.webp'

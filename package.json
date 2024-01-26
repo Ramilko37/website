@@ -35,6 +35,7 @@
         "react-flippy": "^1.1.0",
         "react-icons": "^5.0.1",
         "react-odometerjs": "^3.1.0",
+        "react-router-dom": "^6.21.3",
         "react-russian-map": "^0.0.4",
         "react-scroll": "^1.9.0",
         "react-spring": "^9.7.3",

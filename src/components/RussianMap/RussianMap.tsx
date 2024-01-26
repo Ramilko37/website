@@ -12,8 +12,29 @@ export const RussianMap = ({ setIsflipped }: IRussianMapProps) => {
     const tumen = useRef<any>(null)
     const ufa = useRef<any>(null)
 
+    const handleMouseOver = (ref: any, id: string) => {
+        ref.style.fill = '#fff'
+        console.log(id, 21)
+        setIsflipped(id)
+    }
+
+    const handleTouchStart = (ref: any, id: string) => {
+        ref.style.fill = '#fff'
+        console.log(id, 21)
+        setIsflipped(id)
+    }
+
+    const handleTouchEnd = (ref: any) => {
+        ref.style.fill = '#b455a0'
+        setIsflipped(undefined)
+    }
+
+    const handleMouseOut = (ref: any) => {
+        ref.style.fill = '#b455a0'
+        setIsflipped(undefined)
+    }
+
     useEffect(() => {
-        console.log(perm)
         if (
             !perm.current ||
             !arkhangelsk.current ||
@@ -22,28 +43,7 @@ export const RussianMap = ({ setIsflipped }: IRussianMapProps) => {
         )
             return
 
-        const handleMouseOver = (ref: any, id: string) => {
-            ref.style.fill = '#fff'
-            console.log(id, 21)
-            setIsflipped(id)
-        }
-
-        const handleTouchStart = (ref: any, id: string) => {
-            ref.style.fill = '#fff'
-            console.log(id, 21)
-            setIsflipped(id)
-        }
-
-        const handleTouchEnd = (ref: any) => {
-            ref.style.fill = '#b455a0'
-            setIsflipped(undefined)
-        }
-
-        const handleMouseOut = (ref: any) => {
-            ref.style.fill = '#b455a0'
-            setIsflipped(undefined)
-        }
-
+        console.log(perm.current, 44)
         perm.current.addEventListener('mouseover', () =>
             handleMouseOver(perm.current, 'perm')
         )
@@ -108,26 +108,50 @@ export const RussianMap = ({ setIsflipped }: IRussianMapProps) => {
         })
 
         return () => {
-            perm.current.removeEventListener('mouseover', handleMouseOver)
-            perm.current.removeEventListener('mouseout', handleMouseOut)
-            arkhangelsk.current.removeEventListener(
-                'mouseover',
-                handleMouseOver
-            )
-            arkhangelsk.current.removeEventListener('mouseout', handleMouseOut)
+            if (perm.current) {
+                perm.current.removeEventListener('mouseover', handleMouseOver)
+                perm.current.removeEventListener('mouseout', handleMouseOut)
+                perm?.current.removeEventListener(
+                    'touchstart',
+                    handleTouchStart
+                )
+                perm?.current.removeEventListener('touchend', handleTouchEnd)
+            }
+            if (arkhangelsk.current) {
+                arkhangelsk.current.removeEventListener(
+                    'mouseover',
+                    handleMouseOver
+                )
+                arkhangelsk.current.removeEventListener(
+                    'mouseout',
+                    handleMouseOut
+                )
+                arkhangelsk.current.removeEventListener(
+                    'touchstart',
+                    handleTouchStart
+                )
+                arkhangelsk.current.removeEventListener(
+                    'touchend',
+                    handleTouchEnd
+                )
+            }
 
-            // Remove touch event listeners
-            perm.current.removeEventListener('touchstart', handleTouchStart)
-            perm.current.removeEventListener('touchend', handleTouchEnd)
-            arkhangelsk.current.removeEventListener(
-                'touchstart',
-                handleTouchStart
-            )
-            arkhangelsk.current.removeEventListener('touchend', handleTouchEnd)
-            tumen.current.removeEventListener('touchstart', handleTouchStart)
-            tumen.current.removeEventListener('touchend', handleTouchEnd)
-            ufa.current.removeEventListener('touchstart', handleTouchStart)
-            ufa.current.removeEventListener('touchend', handleTouchEnd)
+            if (tumen.current) {
+                tumen.current.removeEventListener('mouseover', handleMouseOver)
+                tumen.current.removeEventListener('mouseout', handleMouseOut)
+                tumen.current.removeEventListener(
+                    'touchstart',
+                    handleTouchStart
+                )
+                tumen.current.removeEventListener('touchend', handleTouchEnd)
+            }
+
+            if (ufa.current) {
+                ufa.current.removeEventListener('mouseover', handleMouseOver)
+                ufa.current.removeEventListener('mouseout', handleMouseOut)
+                ufa.current.removeEventListener('touchstart', handleTouchStart)
+                ufa.current.removeEventListener('touchend', handleTouchEnd)
+            }
         }
     }, [])
 
