@@ -46,6 +46,7 @@ export const TeamComponent = () => {
             {data.map((item, key) => {
                 return (
                     <TeamCardComponent
+                        key={key}
                         name={item.name}
                         position={item.position}
                         image={item.image}

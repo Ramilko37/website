@@ -3,7 +3,7 @@ import classes from './Header.module.css'
 import { useHeadroom, useMediaQuery } from '@mantine/hooks'
 import { Link } from 'react-scroll'
 import { useState } from 'react'
-import { Route, Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 
 const linksData = [
     { id: 'numbers', title: 'О нас' },

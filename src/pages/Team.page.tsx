@@ -1,12 +1,4 @@
-import {
-    Flex,
-    SimpleGrid,
-    Title,
-    Image,
-    Text,
-    BackgroundImage,
-    Box,
-} from '@mantine/core'
+import { Flex, Title } from '@mantine/core'
 import { TeamComponent } from '../components/TeamComponent/TeamComponent'
 
 export const TeamPage = () => {

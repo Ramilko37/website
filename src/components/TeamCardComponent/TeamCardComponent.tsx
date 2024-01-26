@@ -1,5 +1,5 @@
 import { Flex, BackgroundImage, Text } from '@mantine/core'
-import { useMediaQuery, useHover } from '@mantine/hooks'
+import { useHover } from '@mantine/hooks'
 
 interface ICardComponentProps {
     name: string
@@ -12,7 +12,6 @@ export const TeamCardComponent = ({
     position,
     image,
 }: ICardComponentProps) => {
-    const isMobile = useMediaQuery(`(max-width: 580px)`)
     const { hovered, ref } = useHover()
 
     return (
