@@ -5,17 +5,20 @@ interface ICardComponentProps {
     name: string
     position: string
     image: string
+    handleCardClick: (image: string) => () => void
 }
 
 export const TeamCardComponent = ({
     name,
     position,
     image,
+    handleCardClick,
 }: ICardComponentProps) => {
     const { hovered, ref } = useHover()
 
     return (
         <div
+            onClick={handleCardClick(image)}
             ref={ref}
             style={{
                 boxShadow: ' 5px 5px 5px 0px rgba(0,0,0,0.3)',
