@@ -5,6 +5,7 @@ import ReactCardFlip from 'react-card-flip'
 import { RussianMap } from '../RussianMap/RussianMap'
 import { useMediaQuery } from '@mantine/hooks'
 import { AboutBanner } from '../AboutBanner/AboutBanner'
+import { About } from '../About/About'
 
 const initialNumbers = [
     {
@@ -118,47 +119,8 @@ const NumbersBlock: FC = () => {
                 w={'100%'}
                 mt={isMobile ? '-20px' : 0}
             >
-                О НАС
+                ГЕОГРАФИЯ ПРОЕКТОВ
             </Title>
-            <AboutBanner />
-            <Flex
-                w={{ base: '100%', lg: '68vw' }}
-                m={'0 auto'}
-                h={'fit-content'}
-                p={{ base: '0 24px 0', lg: '48px' }}
-                direction={'column'}
-                justify={'center'}
-                align={'center'}
-                gap={{ base: '16px', lg: '24px' }}
-                style={{
-                    borderRadius: '12px',
-                    background:
-                        'linear-gradient(-60deg, var(--mantine-color-blue-4) 0%, #002F6D 100%)',
-                }}
-            >
-                <Title c={'#fff'} fz={'38px'}>
-                    ЦЕНТР ГЧП-КОМПЕТЕНЦИЙ
-                    <br /> ГРУППЫ АФК «СИСТЕМА»
-                </Title>
-                <Text c={'#fff'} size="xl">
-                    За два года деятельности Компании, было заключено 6
-                    концессионных соглашений. Общая стоимость строительных
-                    контрактов, полученных ООО «Эталон Кампус» превышает 122
-                    млрд руб.
-                </Text>
-                <Text c={'#fff'} size="xl">
-                    Расширение компетенций, полученное в ходе работы над
-                    текущими проектами (структурирование, управление и GR) и
-                    приобретенная репутация на рынке ГЧП позволяет Компании
-                    увеличивать маржинальность зключаемых контрактов и расширять
-                    зону присутствия Группы. Таким образом на текущий момент
-                    прорабатываются еще 4 проекта, которые с высокой долей
-                    вероятности начнут свою реализацию в следующем году и
-                    увеличат портфель строительных контрактов Компании на 63
-                    млрд руб.
-                </Text>
-            </Flex>
-
             <Box>
                 <div className={classes.content}>
                     <div className={classes.cards}>
