@@ -1,11 +1,13 @@
 import { Text } from '@mantine/core'
 import classes from './AboutBanner.module.css'
+import { useInViewport } from '@mantine/hooks'
+import CountUp from 'react-countup'
 
 const data = [
     {
         title: 'Более',
         stats: '120 млрд',
-        description: ' Инвестиции в проекты по всей России',
+        description: 'млрд инвестиций в проекты по всей России',
     },
     {
         title: 'Более',
@@ -20,13 +22,25 @@ const data = [
 ]
 
 export const AboutBanner = () => {
+    const { ref, inViewport } = useInViewport()
+
     const stats = data.map((stat) => (
-        <div key={stat.title} className={classes.stat}>
+        <div ref={ref} key={stat.title} className={classes.stat}>
             {/* <Text className={classes.count}>{stat.stats}</Text> */}
             <Text mb={{ base: '12px', md: '20px' }} className={classes.title}>
                 {stat.title}
             </Text>
-            <Text className={classes.count}>{stat.stats}</Text>
+            <Text className={classes.count}>
+                {' '}
+                {inViewport ? (
+                    <CountUp
+                        end={parseFloat(stat.stats.replace(/[^0-9.]/g, ''))}
+                        duration={2}
+                    />
+                ) : (
+                    '0'
+                )}
+            </Text>
             <Text className={classes.description}>{stat.description}</Text>
         </div>
     ))
