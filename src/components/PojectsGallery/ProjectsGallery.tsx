@@ -1,4 +1,4 @@
-import { Flex, Text, Badge, Image as Img } from '@mantine/core'
+import { Flex, Title, Text, Badge, Image as Img } from '@mantine/core'
 import permTitleImage from '../../images/campus.png'
 import perm1 from '../../images/perm1.webp'
 import perm2 from '../../images/perm2.webp'
@@ -431,17 +431,6 @@ export const ProjectsGallery = () => {
                 gap={'20px'}
                 pt={isMobile ? '120px' : '120px'}
             >
-                {/* <Title
-                    style={{ textAlign: 'center' }}
-                    m={'0 auto'}
-                    mb={'40px'}
-                    c={'#002F6D'}
-                    fz={'40px'}
-                    fw={'100'}
-                    w={'100%'}
-                >
-                    НАШИ ПРОЕКТЫ
-                </Title> */}
                 <Flex
                     w={'70%'}
                     px={'20px'}

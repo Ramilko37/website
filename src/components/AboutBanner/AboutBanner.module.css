@@ -6,7 +6,7 @@
     padding: calc(var(--mantine-spacing-xl) * 1.5);
     border-radius: var(--mantine-radius-md);
     width: 60vw;
-    margin: 90px auto;
+    margin: 0 auto;
 
 
     @media (max-width: 640px) {

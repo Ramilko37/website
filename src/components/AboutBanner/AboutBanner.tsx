@@ -1,5 +1,5 @@
 import { Text } from '@mantine/core'
-import classes from './About.module.css'
+import classes from './AboutBanner.module.css'
 
 const data = [
     {
@@ -19,7 +19,7 @@ const data = [
     },
 ]
 
-export const AboutUs = () => {
+export const AboutBanner = () => {
     const stats = data.map((stat) => (
         <div key={stat.title} className={classes.stat}>
             {/* <Text className={classes.count}>{stat.stats}</Text> */}
