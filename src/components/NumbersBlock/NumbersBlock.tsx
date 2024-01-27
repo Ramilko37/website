@@ -1,11 +1,9 @@
 import { FC, useState } from 'react'
 import classes from './styles.module.css'
-import { Flex, Box, Title, Text, Timeline } from '@mantine/core'
+import { Flex, Box, Title } from '@mantine/core'
 import ReactCardFlip from 'react-card-flip'
 import { RussianMap } from '../RussianMap/RussianMap'
 import { useMediaQuery } from '@mantine/hooks'
-import { AboutBanner } from '../AboutBanner/AboutBanner'
-import { About } from '../About/About'
 
 const initialNumbers = [
     {

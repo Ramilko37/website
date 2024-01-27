@@ -2,11 +2,7 @@ import { Flex, Title, Text, Timeline, Accordion, List } from '@mantine/core'
 import { AboutBanner } from '../AboutBanner/AboutBanner'
 import { useState } from 'react'
 import styles from './About.module.css'
-import {
-    IconChevronDown,
-    IconChevronRight,
-    IconPlus,
-} from '@tabler/icons-react'
+import { IconChevronDown } from '@tabler/icons-react'
 
 const concessionProjectStages = [
     {
@@ -138,7 +134,7 @@ export const About = () => {
                         },
                     }}
                 >
-                    {concessionProjectStages.map((stage, key) => {
+                    {concessionProjectStages.map((stage) => {
                         return (
                             <Timeline.Item
                                 key={stage.id}
