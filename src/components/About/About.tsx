@@ -60,6 +60,7 @@ const concessionProjectStages = [
 
 export const About = () => {
     const [active, setActive] = useState<number>(1)
+    const [stage, setStage] = useState<number>(1)
 
     return (
         <Flex
@@ -152,12 +153,16 @@ export const About = () => {
                                         padding: 0,
                                     }}
                                     chevron={null}
+                                    transitionDuration={700}
                                 >
                                     <Accordion.Item
                                         key={stage.stage}
                                         value={stage.stage}
                                         className={styles.accordionItem}
-                                        onClick={() => setActive(stage.id)}
+                                        onClick={() => {
+                                            setActive(stage.id)
+                                            setStage(stage.id)
+                                        }}
                                     >
                                         <Accordion.Control
                                             w={'fit-content'}
