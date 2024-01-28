@@ -1,6 +1,5 @@
 import { FC, useState } from 'react'
-import classes from './styles.module.css'
-import { Flex, Image, Title, rem } from '@mantine/core'
+import { Flex, Image, Title, Text, rem, BackgroundImage } from '@mantine/core'
 import ReactCardFlip from 'react-card-flip'
 import { RussianMap } from '../RussianMap/RussianMap'
 import { useMediaQuery } from '@mantine/hooks'
@@ -8,11 +7,17 @@ import permBg from '../../images/Coat_of_Arms_of_Perm.svg.png'
 import tyumenBg from '../../images/tyumen_gerb.png'
 import ufaBg from '../../images/gerb_Ufa.png'
 import arkhangelskBg from '../../images/arkhangelsk_gerb.png'
+import permBack from '../../images/perm6.webp'
+import tyumenBack from '../../images/tumen4.webp'
+import ufaBack from '../../images/ufa7.webp'
+import arkhangelskBack from '../../images/arhangelsk.webp'
+import styles from './styles.module.css'
+import { Link } from 'react-scroll'
 
 const initialNumbers = [
     {
         id: 'perm',
-        num: '100k',
+        // num: '100k',
         icon: (
             <svg
                 style={{ width: rem(80), height: rem(80) }}
@@ -28,12 +33,13 @@ const initialNumbers = [
                 ></path>
             </svg>
         ),
-        label: 'ПЕРМЬ',
+        label: 'Кампус Пермь',
         bgImage: permBg,
+        backImage: permBack,
     },
     {
         id: 'ufa',
-        num: '25+',
+        // num: '25+',
         icon: (
             <svg
                 style={{ width: rem(80), height: rem(80) }}
@@ -50,12 +56,13 @@ const initialNumbers = [
                 <path d="M14 15h-8" />
             </svg>
         ),
-        label: 'УФА',
+        label: 'Кампус Уфа',
         bgImage: ufaBg,
+        backImage: ufaBack,
     },
     {
         id: 'arkhangelsk',
-        num: '20га',
+        // num: '20га',
         icon: (
             <svg
                 style={{ width: rem(80), height: rem(80) }}
@@ -74,12 +81,13 @@ const initialNumbers = [
                 <path d="M17 9v4a2 2 0 1 1 -2 2" />
             </svg>
         ),
-        label: 'АРХАНГЕЛЬСК',
+        label: 'Кампус Архангельск',
         bgImage: arkhangelskBg,
+        backImage: arkhangelskBack,
     },
     {
         id: 'tumen',
-        num: '5к+',
+        // num: '5к+',
         icon: (
             <svg
                 style={{ width: rem(80), height: rem(80) }}
@@ -98,12 +106,11 @@ const initialNumbers = [
                 <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
             </svg>
         ),
-        label: 'ТЮМЕНЬ',
+        label: 'Кампус Тюмень',
         bgImage: tyumenBg,
+        backImage: tyumenBack,
     },
 ]
-
-console.log(permBg)
 
 const NumbersBlock: FC = () => {
     const [isFlipped, setIsflipped] = useState<string | undefined>(undefined)
@@ -119,9 +126,10 @@ const NumbersBlock: FC = () => {
             id={'numbers'}
             bg={'rgba(0, 0, 0, 0.03)'}
             direction={'column'}
-            p={'40px 24px 0'}
-            h={isMobile ? '100dvh' : '100dvh'}
-            gap={{ base: '16px', lg: '48px' }}
+            p={{ base: '20px 0 40px', md: '0 40px 90px' }}
+            // h={'100%'}
+            gap={{ base: '16px', lg: '24px' }}
+            style={{ border: '1px solid red' }}
         >
             <Title
                 style={{ textAlign: 'center' }}
@@ -135,73 +143,84 @@ const NumbersBlock: FC = () => {
                 ГЕОГРАФИЯ ПРОЕКТОВ
             </Title>
 
-            <Flex direction={'column'}>
-                <div className={classes.cards}>
-                    <Flex className={classes.left}>
-                        <RussianMap setIsflipped={setIsflipped} />
-                    </Flex>
-                    <div className={classes.right}>
-                        <div className={classes.list}>
-                            {initialNumbers.map((item, index) => {
-                                console.log(item.bgImage, 141)
-                                return (
-                                    <ReactCardFlip
-                                        key={index}
-                                        isFlipped={isFlipped === item.id}
-                                        flipDirection="horizontal"
-                                    >
-                                        <div
-                                            onClick={cardFlipHandler(item.id)}
-                                            key={`join-${index}`}
-                                            className={classes.item}
-                                        >
-                                            <Image
-                                                w={{
-                                                    base: '24px',
-                                                    md: '48px',
-                                                    lg: '64px',
-                                                }}
-                                                src={item.bgImage}
-                                            />
-                                            <div className={classes.bottom}>
-                                                <div className={classes.label}>
-                                                    {item.label}
-                                                </div>
-                                                <div
-                                                    className={`fw550 ${classes.number}`}
-                                                >
-                                                    {item.num}
-                                                </div>
-                                            </div>
-                                        </div>
+            <RussianMap setIsflipped={setIsflipped} />
 
-                                        <Flex
-                                            direction={'column'}
-                                            key={`join-${index}`}
-                                            bg={item.bgImage}
-                                            className={classes.itemBack}
-                                        >
-                                            {/* <div className={classes.icon}>
-                                                {item.icon}
-                                            </div> */}
+            <Flex
+                w={'100%'}
+                justify={'center'}
+                gap={{ base: '8px', md: '16px', lg: '40px' }}
+            >
+                {initialNumbers.map((item, index) => {
+                    console.log(item.bgImage, 141)
+                    return (
+                        <ReactCardFlip
+                            key={index}
+                            isFlipped={isFlipped === item.id}
+                            flipDirection="horizontal"
+                        >
+                            <Flex
+                                onClick={cardFlipHandler(item.id)}
+                                key={`join-${index}`}
+                                w={{ base: '100px', md: '150px', lg: '200px' }}
+                                h={{ base: '100px', md: '150px', lg: '200px' }}
+                                style={{
+                                    background:
+                                        'linear-gradient(-60deg, var(--mantine-color-blue-4) 0%, #002F6D 100%)',
+                                    borderRadius: '16px',
+                                    padding: '16px',
+                                    color: '#fff',
+                                    cursor: 'pointer',
+                                }}
+                                className={styles.card}
+                                justify={'space-between'}
+                                direction={'column'}
+                            >
+                                <Image
+                                    w={{
+                                        base: '24px',
+                                        md: '48px',
+                                        lg: '64px',
+                                    }}
+                                    src={item.bgImage}
+                                />
 
-                                            <div className={classes.bottom}>
-                                                <div className={classes.label}>
-                                                    {item.label}
-                                                </div>
-                                                <div
-                                                    className={`fw550 ${classes.number}`}
-                                                >
-                                                    {item.num}
-                                                </div>
-                                            </div>
-                                        </Flex>
-                                    </ReactCardFlip>
-                                )
-                            })}
-                        </div>
-                    </div>
-                </div>
+                                <Text fz={{ base: '10px', md: '14px' }}>
+                                    {item.label}
+                                </Text>
+                            </Flex>
+
+                            <Link to={'projects'} smooth>
+                                <Flex
+                                    direction={'column'}
+                                    key={`join-${index}`}
+                                    w={{
+                                        base: '100px',
+                                        md: '150px',
+                                        lg: '200px',
+                                    }}
+                                    h={{
+                                        base: '100px',
+                                        md: '150px',
+                                        lg: '200px',
+                                    }}
+                                    className={styles.card}
+                                    style={{
+                                        border: '3px solid #002F6D',
+                                        borderRadius: '16px',
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    <BackgroundImage
+                                        style={{ borderRadius: '12px' }}
+                                        w={'100%'}
+                                        h={'100%'}
+                                        src={item.backImage}
+                                    />
+                                </Flex>
+                            </Link>
+                        </ReactCardFlip>
+                    )
+                })}
             </Flex>
         </Flex>
     )
