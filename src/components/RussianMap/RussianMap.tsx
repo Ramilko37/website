@@ -1,4 +1,4 @@
-import { Flex, rem } from '@mantine/core'
+import { Flex } from '@mantine/core'
 import { useEffect, useRef } from 'react'
 import styles from './map.module.css'
 

@@ -60,7 +60,7 @@ const concessionProjectStages = [
 
 export const About = () => {
     const [active, setActive] = useState<number>(1)
-    const [stage, setStage] = useState<number>(1)
+    // const [stage, setStage] = useState<number>(1)
 
     return (
         <Flex
@@ -161,7 +161,7 @@ export const About = () => {
                                         className={styles.accordionItem}
                                         onClick={() => {
                                             setActive(stage.id)
-                                            setStage(stage.id)
+                                            // setStage(stage.id)
                                         }}
                                     >
                                         <Accordion.Control
