@@ -107,7 +107,7 @@ export const ProjectsGallery = () => {
                         image: perm1,
                         icon: (
                             <RxRulerSquare
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -120,7 +120,7 @@ export const ProjectsGallery = () => {
                         image: perm2,
                         icon: (
                             <BsFillPeopleFill
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -133,7 +133,7 @@ export const ProjectsGallery = () => {
                         image: perm3,
                         icon: (
                             <MdCurrencyRuble
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -146,7 +146,7 @@ export const ProjectsGallery = () => {
                         image: perm4,
                         icon: (
                             <LuClock4
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -159,7 +159,7 @@ export const ProjectsGallery = () => {
                         image: perm5,
                         icon: (
                             <AiOutlineStock
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -177,7 +177,7 @@ export const ProjectsGallery = () => {
                         image: ufa1,
                         icon: (
                             <RxRulerSquare
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -190,7 +190,7 @@ export const ProjectsGallery = () => {
                         image: ufa2,
                         icon: (
                             <BsFillPeopleFill
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -203,7 +203,7 @@ export const ProjectsGallery = () => {
                         image: ufa3,
                         icon: (
                             <MdCurrencyRuble
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -216,7 +216,7 @@ export const ProjectsGallery = () => {
                         image: ufa4,
                         icon: (
                             <LuClock4
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -229,7 +229,7 @@ export const ProjectsGallery = () => {
                         image: ufa5,
                         icon: (
                             <AiOutlineStock
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -245,7 +245,7 @@ export const ProjectsGallery = () => {
                         image: tumen,
                         icon: (
                             <BsFillPeopleFill
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -258,7 +258,7 @@ export const ProjectsGallery = () => {
                         image: tumen2,
                         icon: (
                             <MdCurrencyRuble
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -271,7 +271,7 @@ export const ProjectsGallery = () => {
                         image: tumen3,
                         icon: (
                             <LuClock4
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -284,7 +284,7 @@ export const ProjectsGallery = () => {
                         image: tumen4,
                         icon: (
                             <AiOutlineStock
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -300,7 +300,7 @@ export const ProjectsGallery = () => {
                         image: arhangelskTitleImage,
                         icon: (
                             <RxRulerSquare
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -313,7 +313,7 @@ export const ProjectsGallery = () => {
                         image: arhangelskImage,
                         icon: (
                             <BsFillPeopleFill
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -326,7 +326,7 @@ export const ProjectsGallery = () => {
                         image: arhangelskImage2,
                         icon: (
                             <MdCurrencyRuble
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -339,7 +339,7 @@ export const ProjectsGallery = () => {
                         image: arhangelskImage,
                         icon: (
                             <LuClock4
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
@@ -352,7 +352,7 @@ export const ProjectsGallery = () => {
                         image: arhangelskTitleImage,
                         icon: (
                             <AiOutlineStock
-                                color="002F6D"
+                                color="#002F6D"
                                 size={isMobile ? 32 : 64}
                             />
                         ),
