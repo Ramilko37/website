@@ -82,8 +82,17 @@ export const TeamComponent = () => {
                     timingFunction: 'linear',
                 }}
             >
-                <Flex gap={{ base: '16px', lg: '24px' }}>
-                    <Image w={'300'} h={'250px'} src={activeImage} />
+                <Flex
+                    gap={{ base: '16px', lg: '24px' }}
+                    style={{ display: 'block', float: 'left' }}
+                >
+                    <Image
+                        style={{ float: 'left' }}
+                        mr={'16px'}
+                        w={'300'}
+                        h={'250px'}
+                        src={activeImage}
+                    />
                     <Text>
                         Shawn Corey Carter (born December 4, 1969), known by his
                         stage name Jay-Z,[a] is an American rapper, record

@@ -123,7 +123,7 @@ export const About = () => {
                 <Timeline
                     mt={{ base: '24px', lg: '48px' }}
                     pt={'10px'}
-                    w={'50%'}
+                    w={{ base: '100%', lg: '50%' }}
                     active={active}
                     bulletSize={24}
                     lineWidth={2}
