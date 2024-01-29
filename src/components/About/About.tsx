@@ -1,5 +1,4 @@
 import { Flex, Title, Text, Timeline, Accordion, List } from '@mantine/core'
-import { AboutBanner } from '../AboutBanner/AboutBanner'
 import { useState } from 'react'
 import styles from './About.module.css'
 import { IconChevronDown } from '@tabler/icons-react'

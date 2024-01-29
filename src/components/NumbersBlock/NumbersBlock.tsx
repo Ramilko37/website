@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import classes from './styles.module.css'
-import { Flex, Box, Title, Text, Image, BackgroundImage } from '@mantine/core'
+import { Flex, Box, Title, Text, BackgroundImage } from '@mantine/core'
 import ReactCardFlip from 'react-card-flip'
 import { RussianMap } from '../RussianMap/RussianMap'
 import { useInViewport, useMediaQuery } from '@mantine/hooks'
@@ -37,7 +37,7 @@ const NumbersBlock: FC = () => {
             icon: <BsFillPeopleFill size={isMobile ? 32 : 64} />,
             label: 'УФА',
             text: 'мест проживания',
-            backImg: tyumenBack,
+            backImg: ufaBack,
         },
         {
             id: 'arkhangelsk',
@@ -46,7 +46,7 @@ const NumbersBlock: FC = () => {
             icon: <AiOutlineStock size={isMobile ? 32 : 64} />,
             label: 'АРХАНГЕЛЬСК',
             text: 'Вклад в ВВП',
-            backImg: tyumenBack,
+            backImg: arkhangelskBack,
         },
         {
             id: 'tumen',
