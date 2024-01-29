@@ -79,7 +79,6 @@
   width: 400px;
   height: 400px;
   aspect-ratio: 1 / 1;
-  border: 6px solid #002F6D;
   border-radius: 1.666666666666667vw;
   box-sizing: border-box;
   flex: 0 0 calc(50% - 0.555555555555556vw);
