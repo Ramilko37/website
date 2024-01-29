@@ -756,12 +756,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:^7.2.2":
-  version: 7.3.2
-  resolution: "@mantine/hooks@npm:7.3.2"
+"@mantine/hooks@npm:^7.5.0":
+  version: 7.5.0
+  resolution: "@mantine/hooks@npm:7.5.0"
   peerDependencies:
     react: ^18.2.0
-  checksum: 9dce135264a0c6199df9887aa4456312007973ffc4aaca4219d9339509f52e07c26927c61cdf2bfd6df4bc934ce5b6abb784565e512455b0e36038bcec969c80
+  checksum: 4db4193e6e3504b53705f569d022718834a7edcc32c95296cc850a537bdb07f026eecd7bfc67429c0c78777ed704ed3a157fa9048803cb29612dd1a60ba9c43b
   languageName: node
   linkType: hard
 
@@ -1684,7 +1684,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"countup.js@npm:^2.0.7":
+"countup.js@npm:^2.0.7, countup.js@npm:^2.8.0":
   version: 2.8.0
   resolution: "countup.js@npm:2.8.0"
   checksum: 793c2de67a585d708cb7f7e25ea0c9bc17e6e76cf724e34babdd5325b5602bd6882a00510d59e0f1f2fd14e69f882260e08780fa0662741df2abe0feaceda51f
@@ -3379,6 +3379,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-countup@npm:^6.5.0":
+  version: 6.5.0
+  resolution: "react-countup@npm:6.5.0"
+  dependencies:
+    countup.js: "npm:^2.8.0"
+  peerDependencies:
+    react: ">= 16.3.0"
+  checksum: b44e5b753f1a84d242a0b8465546f7d4b18f61629576949e609f6ddc37589db15351f0d527cb9b72e9600198959d4bfd580b34ababf7a9a8c8efae4533856de6
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:^18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
@@ -4341,7 +4352,7 @@ __metadata:
     "@mantine/core": "npm:^7.2.2"
     "@mantine/dropzone": "npm:7.2.2"
     "@mantine/form": "npm:7.2.2"
-    "@mantine/hooks": "npm:^7.2.2"
+    "@mantine/hooks": "npm:^7.5.0"
     "@mantine/spotlight": "npm:7.2.2"
     "@mantinex/dev-icons": "npm:^1.0.1"
     "@mantinex/mantine-header": "npm:^1.0.1"
@@ -4369,6 +4380,7 @@ __metadata:
     prettier: "npm:^3.1.1"
     react: "npm:^18.2.0"
     react-card-flip: "npm:^1.2.2"
+    react-countup: "npm:^6.5.0"
     react-dom: "npm:^18.2.0"
     react-fast-marquee: "npm:^1.6.2"
     react-flippy: "npm:^1.1.0"
