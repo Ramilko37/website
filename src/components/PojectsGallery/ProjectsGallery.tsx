@@ -10,8 +10,8 @@ import ufa2 from '../../images/ufa2.webp'
 import ufa3 from '../../images/ufa3.webp'
 import ufa4 from '../../images/ufa4.webp'
 import ufa5 from '../../images/ufa5.webp'
-import ufa6 from '../../images/ufa6.webp'
-import ufa7 from '../../images/ufa7.webp'
+// import ufa6 from '../../images/ufa6.webp'
+// import ufa7 from '../../images/ufa7.webp'
 import tumen from '../../images/tumen.webp'
 import tumen2 from '../../images/tumen2.webp'
 import tumen3 from '../../images/tumen3.webp'
@@ -24,6 +24,11 @@ import arhangelskImage2 from '../../images/arhangelsk3.webp'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Carousel } from '@mantine/carousel'
 import { useHover, useMediaQuery } from '@mantine/hooks'
+import { MdCurrencyRuble } from 'react-icons/md'
+import { BsFillPeopleFill } from 'react-icons/bs'
+import { AiOutlineStock } from 'react-icons/ai'
+import { RxRulerSquare } from 'react-icons/rx'
+import { LuClock4 } from 'react-icons/lu'
 
 enum ProjectsGalleryType {
     Perm,
@@ -100,34 +105,64 @@ export const ProjectsGallery = () => {
                         bullet2: 'Площадь участка – 15,6 Га',
                         bullet3: '',
                         image: perm1,
+                        icon: (
+                            <RxRulerSquare
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     {
                         title: 'Вместимость',
-                        bullet1: 'Кол-во мест в общежитиях – 4 980 мест',
-                        bullet2: 'Кол-во мест в гостинице – 120 мест',
+                        bullet1: 'Кол-во мест в общежитиях – 4 760 мест',
+                        bullet2: 'Кол-во мест в гостинице – 329 мест',
                         bullet3: '',
                         image: perm2,
+                        icon: (
+                            <BsFillPeopleFill
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     {
-                        title: 'Потребность в инвестициях – 32 203 млн руб',
-                        bullet1: 'Капитальный грант – 21 408 млн руб.',
-                        bullet2: 'Старший долг – 9 042 млн руб.',
-                        bullet3: 'Акционерный заем – 1 753 млн руб',
+                        title: 'Потребность в инвестициях – 28 622 млн руб',
+                        bullet1: 'Капитальный грант – 19 686 млн руб.',
+                        bullet2: 'Старший долг – 7 616 млн руб.',
+                        bullet3: 'Акционерный заем – 1 320 млн руб',
                         image: perm3,
+                        icon: (
+                            <MdCurrencyRuble
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     {
-                        title: 'Потребность в инвестициях – 32 203 млн руб',
+                        title: 'Сроки концессионного соглашения – 22 года',
                         bullet1: 'Проектирование – 1 год.',
                         bullet2: 'Строительство – 3 года',
                         bullet3: 'Эксплуатация – 18 лет',
                         image: perm4,
+                        icon: (
+                            <LuClock4
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     {
                         title: 'Экспертиза Прокампус',
                         bullet1: 'Финансовая экспертиза – 100 баллов',
                         bullet2: 'Юридическая экспертиза – 100 баллов',
-                        bullet3: 'Строительная экспертиза – 56 баллов',
+                        bullet3: 'Строительная экспертиза – 68 баллов',
                         image: perm5,
+                        icon: (
+                            <AiOutlineStock
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     // { text: 'ProjectImage', image: perm5 },
                     // { text: 'ProjectImage', image: perm6 },
@@ -136,52 +171,68 @@ export const ProjectsGallery = () => {
                 return [
                     {
                         title: 'Площадь объекта',
-                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
-                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet1: 'Площадь зданий – 152,7 тыс. м2',
+                        bullet2: 'Площадь участка – 4,8 Га',
                         bullet3: '',
                         image: ufa1,
+                        icon: (
+                            <RxRulerSquare
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     {
-                        title: 'Площадь объекта',
-                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
-                        bullet2: 'Площадь участка – 15,6 Га',
+                        title: 'Вместимость',
+                        bullet1: 'Кол-во мест в общежитиях – 3 004 мест',
+                        bullet2: 'Кол-во мест в гостинице – 500 мест',
                         bullet3: '',
                         image: ufa2,
+                        icon: (
+                            <BsFillPeopleFill
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     {
-                        title: 'Площадь объекта',
-                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
-                        bullet2: 'Площадь участка – 15,6 Га',
-                        bullet3: '',
+                        title: 'Потребность в инвестициях – 21 284 млн руб',
+                        bullet1: 'Капитальный грант – 15 327 млн руб.',
+                        bullet2: 'Старший долг – 4 775 млн руб.',
+                        bullet3: 'Акционерный заем – 1 181 млн руб',
                         image: ufa3,
+                        icon: (
+                            <MdCurrencyRuble
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     {
-                        title: 'Площадь объекта',
-                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
-                        bullet2: 'Площадь участка – 15,6 Га',
-                        bullet3: '',
+                        title: 'Сроки концессионного соглашения – 22 года',
+                        bullet1: 'Проектирование – 1 год.',
+                        bullet2: 'Строительство – 2 года',
+                        bullet3: 'Эксплуатация – 22 лет',
                         image: ufa4,
+                        icon: (
+                            <LuClock4
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     {
-                        title: 'Площадь объекта',
-                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
-                        bullet2: 'Площадь участка – 15,6 Га',
-                        bullet3: '',
+                        title: 'Экспертиза Прокампус',
+                        bullet1: 'Финансовая экспертиза – 70 баллов',
+                        bullet2: 'Юридическая экспертиза – 96 баллов',
+                        bullet3: 'Строительная экспертиза – н.д.',
                         image: ufa5,
-                    },
-                    {
-                        title: 'Площадь объекта',
-                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
-                        bullet2: 'Площадь участка – 15,6 Га',
-                        bullet3: '',
-                        image: ufa6,
-                    },
-                    {
-                        title: 'Площадь объекта',
-                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
-                        bullet2: 'Площадь участка – 15,6 Га',
-                        bullet3: '',
-                        image: ufa7,
+                        icon: (
+                            <AiOutlineStock
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                 ]
             case ProjectsGalleryType.Tumen:
@@ -192,6 +243,12 @@ export const ProjectsGallery = () => {
                         bullet2: 'Площадь участка – 15,6 Га',
                         bullet3: '',
                         image: tumen,
+                        icon: (
+                            <BsFillPeopleFill
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     {
                         title: 'Площадь объекта',
@@ -199,6 +256,12 @@ export const ProjectsGallery = () => {
                         bullet2: 'Площадь участка – 15,6 Га',
                         bullet3: '',
                         image: tumen2,
+                        icon: (
+                            <MdCurrencyRuble
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     {
                         title: 'Площадь объекта',
@@ -206,6 +269,12 @@ export const ProjectsGallery = () => {
                         bullet2: 'Площадь участка – 15,6 Га',
                         bullet3: '',
                         image: tumen3,
+                        icon: (
+                            <LuClock4
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     {
                         title: 'Площадь объекта',
@@ -213,30 +282,80 @@ export const ProjectsGallery = () => {
                         bullet2: 'Площадь участка – 15,6 Га',
                         bullet3: '',
                         image: tumen4,
+                        icon: (
+                            <AiOutlineStock
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                 ]
             case ProjectsGalleryType.Arhangelsk:
                 return [
                     {
                         title: 'Площадь объекта',
-                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
-                        bullet2: 'Площадь участка – 15,6 Га',
+                        bullet1: 'Площадь зданий – 128,8 тыс. м2',
+                        bullet2: 'Площадь участка – 5,1 Га',
                         bullet3: '',
                         image: arhangelskTitleImage,
+                        icon: (
+                            <RxRulerSquare
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     {
-                        title: 'Площадь объекта',
-                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
-                        bullet2: 'Площадь участка – 15,6 Га',
+                        title: 'Вместимость',
+                        bullet1: 'Кол-во мест в общежитиях – 4 124 мест',
+                        bullet2: 'Кол-во мест в гостинице – 132 мест',
                         bullet3: '',
                         image: arhangelskImage,
+                        icon: (
+                            <BsFillPeopleFill
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                     {
-                        title: 'Площадь объекта',
-                        bullet1: 'Площадь зданий – 167,3 тыс. м2',
-                        bullet2: 'Площадь участка – 15,6 Га',
-                        bullet3: '',
+                        title: 'Потребность в инвестициях – 28 935 млн руб',
+                        bullet1: 'Капитальный грант – 20 255 млн руб.',
+                        bullet2: 'Старший долг – 7 299 млн руб.',
+                        bullet3: 'Акционерный заем – 1 382 млн руб',
                         image: arhangelskImage2,
+                        icon: (
+                            <MdCurrencyRuble
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
+                    },
+                    {
+                        title: 'Сроки концессионного соглашения – 22 года',
+                        bullet1: 'Проектирование – 1 год.',
+                        bullet2: 'Строительство – 3 года',
+                        bullet3: 'Эксплуатация – 18 лет',
+                        image: arhangelskImage,
+                        icon: (
+                            <LuClock4
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
+                    },
+                    {
+                        title: 'Экспертиза Прокампус',
+                        bullet1: 'Финансовая экспертиза – 100 баллов',
+                        bullet2: 'Юридическая экспертиза – 100 баллов',
+                        bullet3: 'Строительная экспертиза – 68 баллов',
+                        image: arhangelskTitleImage,
+                        icon: (
+                            <AiOutlineStock
+                                color="002F6D"
+                                size={isMobile ? 32 : 64}
+                            />
+                        ),
                     },
                 ]
         }
@@ -244,6 +363,7 @@ export const ProjectsGallery = () => {
 
     useEffect(() => {
         const preloadImages = () => {
+            if (!projectsData) return
             if (imagesRef.current) {
                 projectsData.forEach((project) => {
                     const img = new Image()
@@ -256,7 +376,7 @@ export const ProjectsGallery = () => {
     }, [projectsData])
 
     const slides = useMemo(() => {
-        return projectsData.map((project, index) => (
+        return projectsData?.map((project, index) => (
             <Carousel.Slide key={index}>
                 <Flex m={'0 auto'} w={'90%'} h={'70vh'}>
                     <Flex
@@ -271,7 +391,9 @@ export const ProjectsGallery = () => {
                         }}
                         align={'center'}
                     >
+                        {project.icon}
                         <Text
+                            mt={{ base: '20px', lg: '40px' }}
                             w={'100%'}
                             c={'#002F6D'}
                             style={{
@@ -288,6 +410,7 @@ export const ProjectsGallery = () => {
                         >
                             {project.title}
                         </Text>
+
                         <Text
                             w={'100%'}
                             c={'#002F6D'}

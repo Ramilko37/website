@@ -15,7 +15,7 @@ const linksData = [
 ]
 
 export const Header = () => {
-    const pinned = useHeadroom({ fixedAt: 600 })
+    const pinned = useHeadroom({ fixedAt: 200 })
     const [opened, setOpened] = useState<boolean>(false)
     const isMobile = useMediaQuery('(max-width: 640px)')
 
@@ -48,7 +48,7 @@ export const Header = () => {
                         width={200}
                         closeOnItemClick={true}
                         closeOnClickOutside
-                        opened={opened}
+                        opened={opened && pinned}
                         onChange={() => setOpened(!opened)}
                     >
                         <Menu.Target>
@@ -91,7 +91,7 @@ export const Header = () => {
                                         ) : (
                                             <Menu.Item
                                                 key={link.id}
-                                                className={classes.link}
+                                                className={classes.linkMobile}
                                                 closeMenuOnClick={true}
                                             >
                                                 <Link

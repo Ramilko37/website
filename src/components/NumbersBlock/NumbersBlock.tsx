@@ -8,7 +8,6 @@ import permBack from '../../images/perm6.webp'
 import tyumenBack from '../../images/tumen4.webp'
 import ufaBack from '../../images/ufa7.webp'
 import arkhangelskBack from '../../images/arhangelsk.webp'
-
 import { MdCurrencyRuble } from 'react-icons/md'
 import { BsFillPeopleFill } from 'react-icons/bs'
 import { AiOutlineStock } from 'react-icons/ai'

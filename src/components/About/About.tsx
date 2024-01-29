@@ -65,7 +65,7 @@ export const About = () => {
             w={'100%'}
             direction={'column'}
             gap={{ base: '16px', lg: '24px' }}
-            p={{ base: '0 24px 0', lg: '48px' }}
+            p={{ base: '24px 24px 0', lg: '90px 48px' }}
             bg={'rgba(0, 0, 0, 0.03)'}
         >
             {/* <AboutBanner /> */}
