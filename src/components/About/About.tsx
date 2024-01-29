@@ -69,7 +69,7 @@ export const About = () => {
             p={{ base: '0 24px 0', lg: '48px' }}
             bg={'rgba(0, 0, 0, 0.03)'}
         >
-            <AboutBanner />
+            {/* <AboutBanner /> */}
             <Flex
                 w={{ base: '100%', lg: '68vw' }}
                 m={'0 auto'}
