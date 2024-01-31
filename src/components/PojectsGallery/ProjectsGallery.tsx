@@ -105,12 +105,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Площадь участка – 15,6 Га',
                         bullet3: '',
                         image: perm1,
-                        icon: (
-                            <RxRulerSquare
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <RxRulerSquare color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Вместимость',
@@ -118,12 +113,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Кол-во мест в гостинице – 329 мест',
                         bullet3: '',
                         image: perm2,
-                        icon: (
-                            <BsFillPeopleFill
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <BsFillPeopleFill color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Потребность в инвестициях – 28 622 млн руб',
@@ -131,12 +121,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Старший долг – 7 616 млн руб.',
                         bullet3: 'Акционерный заем – 1 320 млн руб',
                         image: perm3,
-                        icon: (
-                            <MdCurrencyRuble
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <MdCurrencyRuble color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Сроки концессионного соглашения – 22 года',
@@ -144,12 +129,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Строительство – 3 года',
                         bullet3: 'Эксплуатация – 18 лет',
                         image: perm4,
-                        icon: (
-                            <LuClock4
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <LuClock4 color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Экспертиза Прокампус',
@@ -157,12 +137,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Юридическая экспертиза – 100 баллов',
                         bullet3: 'Строительная экспертиза – 68 баллов',
                         image: perm5,
-                        icon: (
-                            <AiOutlineStock
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <AiOutlineStock color="#002F6D" size={20} />,
                     },
                     // { text: 'ProjectImage', image: perm5 },
                     // { text: 'ProjectImage', image: perm6 },
@@ -175,12 +150,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Площадь участка – 4,8 Га',
                         bullet3: '',
                         image: ufa1,
-                        icon: (
-                            <RxRulerSquare
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <RxRulerSquare color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Вместимость',
@@ -188,12 +158,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Кол-во мест в гостинице – 500 мест',
                         bullet3: '',
                         image: ufa2,
-                        icon: (
-                            <BsFillPeopleFill
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <BsFillPeopleFill color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Потребность в инвестициях – 21 284 млн руб',
@@ -201,12 +166,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Старший долг – 4 775 млн руб.',
                         bullet3: 'Акционерный заем – 1 181 млн руб',
                         image: ufa3,
-                        icon: (
-                            <MdCurrencyRuble
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <MdCurrencyRuble color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Сроки концессионного соглашения – 22 года',
@@ -214,12 +174,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Строительство – 2 года',
                         bullet3: 'Эксплуатация – 22 лет',
                         image: ufa4,
-                        icon: (
-                            <LuClock4
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <LuClock4 color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Экспертиза Прокампус',
@@ -227,12 +182,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Юридическая экспертиза – 96 баллов',
                         bullet3: 'Строительная экспертиза – н.д.',
                         image: ufa5,
-                        icon: (
-                            <AiOutlineStock
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <AiOutlineStock color="#002F6D" size={20} />,
                     },
                 ]
             case ProjectsGalleryType.Tumen:
@@ -243,12 +193,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Площадь участка – 15,6 Га',
                         bullet3: '',
                         image: tumen,
-                        icon: (
-                            <BsFillPeopleFill
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <BsFillPeopleFill color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Площадь объекта',
@@ -256,12 +201,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Площадь участка – 15,6 Га',
                         bullet3: '',
                         image: tumen2,
-                        icon: (
-                            <MdCurrencyRuble
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <MdCurrencyRuble color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Площадь объекта',
@@ -269,12 +209,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Площадь участка – 15,6 Га',
                         bullet3: '',
                         image: tumen3,
-                        icon: (
-                            <LuClock4
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <LuClock4 color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Площадь объекта',
@@ -282,12 +217,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Площадь участка – 15,6 Га',
                         bullet3: '',
                         image: tumen4,
-                        icon: (
-                            <AiOutlineStock
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <AiOutlineStock color="#002F6D" size={20} />,
                     },
                 ]
             case ProjectsGalleryType.Arhangelsk:
@@ -298,12 +228,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Площадь участка – 5,1 Га',
                         bullet3: '',
                         image: arhangelskTitleImage,
-                        icon: (
-                            <RxRulerSquare
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <RxRulerSquare color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Вместимость',
@@ -311,12 +236,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Кол-во мест в гостинице – 132 мест',
                         bullet3: '',
                         image: arhangelskImage,
-                        icon: (
-                            <BsFillPeopleFill
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <BsFillPeopleFill color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Потребность в инвестициях – 28 935 млн руб',
@@ -324,12 +244,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Старший долг – 7 299 млн руб.',
                         bullet3: 'Акционерный заем – 1 382 млн руб',
                         image: arhangelskImage2,
-                        icon: (
-                            <MdCurrencyRuble
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <MdCurrencyRuble color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Сроки концессионного соглашения – 22 года',
@@ -337,12 +252,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Строительство – 3 года',
                         bullet3: 'Эксплуатация – 18 лет',
                         image: arhangelskImage,
-                        icon: (
-                            <LuClock4
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <LuClock4 color="#002F6D" size={20} />,
                     },
                     {
                         title: 'Экспертиза Прокампус',
@@ -350,12 +260,7 @@ export const ProjectsGallery = () => {
                         bullet2: 'Юридическая экспертиза – 100 баллов',
                         bullet3: 'Строительная экспертиза – 68 баллов',
                         image: arhangelskTitleImage,
-                        icon: (
-                            <AiOutlineStock
-                                color="#002F6D"
-                                size={isMobile ? 32 : 64}
-                            />
-                        ),
+                        icon: <AiOutlineStock color="#002F6D" size={20} />,
                     },
                 ]
         }
@@ -375,89 +280,51 @@ export const ProjectsGallery = () => {
         preloadImages()
     }, [projectsData])
 
+    const renderProjectDetails = (project: any) => {
+        return (
+            <Flex
+                w={'80%'}
+                direction={'column'}
+                align="center"
+                justify="center"
+                style={{ borderBottom: '1px solid rgba(0, 47, 109, 0.3)' }}
+                m={'auto'}
+            >
+                <Flex
+                    gap={'12px'}
+                    style={{ alignContent: 'center', justifyContent: 'center' }}
+                >
+                    {project.icon}
+                    <Text
+                        style={{
+                            fontSize: '18px',
+                            color: '#002F6D',
+                            marginBottom: '10px',
+                        }}
+                    >
+                        {project.title}
+                    </Text>
+                </Flex>
+
+                <Flex direction={'column'}>
+                    <Text style={{ fontSize: '16px', color: '#002F6D' }}>
+                        {project.bullet1}
+                    </Text>
+                    <Text style={{ fontSize: '16px', color: '#002F6D' }}>
+                        {project.bullet2}
+                    </Text>
+                    <Text style={{ fontSize: '16px', color: '#002F6D' }}>
+                        {project.bullet3}
+                    </Text>
+                </Flex>
+            </Flex>
+        )
+    }
+
     const slides = useMemo(() => {
         return projectsData?.map((project, index) => (
             <Carousel.Slide key={index}>
                 <Flex m={'0 auto'} w={'90%'} h={'70vh'}>
-                    <Flex
-                        p={'24px'}
-                        style={{
-                            flexDirection: 'column',
-                            flex: '0 1 40%',
-                            height: '100%',
-                            position: 'relative',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                        }}
-                        align={'center'}
-                    >
-                        {project.icon}
-                        <Text
-                            mt={{ base: '20px', lg: '40px' }}
-                            w={'100%'}
-                            c={'#002F6D'}
-                            style={{
-                                fontSize: '1.388888888888889vw',
-                                lineHeight: '140%',
-                                color: '#000000',
-                                textAlign: 'center',
-                                justifyContent: 'flex-start',
-                                borderBottom: '3px solid #002F6D',
-                            }}
-                            size="xl"
-                            fz={'32px'}
-                            mb={'20px'}
-                        >
-                            {project.title}
-                        </Text>
-
-                        <Text
-                            w={'100%'}
-                            c={'#002F6D'}
-                            style={{
-                                fontSize: '1.388888888888889vw',
-                                lineHeight: '140%',
-                                color: '#000000',
-                                textAlign: 'center',
-                                justifyContent: 'flex-start',
-                            }}
-                            size="xl"
-                            fz={'22px'}
-                        >
-                            {project.bullet1}
-                        </Text>
-                        <Text
-                            w={'100%'}
-                            c={'#002F6D'}
-                            style={{
-                                fontSize: '1.388888888888889vw',
-                                lineHeight: '140%',
-                                color: '#000000',
-                                textAlign: 'center',
-                                justifyContent: 'flex-start',
-                            }}
-                            size="xl"
-                            fz={'22px'}
-                        >
-                            {project.bullet2}
-                        </Text>
-                        <Text
-                            w={'100%'}
-                            c={'#002F6D'}
-                            style={{
-                                fontSize: '1.388888888888889vw',
-                                lineHeight: '140%',
-                                color: '#000000',
-                                textAlign: 'center',
-                                justifyContent: 'flex-start',
-                            }}
-                            size="xl"
-                            fz={'22px'}
-                        >
-                            {project.bullet3}
-                        </Text>
-                    </Flex>
-                    {/* <Image fit={'contain'} w={'auto'} h={'100%'} src={project.image} /> */}
                     <Flex
                         bg={project.image}
                         style={{
@@ -511,6 +378,7 @@ export const ProjectsGallery = () => {
     if (isMobile) {
         return (
             <Flex
+                id={'projects'}
                 direction={'column'}
                 w={'100%'}
                 h={isMobile ? '100%' : '100dvh'}
@@ -610,9 +478,23 @@ export const ProjectsGallery = () => {
                     })}
                 </Flex>
             </Flex>
-            <Carousel includeGapInSize={false} loop={true}>
-                {slides}
-            </Carousel>
+            <Flex>
+                <Flex
+                    direction="column"
+                    w={'50%'}
+                    h={'100%'}
+                    gap={'16px'}
+                    justify={'center'}
+                    // style={{ width: '60%', height: '100%' }}
+                >
+                    {projectsData.map((project) =>
+                        renderProjectDetails(project)
+                    )}
+                </Flex>
+                <Carousel w={'100%'} includeGapInSize={false} loop={true}>
+                    {slides}
+                </Carousel>
+            </Flex>
         </Flex>
     )
 }
