@@ -1,4 +1,4 @@
-import { Flex, Modal, SimpleGrid, Image, Text } from '@mantine/core'
+import { SimpleGrid } from '@mantine/core'
 import { TeamCardComponent } from '../TeamCardComponent/TeamCardComponent'
 
 import principal from '../../images/bugulov.jpg'
