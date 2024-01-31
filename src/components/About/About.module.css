@@ -5,13 +5,12 @@
 }
 
 .accordionControl {
-
     padding: 0;
     text-align: start;
     background: transparent;
     padding-bottom: 10;
 
-    &::hover {
+    &:hover {
         background-color: red;
     }
 }
