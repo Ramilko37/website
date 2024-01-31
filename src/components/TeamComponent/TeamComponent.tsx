@@ -1,52 +1,27 @@
 import { Flex, Modal, SimpleGrid, Image, Text } from '@mantine/core'
 import { TeamCardComponent } from '../TeamCardComponent/TeamCardComponent'
-import image from '../../images/ImageCrew.jpg'
-import { useDisclosure } from '@mantine/hooks'
-import { useState } from 'react'
+
+import principal from '../../images/bugulov.jpg'
+import financial from '../../images/sozaev.jpg'
 
 const data = [
     {
-        name: 'Jay Zee',
-        position: ' Vice President Chill & Relax',
-        image: image,
+        name: 'Бугулов Алан Арсенович',
+        position: 'Генеральный Директор',
+        description:
+            'С 2007 по 2017 годы работал в федеральных органах исполнительной власти, в том числе  последние 7 лет в Минфине России, где отвечал за управление портфелем инвестиционных проектов в сфере транспорта с персональным фокусом на замещение бюджетного финансирования внебюджетными источниками. Покинул госслужбу в должности заместителя директора департамента. С 2017 года трудился на руководящих позициях в крупных инфраструктурных холдингах и инвестиционных компаниях, в том числе международных (Ictas-Astaldi, Группа «ВИС», InfraOne). Специализируется на структурировании и сопровождении проектов в области инфраструктуры на принципах проектного финансирования и ГЧП. Участвовал в разработке и написании действующих государственных мер поддержки рынка ГЧП, таких как: -межбюджетные трансферты на поддержку региональных проектов ГЧП в дорожной отрасли; -межбюджетные трансферты на реализацию проектов строительства кампусов; -«Дальневосточная концессия»; -участие ППК РЭО в уставочных (складочных) капиталах юридических лиц, реализующих ГЧП проекты; -имущественные взносы ГК «Автодор» на участие в капиталах хозяйственных обществ, реализующих инвестиционные проекты. Член экспертного совета по развитию ГЧП при Минэкономразвития России. Имеет благодарность Министра финансов РФ, различные ведомственные награды.',
+        image: principal,
     },
     {
-        name: 'Jay Zee',
-        position: ' Vice President Chill & Relax',
-        image: image,
-    },
-    {
-        name: 'Jay Zee',
-        position: ' Vice President Chill & Relax',
-        image: image,
-    },
-    {
-        name: 'Jay Zee',
-        position: ' Vice President Chill & Relax',
-        image: image,
-    },
-    {
-        name: 'Jay Zee',
-        position: ' Vice President Chill & Relax',
-        image: image,
-    },
-    {
-        name: 'Jay Zee',
-        position: ' Vice President Chill & Relax',
-        image: image,
+        name: 'Созаев Сослан Тотразович',
+        position: 'Директор финансово-юридического департамента',
+        description:
+            'С 2007 по 2017 годы работал в федеральных органах исполнительной власти, в том числе  последние 7 лет в Минфине России, где отвечал за управление портфелем инвестиционных проектов в сфере транспорта с персональным фокусом на замещение бюджетного финансирования внебюджетными источниками. Покинул госслужбу в должности заместителя директора департамента. С 2017 года трудился на руководящих позициях в крупных инфраструктурных холдингах и инвестиционных компаниях, в том числе международных (Ictas-Astaldi, Группа «ВИС», InfraOne). Специализируется на структурировании и сопровождении проектов в области инфраструктуры на принципах проектного финансирования и ГЧП. Участвовал в разработке и написании действующих государственных мер поддержки рынка ГЧП, таких как: -межбюджетные трансферты на поддержку региональных проектов ГЧП в дорожной отрасли; -межбюджетные трансферты на реализацию проектов строительства кампусов; -«Дальневосточная концессия»; -участие ППК РЭО в уставочных (складочных) капиталах юридических лиц, реализующих ГЧП проекты; -имущественные взносы ГК «Автодор» на участие в капиталах хозяйственных обществ, реализующих инвестиционные проекты. Член экспертного совета по развитию ГЧП при Минэкономразвития России. Имеет благодарность Министра финансов РФ, различные ведомственные награды.',
+        image: financial,
     },
 ]
 
 export const TeamComponent = () => {
-    const [opened, { open, close }] = useDisclosure(false)
-    const [activeImage, setActiveImage] = useState<string | null>(null)
-
-    const handleCardClick = (activeImage: string) => () => {
-        console.log('click', activeImage)
-        setActiveImage(activeImage)
-        open()
-    }
-
     return (
         <>
             <SimpleGrid
@@ -54,7 +29,7 @@ export const TeamComponent = () => {
                 spacing={{ base: 20, lg: 'xl' }}
                 verticalSpacing={{ base: 'md', sm: 50 }}
                 cols={{ base: 1, sm: 2, lg: 3 }}
-                h={'100%'}
+                h={'fit-content'}
             >
                 {data.map((item, key) => {
                     return (
@@ -62,50 +37,12 @@ export const TeamComponent = () => {
                             key={key}
                             name={item.name}
                             position={item.position}
+                            description={item.description}
                             image={item.image}
-                            handleCardClick={handleCardClick}
                         />
                     )
                 })}
             </SimpleGrid>
-            <Modal
-                size={'30em'}
-                opened={opened}
-                onClose={close}
-                overlayProps={{
-                    backgroundOpacity: 0.55,
-                    blur: 3,
-                }}
-                transitionProps={{
-                    transition: 'fade',
-                    duration: 300,
-                    timingFunction: 'linear',
-                }}
-            >
-                <Flex
-                    gap={{ base: '16px', lg: '24px' }}
-                    style={{ display: 'block', float: 'left' }}
-                >
-                    <Image
-                        style={{ float: 'left' }}
-                        mr={'16px'}
-                        w={'300'}
-                        h={'250px'}
-                        src={activeImage}
-                    />
-                    <Text>
-                        Shawn Corey Carter (born December 4, 1969), known by his
-                        stage name Jay-Z,[a] is an American rapper, record
-                        producer, and entrepreneur.[8] Known for his involvement
-                        in the creative and commercial success of numerous
-                        artists,[9][10] he was named the greatest rapper of all
-                        time by Billboard and Vibe in 2023.[11] He is the
-                        founder and chairman of entertainment company Roc
-                        Nation, and was the president and chief executive
-                        officer of Def Jam Recordings from 2004 to 2007.[1
-                    </Text>
-                </Flex>
-            </Modal>
         </>
     )
 }

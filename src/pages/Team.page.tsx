@@ -6,6 +6,7 @@ export const TeamPage = () => {
         <Flex
             bg={'rgba(0, 0, 0, 0.03)'}
             w={'100%'}
+            h={{ base: '100%', lg: '100dvh' }}
             justify={'center'}
             align={'center'}
             direction={'column'}
