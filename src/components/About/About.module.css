@@ -1,3 +1,16 @@
+.title {
+  color: #002F6D;
+  text-align: center;
+
+  /* Desktop/H2 */
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  /* 60px */
+}
+
+
 .accordionItem {
     border: none;
     padding: 0;
@@ -10,7 +23,7 @@
     background: transparent;
     padding-bottom: 10;
 
-    &:hover {
+    /* &:hover {
         background-color: red;
-    }
+    } */
 }

@@ -57,8 +57,7 @@ export default function HeroBlock() {
             >
                 <animated.div style={titleAnimation}>
                     <Title className={classes.title}>
-                        ЭТАЛОН КАМПУС - Федеральный девелопер, входящий в группу
-                        «Эталон»
+                        ЭТАЛОННЫЕ КОНЦЕССИИ - Центр компетенций ГЧП в группе «Эталон»
                     </Title>
                 </animated.div>
                 <animated.div style={textAnimation}>

@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import classes from './styles.module.css'
+import styles from './styles.module.css'
 import { Flex, Box, Title, Text, BackgroundImage } from '@mantine/core'
 import ReactCardFlip from 'react-card-flip'
 import { RussianMap } from '../RussianMap/RussianMap'
@@ -68,29 +68,26 @@ const NumbersBlock: FC = () => {
             id={'numbers'}
             bg={'rgba(0, 0, 0, 0.03)'}
             direction={'column'}
-            p={'40px 24px 0'}
+            p={{ base: '40px 24px 0', lg: '90px 0 90px'}}
             h={isMobile ? '100dvh' : 'auto'}
             gap={{ base: '16px', lg: '48px' }}
         >
             <Title
-                style={{ textAlign: 'center' }}
+            className={styles.title}
                 m={'0 auto'}
-                c={'#002F6D'}
-                fz={'40px'}
-                fw={'100'}
-                w={'100%'}
+               
                 mt={isMobile ? '-20px' : 0}
             >
-                ГЕОГРАФИЯ ПРОЕКТОВ
+                География проектов
             </Title>
             <Box>
-                <div className={classes.content}>
-                    <div className={classes.cards}>
-                        <Flex className={classes.left}>
+                <div className={styles.content}>
+                    <div className={styles.cards}>
+                        <Flex className={styles.left}>
                             <RussianMap setIsflipped={setIsflipped} />
                         </Flex>
-                        <div className={classes.right}>
-                            <div className={classes.list} ref={ref}>
+                        <div className={styles.right}>
+                            <div className={styles.list} ref={ref}>
                                 {initialNumbers.map((item, index) => {
                                     return (
                                         <ReactCardFlip
@@ -103,24 +100,24 @@ const NumbersBlock: FC = () => {
                                                     item.id
                                                 )}
                                                 key={`join-${index}`}
-                                                className={classes.item}
+                                                className={styles.item}
                                             >
                                                 <div>{item.icon}</div>
-                                                <div className={classes.bottom}>
+                                                <div className={styles.bottom}>
                                                     {/* <div
                                                         className={
-                                                            classes.label
+                                                            styles.label
                                                         }
                                                     >
                                                         {item.label}
                                                     </div> */}
                                                     <div
-                                                        className={`fw550 ${classes.number}`}
+                                                        className={`fw550 ${styles.number}`}
                                                     >
                                                         {inViewport ? (
                                                             <>
                                                                 <Text
-                                                                    className={`fw550 ${classes.number}`}
+                                                                    className={`fw550 ${styles.number}`}
                                                                 >
                                                                     <CountUp
                                                                         end={parseFloat(
@@ -136,7 +133,7 @@ const NumbersBlock: FC = () => {
                                                                     +
                                                                 </Text>
                                                                 <Text
-                                                                    className={`fw550 ${classes.number}`}
+                                                                    className={`fw550 ${styles.number}`}
                                                                 >
                                                                     {item.sign}
                                                                 </Text>
@@ -144,12 +141,12 @@ const NumbersBlock: FC = () => {
                                                         ) : (
                                                             <>
                                                                 <Text
-                                                                    className={`fw550 ${classes.number}`}
+                                                                    className={`fw550 ${styles.number}`}
                                                                 >
                                                                     {item.num} +
                                                                 </Text>
                                                                 <Text
-                                                                    className={`fw550 ${classes.number}`}
+                                                                    className={`fw550 ${styles.number}`}
                                                                 >
                                                                     {item.sign}
                                                                 </Text>
@@ -165,20 +162,20 @@ const NumbersBlock: FC = () => {
                                                 </div>
                                             </div>
 
-                                            <Flex className={classes.itemBack}>
-                                                {/* <div className={classes.icon}>
+                                            <Flex className={styles.itemBack}>
+                                                {/* <div className={styles.icon}>
                                                     {item.icon}
                                                 </div>
-                                                <div className={classes.bottom}>
+                                                <div className={styles.bottom}>
                                                     <div
                                                         className={
-                                                            classes.label
+                                                            styles.label
                                                         }
                                                     >
                                                         {item.label}
                                                     </div>
                                                     <div
-                                                        className={`fw550 ${classes.number}`}
+                                                        className={`fw550 ${styles.number}`}
                                                     >
                                                         {item.num}
                                                     </div>

@@ -8,13 +8,16 @@
 
 .title {
   color: #002F6D;
-  font-size: '50px';
-  font-weight: 900;
-  margin-bottom: var(--mantine-spacing-md);
   text-align: center;
 
+  /* Desktop/H2 */
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  /* 60px */
+
   @media (max-width: 350px) {
-    font-size: rem(28px);
     text-align: left;
   }
 }
@@ -55,3 +58,4 @@
     /* Adjust the size of the arrow icons */
   }
 }
+

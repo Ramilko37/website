@@ -5,11 +5,19 @@ import { NewsCard } from '../NewsCard/NewsCard'
 import vettaNewsImg from '../../images/vetta.png'
 import businessClassNews from '../../images/businessClassNews.png'
 import kommersant from '../../images/kommersant.png'
+import ura from '../../images/ura.webp'
+import properm from '../../images/properm.webp'
+import ufa1 from '../../images/ufa_mk_1.jpg'
+import ufa2 from '../../images/ufa_mk_2.jpg'
+import tumen2 from '../../images/tumen_2.jpg'
+import tumen3 from '../../images/tumen_3.jpg'
+import sitronics from '../../images/Sitronics-Group.png'
+import arkhangelsk from '../../images/arkhangelsk_news.webp'
 import { useMediaQuery } from '@mantine/hooks'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import 'swiper/css'
-
+import styles from './styles.module.css'
 import {} from '@tabler/icons-react'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
@@ -71,7 +79,105 @@ export const MOCKDATA = [
         description:
             'ООО «Кампус “Парма”», концессионер строительства межвузовского студенческого кампуса в Перми, сменило собственника. По данным «СПАРК-Интерфакс», с 24 июля единственным учредителем компании является ООО «Эталон Кампус». Ранее 100% долей в уставном капитале общества принадлежало основателю инвесткомпании АФК «Система» Владимиру Евтушенко.',
     },
+    {
+        linkProps: {
+            href: 'https://ura.news/news/1052708255',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+
+        image: ura,
+        title: 'Межвузовский кампус в Перми будут строить студенты',
+        description:
+            '«Благодаря трехстороннему соглашению студенты техникумов, колледжей и вузов Пермского края смогут привлекаться в составе студенческих отрядов „РСО“ к работе по строительству современного многофункционального студенческого Кампуса в Перми», — сообщается на сайте правительства Прикамья',
+    },
+    {
+        linkProps: {
+            href: 'https://properm.ru/news/2023-12-21/risovali-risovali-teper-stroim-postroim-chto-tam-s-zooparkom-vokzalom-galereey-3124500',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+
+        image: properm,
+        title: 'Рисовали-рисовали, теперь строим-построим. Что там с зоопарком, вокзалом, галереей?',
+        description:
+            'Много лет пермяков радовали красивыми картинками — будущих вокзалов, зоопарка, галереи, театров, спортивных комплексов, набережной. Устраивали конкурсы, награждали победителей за лучшие проекты того, сего. Период картинок, похоже, закончился. Начался период строек.',
+    },
+    {
+        linkProps: {
+            href: 'https://ura.news/news/1052708255',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+
+        image: ufa1,
+        title: 'В Уфе завершили строительство IQ-парка межвузовского кампуса',
+        description:
+            'В январе 2024 года в Уфе торжественно откроют первую очередь межвузовского кампуса. О завершении его строительства сообщил премьер-министр правительства Башкирии Андрей Назаров.',
+    },
+      {
+        linkProps: {
+            href: 'https://ura.news/news/1052708255',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+
+        image: ufa2,
+        title: 'В межвузовском кампусе в Уфе откроется мастерская киберфизических инноваций',
+        description:
+            'Она откроется на 15 этаже IQ-парка - первой очереди кампуса. В мастерской «Берлога» будет включаться площадку для сборки, программирования и эксплуатации БПЛА, лабораторию полезных игр и мастерскую киберфизики.',
+    },
+     {
+        linkProps: {
+            href: 'https://ura.news/news/1052708255',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+
+        image: tumen2,
+        title: 'Тюменский кампус создается не только для студентов',
+        description:
+            'В отдельном профильном блоке комплекса студенты и молодежь смогут заниматься в учебных кабинетах, библиотеке. Также подготовят оранжерею, музыкальный и декоративно-прикладной кабинеты. Кампус станет идеальной средой для талантливых ребят со всей России.',
+    },
+    {
+        linkProps: {
+            href: 'https://ura.news/news/1052708255',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+
+        image: tumen3,
+        title: 'В Тюмени все готово для строительства межуниверситетского кампуса',
+        description:
+            'Губернатор Тюменской области Александр Моор рассказал о подготовке к строительству межуниверситетского кампуса в регионе. Этот проект, реализуемый в рамках национального проекта «Наука и университеты», инициированного президентом Владимиром Путиным, призван создать уникальную образовательную и технологическую среду для талантливых студентов со всей страны.',
+    },
+     {
+        linkProps: {
+            href: 'https://dv1930.ru/medicine/poyavlenie-kampusa-arkticheskaya-zvezda-stanet-stimulom-dlya-razvitiya-v-pomore-medicinskoj-nauki/',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+
+        image: tumen3,
+        title: 'Появление кампуса «Арктическая звезда» станет стимулом для развития в Поморье медицинской науки',
+        description:
+            'Межвузовский кампус мирового уровня «Арктическая звезда», который будет построен в Архангельске в 2027 году, станет уникальной научной и образовательной средой, призванной вывести научный потенциал региона на совершенно новый уровень.',
+    },
+     {
+        linkProps: {
+            href: 'https://dv1930.ru/medicine/poyavlenie-kampusa-arkticheskaya-zvezda-stanet-stimulom-dlya-razvitiya-v-pomore-medicinskoj-nauki/',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+
+        image: arkhangelsk,
+        title: 'Sitronics Group разработала концепцию цифровизации университетских кампусов',
+        description:
+            'Межвузовский кампус мирового уровня «Арктическая звезда», который будет построен в Архангельске в 2027 году, станет уникальной научной и образовательной средой, призванной вывести научный потенциал региона на совершенно новый уровень.',
+    },
 ]
+
+
 
 export const NewsSlider = () => {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
@@ -90,14 +196,10 @@ export const NewsSlider = () => {
             pos={'relative'}
         >
             <Title
-                style={{ textAlign: 'center' }}
-                m={'40px auto 80px'}
-                c={'#002F6D'}
-                fz={'40px'}
-                fw={'100'}
-                w={'100%'}
+               className={styles.title}
+               mb={'40px'}
             >
-                ПРЕССА О НАС
+               Пресса о нас
             </Title>
             <Swiper
                 modules={[Navigation]}

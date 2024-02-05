@@ -8,7 +8,8 @@ export const theme = createTheme({
         lg: '74em',
         xl: '90em',
     },
-    fontFamily: 'Geologica',
+    fontFamily: 'Handil Pro, sans-serif',
+    fontFamilyMonospace: 'Handil Pro, monospace',
     colors: {
         ethalonBlue: [
             ' linear-gradient(-60deg,var(--mantine-color-blue-4) 0%, #002F6D 100%);',
