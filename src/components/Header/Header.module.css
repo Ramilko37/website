@@ -1,61 +1,49 @@
 .header {
     width: 100%;
-    position: fixed;
-    z-index: 100;
-    height: rem(60px);
-    padding-left: var(--mantine-spacing-md);
-    padding-right: var(--mantine-spacing-md);
-    background: transparent;
+    height: rem(56px);
+    margin-bottom: rem(120px);
+    background-color: transparent;
+
     display: flex;
+    position: fixed;
+    z-index: 1000;
+
     justify-content: flex-end;
 }
 
-.link {
+.inner {
+    width: 100%;
+    height: rem(56px);
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    height: 100%;
-    padding-left: var(--mantine-spacing-md);
-    padding-right: var(--mantine-spacing-md);
+}
+
+.link {
+    display: block;
+    line-height: 1;
+    padding: rem(8px) rem(12px);
+    border-radius: var(--mantine-radius-md);
     text-decoration: none;
     color: #fff;
-    font-weight: 500;
-    font-size: 20px;
-
-    @media (max-width: 350px) {
-        height: rem(42px);
-        width: 100%;
-    }
+    font-size: var(--mantine-font-size-md);
 
     @mixin hover {
-        color: var(--mantine-color-ethalonBlue)
+        font-weight: 700;
     }
 }
 
-.linkMobile {
-    color: #000;
-    opacity: 0.75;
+.linkLabel {
+    color: #fff;
+    margin-right: rem(5px);
+}
+
+.menuItem {
+    color: #fff;
     background: transparent;
-    font-size: 32px;
-    text-decoration: none;
-}
-
-.subLink {
-    width: 100%;
-    padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
-    border-radius: var(--mantine-radius-md);
 
     @mixin hover {
-        background-color: light-dark(var(--mantine-color-gray-0),
-                var(--mantine-color-dark-7));
+        /* background: transparent; */
+        font-weight: 700;
     }
-}
-
-.dropdownFooter {
-    background-color: light-dark(var(--mantine-color-gray-0),
-            var(--mantine-color-dark-7));
-    margin: calc(var(--mantine-spacing-md) * -1);
-    margin-top: var(--mantine-spacing-sm);
-    padding: var(--mantine-spacing-md) calc(var(--mantine-spacing-md) * 2);
-    /* padding-bottom: var(--mantine-spacing-xl); */
-    border-top: rem(1px) solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
 }

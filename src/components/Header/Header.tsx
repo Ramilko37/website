@@ -1,163 +1,103 @@
-import { Box, rem, Portal, Burger, Menu, Drawer } from '@mantine/core'
-import classes from './Header.module.css'
-import { useHeadroom, useMediaQuery } from '@mantine/hooks'
+import { Menu, Group, Center, Burger, Container } from '@mantine/core'
+import { useDisclosure } from '@mantine/hooks'
+import { IconChevronDown } from '@tabler/icons-react'
 import { Link } from 'react-scroll'
-import { useState } from 'react'
-import { Link as RouterLink } from 'react-router-dom'
+import classes from './Header.module.css'
 
-const linksData = [
-    { id: 'numbers', title: 'О нас' },
-    { id: 'projects', title: 'Проекты' },
-    { id: 'news', title: 'Новости' },
-    { id: 'contacts', title: 'Контакты' },
-    { id: 'marquee', title: 'Партнеры' },
-    { id: 'team', title: 'Команда' },
+const links = [
+    { id: 'numbers', link: '/numbers', label: 'О нас' },
+    {
+        id: 'projects',
+        link: '#1',
+        label: 'Проекты',
+        links: [
+            { link: '/docs', label: 'Documentation' },
+            { link: '/resources', label: 'Resources' },
+            { link: '/community', label: 'Community' },
+            { link: '/blog', label: 'Blog' },
+        ],
+    },
+    { id: 'news', link: '', label: 'Новости' },
+    { id: 'contacts', link: '', label: 'Контакты' },
+    { id: 'partners', link: '', label: 'Партнеры' },
+    { id: '', link: '/team', label: 'Команда' },
 ]
 
 export const Header = () => {
-    const pinned = useHeadroom({ fixedAt: 200 })
-    const [opened, setOpened] = useState<boolean>(false)
-    const isMobile = useMediaQuery('(max-width: 640px)')
+    const [opened, { toggle }] = useDisclosure(false)
+
+    const items = links.map((link) => {
+        const menuItems = link.links?.map((item) => (
+            <Menu.Item c={'#fff'} className={classes.menuItem} key={item.link}>
+                {item.label}
+            </Menu.Item>
+        ))
+
+        if (menuItems) {
+            return (
+                <Menu
+                    key={link.label}
+                    trigger="hover"
+                    transitionProps={{ exitDuration: 0 }}
+                    withinPortal
+                >
+                    <Menu.Target>
+                        <a
+                            href={link.link}
+                            className={classes.link}
+                            onClick={(event) => event.preventDefault()}
+                        >
+                            <Center>
+                                <span className={classes.linkLabel}>
+                                    {link.label}
+                                </span>
+                                <IconChevronDown size="0.9rem" stroke={1.5} />
+                            </Center>
+                        </a>
+                    </Menu.Target>
+                    <Menu.Dropdown
+                        styles={{
+                            dropdown: {
+                                background: 'transparent',
+                                border: 'none',
+                            },
+                        }}
+                    >
+                        {menuItems}
+                    </Menu.Dropdown>
+                </Menu>
+            )
+        }
+
+        return (
+            <Link to={link.id as string} smooth>
+                <a
+                    key={link.label}
+                    href={link.link}
+                    className={classes.link}
+                    onClick={(event) => event.preventDefault()}
+                >
+                    {link.label}
+                </a>
+            </Link>
+        )
+    })
 
     return (
-        <Portal>
-            <Box
-                style={{
-                    position: 'fixed',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    padding: 'var(--mantine-spacing-xs)',
-                    height: rem(60),
-                    zIndex: 1000000,
-                    transform: `translate3d(0, ${pinned ? 0 : rem(-110)}, 0)`,
-                    transition: 'transform 400ms ease',
-                    background: 'transparent',
-                }}
-            >
-                <header
-                    className={classes.header}
-                    style={{
-                        position: 'relative',
-                        display: pinned ? 'flex' : 'none',
-                        transition: 'display 1s ease-in-out',
-                    }}
-                >
-                    <Menu
-                        shadow="none"
-                        width={200}
-                        closeOnItemClick={true}
-                        closeOnClickOutside
-                        opened={opened && pinned}
-                        onChange={() => setOpened(!opened)}
-                    >
-                        <Menu.Target>
-                            <Burger
-                                size="xl"
-                                color="#fff"
-                                opened={opened}
-                                onClick={() => setOpened(!opened)}
-                                aria-label="Toggle navigation"
-                            />
-                        </Menu.Target>
-
-                        {isMobile ? (
-                            <Drawer
-                                opened={opened}
-                                onClose={() => setOpened(!opened)}
-                                closeButtonProps={{
-                                    size: 'xl',
-                                    w: '90px',
-                                    h: '110px',
-                                }}
-                            >
-                                <Drawer.Body>
-                                    {linksData.map((link) =>
-                                        link.id === 'team' ? (
-                                            <Menu.Item
-                                                key={link.id}
-                                                className={classes.linkMobile}
-                                                closeMenuOnClick={true}
-                                            >
-                                                <RouterLink
-                                                    className={
-                                                        classes.linkMobile
-                                                    }
-                                                    to={link.id}
-                                                >
-                                                    {link.title}
-                                                </RouterLink>
-                                            </Menu.Item>
-                                        ) : (
-                                            <Menu.Item
-                                                key={link.id}
-                                                className={classes.linkMobile}
-                                                closeMenuOnClick={true}
-                                            >
-                                                <Link
-                                                    onClick={() => {
-                                                        setOpened(!opened)
-                                                    }}
-                                                    className={
-                                                        classes.linkMobile
-                                                    }
-                                                    smooth
-                                                    spy
-                                                    to={link.id}
-                                                >
-                                                    {link.title}
-                                                </Link>
-                                            </Menu.Item>
-                                        )
-                                    )}
-                                </Drawer.Body>
-                            </Drawer>
-                        ) : (
-                            <Menu.Dropdown
-                                bg={'transparent'}
-                                style={{ border: 'none' }}
-                            >
-                                {linksData.map((link) =>
-                                    link.id === 'team' ? (
-                                        <Menu.Item
-                                            key={link.id}
-                                            className={classes.link}
-                                            closeMenuOnClick={true}
-                                        >
-                                            <RouterLink
-                                                className={classes.link}
-                                                to={link.id}
-                                            >
-                                                {link.title}
-                                            </RouterLink>
-                                        </Menu.Item>
-                                    ) : (
-                                        <Menu.Item
-                                            key={link.id}
-                                            className={classes.link}
-                                            closeMenuOnClick={true}
-                                        >
-                                            <Link
-                                                onClick={() => {
-                                                    setOpened(!opened)
-                                                    if (link.id === 'team') {
-                                                    }
-                                                }}
-                                                className={classes.link}
-                                                smooth
-                                                spy
-                                                to={link.id}
-                                            >
-                                                {link.title}
-                                            </Link>
-                                        </Menu.Item>
-                                    )
-                                )}
-                            </Menu.Dropdown>
-                        )}
-                    </Menu>
-                </header>
-            </Box>
-        </Portal>
+        <header className={classes.header}>
+            <Container size="lg" m={'0 10% 0'}>
+                <div className={classes.inner}>
+                    <Group gap={5} visibleFrom="sm">
+                        {items}
+                    </Group>
+                    <Burger
+                        opened={opened}
+                        onClick={toggle}
+                        size="sm"
+                        hiddenFrom="sm"
+                    />
+                </div>
+            </Container>
+        </header>
     )
 }
