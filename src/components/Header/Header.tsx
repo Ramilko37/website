@@ -3,6 +3,7 @@ import { useDisclosure } from '@mantine/hooks'
 import { IconChevronDown } from '@tabler/icons-react'
 import { Link } from 'react-scroll'
 import classes from './Header.module.css'
+import { LogoIcon } from '../../images/icons/logo-icon'
 
 const links = [
     { id: 'numbers', link: '/numbers', label: 'О нас' },
@@ -51,7 +52,6 @@ export const Header = () => {
                                 <span className={classes.linkLabel}>
                                     {link.label}
                                 </span>
-                                <IconChevronDown size="0.9rem" stroke={1.5} />
                             </Center>
                         </a>
                     </Menu.Target>
@@ -70,7 +70,7 @@ export const Header = () => {
         }
 
         return (
-            <Link to={link.id as string} smooth>
+            <Link style={{ height: '100%' }} to={link.id as string} smooth>
                 <a
                     key={link.label}
                     href={link.link}
@@ -85,9 +85,10 @@ export const Header = () => {
 
     return (
         <header className={classes.header}>
-            <Container size="lg" m={'0 10% 0'}>
+            <LogoIcon />
+            <Container size="lg" m={0} h={'100%'}>
                 <div className={classes.inner}>
-                    <Group gap={5} visibleFrom="sm">
+                    <Group h={'100%'} gap={20} visibleFrom="sm">
                         {items}
                     </Group>
                     <Burger

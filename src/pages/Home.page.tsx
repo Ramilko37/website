@@ -11,14 +11,12 @@ import { About } from '../components/About/About'
 import { Services } from '../components/Services/Services'
 import { Events } from '../components/Events/Events'
 
-
 export const HomePage = () => {
     return (
         <Flex bg={'rgba(0, 0, 0, 0.03)'} direction={'column'} w={'100vw'}>
             <Header />
             <HeroBlock />
             <About />
-            <Services />
             <NumbersBlock />
             <ProjectsGallery />
             <Events />

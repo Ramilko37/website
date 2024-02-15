@@ -1,21 +1,18 @@
 import { Flex, Title, Text } from '@mantine/core'
 import styles from './About.module.css'
 
-
 export const About = () => {
-  
-
     return (
         <Flex
             w={'100%'}
             direction={'column'}
             gap={{ base: '16px', lg: '24px' }}
-            p={{ base: '24px 24px 0', lg: '90px 48px' }}
-            bg={'rgba(0, 0, 0, 0.03)'}
+            p={{ base: '24px 24px 0', lg: '198px 0 0' }}
+            bg={'rgb(248, 249, 251)'}
         >
             {/* <AboutBanner /> */}
             <Flex
-                w={{ base: '100%', lg: '66vw' }}
+                w={{ base: '100%', lg: '61vw' }}
                 m={'0 auto'}
                 h={'fit-content'}
                 direction={'column'}
@@ -24,20 +21,17 @@ export const About = () => {
                 gap={{ base: '16px', lg: '24px' }}
                 style={{
                     borderRadius: '12px',
-                    background:
-                        'transparent',
+                    background: 'transparent',
                 }}
             >
-                <Title className={styles.title}>
-                    О нас
-                </Title>
-                <Text c={'#002F6D'} size="xl" style={{ textAlign: 'justify' }}>
+                <Title className={styles.title}>О нас</Title>
+                <Text className={styles.description}>
                     За два года деятельности Компании, было заключено 6
                     концессионных соглашений. Общая стоимость строительных
                     контрактов, полученных ООО «Эталон Кампус» превышает 122
                     млрд руб.
                 </Text>
-                <Text c={'#002F6D'} size="xl" style={{ textAlign: 'justify' }}> 
+                <Text className={styles.description}>
                     Расширение компетенций, полученное в ходе работы над
                     текущими проектами (структурирование, управление и GR) и
                     приобретенная репутация на рынке ГЧП позволяет Компании

@@ -66,16 +66,15 @@ const NumbersBlock: FC = () => {
     return (
         <Flex
             id={'numbers'}
-            bg={'rgba(0, 0, 0, 0.03)'}
+            bg={'rgb(248, 249, 251)'}
             direction={'column'}
-            p={{ base: '40px 24px 0', lg: '90px 0 90px'}}
+            p={{ base: '40px 24px 0', lg: '90px 0 90px' }}
             h={isMobile ? '100dvh' : 'auto'}
             gap={{ base: '16px', lg: '48px' }}
         >
             <Title
-            className={styles.title}
+                className={styles.title}
                 m={'0 auto'}
-               
                 mt={isMobile ? '-20px' : 0}
             >
                 География проектов

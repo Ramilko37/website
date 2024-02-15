@@ -8,7 +8,7 @@ export const theme = createTheme({
         lg: '74em',
         xl: '90em',
     },
-    fontFamily: 'SVN-Gilroy, sans-serif',
+    fontFamily: 'Gilroy, sans-serif',
 
     colors: {
         ethalonBlue: [
@@ -16,6 +16,3 @@ export const theme = createTheme({
         ] as any,
     },
 })
-
-
-                                                

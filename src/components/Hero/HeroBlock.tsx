@@ -1,6 +1,6 @@
 import { Container, Title, Text, Flex } from '@mantine/core'
 import classes from './Hero.module.css'
-import video from '../../images/hero_bg.mp4'
+import video from '../../images/rolik_zastavka.mp4'
 import videoMobile from '../../images/bg_video_mobile.mp4'
 import { animated, useSpring } from 'react-spring'
 import { useMediaQuery } from '@mantine/hooks'
@@ -8,7 +8,6 @@ import { useMediaQuery } from '@mantine/hooks'
 export default function HeroBlock() {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
     const titleAnimation = useSpring({
-        maxWidth: '900px',
         opacity: 1,
         transform: 'translateX(0)',
         from: { opacity: 0, transform: 'translateX(-100%)' },
@@ -53,15 +52,17 @@ export default function HeroBlock() {
             <Container
                 style={{ zIndex: 20 }}
                 className={classes.container}
-                size="md"
+                fluid
+                h={'100%'}
             >
                 <animated.div style={titleAnimation}>
                     <Title className={classes.title}>
-                        ЭТАЛОННЫЕ КОНЦЕССИИ - Центр компетенций ГЧП в группе «Эталон»
+                        ЭТАЛОННЫЕ КОНЦЕССИИ - Центр
+                        <br /> компетенций ГЧП в группе «Эталон»
                     </Title>
                 </animated.div>
                 <animated.div style={textAnimation}>
-                    <Text fs={'28px'} className={classes.description} mt="xl">
+                    <Text className={classes.description}>
                         Комплексный подход к реализации крупных инфраструктурных
                         проектов
                     </Text>
