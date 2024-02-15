@@ -1,7 +1,4 @@
-import { FlexProps } from '@mantine/core'
-import React from 'react'
-
-export const LogoIcon = ({ ...props }: FlexProps) => {
+export const LogoIcon = () => {
     return (
         <svg
             width="241.451843"
