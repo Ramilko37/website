@@ -8,7 +8,6 @@ import { NewsSlider } from '../components/NewsSlider/NewsSlider'
 import { ProjectsGallery } from '../components/PojectsGallery/ProjectsGallery'
 import { PartnersCarousel } from '../components/PartnersCarousel/PartnersCarousel'
 import { About } from '../components/About/About'
-import { Services } from '../components/Services/Services'
 import { Events } from '../components/Events/Events'
 
 export const HomePage = () => {

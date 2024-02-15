@@ -1,6 +1,5 @@
 import { Menu, Group, Center, Burger, Container } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
-import { IconChevronDown } from '@tabler/icons-react'
 import { Link } from 'react-scroll'
 import classes from './Header.module.css'
 import { LogoIcon } from '../../images/icons/logo-icon'
