@@ -3,12 +3,13 @@ import { Flex } from '@mantine/core'
 import { Header } from '../components/Header/Header'
 import HeroBlock from '../components/Hero/HeroBlock'
 import { YandexMaps } from '../components/YandexMaps/YandexMaps'
-import NumbersBlock from '../components/NumbersBlock/NumbersBlock'
 import { NewsSlider } from '../components/NewsSlider/NewsSlider'
 import { ProjectsGallery } from '../components/PojectsGallery/ProjectsGallery'
 import { PartnersCarousel } from '../components/PartnersCarousel/PartnersCarousel'
 import { About } from '../components/About/About'
 import { Events } from '../components/Events/Events'
+import { Quote } from '../components/Quote/Quote'
+import { RussianMap } from '../components/RussianMap/RussianMap'
 
 export const HomePage = () => {
     return (
@@ -16,7 +17,8 @@ export const HomePage = () => {
             <Header />
             <HeroBlock />
             <About />
-            <NumbersBlock />
+            <Quote />
+            <RussianMap />
             <ProjectsGallery />
             <Events />
             <NewsSlider />

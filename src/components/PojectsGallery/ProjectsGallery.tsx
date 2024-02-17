@@ -1,4 +1,4 @@
-import { Flex, Text, Badge, Image as Img } from '@mantine/core'
+import { Flex, Text, Image as Img } from '@mantine/core'
 import permTitleImage from '../../images/campus.png'
 import perm1 from '../../images/perm1.webp'
 import perm2 from '../../images/perm2.webp'
@@ -23,12 +23,15 @@ import arhangelskImage from '../../images/arhangelsk2.webp'
 import arhangelskImage2 from '../../images/arhangelsk3.webp'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Carousel } from '@mantine/carousel'
-import { useHover, useMediaQuery } from '@mantine/hooks'
+import { useMediaQuery } from '@mantine/hooks'
 import { MdCurrencyRuble } from 'react-icons/md'
 import { BsFillPeopleFill } from 'react-icons/bs'
 import { AiOutlineStock } from 'react-icons/ai'
 import { RxRulerSquare } from 'react-icons/rx'
 import { LuClock4 } from 'react-icons/lu'
+import { SquareIcon } from '../../images/icons/square-icon'
+import { PeopleIcon } from '../../images/icons/people-icon'
+import { СlockIcon } from '../../images/icons/clock-icon'
 
 enum ProjectsGalleryType {
     Perm,
@@ -62,15 +65,15 @@ const projectsNavBarData = [
 
 export const ProjectsGallery = () => {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
-    const [galleryType, setGalleryType] = useState<ProjectsGalleryType>(
+    const [galleryType] = useState<ProjectsGalleryType>(
         ProjectsGalleryType.Perm
     )
-    const { ref } = useHover()
+    // const { ref } = useHover()
     const imagesRef = useRef<HTMLDivElement>(null)
 
-    const galleryTypeClickHandler = (type: ProjectsGalleryType) => {
-        setGalleryType(type)
-    }
+    // const galleryTypeClickHandler = (type: ProjectsGalleryType) => {
+    //     setGalleryType(type)
+    // }
 
     const mobileProjectsData = [
         {
@@ -280,62 +283,61 @@ export const ProjectsGallery = () => {
         preloadImages()
     }, [projectsData])
 
-    const renderProjectDetails = (project: any) => {
-        return (
-            <Flex
-                w={'80%'}
-                direction={'column'}
-                align="center"
-                justify="center"
-                style={{ borderBottom: '1px solid rgba(0, 47, 109, 0.3)' }}
-                m={'auto'}
-            >
-                <Flex
-                    gap={'12px'}
-                    style={{ alignContent: 'center', justifyContent: 'center' }}
-                >
-                    {project.icon}
-                    <Text
-                        style={{
-                            fontSize: '18px',
-                            color: '#002F6D',
-                            marginBottom: '10px',
-                        }}
-                    >
-                        {project.title}
-                    </Text>
-                </Flex>
+    // const renderProjectDetails = (project: any) => {
+    //     return (
+    //         <Flex
+    //             w={'80%'}
+    //             direction={'column'}
+    //             align="center"
+    //             justify="center"
+    //             style={{ borderBottom: '1px solid rgba(0, 47, 109, 0.3)' }}
+    //             m={'auto'}
+    //         >
+    //             <Flex
+    //                 gap={'12px'}
+    //                 style={{ alignContent: 'center', justifyContent: 'center' }}
+    //             >
+    //                 {project.icon}
+    //                 <Text
+    //                     style={{
+    //                         fontSize: '18px',
+    //                         color: '#002F6D',
+    //                         marginBottom: '10px',
+    //                     }}
+    //                 >
+    //                     {project.title}
+    //                 </Text>
+    //             </Flex>
 
-                <Flex direction={'column'}>
-                    <Text style={{ fontSize: '16px', color: '#002F6D' }}>
-                        {project.bullet1}
-                    </Text>
-                    <Text style={{ fontSize: '16px', color: '#002F6D' }}>
-                        {project.bullet2}
-                    </Text>
-                    <Text style={{ fontSize: '16px', color: '#002F6D' }}>
-                        {project.bullet3}
-                    </Text>
-                </Flex>
-            </Flex>
-        )
-    }
+    //             <Flex direction={'column'}>
+    //                 <Text style={{ fontSize: '16px', color: '#002F6D' }}>
+    //                     {project.bullet1}
+    //                 </Text>
+    //                 <Text style={{ fontSize: '16px', color: '#002F6D' }}>
+    //                     {project.bullet2}
+    //                 </Text>
+    //                 <Text style={{ fontSize: '16px', color: '#002F6D' }}>
+    //                     {project.bullet3}
+    //                 </Text>
+    //             </Flex>
+    //         </Flex>
+    //     )
+    // }
 
     const slides = useMemo(() => {
         return projectsData?.map((project, index) => (
-            <Carousel.Slide key={index}>
-                <Flex m={'0 auto'} w={'90%'} h={'70vh'}>
-                    <Flex
-                        bg={project.image}
-                        style={{
-                            borderRadius: '20px',
-                            backgroundImage: `url(${project.image})`,
-                            backgroundSize: 'cover',
-                            backgroundRepeat: 'no-repeat',
-                        }}
-                        w={'100%'}
-                    />
-                </Flex>
+            <Carousel.Slide w={'95%'} h={680} key={index}>
+                <Flex
+                    bg={project.image}
+                    style={{
+                        borderRadius: '20px',
+                        backgroundImage: `url(${project.image})`,
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                    }}
+                    w={'100%'}
+                    h={'100%'}
+                />
             </Carousel.Slide>
         ))
     }, [galleryType, projectsData])
@@ -384,19 +386,7 @@ export const ProjectsGallery = () => {
                 h={isMobile ? '100%' : '100dvh'}
                 justify={'center'}
             >
-                {/* <Title
-                    style={{ textAlign: 'center' }}
-                    m={'40px auto'}
-                    mb={'40px'}
-                    c={'#002F6D'}
-                    fz={'40px'}
-                    fw={'100'}
-                    w={'100%'}
-                >
-                    НАШИ ПРОЕКТЫ
-                </Title> */}
-
-                <Carousel includeGapInSize={false} loop={true}>
+                <Carousel withIndicators includeGapInSize={false} loop={true}>
                     {mobileSlides}
                 </Carousel>
             </Flex>
@@ -406,94 +396,182 @@ export const ProjectsGallery = () => {
     return (
         <Flex
             id={'projects'}
-            w={'100vw'}
+            w={'1175px'}
             h={'100dvh'}
-            gap={'24px'}
             justify={'center'}
             direction={'column'}
+            m={'0 auto'}
         >
             <Flex
                 ref={imagesRef}
                 direction={'column'}
                 w={'100%'}
                 justify={'center'}
+                align={'center'}
                 m={'0 auto'}
-                gap={'20px'}
+                gap={'40px'}
                 pt={isMobile ? '120px' : '120px'}
             >
-                <Flex
-                    w={'70%'}
-                    px={'20px'}
-                    m={'0 auto'}
-                    mt={'120px'}
-                    gap={'20px'}
-                >
-                    {projectsNavBarData.map((project, index) => {
+                <Text c={'#012f6d'} fz={'42px'} fw={'700'} lh={'130%'}>
+                    Наши проекты
+                </Text>
+                <Flex w={'100%'} m={'0 auto'} justify={'space-between'}>
+                    {projectsNavBarData.map((project) => {
                         return (
-                            <Flex
-                                ref={ref}
-                                p={'8px'}
-                                key={index}
-                                onClick={() =>
-                                    galleryTypeClickHandler(project.type)
-                                }
-                                w={'400px'}
-                                h={'200px'}
-                                bg={project.image}
-                                style={{
-                                    cursor: 'pointer',
-                                    borderRadius: '20px',
-                                    backgroundImage: `url(${project.image})`,
-                                    backgroundSize: 'cover',
-                                    filter:
-                                        project.type === galleryType
-                                            ? 'drop-shadow(16px 16px 20px gray)'
-                                            : '',
-                                    transition: 'all 0.3s ease', // Smooth transition for resizing
-                                }}
-                            >
-                                <Badge
-                                    radius={'xs'}
-                                    bg={
-                                        project.type === galleryType
-                                            ? '#b455a0'
-                                            : 'linear-gradient(90deg, var(--mantine-color-blue-4), #002F6D 100%)'
-                                    }
-                                    style={{
-                                        transition:
-                                            'background-color 0.5s ease',
-                                        padding: 0,
-                                    }}
+                            <Flex>
+                                <Text
+                                    c={'#012f6d'}
+                                    fz={'32px'}
+                                    fw={'400'}
+                                    lh={'130%'}
                                 >
-                                    <Text
-                                        c={'#fff'}
-                                        fz={isMobile ? 'sm' : 'md'}
-                                    >
-                                        {' '}
-                                        {project.title}
-                                    </Text>
-                                </Badge>
+                                    {project.title}
+                                </Text>
                             </Flex>
                         )
                     })}
                 </Flex>
             </Flex>
-            <Flex>
-                <Flex
-                    direction="column"
-                    w={'50%'}
-                    h={'100%'}
-                    gap={'16px'}
-                    justify={'center'}
-                    // style={{ width: '60%', height: '100%' }}
-                >
-                    {projectsData.map((project) =>
-                        renderProjectDetails(project)
-                    )}
+
+            <Flex
+                m={'37px auto 24px'}
+                w={'100%'}
+                gap={'24px'}
+                justify={'space-between'}
+                align={'center'}
+                style={{ border: '1px solid red' }}
+
+                // style={{ width: '60%', height: '100%' }}
+            >
+                <Flex direction={'column'} w={'30%'} gap={'24px'}>
+                    <Flex
+                        direction={'column'}
+                        justify={'center'}
+                        align={'center'}
+                        w={'370px'}
+                        h={'328px'}
+                        style={{
+                            borderRadius: '16px',
+                            border: '1px solid rgb(188, 210, 235)',
+                        }}
+                    >
+                        <Flex
+                            w={'80px'}
+                            h={'80px'}
+                            style={{ border: '1px dashed rgb(188, 210, 235)' }}
+                            justify={'center'}
+                            align={'center'}
+                        >
+                            <SquareIcon />
+                        </Flex>
+                        <Text c={'#012f6d'} fz={'50px'} fw={700} lh={'130%'}>
+                            167 тыс м²
+                        </Text>
+                        <Text c={'#012f6d'} fz={'32px'} fw={400} lh={'130%'}>
+                            Площадь объекта
+                        </Text>
+                    </Flex>
+                    <Flex
+                        direction={'column'}
+                        justify={'center'}
+                        align={'center'}
+                        w={'370px'}
+                        h={'328px'}
+                        style={{
+                            borderRadius: '16px',
+                            border: '1px solid rgb(188, 210, 235)',
+                        }}
+                    >
+                        <Flex
+                            w={'80px'}
+                            h={'80px'}
+                            style={{ border: '1px dashed rgb(188, 210, 235)' }}
+                            justify={'center'}
+                            align={'center'}
+                        >
+                            <PeopleIcon />
+                        </Flex>
+                        <Text c={'#012f6d'} fz={'50px'} fw={700} lh={'130%'}>
+                            5100 мест
+                        </Text>
+                        <Text c={'#012f6d'} fz={'32px'} fw={400} lh={'130%'}>
+                            Вместимость
+                        </Text>
+                    </Flex>
                 </Flex>
-                <Carousel w={'100%'} includeGapInSize={false} loop={true}>
-                    {slides}
-                </Carousel>
+                <Flex
+                    w={'70%'}
+                    h={'680px'}
+                    style={{ maxWidth: '770px', overflow: 'hidden' }}
+                >
+                    <Carousel
+                        w={'100%'}
+                        h={'100%'}
+                        includeGapInSize={false}
+                        loop={true}
+                        slideGap={'md'}
+                    >
+                        {slides}
+                    </Carousel>
+                </Flex>
+            </Flex>
+            <Flex w={'100%'} gap={'30px'} style={{ border: '1px solid red' }}>
+                <Flex
+                    justify={'center'}
+                    align={'center'}
+                    w={'50%'}
+                    p={'55px 0 55px'}
+                    style={{
+                        borderRadius: '16px',
+                        border: '1px solid rgb(188, 210, 235)',
+                    }}
+                >
+                    <Flex
+                        w={'80px'}
+                        h={'80px'}
+                        style={{ border: '1px dashed rgb(188, 210, 235)' }}
+                        justify={'center'}
+                        align={'center'}
+                    >
+                        <СlockIcon />
+                    </Flex>
+                    <Flex direction={'column'}>
+                        <Text c={'#012f6d'} fz={'50px'} fw={700} lh={'130%'}>
+                            167 тыс м²
+                        </Text>
+                        <Text c={'#012f6d'} fz={'32px'} fw={400} lh={'130%'}>
+                            Площадь объекта
+                        </Text>
+                    </Flex>
+                </Flex>
+                <Flex
+                    justify={'center'}
+                    align={'center'}
+                    w={'50%'}
+                    p={'55px 0 55px'}
+                    style={{
+                        borderRadius: '16px',
+                        border: '1px solid rgb(188, 210, 235)',
+                    }}
+                >
+                    <Flex
+                        w={'80px'}
+                        h={'80px'}
+                        style={{ border: '1px dashed rgb(188, 210, 235)' }}
+                        justify={'center'}
+                        align={'center'}
+                    >
+                        <PeopleIcon />
+                    </Flex>
+                    <Flex direction={'column'}>
+                        <Text c={'#012f6d'} fz={'50px'} fw={700} lh={'130%'}>
+                            5100 мест
+                        </Text>
+                        <Text c={'#012f6d'} fz={'32px'} fw={400} lh={'130%'}>
+                            Вместимость
+                        </Text>
+                    </Flex>
+                </Flex>
             </Flex>
         </Flex>
     )

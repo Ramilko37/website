@@ -83,7 +83,7 @@ const NumbersBlock: FC = () => {
                 <div className={styles.content}>
                     <div className={styles.cards}>
                         <Flex className={styles.left}>
-                            <RussianMap setIsflipped={setIsflipped} />
+                            <RussianMap />
                         </Flex>
                         <div className={styles.right}>
                             <div className={styles.list} ref={ref}>

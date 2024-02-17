@@ -5,21 +5,19 @@ import classes from './Header.module.css'
 import { LogoIcon } from '../../images/icons/logo-icon'
 
 const links = [
-    { id: 'numbers', link: '/numbers', label: 'О нас' },
     {
         id: 'projects',
         link: '#1',
         label: 'Проекты',
         links: [
-            { link: '/docs', label: 'Documentation' },
-            { link: '/resources', label: 'Resources' },
-            { link: '/community', label: 'Community' },
-            { link: '/blog', label: 'Blog' },
+            { link: '/docs', label: 'Пермь' },
+            { link: '/resources', label: 'Уфа' },
+            { link: '/community', label: 'Архангельск' },
+            { link: '/blog', label: 'Тюмень' },
         ],
     },
     { id: 'news', link: '', label: 'Новости' },
     { id: 'contacts', link: '', label: 'Контакты' },
-    { id: 'partners', link: '', label: 'Партнеры' },
     { id: '', link: '/team', label: 'Команда' },
 ]
 
