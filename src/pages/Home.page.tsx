@@ -7,7 +7,6 @@ import { NewsSlider } from '../components/NewsSlider/NewsSlider'
 import { ProjectsGallery } from '../components/PojectsGallery/ProjectsGallery'
 import { PartnersCarousel } from '../components/PartnersCarousel/PartnersCarousel'
 import { About } from '../components/About/About'
-import { Events } from '../components/Events/Events'
 import { Quote } from '../components/Quote/Quote'
 import { RussianMap } from '../components/RussianMap/RussianMap'
 
@@ -20,7 +19,6 @@ export const HomePage = () => {
             <Quote />
             <RussianMap />
             <ProjectsGallery />
-            <Events />
             <NewsSlider />
             <YandexMaps />
             <PartnersCarousel />

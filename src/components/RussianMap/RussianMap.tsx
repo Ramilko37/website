@@ -62,76 +62,127 @@ export const RussianMap = () => {
             <Flex gap={'30px'}>
                 {initialNumbers.map((item, index) => {
                     return (
-                        <ReactCardFlip
-                            key={index}
-                            isFlipped={isFlipped === item.id}
-                            flipDirection="horizontal"
+                        <Flex
+                            ref={ref}
+                            direction={'column'}
+                            w={'270px'}
+                            h={'196px'}
+                            bg={'rgb(35, 60, 145)'}
+                            p={'32px 20px'}
+                            style={{
+                                borderRadius: '16px',
+                            }}
+                            onClick={cardFlipHandler(item.id)}
+                            key={`join-${index}`}
                         >
-                            <Flex
-                                ref={ref}
-                                direction={'column'}
-                                w={'270px'}
-                                h={'196px'}
-                                bg={'rgb(35, 60, 145)'}
-                                p={'32px 20px'}
+                            <Text c={'#fff'} fz={'50px'} fw={700} lh={'100%'}>
+                                {inViewport ? (
+                                    <Text
+                                        c={'#fff'}
+                                        fz={'50px'}
+                                        fw={700}
+                                        lh={'100%'}
+                                    >
+                                        <CountUp
+                                            end={parseFloat(
+                                                item.num.replace(/[^0-9.]/g, '')
+                                            )}
+                                            duration={3}
+                                        />
+                                        +
+                                    </Text>
+                                ) : (
+                                    item.num
+                                )}
+                            </Text>
+                            <Text c={'#fff'} fz={'30px'} fw={700} lh={'100%'}>
+                                {item.sign}
+                            </Text>
+                            <Text
+                                mt={'22px'}
+                                c={'#fff'}
+                                fz={'20px'}
+                                fw={400}
+                                lh={'130%'}
                                 style={{
-                                    borderRadius: '16px',
+                                    alignItems: 'flex-end',
                                 }}
-                                onClick={cardFlipHandler(item.id)}
-                                key={`join-${index}`}
                             >
-                                <Text
-                                    c={'#fff'}
-                                    fz={'50px'}
-                                    fw={700}
-                                    lh={'100%'}
-                                >
-                                    {inViewport ? (
-                                        <Text
-                                            c={'#fff'}
-                                            fz={'50px'}
-                                            fw={700}
-                                            lh={'100%'}
-                                        >
-                                            <CountUp
-                                                end={parseFloat(
-                                                    item.num.replace(
-                                                        /[^0-9.]/g,
-                                                        ''
-                                                    )
-                                                )}
-                                                duration={3}
-                                            />
-                                            +
-                                        </Text>
-                                    ) : (
-                                        item.num
-                                    )}
-                                </Text>
-                                <Text
-                                    c={'#fff'}
-                                    fz={'30px'}
-                                    fw={700}
-                                    lh={'100%'}
-                                >
-                                    {item.sign}
-                                </Text>
-                                <Text
-                                    mt={'22px'}
-                                    c={'#fff'}
-                                    fz={'20px'}
-                                    fw={400}
-                                    lh={'130%'}
-                                    style={{
-                                        alignItems: 'flex-end',
-                                    }}
-                                >
-                                    {item.text}
-                                </Text>
-                            </Flex>
+                                {item.text}
+                            </Text>
+                        </Flex>
+                        // <ReactCardFlip
+                        //     key={index}
+                        //     isFlipped={isFlipped === item.id}
+                        //     flipDirection="horizontal"
+                        // >
+                        //     <Flex
+                        //         ref={ref}
+                        //         direction={'column'}
+                        //         w={'270px'}
+                        //         h={'196px'}
+                        //         bg={'rgb(35, 60, 145)'}
+                        //         p={'32px 20px'}
+                        //         style={{
+                        //             borderRadius: '16px',
+                        //         }}
+                        //         onClick={cardFlipHandler(item.id)}
+                        //         key={`join-${index}`}
+                        //     >
+                        //         <Text
+                        //             c={'#fff'}
+                        //             fz={'50px'}
+                        //             fw={700}
+                        //             lh={'100%'}
+                        //         >
+                        //             {inViewport ? (
+                        //                 <Text
+                        //                     c={'#fff'}
+                        //                     fz={'50px'}
+                        //                     fw={700}
+                        //                     lh={'100%'}
+                        //                 >
+                        //                     <CountUp
+                        //                         end={parseFloat(
+                        //                             item.num.replace(
+                        //                                 /[^0-9.]/g,
+                        //                                 ''
+                        //                             )
+                        //                         )}
+                        //                         duration={3}
+                        //                     />
+                        //                     +
+                        //                 </Text>
+                        //             ) : (
+                        //                 item.num
+                        //             )}
+                        //         </Text>
+                        //         <Text
+                        //             c={'#fff'}
+                        //             fz={'30px'}
+                        //             fw={700}
+                        //             lh={'100%'}
+                        //         >
+                        //             {item.sign}
+                        //         </Text>
+                        //         <Text
+                        //             mt={'22px'}
+                        //             c={'#fff'}
+                        //             fz={'20px'}
+                        //             fw={400}
+                        //             lh={'130%'}
+                        //             style={{
+                        //                 alignItems: 'flex-end',
+                        //             }}
+                        //         >
+                        //             {item.text}
+                        //         </Text>
+                        //     </Flex>
 
-                            <Flex className={styles.itemBack}></Flex>
-                        </ReactCardFlip>
+                        //     <Flex >
+                        //         <Text>Prompt</Text>
+                        //     </Flex>
+                        // </ReactCardFlip>
                     )
                 })}
             </Flex>
