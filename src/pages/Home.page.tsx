@@ -3,7 +3,7 @@ import { Flex } from '@mantine/core'
 import { Header } from '../components/Header/Header'
 import HeroBlock from '../components/Hero/HeroBlock'
 import { YandexMaps } from '../components/YandexMaps/YandexMaps'
-import { NewsSlider } from '../components/NewsSlider/NewsSlider'
+// import { NewsSlider } from '../components/NewsSlider/NewsSlider'
 import { ProjectsGallery } from '../components/PojectsGallery/ProjectsGallery'
 import { PartnersCarousel } from '../components/PartnersCarousel/PartnersCarousel'
 import { About } from '../components/About/About'
@@ -19,7 +19,7 @@ export const HomePage = () => {
             <Quote />
             <RussianMap />
             <ProjectsGallery />
-            <NewsSlider />
+            {/* <NewsSlider /> */}
             <YandexMaps />
             <PartnersCarousel />
         </Flex>

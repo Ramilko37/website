@@ -20,7 +20,19 @@ export default function HeroBlock() {
         transform: 'translateX(0)',
         from: { opacity: 0, transform: 'translateX(-100%)' },
         config: { duration: 1000 },
-        delay: 2000,
+        delay: 2000
+    })
+
+    const citateAnimation = useSpring({
+        opacity: 1,
+        transform: 'translateX(0)',
+        from: { opacity: 0, transform: 'translateX(-50%)' },
+        config: { duration: 1000 },
+        delay: 3000,
+        width: '100%',
+        textAlign: 'start',
+        margin: 0
+        
     })
 
     return (
@@ -50,6 +62,7 @@ export default function HeroBlock() {
                 }}
             ></video>
             <Container
+                mt={'66px'}
                 style={{ zIndex: 20 }}
                 className={classes.container}
                 fluid
@@ -64,10 +77,20 @@ export default function HeroBlock() {
                 <animated.div style={textAnimation}>
                     <Text className={classes.description}>
                         Комплексный подход к реализации крупных инфраструктурных
-                        проектов
+                        проектов    
                     </Text>
                 </animated.div>
+                <animated.div style={citateAnimation}>
+                    <Text w={'600px'} mt={'40px'} c={'#fff'} style={{ zIndex: 1000   }} fz={'23px'} fw={400} lh={'130%'} >
+                      “Цель создания современных кампусов как раз в этом и заключается - создать эталонные пространства”
+                    </Text>
+                    <Text c={'#fff'} fz={'20px'} fw={400} lh={'130%'} opacity={'0.5'}>
+                        Президент Российской Федерации В.В. Путин
+                    </Text>
+                </animated.div>
+                
             </Container>
+          
         </Flex>
     )
 }

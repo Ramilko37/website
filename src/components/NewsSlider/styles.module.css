@@ -31,10 +31,18 @@
   }
 }
 
+ .slideActiveClass {
+    width: 760px;
+    border: 1px solid red;
+  }
 
 .swiper {
 
-
+ 
+  .swiper-slide-active {
+     width: 760px;
+    border: 1px solid red;
+  }
   .swiperButtonNext,
   .swiperButtonPrev {
     background-color: #002F6D;

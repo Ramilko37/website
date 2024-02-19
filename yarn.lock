@@ -2363,6 +2363,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"embla-carousel-class-names@npm:^8.0.0-rc23":
+  version: 8.0.0-rc23
+  resolution: "embla-carousel-class-names@npm:8.0.0-rc23"
+  peerDependencies:
+    embla-carousel: 8.0.0-rc23
+  checksum: 4fe0a6634ffd0be185786ddbe2672786e1d49a623d4d4c650f6b3a967ca74e74e03da230feb5badb07fb93a2723e0dfbc70c2bc0a788e756ca34ea04495795fd
+  languageName: node
+  linkType: hard
+
 "embla-carousel-react@npm:^7.0.0":
   version: 7.1.0
   resolution: "embla-carousel-react@npm:7.1.0"
@@ -2378,6 +2387,13 @@ __metadata:
   version: 7.1.0
   resolution: "embla-carousel@npm:7.1.0"
   checksum: 3fcfe5b287c5d09d35dac76b6612567cf6f15abdae0bbf7d10754db9f732dd90cdfdf5bc7405d8fb3f65542bdead09971e93e024a0db9b3f1fcc653a70e733bc
+  languageName: node
+  linkType: hard
+
+"embla-carousel@npm:^8.0.0-rc23":
+  version: 8.0.0-rc23
+  resolution: "embla-carousel@npm:8.0.0-rc23"
+  checksum: b41e3a538d98fb46ecce61716011191c4b841a9123ae567581add61c2697a4e3e1b0c701a8a3b5711ee2ff634d5b3bdd48b1f59cd054bc623d2ed490b1113036
   languageName: node
   linkType: hard
 
@@ -5083,7 +5099,9 @@ __metadata:
     "@typescript-eslint/parser": "npm:^6.9.1"
     "@vitejs/plugin-react": "npm:^4.1.1"
     dynamic-marquee-react: "npm:^1.0.2"
+    embla-carousel: "npm:^8.0.0-rc23"
     embla-carousel-autoplay: "npm:^7.1.0"
+    embla-carousel-class-names: "npm:^8.0.0-rc23"
     embla-carousel-react: "npm:^7.0.0"
     eslint: "npm:^8.53.0"
     eslint-plugin-react-hooks: "npm:^4.6.0"
