@@ -8,7 +8,7 @@ export const YandexMaps = () => {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
 
     return (
-        <Flex id={'contacts'} w={'100vw'} mt={'40px'} h={'600px'}>
+        <Flex id={'contacts'} w={'100vw'} mt={'220px'} h={'600px'}>
             <YMaps>
                 <Map
                     overlay={true}

@@ -41,6 +41,7 @@ export default function HeroBlock() {
             bg={'#f9fafc'}
             direction={'column'}
             className={classes.hero}
+            pos={'relative'}
         >
             {/* <Overlay
                 gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, .15) 90%)"
@@ -84,7 +85,7 @@ export default function HeroBlock() {
             </Flex>
             </Container>
 
-                 <Flex p={'0 10% 0'}  gap={'24px'} direction={'column'} w={'100%'} align={'flex-end'} style={{ zIndex: 1000 }}>
+                 <Flex p={'0 10% 0'}  gap={'24px'} direction={'column'} w={'100%'} align={'flex-end'} style={{ zIndex: 1000 }} pos={'absolute'} bottom={'0'}>
                 <animated.div style={citateAnimation}>
                     <Text w={'600px'} mt={'40px'} c={'#fff'} style={{ zIndex: 1000   }} fz={'23px'} fw={400} lh={'130%'} >
                       “Цель создания современных кампусов как раз в этом и заключается - создать эталонные пространства”
