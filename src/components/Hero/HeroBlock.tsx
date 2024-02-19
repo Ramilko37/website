@@ -67,7 +67,8 @@ export default function HeroBlock() {
                 className={classes.container}
                 fluid
                 h={'100%'}
-            >
+            >   
+            <Flex gap={'24px'} direction={'column'} w={'100%'} align={'flex-end'}>
                 <animated.div style={titleAnimation}>
                     <Title className={classes.title}>
                         ЭТАЛОННЫЕ КОНЦЕССИИ - Центр
@@ -80,6 +81,10 @@ export default function HeroBlock() {
                         проектов    
                     </Text>
                 </animated.div>
+            </Flex>
+            </Container>
+
+                 <Flex p={'0 10% 0'}  gap={'24px'} direction={'column'} w={'100%'} align={'flex-end'} style={{ zIndex: 1000 }}>
                 <animated.div style={citateAnimation}>
                     <Text w={'600px'} mt={'40px'} c={'#fff'} style={{ zIndex: 1000   }} fz={'23px'} fw={400} lh={'130%'} >
                       “Цель создания современных кампусов как раз в этом и заключается - создать эталонные пространства”
@@ -89,7 +94,7 @@ export default function HeroBlock() {
                     </Text>
                 </animated.div>
                 
-            </Container>
+                </Flex>
           
         </Flex>
     )
