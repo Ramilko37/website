@@ -24,11 +24,6 @@ import arhangelskImage2 from '../../images/arhangelsk3.webp'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Carousel } from '@mantine/carousel'
 import { useMediaQuery } from '@mantine/hooks'
-import { MdCurrencyRuble } from 'react-icons/md'
-import { BsFillPeopleFill } from 'react-icons/bs'
-import { AiOutlineStock } from 'react-icons/ai'
-import { RxRulerSquare } from 'react-icons/rx'
-import { LuClock4 } from 'react-icons/lu'
 import { SquareIcon } from '../../images/icons/square-icon'
 import { PeopleIcon } from '../../images/icons/people-icon'
 import { СlockIcon } from '../../images/icons/clock-icon'
@@ -121,7 +116,7 @@ export const ProjectsGallery = () => {
                     {
                         title: '22 года',
                         bullet1: 'Срок реализации',
-                        icon: <PeopleIcon />,
+                        icon: <СlockIcon />,
                     },
                 ]
             case ProjectsGalleryType.Ufa:
@@ -144,7 +139,7 @@ export const ProjectsGallery = () => {
                     {
                         title: '25 лет',
                         bullet1: 'Срок реализации',
-                        icon: <PeopleIcon />,
+                        icon: <СlockIcon />,
                     },
                 ]
             case ProjectsGalleryType.Tumen:
@@ -167,7 +162,7 @@ export const ProjectsGallery = () => {
                     {
                         title: '22 года',
                         bullet1: 'Срок реализации',
-                        icon: <PeopleIcon />,
+                        icon: <СlockIcon />,
                     },
                 ]
             case ProjectsGalleryType.Arhangelsk:
@@ -190,7 +185,7 @@ export const ProjectsGallery = () => {
                     {
                         title: '22 года',
                         bullet1: 'Срок реализации',
-                        icon: <PeopleIcon />,
+                        icon: <СlockIcon />,
                     },
                 ]
         }

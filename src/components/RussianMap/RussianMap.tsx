@@ -1,9 +1,8 @@
 import { Flex, Image, Text } from '@mantine/core'
 import Map from '../../images/russian_map.svg'
 import { useInViewport } from '@mantine/hooks'
-import { useState } from 'react'
+
 import styles from './styles.module.css'
-import ReactCardFlip from 'react-card-flip'
 import CountUp from 'react-countup'
 
 const initialNumbers = [
@@ -38,13 +37,13 @@ const initialNumbers = [
 ]
 
 export const RussianMap = () => {
-    const [isFlipped, setIsflipped] = useState<string | undefined>(undefined)
+    // const [isFlipped, setIsflipped] = useState<string | undefined>(undefined)
     const { ref, inViewport } = useInViewport()
 
-    const cardFlipHandler = (id: string) => () => {
-        console.log('set os flipped')
-        setIsflipped(id)
-    }
+    // const cardFlipHandler = (id: string) => () => {
+    //     console.log('set os flipped')
+    //     setIsflipped(id)
+    // }
 
     return (
         <Flex
@@ -72,7 +71,7 @@ export const RussianMap = () => {
                             style={{
                                 borderRadius: '16px',
                             }}
-                            onClick={cardFlipHandler(item.id)}
+                            // onClick={cardFlipHandler(item.id)}
                             key={`join-${index}`}
                         >
                             <Text c={'#fff'} fz={'50px'} fw={700} lh={'100%'}>
