@@ -12,8 +12,6 @@ export const theme = createTheme({
 
     colors: {
         primaryBlue: ['#012f6d'] as any,
-        ethalonBlue: [
-            ' linear-gradient(-60deg,var(--mantine-color-blue-4) 0%, #002F6D 100%);',
-        ] as any,
+        ethalonBlue: ['#002F6D'] as any,
     },
 })

@@ -7,61 +7,86 @@ interface INewsCardProps {
     image: string
     title: React.ReactNode
     description: React.ReactNode
+    nextTitle: string | undefined
+    // nextDescription: any
 }
 
 export function NewsCard({
     linkProps,
     image,
     title,
-    description,
+    nextTitle,
 }: INewsCardProps) {
-    const { hovered, ref } = useHover()
+    // const { hovered, ref } = useHover()
 
-    const buttonClickHandler = () => {
-        window.open(linkProps.href, '_blank')
-    }
+    // const buttonClickHandler = () => {
+    //     window.open(linkProps.href, '_blank')
+    // }
+
+    console.log(nextTitle, 'next title')
 
     return (
-        <Card
-            h={'500px'}
-            withBorder
-            radius="md"
-            className={classes.card}
-            pos={'relative'}
-        >
-            <Card.Section withBorder>
-                <a {...linkProps}>
-                    <Image fit={'contain'} src={image} height={180} />
-                </a>
-            </Card.Section>
-
-            <Flex direction={'column'} style={{ flex: 1 }}>
-                <Text
-                    c={'#002F6D'}
-                    className={classes.title}
-                    fw={500}
-                    component="a"
-                    {...linkProps}
-                >
-                    {title}
-                </Text>
-
-                <Text fz="md" c="dimmed" lineClamp={4}>
-                    {description}
-                </Text>
+        <Flex w={'1170px'} gap={'30px'}>
+            <Flex
+                pos={'relative'}
+                style={{
+                    borderRadius: '16px',
+                    border: '1px solid rgb(188, 210, 235)',
+                    backgroundImage: `url(${image})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                }}
+                p={'50px 46px 50px'}
+                w={'769px'}
+            >
+                <Flex
+                    pos={'absolute'}
+                    top={'0'}
+                    left={'0'}
+                    w={'769px'}
+                    h={'436px'}
+                    style={{
+                        zIndex: 100,
+                        backgroundColor: '#000',
+                        borderRadius: '16px',
+                    }}
+                    opacity={0.6}
+                />
+                <Flex style={{ zIndex: 110 }} direction={'column'} gap={'50px'}>
+                    <Text c={'#fff'} opacity={0.7}>
+                        01.01.2023
+                    </Text>
+                    <Text c={'#fff'} fz={'32px'}>
+                        {title}
+                    </Text>
+                </Flex>
             </Flex>
 
-            <Group mt="xs" bottom={0}>
-                <Button
-                    ref={ref as any}
-                    onClick={buttonClickHandler}
-                    bg={hovered ? '#b455a0' : '#002F6D'}
-                    radius="md"
-                    style={{ flex: 1 }}
-                >
-                    К новости
-                </Button>
-            </Group>
-        </Card>
+            <Flex
+                style={{
+                    visibility: nextTitle === undefined ? 'hidden' : 'visible',
+                    borderRadius: '16px',
+                    border: '1px solid rgb(188, 210, 235)',
+                }}
+                bg={'#fff'}
+                w={'369px'}
+                h={'436px'}
+                p={'51px 27px 51px'}
+            >
+                <Flex direction={'column'} gap={'50px'}>
+                    <Text c={'#012F6D'} opacity={0.5}>
+                        01.01.2023
+                    </Text>
+                    <Text
+                        style={{ textAlign: 'left' }}
+                        c={'#012F6D'}
+                        fz={'24px'}
+                        fw={400}
+                    >
+                        {nextTitle}
+                    </Text>
+                </Flex>
+            </Flex>
+        </Flex>
     )
 }

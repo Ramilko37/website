@@ -20,7 +20,7 @@ export default function HeroBlock() {
         transform: 'translateX(0)',
         from: { opacity: 0, transform: 'translateX(-100%)' },
         config: { duration: 1000 },
-        delay: 2000
+        delay: 2000,
     })
 
     const citateAnimation = useSpring({
@@ -31,8 +31,7 @@ export default function HeroBlock() {
         delay: 3000,
         width: '100%',
         textAlign: 'start',
-        margin: 0
-        
+        margin: 0,
     })
 
     return (
@@ -68,35 +67,62 @@ export default function HeroBlock() {
                 className={classes.container}
                 fluid
                 h={'100%'}
-            >   
-            <Flex gap={'24px'} direction={'column'} w={'100%'} align={'flex-end'}>
-                <animated.div style={titleAnimation}>
-                    <Title className={classes.title}>
-                        ЭТАЛОННЫЕ КОНЦЕССИИ - Центр
-                        <br /> компетенций ГЧП в группе «Эталон»
-                    </Title>
-                </animated.div>
-                <animated.div style={textAnimation}>
-                    <Text className={classes.description}>
-                        Комплексный подход к реализации крупных инфраструктурных
-                        проектов    
-                    </Text>
-                </animated.div>
-            </Flex>
+            >
+                <Flex
+                    gap={'24px'}
+                    direction={'column'}
+                    w={'100%'}
+                    align={'flex-end'}
+                >
+                    <animated.div style={titleAnimation}>
+                        <Title className={classes.title}>
+                            ЭТАЛОННЫЕ КОНЦЕССИИ - Центр
+                            <br /> компетенций ГЧП в группе «Эталон»
+                        </Title>
+                    </animated.div>
+                    <animated.div style={textAnimation}>
+                        <Text className={classes.description}>
+                            Комплексный подход к реализации крупных
+                            инфраструктурных проектов
+                        </Text>
+                    </animated.div>
+                </Flex>
             </Container>
 
-                 <Flex p={'0 10% 0'}  gap={'24px'} direction={'column'} w={'100%'} align={'flex-end'} style={{ zIndex: 1000 }} pos={'absolute'} bottom={'0'}>
+            <Flex
+                p={'0 10% 0'}
+                gap={'24px'}
+                direction={'column'}
+                w={'100%'}
+                align={'flex-end'}
+                style={{ zIndex: 1000 }}
+                pos={'absolute'}
+                bottom={'0'}
+            >
                 <animated.div style={citateAnimation}>
-                    <Text w={'600px'} mt={'40px'} c={'#fff'} style={{ zIndex: 1000   }} fz={'23px'} fw={400} lh={'130%'} >
-                      “Цель создания современных кампусов как раз в этом и заключается - создать эталонные пространства”
+                    <Text
+                        w={'600px'}
+                        mt={'40px'}
+                        c={'#fff'}
+                        style={{ zIndex: 1000 }}
+                        fz={'23px'}
+                        fw={400}
+                        lh={'130%'}
+                    >
+                        “Цель создания современных кампусов как раз в этом и
+                        заключается - создать эталонные пространства”
                     </Text>
-                    <Text c={'#fff'} fz={'20px'} fw={400} lh={'130%'} opacity={'0.5'}>
+                    <Text
+                        c={'#fff'}
+                        fz={'20px'}
+                        fw={400}
+                        lh={'130%'}
+                        opacity={'0.5'}
+                    >
                         Президент Российской Федерации В.В. Путин
                     </Text>
                 </animated.div>
-                
-                </Flex>
-          
+            </Flex>
         </Flex>
     )
 }
