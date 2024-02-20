@@ -1,6 +1,6 @@
-import { Card, Image, Text, Group, Button, Flex } from '@mantine/core'
-import classes from './styles.module.css'
-import { useHover } from '@mantine/hooks'
+import { Text, Flex } from '@mantine/core'
+// import classes from './styles.module.css'
+// import { useHover } from '@mantine/hooks'
 
 interface INewsCardProps {
     linkProps: { href: string; target: string; rel: string }
@@ -11,12 +11,7 @@ interface INewsCardProps {
     // nextDescription: any
 }
 
-export function NewsCard({
-    linkProps,
-    image,
-    title,
-    nextTitle,
-}: INewsCardProps) {
+export function NewsCard({ image, title, nextTitle }: INewsCardProps) {
     // const { hovered, ref } = useHover()
 
     // const buttonClickHandler = () => {
