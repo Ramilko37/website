@@ -1,4 +1,4 @@
-import { Menu, Group, Center, Burger, Container } from '@mantine/core'
+import { Group, Burger, Container } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
 import { Link } from 'react-scroll'
 import classes from './Header.module.css'
@@ -9,12 +9,6 @@ const links = [
         id: 'projects',
         link: '#1',
         label: 'Проекты',
-        links: [
-            { link: '/docs', label: 'Пермь' },
-            { link: '/resources', label: 'Уфа' },
-            { link: '/community', label: 'Архангельск' },
-            { link: '/blog', label: 'Тюмень' },
-        ],
     },
     { id: 'news', link: '', label: 'Новости' },
     { id: '', link: '/team', label: 'Команда' },
@@ -25,46 +19,46 @@ export const Header = () => {
     const [opened, { toggle }] = useDisclosure(false)
 
     const items = links.map((link) => {
-        const menuItems = link.links?.map((item) => (
-            <Menu.Item c={'#fff'} className={classes.menuItem} key={item.link}>
-                {item.label}
-            </Menu.Item>
-        ))
+        // const menuItems = link.links?.map((item) => (
+        //     <Menu.Item c={'#fff'} className={classes.menuItem} key={item.link}>
+        //         {item.label}
+        //     </Menu.Item>
+        // ))
 
-        if (menuItems) {
-            return (
-                <Menu
-                    key={link.label}
-                    trigger="hover"
-                    transitionProps={{ exitDuration: 0 }}
-                    withinPortal
-                >
-                    <Menu.Target>
-                        <a
-                            href={link.link}
-                            className={classes.link}
-                            onClick={(event) => event.preventDefault()}
-                        >
-                            <Center>
-                                <span className={classes.linkLabel}>
-                                    {link.label}
-                                </span>
-                            </Center>
-                        </a>
-                    </Menu.Target>
-                    <Menu.Dropdown
-                        styles={{
-                            dropdown: {
-                                background: 'transparent',
-                                border: 'none',
-                            },
-                        }}
-                    >
-                        {menuItems}
-                    </Menu.Dropdown>
-                </Menu>
-            )
-        }
+        // if (menuItems) {
+        //     return (
+        //         <Menu
+        //             key={link.label}
+        //             trigger="hover"
+        //             transitionProps={{ exitDuration: 0 }}
+        //             withinPortal
+        //         >
+        //             <Menu.Target>
+        //                 <a
+        //                     href={link.link}
+        //                     className={classes.link}
+        //                     onClick={(event) => event.preventDefault()}
+        //                 >
+        //                     <Center>
+        //                         <span className={classes.linkLabel}>
+        //                             {link.label}
+        //                         </span>
+        //                     </Center>
+        //                 </a>
+        //             </Menu.Target>
+        //             <Menu.Dropdown
+        //                 styles={{
+        //                     dropdown: {
+        //                         background: 'transparent',
+        //                         border: 'none',
+        //                     },
+        //                 }}
+        //             >
+        //                 {menuItems}
+        //             </Menu.Dropdown>
+        //         </Menu>
+        //     )
+        // }
 
         return (
             <Link style={{ height: '100%' }} to={link.id as string} smooth>
