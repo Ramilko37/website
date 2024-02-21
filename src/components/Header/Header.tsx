@@ -17,8 +17,8 @@ const links = [
         ],
     },
     { id: 'news', link: '', label: 'Новости' },
-    { id: 'contacts', link: '', label: 'Контакты' },
     { id: '', link: '/team', label: 'Команда' },
+    { id: 'contacts', link: '/team', label: 'Контакты' },
 ]
 
 export const Header = () => {
