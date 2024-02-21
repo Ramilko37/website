@@ -17,6 +17,7 @@ export const Contacts = () => {
             justify={'center'}
             align={'center'}
             gap={'36px'}
+            pt={'120px'}
         >
             <Title c={'#012F6D'} fz={42} fw={700}>
                 Контакты

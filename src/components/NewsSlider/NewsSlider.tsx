@@ -198,10 +198,11 @@ export const NewsSlider = () => {
     return (
         <Flex
             id={'news'}
-            h={isMobile ? 'fit-content' : '900px'}
+            h={'fit-content'}
             direction={'column'}
             w={'80vw'}
             m={'220px auto 0'}
+            pt={'220px'}
             justify={'center'}
             align={'center'}
             pos={'relative'}
