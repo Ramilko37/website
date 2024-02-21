@@ -1,4 +1,4 @@
-import { Container, Title, Text, Flex } from '@mantine/core'
+import { Title, Text, Flex } from '@mantine/core'
 import classes from './Hero.module.css'
 import video from '../../images/hero_block_video.mp4'
 import videoMobile from '../../images/bg_video_mobile.mp4'

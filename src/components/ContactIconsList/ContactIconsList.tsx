@@ -1,4 +1,4 @@
-import { Text, Box, Stack, rem, Flex } from '@mantine/core'
+import { Text, Stack, Flex } from '@mantine/core'
 import { IconSun, IconPhone, IconMapPin, IconAt } from '@tabler/icons-react'
 import classes from './styles.module.css'
 
@@ -9,12 +9,7 @@ interface ContactIconProps
     description: React.ReactNode
 }
 
-function ContactIcon({
-    icon: Icon,
-    title,
-    description,
-    ...others
-}: ContactIconProps) {
+function ContactIcon({ title, description }: ContactIconProps) {
     return (
         <Flex
             color={'#002F6D'}

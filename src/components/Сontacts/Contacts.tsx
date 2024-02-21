@@ -1,11 +1,10 @@
-import { Box, Flex, Text, Title } from '@mantine/core'
+import { Flex, Title } from '@mantine/core'
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps'
 import { ContactIconsList } from '../ContactIconsList/ContactIconsList'
-import classes from './styles.module.css'
-import { useMediaQuery } from '@mantine/hooks'
+// import { useMediaQuery } from '@mantine/hooks'
 
 export const Contacts = () => {
-    const isMobile = useMediaQuery(`(max-width: 640px)`)
+    // const isMobile = useMediaQuery(`(max-width: 640px)`)
 
     return (
         <Flex
