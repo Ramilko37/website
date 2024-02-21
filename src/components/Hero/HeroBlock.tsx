@@ -60,12 +60,10 @@ export default function HeroBlock() {
                     zIndex: 10,
                     filter: 'brightness(50%)',
                 }}
-            ></video>
-            <Container
-                mt={'66px'}
+            />
+            <Flex
                 style={{ zIndex: 20 }}
                 className={classes.container}
-                fluid
                 h={'100%'}
             >
                 <Flex
@@ -87,7 +85,7 @@ export default function HeroBlock() {
                         </Text>
                     </animated.div>
                 </Flex>
-            </Container>
+            </Flex>
 
             <Flex
                 p={'0 10% 0'}
@@ -97,7 +95,7 @@ export default function HeroBlock() {
                 align={'flex-end'}
                 style={{ zIndex: 1000 }}
                 pos={'absolute'}
-                bottom={'0'}
+                bottom={'135px'}
             >
                 <animated.div style={citateAnimation}>
                     <Text

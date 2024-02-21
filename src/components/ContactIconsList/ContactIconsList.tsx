@@ -16,43 +16,42 @@ function ContactIcon({
     ...others
 }: ContactIconProps) {
     return (
-        <Flex color={'#002F6D'} className={classes.wrapper} {...others}>
-            <Box mr="md">
-                <Icon
-                    style={{
-                        width: rem(24),
-                        height: rem(24),
-                        color: '#002F6D',
-                    }}
-                />
-            </Box>
-
-            <div>
-                {/* <Text size="xs" className={classes.title} c={'#fff'}>
-          {title}
-        </Text> */}
+        <Flex
+            color={'#002F6D'}
+            className={classes.wrapper}
+            direction={'column'}
+            gap={'36px'}
+        >
+            <Flex w={'100%'} direction={'column'} gap={'4px'}>
+                <Text size="xs" className={classes.title} opacity={0.6}>
+                    {title}
+                </Text>
                 <Text className={classes.description} c={'#002F6D'}>
                     {description}
                 </Text>
-            </div>
+            </Flex>
         </Flex>
     )
 }
 
 const MOCKDATA = [
-    { title: 'Email', description: 'info@etalon-campus.ru', icon: IconAt },
-    { title: 'Телефон', description: '+495 335 35 35', icon: IconPhone },
+    { title: 'Email:', description: 'info@etalon-campus.ru', icon: IconAt },
+    { title: 'Телефон:', description: '+495 335 35 35', icon: IconPhone },
     {
-        title: 'Адрес',
+        title: 'Адрес:',
         description: 'Москва, пер Токмаков, д. 5, стр. 1, помещ. 1/5',
         icon: IconMapPin,
     },
-    { title: 'Working hours', description: '9 00 – 18 00', icon: IconSun },
+    { title: 'Время работы:', description: '9 00 – 18 00', icon: IconSun },
 ]
 
 export function ContactIconsList() {
     const items = MOCKDATA.map((item, index) => (
         <ContactIcon key={index} {...item} />
     ))
-    return <Stack>{items}</Stack>
+    return (
+        <Stack bg={'#fff'} gap={'36px'}>
+            {items}
+        </Stack>
+    )
 }

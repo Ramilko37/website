@@ -11,7 +11,7 @@ body {
     /* overflow-x: hidden; */
     height: 100%;
     height: 100dvh;
-    background: rgb(248, 249, 251);
+    background: #f8f9fb;
     font-family: 'Gilroy', sans-serif;
 }
 

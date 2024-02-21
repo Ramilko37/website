@@ -2,18 +2,18 @@
     position: relative;
     background-size: cover;
     background-position: center;
-    height: 70dvh;
-    padding-top: 86px;
+    height: 100dvh;
 }
 
 .container {
     width: 100%;
-    padding: 0 10% 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
-   
+    padding: 10% 19% 12% 0;
+    margin: 0;
     gap: 24px;
     z-index: 1;
     position: relative;

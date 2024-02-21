@@ -1,18 +1,24 @@
 .wrapper {
-  display: flex;
-  align-items: center;
-  color: '#002F6D',
+    display: flex;
+    align-items: center;
+    color: '#002F6D';
 }
 
 .icon {
-  margin-right: var(--mantine-spacing-md);
-  background-color: transparent;
+    margin-right: var(--mantine-spacing-md);
+    background-color: transparent;
 }
 
 .title {
-  color: '#002F6D',
+    font-size: 20px;
+    line-height: 130%;
+    font-weight: 400;
+    color: '#012F6D';
 }
 
 .description {
-  color: '#002F6D',
+    font-size: 28px;
+    line-height: 130%;
+    font-weight: 400;
+    color: '#002F6D';
 }

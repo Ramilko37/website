@@ -11,14 +11,17 @@ interface INewsCardProps {
     // nextDescription: any
 }
 
-export function NewsCard({ image, title, nextTitle }: INewsCardProps) {
+export function NewsCard({
+    linkProps,
+    image,
+    title,
+    nextTitle,
+}: INewsCardProps) {
     // const { hovered, ref } = useHover()
 
-    // const buttonClickHandler = () => {
-    //     window.open(linkProps.href, '_blank')
-    // }
-
-    console.log(nextTitle, 'next title')
+    const buttonClickHandler = () => {
+        window.open(linkProps.href, '_blank')
+    }
 
     return (
         <Flex w={'1170px'} gap={'30px'}>
@@ -47,7 +50,12 @@ export function NewsCard({ image, title, nextTitle }: INewsCardProps) {
                     }}
                     opacity={0.6}
                 />
-                <Flex style={{ zIndex: 110 }} direction={'column'} gap={'50px'}>
+                <Flex
+                    style={{ zIndex: 110, cursor: 'pointer' }}
+                    direction={'column'}
+                    gap={'50px'}
+                    onClick={buttonClickHandler}
+                >
                     <Text c={'#fff'} opacity={0.7}>
                         01.01.2023
                     </Text>
@@ -58,10 +66,12 @@ export function NewsCard({ image, title, nextTitle }: INewsCardProps) {
             </Flex>
 
             <Flex
+                className={'image-swiper-button-next'}
                 style={{
                     visibility: nextTitle === undefined ? 'hidden' : 'visible',
                     borderRadius: '16px',
                     border: '1px solid rgb(188, 210, 235)',
+                    cursor: 'pointer',
                 }}
                 bg={'#fff'}
                 w={'369px'}

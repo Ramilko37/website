@@ -11,7 +11,7 @@ export const PartnersCarousel = () => {
             id="marquee"
             style={{
                 height: 'fit-content',
-                backgroundColor: '#f9fafc',
+
                 padding: '100px 0 100px',
             }}
         >
