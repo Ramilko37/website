@@ -34,6 +34,101 @@ export default function HeroBlock() {
         margin: 0,
     })
 
+    if (isMobile) {
+        return (
+            <Flex
+                pos={'relative'}
+                direction={'column'}
+                w={'100%'}
+                h={'100dvh'}
+                gap={'50px'}
+            >
+                <video
+                    src={isMobile ? videoMobile : video}
+                    autoPlay
+                    muted
+                    loop
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        position: 'absolute',
+                        zIndex: 10,
+                        filter: 'brightness(50%)',
+                    }}
+                />
+                <Flex
+                    gap={'24px'}
+                    direction={'column'}
+                    w={'100%'}
+                    h={'100%'}
+                    align={'flex-end'}
+                    style={{ zIndex: 20 }}
+                    p={'120px 20px 50px'}
+                    mt={'50px'}
+                >
+                    <animated.div style={titleAnimation}>
+                        <Title
+                            c={'#fff'}
+                            fz={32}
+                            fw={700}
+                            style={{
+                                textAlign: 'center',
+                                textTransform: 'uppercase',
+                            }}
+                        >
+                            ЭТАЛОННЫЕ КОНЦЕССИИ - Центр
+                            <br /> компетенций ГЧП в группе «Эталон»
+                        </Title>
+                    </animated.div>
+                    <animated.div style={textAnimation}>
+                        <Text
+                            c={'#fff'}
+                            fz={20}
+                            fw={400}
+                            style={{ textAlign: 'center' }}
+                        >
+                            Комплексный подход к реализации крупных
+                            инфраструктурных проектов
+                        </Text>
+                    </animated.div>
+                </Flex>
+                <Flex
+                    w={'100%'}
+                    direction={'column'}
+                    style={{ zIndex: 20 }}
+                    p={'0 20px 50px'}
+                >
+                    <animated.div style={citateAnimation}>
+                        <Text
+                            mt={'40px'}
+                            c={'#fff'}
+                            style={{ zIndex: 1000, textAlign: 'center' }}
+                            fz={16}
+                            fw={400}
+                            lh={'130%'}
+                        >
+                            “Цель создания современных кампусов как раз в этом и
+                            заключается - создать эталонные пространства”
+                        </Text>
+                        <Text
+                            c={'#fff'}
+                            fz={16}
+                            fw={400}
+                            lh={'130%'}
+                            opacity={'0.5'}
+                            mt={'20px'}
+                            style={{ textAlign: 'center' }}
+                        >
+                            Президент Российской Федерации Владимир Владимирович
+                            Путин
+                        </Text>
+                    </animated.div>
+                </Flex>
+            </Flex>
+        )
+    }
+
     return (
         <Flex
             id={'hero'}
@@ -117,7 +212,8 @@ export default function HeroBlock() {
                         lh={'130%'}
                         opacity={'0.5'}
                     >
-                        Президент Российской Федерации В.В. Путин
+                        Президент Российской Федерации Владимир Владимирович
+                        Путин
                     </Text>
                 </animated.div>
             </Flex>

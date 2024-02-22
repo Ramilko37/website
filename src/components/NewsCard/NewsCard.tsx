@@ -1,4 +1,5 @@
 import { Text, Flex } from '@mantine/core'
+import { useMediaQuery } from '@mantine/hooks'
 // import classes from './styles.module.css'
 // import { useHover } from '@mantine/hooks'
 
@@ -18,9 +19,57 @@ export function NewsCard({
     nextTitle,
 }: INewsCardProps) {
     // const { hovered, ref } = useHover()
+    const isMobile = useMediaQuery(`(max-width: 640px)`)
 
     const buttonClickHandler = () => {
         window.open(linkProps.href, '_blank')
+    }
+
+    if (isMobile) {
+        return (
+            <Flex
+                pos={'relative'}
+                style={{
+                    borderRadius: '16px',
+                    border: '1px solid rgb(188, 210, 235)',
+                    backgroundImage: `url(${image})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover',
+                }}
+                p={'50px 46px 50px'}
+                w={'100%'}
+                h={'436px'}
+            >
+                <Flex
+                    pos={'absolute'}
+                    top={'0'}
+                    left={'0'}
+                    w={'100%'}
+                    h={'100%'}
+                    style={{
+                        zIndex: 100,
+                        backgroundColor: '#000',
+                        borderRadius: '16px',
+                    }}
+                    opacity={0.6}
+                />
+                <Flex
+                    w={'100%'}
+                    h={'100%'}
+                    style={{ zIndex: 110, cursor: 'pointer' }}
+                    direction={'column'}
+                    gap={'50px'}
+                    onClick={buttonClickHandler}
+                >
+                    <Text c={'#fff'} opacity={0.7}>
+                        01.01.2023
+                    </Text>
+                    <Text c={'#fff'} fz={{ base: '22px', lg: '32px' }}>
+                        {title}
+                    </Text>
+                </Flex>
+            </Flex>
+        )
     }
 
     return (

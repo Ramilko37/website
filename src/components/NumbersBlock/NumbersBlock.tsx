@@ -71,12 +71,9 @@ const NumbersBlock: FC = () => {
             p={{ base: '40px 24px 0', lg: '90px 0 90px' }}
             h={isMobile ? '100dvh' : 'auto'}
             gap={{ base: '16px', lg: '48px' }}
+            style={{ border: '1px solid red' }}
         >
-            <Title
-                className={styles.title}
-                m={'0 auto'}
-                mt={isMobile ? '-20px' : 0}
-            >
+            <Title className={styles.title} m={'0 auto'}>
                 География проектов
             </Title>
             <Box>

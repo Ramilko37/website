@@ -49,7 +49,7 @@ export const RussianMap = () => {
         <Flex
             direction={'column'}
             w={'100%'}
-            p={'220px 0 220px'}
+            p={{ base: '90px 0 90px', lg: '220px 0 220px' }}
             justify={'center'}
             align={'center'}
             gap={'36px'}
@@ -58,18 +58,25 @@ export const RussianMap = () => {
             <Flex w={'61wv'}>
                 <Image src={Map} />
             </Flex>
-            <Flex gap={'30px'}>
+            <Flex
+                w={'100%'}
+                gap={'30px'}
+                wrap={'wrap'}
+                px={'40px'}
+                justify={'center'}
+            >
                 {initialNumbers.map((item, index) => {
                     return (
                         <Flex
                             ref={ref}
                             direction={'column'}
-                            w={'270px'}
-                            h={'196px'}
+                            w={{ base: '140px', lg: '270px' }}
+                            h={{ base: '140px', lg: '196px' }}
                             bg={'rgb(35, 60, 145)'}
-                            p={'32px 20px'}
+                            p={{ base: '32px 0 32px', lg: '32px 20px' }}
                             style={{
                                 borderRadius: '16px',
+                                textAlign: 'center',
                             }}
                             // onClick={cardFlipHandler(item.id)}
                             key={`join-${index}`}
@@ -78,7 +85,7 @@ export const RussianMap = () => {
                                 {inViewport ? (
                                     <Text
                                         c={'#fff'}
-                                        fz={'50px'}
+                                        fz={{ base: '30px', lg: '50px' }}
                                         fw={700}
                                         lh={'100%'}
                                     >
@@ -94,13 +101,18 @@ export const RussianMap = () => {
                                     item.num
                                 )}
                             </Text>
-                            <Text c={'#fff'} fz={'30px'} fw={700} lh={'100%'}>
+                            <Text
+                                c={'#fff'}
+                                fz={{ base: '30px', lg: '50px' }}
+                                fw={700}
+                                lh={'100%'}
+                            >
                                 {item.sign}
                             </Text>
                             <Text
-                                mt={'22px'}
+                                mt={{ base: 10, lg: '22px' }}
                                 c={'#fff'}
-                                fz={'20px'}
+                                fz={{ base: '16px', lg: '20px' }}
                                 fw={400}
                                 lh={'130%'}
                                 style={{

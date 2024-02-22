@@ -200,9 +200,9 @@ export const NewsSlider = () => {
             id={'news'}
             h={'fit-content'}
             direction={'column'}
-            w={'80vw'}
-            m={'220px auto 0'}
-            pt={'220px'}
+            w={isMobile ? '100%' : '80vw'}
+            m={isMobile ? 0 : '220px auto 0'}
+            p={{ base: '40px', lg: '220px 0 0' }}
             justify={'center'}
             align={'center'}
             pos={'relative'}
@@ -214,7 +214,7 @@ export const NewsSlider = () => {
                 pagination={pagination}
                 modules={[Navigation, Pagination]}
                 style={{
-                    width: '1170px',
+                    width: isMobile ? '100%' : '1170px',
                     paddingBottom: '40px',
                 }}
                 spaceBetween={50}

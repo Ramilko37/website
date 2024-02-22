@@ -123,7 +123,7 @@ export const ProjectsGallery = () => {
                 return [
                     {
                         title: '152,7 тыс. м2',
-                         bullet1: 'Площадь объекта',
+                        bullet1: 'Площадь объекта',
                         icon: <SquareIcon />,
                     },
                     {
@@ -191,38 +191,53 @@ export const ProjectsGallery = () => {
         }
     }, [galleryType])
 
-   const imagesData = {
-    [ProjectsGalleryType.Perm]: [
-        perm1, perm2, perm3, perm4, perm5, permTitleImage,
-    ],
-    [ProjectsGalleryType.Ufa]: [
-        ufa1, ufa2, ufa3, ufa4, ufa5, ufaTitleImage,
-    ],
-    [ProjectsGalleryType.Tumen]: [
-        tumen, tumen2, tumen3, tumen4, tumenTitleImage,
-    ],
-    [ProjectsGalleryType.Arhangelsk]: [
-        arhangelskImage, arhangelskImage2, arhangelskTitleImage,
-    ],
-};
+    const imagesData = {
+        [ProjectsGalleryType.Perm]: [
+            perm1,
+            perm2,
+            perm3,
+            perm4,
+            perm5,
+            permTitleImage,
+        ],
+        [ProjectsGalleryType.Ufa]: [
+            ufa1,
+            ufa2,
+            ufa3,
+            ufa4,
+            ufa5,
+            ufaTitleImage,
+        ],
+        [ProjectsGalleryType.Tumen]: [
+            tumen,
+            tumen2,
+            tumen3,
+            tumen4,
+            tumenTitleImage,
+        ],
+        [ProjectsGalleryType.Arhangelsk]: [
+            arhangelskImage,
+            arhangelskImage2,
+            arhangelskTitleImage,
+        ],
+    }
 
-   useEffect(() => {
-    const preloadImages = () => {
-        const imagesToPreload = imagesData[galleryType]; 
-        if (!imagesToPreload) return;
+    useEffect(() => {
+        const preloadImages = () => {
+            const imagesToPreload = imagesData[galleryType]
+            if (!imagesToPreload) return
 
-        imagesToPreload.forEach(imageSrc => {
-            const img = new Image();
-            img.src = imageSrc;
-        });
-    };
+            imagesToPreload.forEach((imageSrc) => {
+                const img = new Image()
+                img.src = imageSrc
+            })
+        }
 
-    preloadImages();
-}, [galleryType]);
-
+        preloadImages()
+    }, [galleryType])
 
     const slides = useMemo(() => {
-        const currentImages = imagesData[galleryType] || []; 
+        const currentImages = imagesData[galleryType] || []
         return currentImages?.map((imageSrc, index) => (
             <Carousel.Slide w={'95%'} h={680} key={index}>
                 <Flex
@@ -242,34 +257,22 @@ export const ProjectsGallery = () => {
 
     const mobileSlides = useMemo(() => {
         return mobileProjectsData.map((project, index) => (
-            <Carousel.Slide key={index}>
+            <Carousel.Slide key={index} style={{ borderRadius: '16px' }}>
                 <Flex
                     direction={'column'}
                     justify={'center'}
                     m={'0 auto'}
                     w={'90%'}
                     h={'100%'}
+                    style={{ borderRadius: '16px' }}
                 >
                     <Img
                         fit={'contain'}
                         w={'100%'}
                         h={'auto'}
                         src={project.image}
+                        style={{ borderRadius: '16px' }}
                     />
-                    <Text
-                        w={'100%'}
-                        c={'#002f6d'}
-                        style={{
-                            fontSize: '24px',
-                            lineHeight: '140%',
-                            color: '#000000',
-                            textAlign: 'center',
-                            justifyContent: 'flex-start',
-                            marginTop: '20px',
-                        }}
-                    >
-                        {project.text}
-                    </Text>
                 </Flex>
             </Carousel.Slide>
         ))
@@ -283,10 +286,111 @@ export const ProjectsGallery = () => {
                 w={'100%'}
                 h={isMobile ? '100%' : '100dvh'}
                 justify={'center'}
+                px={'40px'}
             >
-                <Carousel withIndicators includeGapInSize={false} loop={true}>
+                <Text
+                    c={'#012f6d'}
+                    fz={'30px'}
+                    fw={'700'}
+                    lh={'130%'}
+                    mb={'40px'}
+                    style={{ textAlign: 'center' }}
+                >
+                    Наши проекты
+                </Text>
+                <Flex
+                    direction={'column'}
+                    w={'100%'}
+                    m={'0 auto 24px'}
+                    justify={'center'}
+                    align={'center'}
+                    gap={'16px'}
+                >
+                    {projectsNavBarData.map((project, index) => {
+                        return (
+                            <Flex
+                                key={index}
+                                onClick={() =>
+                                    galleryTypeClickHandler(project.type)
+                                }
+                                style={{
+                                    borderBottom:
+                                        galleryType === project.type
+                                            ? '3px solid rgb(35, 60, 145)'
+                                            : '',
+                                    transition: 'border-bottom 0.3s',
+                                    textAlign: 'center',
+                                }}
+                                w={'fit-content'}
+                            >
+                                <Text
+                                    c={'#012f6d'}
+                                    fz={'32px'}
+                                    fw={'400'}
+                                    lh={'130%'}
+                                    style={{ textAlign: 'center' }}
+                                >
+                                    {project.title}
+                                </Text>
+                            </Flex>
+                        )
+                    })}
+                </Flex>
+                <Carousel
+                    style={{ borderRadius: '16px' }}
+                    withIndicators
+                    includeGapInSize={false}
+                    loop={true}
+                >
                     {mobileSlides}
                 </Carousel>
+                <Flex direction={'column'} w={'100%'} gap={'30px'} mt={'24px'}>
+                    {projectsData.map((project, index) => {
+                        return (
+                            <Flex
+                                key={index}
+                                direction={'column'}
+                                justify={'center'}
+                                align={'center'}
+                                w={'100%'}
+                                h={'fit-content'}
+                                p={'20px'}
+                                style={{
+                                    borderRadius: '16px',
+                                    border: '1px solid rgb(188, 210, 235)',
+                                    textAlign: 'center',
+                                }}
+                            >
+                                <Flex
+                                    w={'60px'}
+                                    h={'60px'}
+                                    justify={'center'}
+                                    align={'center'}
+                                >
+                                    {project.icon}
+                                </Flex>
+                                <Flex direction={'column'}>
+                                    <Text
+                                        c={'#012f6d'}
+                                        fz={30}
+                                        fw={700}
+                                        lh={'130%'}
+                                    >
+                                        {project.title}
+                                    </Text>
+                                    <Text
+                                        c={'#012f6d'}
+                                        fz={18}
+                                        fw={400}
+                                        lh={'130%'}
+                                    >
+                                        {project.bullet1}
+                                    </Text>
+                                </Flex>
+                            </Flex>
+                        )
+                    })}
+                </Flex>
             </Flex>
         )
     }
@@ -317,7 +421,7 @@ export const ProjectsGallery = () => {
                     {projectsNavBarData.map((project, index) => {
                         return (
                             <Flex
-                            key={index}
+                                key={index}
                                 onClick={() =>
                                     galleryTypeClickHandler(project.type)
                                 }
@@ -351,38 +455,50 @@ export const ProjectsGallery = () => {
                 align={'center'}
             >
                 <Flex direction={'column'} w={'30%'} gap={'24px'}>
-                   {projectsData.slice(0,2).map((project, index) => {
+                    {projectsData.slice(0, 2).map((project, index) => {
                         return (
-                             <Flex
-                        key={index}
-                        direction={'column'}
-                        justify={'center'}
-                        align={'center'}
-                        w={'370px'}
-                        h={'328px'}
-                        style={{
-                            borderRadius: '16px',
-                            border: '1px solid rgb(188, 210, 235)',
-                        }}
-                    >
-                        <Flex
-                            w={'80px'}
-                            h={'80px'}
-                            style={{ border: '1px dashed rgb(188, 210, 235)' }}
-                            justify={'center'}
-                            align={'center'}
-                        >
-                            {project.icon}
-                        </Flex>
-                        <Text c={'#012f6d'} fz={'50px'} fw={700} lh={'130%'}>
-                            {project.title}
-                        </Text>
-                        <Text c={'#012f6d'} fz={'32px'} fw={400} lh={'130%'}>
-                            {project.bullet1}
-                        </Text>
-                    </Flex>
+                            <Flex
+                                key={index}
+                                direction={'column'}
+                                justify={'center'}
+                                align={'center'}
+                                w={'370px'}
+                                h={'328px'}
+                                style={{
+                                    borderRadius: '16px',
+                                    border: '1px solid rgb(188, 210, 235)',
+                                }}
+                            >
+                                <Flex
+                                    w={'80px'}
+                                    h={'80px'}
+                                    style={{
+                                        border: '1px dashed rgb(188, 210, 235)',
+                                    }}
+                                    justify={'center'}
+                                    align={'center'}
+                                >
+                                    {project.icon}
+                                </Flex>
+                                <Text
+                                    c={'#012f6d'}
+                                    fz={'50px'}
+                                    fw={700}
+                                    lh={'130%'}
+                                >
+                                    {project.title}
+                                </Text>
+                                <Text
+                                    c={'#012f6d'}
+                                    fz={'32px'}
+                                    fw={400}
+                                    lh={'130%'}
+                                >
+                                    {project.bullet1}
+                                </Text>
+                            </Flex>
                         )
-                   })}
+                    })}
                 </Flex>
                 <Flex
                     w={'70%'}
@@ -401,41 +517,53 @@ export const ProjectsGallery = () => {
                 </Flex>
             </Flex>
             <Flex w={'100%'} gap={'30px'}>
-               {projectsData.slice(2,projectsData.length).map((project, index) => {
-                    return (
-                        <Flex
-                        key={index}
-                    justify={'space-between'}
-                    align={'center'}
-                    w={'50%'}
-                   p={'55px 62px 55px'}
-                    style={{
-                        borderRadius: '16px',
-                        border: '1px solid rgb(188, 210, 235)',
-                    }}
-                >
-                    <Flex
-                        w={'80px'}
-                        h={'80px'}
-                        style={{ border: '1px dashed rgb(188, 210, 235)' }}
-                        justify={'center'}
-                        align={'center'}
-                       
-                    >
-                        {project.icon}
-                    </Flex>
-                    <Flex direction={'column'}>
-                        <Text c={'#012f6d'} fz={'50px'} fw={700} lh={'130%'}>
-                            {project.title}
-                        </Text>
-                        <Text c={'#012f6d'} fz={'32px'} fw={400} lh={'130%'}>
-                            {project.bullet1}
-                        </Text>
-                    </Flex>
-                </Flex> 
-                    )
-                })}
-            
+                {projectsData
+                    .slice(2, projectsData.length)
+                    .map((project, index) => {
+                        return (
+                            <Flex
+                                key={index}
+                                justify={'space-between'}
+                                align={'center'}
+                                w={'50%'}
+                                p={'55px 62px 55px'}
+                                style={{
+                                    borderRadius: '16px',
+                                    border: '1px solid rgb(188, 210, 235)',
+                                }}
+                            >
+                                <Flex
+                                    w={'80px'}
+                                    h={'80px'}
+                                    style={{
+                                        border: '1px dashed rgb(188, 210, 235)',
+                                    }}
+                                    justify={'center'}
+                                    align={'center'}
+                                >
+                                    {project.icon}
+                                </Flex>
+                                <Flex direction={'column'}>
+                                    <Text
+                                        c={'#012f6d'}
+                                        fz={'50px'}
+                                        fw={700}
+                                        lh={'130%'}
+                                    >
+                                        {project.title}
+                                    </Text>
+                                    <Text
+                                        c={'#012f6d'}
+                                        fz={'32px'}
+                                        fw={400}
+                                        lh={'130%'}
+                                    >
+                                        {project.bullet1}
+                                    </Text>
+                                </Flex>
+                            </Flex>
+                        )
+                    })}
             </Flex>
         </Flex>
     )
