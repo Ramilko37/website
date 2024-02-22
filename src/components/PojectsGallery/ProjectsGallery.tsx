@@ -239,11 +239,16 @@ export const ProjectsGallery = () => {
     const slides = useMemo(() => {
         const currentImages = imagesData[galleryType] || []
         return currentImages?.map((imageSrc, index) => (
-            <Carousel.Slide w={'95%'} h={680} key={index}>
+            <Carousel.Slide
+                w={'95%'}
+                h={680}
+                key={index}
+                style={{ borderRadius: '16px' }}
+            >
                 <Flex
                     bg={imageSrc}
                     style={{
-                        borderRadius: '20px',
+                        borderRadius: '16px',
                         backgroundImage: `url(${imageSrc})`,
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat',
@@ -381,7 +386,7 @@ export const ProjectsGallery = () => {
                                     <Text
                                         c={'#012f6d'}
                                         fz={18}
-                                        fw={400}
+                                        fw={300}
                                         lh={'130%'}
                                     >
                                         {project.bullet1}
@@ -402,7 +407,7 @@ export const ProjectsGallery = () => {
             h={'100dvh'}
             justify={'center'}
             direction={'column'}
-            m={'0 auto'}
+            m={'220px auto 0'}
         >
             <Flex
                 ref={imagesRef}
@@ -472,9 +477,6 @@ export const ProjectsGallery = () => {
                                 <Flex
                                     w={'80px'}
                                     h={'80px'}
-                                    style={{
-                                        border: '1px dashed rgb(188, 210, 235)',
-                                    }}
                                     justify={'center'}
                                     align={'center'}
                                 >
@@ -491,7 +493,7 @@ export const ProjectsGallery = () => {
                                 <Text
                                     c={'#012f6d'}
                                     fz={'32px'}
-                                    fw={400}
+                                    fw={300}
                                     lh={'130%'}
                                 >
                                     {project.bullet1}
@@ -503,7 +505,11 @@ export const ProjectsGallery = () => {
                 <Flex
                     w={'70%'}
                     h={'680px'}
-                    style={{ maxWidth: '770px', overflow: 'hidden' }}
+                    style={{
+                        maxWidth: '770px',
+                        overflow: 'hidden',
+                        borderRadius: '16px',
+                    }}
                 >
                     <Carousel
                         w={'100%'}
@@ -511,6 +517,7 @@ export const ProjectsGallery = () => {
                         includeGapInSize={false}
                         loop={true}
                         slideGap={'md'}
+                        style={{ borderRadius: '16px' }}
                     >
                         {slides}
                     </Carousel>
@@ -523,10 +530,11 @@ export const ProjectsGallery = () => {
                         return (
                             <Flex
                                 key={index}
-                                justify={'space-between'}
+                                justify={'center'}
                                 align={'center'}
-                                w={'50%'}
-                                p={'55px 62px 55px'}
+                                w={'52%'}
+                                p={'55px 40px 55px'}
+                                gap={'32px'}
                                 style={{
                                     borderRadius: '16px',
                                     border: '1px solid rgb(188, 210, 235)',
@@ -535,11 +543,9 @@ export const ProjectsGallery = () => {
                                 <Flex
                                     w={'80px'}
                                     h={'80px'}
-                                    style={{
-                                        border: '1px dashed rgb(188, 210, 235)',
-                                    }}
                                     justify={'center'}
                                     align={'center'}
+                                    gap={'32px'}
                                 >
                                     {project.icon}
                                 </Flex>
@@ -555,7 +561,7 @@ export const ProjectsGallery = () => {
                                     <Text
                                         c={'#012f6d'}
                                         fz={'32px'}
-                                        fw={400}
+                                        fw={300}
                                         lh={'130%'}
                                     >
                                         {project.bullet1}

@@ -135,7 +135,7 @@ export function NewsCard({
                         style={{ textAlign: 'left' }}
                         c={'#012F6D'}
                         fz={'24px'}
-                        fw={400}
+                        fw={300}
                     >
                         {nextTitle}
                     </Text>

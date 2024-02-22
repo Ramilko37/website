@@ -1,6 +1,6 @@
-import { Flex, Image, Text } from '@mantine/core'
+import { Box, Button, Flex, Image, Popover, Text } from '@mantine/core'
 import Map from '../../images/russian_map.svg'
-import { useInViewport } from '@mantine/hooks'
+import { useDisclosure, useInViewport } from '@mantine/hooks'
 
 import styles from './styles.module.css'
 import CountUp from 'react-countup'
@@ -39,6 +39,7 @@ const initialNumbers = [
 export const RussianMap = () => {
     // const [isFlipped, setIsflipped] = useState<string | undefined>(undefined)
     const { ref, inViewport } = useInViewport()
+    const [opened, { close, open }] = useDisclosure(false)
 
     // const cardFlipHandler = (id: string) => () => {
     //     console.log('set os flipped')
@@ -48,21 +49,128 @@ export const RussianMap = () => {
     return (
         <Flex
             direction={'column'}
-            w={'100%'}
-            p={{ base: '90px 0 90px', lg: '220px 0 220px' }}
+            w={{ base: '100%', lg: '1171px' }}
+            m={'0 auto'}
+            p={{ base: '90px 0 90px', lg: '220px 0 0' }}
             justify={'center'}
             align={'center'}
             gap={'36px'}
         >
             <Text className={styles.title}>География проектов</Text>
-            <Flex w={'61wv'}>
+            <Flex w={'61wv'} pos={'relative'}>
                 <Image src={Map} />
+                <Popover
+                    width={200}
+                    position="bottom"
+                    withArrow
+                    shadow="md"
+                    opened={opened}
+                    // styles={{
+                    //     dropdown: {
+                    //         position: 'absolute',
+                    //         top: '35%',
+                    //         left: '25%',
+                    //     },
+                    // }}
+                >
+                    <Popover.Target>
+                        <Box
+                            pos={'absolute'}
+                            top={'35%'}
+                            left={'25%'}
+                            w={'10px'}
+                            h={'10px'}
+                            style={{ borderRadius: '50%' }}
+                            bg={'#233C91'}
+                            onMouseEnter={open}
+                            onMouseLeave={close}
+                        />
+                    </Popover.Target>
+                    <Popover.Dropdown
+                        style={{
+                            position: 'absolute',
+                            top: '35%',
+                            left: '25%',
+                            pointerEvents: 'none',
+                        }}
+                    >
+                        <Text size="sm">
+                            This popover is shown when user hovers the target
+                            element
+                        </Text>
+                    </Popover.Dropdown>
+                </Popover>
+
+                <Popover>
+                    <Popover.Target>
+                        <Box
+                            pos={'absolute'}
+                            top={'55%'}
+                            left={'26%'}
+                            w={'10px'}
+                            h={'10px'}
+                            style={{ borderRadius: '50%' }}
+                            bg={'#233C91'}
+                            onMouseEnter={open}
+                            onMouseLeave={close}
+                        />
+                    </Popover.Target>
+                    <Popover.Dropdown style={{ pointerEvents: 'none' }}>
+                        <Text size="sm">
+                            This popover is shown when user hovers the target
+                            element
+                        </Text>
+                    </Popover.Dropdown>
+                </Popover>
+
+                <Popover>
+                    <Popover.Target>
+                        <Box
+                            pos={'absolute'}
+                            top={'65%'}
+                            left={'33%'}
+                            w={'10px'}
+                            h={'10px'}
+                            style={{ borderRadius: '50%' }}
+                            bg={'#233C91'}
+                            onMouseEnter={open}
+                            onMouseLeave={close}
+                        />
+                    </Popover.Target>
+                    <Popover.Dropdown style={{ pointerEvents: 'none' }}>
+                        <Text size="sm">
+                            This popover is shown when user hovers the target
+                            element
+                        </Text>
+                    </Popover.Dropdown>
+                </Popover>
+
+                <Popover>
+                    <Popover.Target>
+                        <Box
+                            pos={'absolute'}
+                            top={'63%'}
+                            left={'23%'}
+                            w={'10px'}
+                            h={'10px'}
+                            style={{ borderRadius: '50%' }}
+                            bg={'#233C91'}
+                            onMouseEnter={open}
+                            onMouseLeave={close}
+                        />
+                    </Popover.Target>
+                    <Popover.Dropdown style={{ pointerEvents: 'none' }}>
+                        <Text size="sm">
+                            This popover is shown when user hovers the target
+                            element
+                        </Text>
+                    </Popover.Dropdown>
+                </Popover>
             </Flex>
             <Flex
                 w={'100%'}
                 gap={'30px'}
-                wrap={'wrap'}
-                px={'40px'}
+                wrap={{ base: 'wrap', lg: 'nowrap' }}
                 justify={'center'}
             >
                 {initialNumbers.map((item, index) => {
@@ -113,7 +221,7 @@ export const RussianMap = () => {
                                 mt={{ base: 10, lg: '22px' }}
                                 c={'#fff'}
                                 fz={{ base: '16px', lg: '20px' }}
-                                fw={400}
+                                fw={300}
                                 lh={'130%'}
                                 style={{
                                     alignItems: 'flex-end',
@@ -180,7 +288,7 @@ export const RussianMap = () => {
                         //             mt={'22px'}
                         //             c={'#fff'}
                         //             fz={'20px'}
-                        //             fw={400}
+                        //             fw={300}
                         //             lh={'130%'}
                         //             style={{
                         //                 alignItems: 'flex-end',

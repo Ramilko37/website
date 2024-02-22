@@ -85,7 +85,7 @@ export default function HeroBlock() {
                         <Text
                             c={'#fff'}
                             fz={20}
-                            fw={400}
+                            fw={300}
                             style={{ textAlign: 'center' }}
                         >
                             Комплексный подход к реализации крупных
@@ -105,7 +105,7 @@ export default function HeroBlock() {
                             c={'#fff'}
                             style={{ zIndex: 1000, textAlign: 'center' }}
                             fz={16}
-                            fw={400}
+                            fw={300}
                             lh={'130%'}
                         >
                             “Цель создания современных кампусов как раз в этом и
@@ -114,7 +114,7 @@ export default function HeroBlock() {
                         <Text
                             c={'#fff'}
                             fz={16}
-                            fw={400}
+                            fw={300}
                             lh={'130%'}
                             opacity={'0.5'}
                             mt={'20px'}
@@ -164,7 +164,8 @@ export default function HeroBlock() {
                 <Flex
                     gap={'24px'}
                     direction={'column'}
-                    w={'100%'}
+                    w={'61vw'}
+                    m={'228px auto'}
                     align={'flex-end'}
                 >
                     <animated.div style={titleAnimation}>
@@ -193,28 +194,30 @@ export default function HeroBlock() {
                 bottom={'135px'}
             >
                 <animated.div style={citateAnimation}>
-                    <Text
-                        w={'600px'}
-                        mt={'40px'}
-                        c={'#fff'}
-                        style={{ zIndex: 1000 }}
-                        fz={'23px'}
-                        fw={400}
-                        lh={'130%'}
-                    >
-                        “Цель создания современных кампусов как раз в этом и
-                        заключается - создать эталонные пространства”
-                    </Text>
-                    <Text
-                        c={'#fff'}
-                        fz={'20px'}
-                        fw={400}
-                        lh={'130%'}
-                        opacity={'0.5'}
-                    >
-                        Президент Российской Федерации Владимир Владимирович
-                        Путин
-                    </Text>
+                    <Flex w={'100%'} direction={'column'} gap={'16px'}>
+                        <Text
+                            w={'600px'}
+                            mt={'40px'}
+                            c={'#fff'}
+                            style={{ zIndex: 1000 }}
+                            fz={'23px'}
+                            fw={300}
+                            lh={'130%'}
+                        >
+                            “Цель создания современных кампусов как раз в этом и
+                            заключается - создать эталонные пространства”
+                        </Text>
+                        <Text
+                            c={'#fff'}
+                            fz={'20px'}
+                            fw={300}
+                            lh={'130%'}
+                            opacity={'0.5'}
+                        >
+                            Президент Российской Федерации Владимир Владимирович
+                            Путин
+                        </Text>
+                    </Flex>
                 </animated.div>
             </Flex>
         </Flex>

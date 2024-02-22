@@ -12,7 +12,7 @@
 .title {
     font-size: 20px;
     line-height: 130%;
-    font-weight: 400;
+    font-weight: 300;
     color: '#012F6D';
 
     @media (max-width: 640px) {
@@ -24,7 +24,7 @@
 .description {
     font-size: 28px;
     line-height: 130%;
-    font-weight: 400;
+    font-weight: 300;
     color: '#002F6D';
 
     @media (max-width: 640px) {

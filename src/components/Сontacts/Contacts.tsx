@@ -99,7 +99,7 @@ export const Contacts = () => {
                     </YMaps>
                     <Flex
                         bg={'#fff'}
-                        w={'35%'}
+                        w={'40%'}
                         h={'100%'}
                         p={'44px 32px'}
                         pos={'relative'}
