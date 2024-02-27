@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Popover, Text } from '@mantine/core'
+import { Box, Flex, Image, Popover, Text } from '@mantine/core'
 import Map from '../../images/russian_map.svg'
 import { useDisclosure, useInViewport } from '@mantine/hooks'
 
