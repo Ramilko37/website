@@ -3,6 +3,7 @@ import { useDisclosure } from '@mantine/hooks'
 import { Link } from 'react-scroll'
 import classes from './Header.module.css'
 import { LogoIcon } from '../../images/icons/logo-icon'
+import { Route, Link as RouterLink } from 'react-router-dom'
 
 const links = [
     {
@@ -11,8 +12,8 @@ const links = [
         label: 'Проекты',
     },
     { id: 'news', link: '', label: 'Новости' },
-    { id: '', link: '/team', label: 'Команда' },
-    { id: 'contacts', link: '/team', label: 'Контакты' },
+    { id: 'team', link: '/team', label: 'Команда' },
+    { id: 'contacts', link: '', label: 'Контакты' },
 ]
 
 export const Header = () => {
@@ -60,18 +61,26 @@ export const Header = () => {
         //     )
         // }
 
-        return (
-            <Link style={{ height: '100%' }} to={link.id as string} smooth>
-                <a
-                    key={link.label}
-                    href={link.link}
-                    className={classes.link}
-                    onClick={(event) => event.preventDefault()}
-                >
-                    {link.label}
-                </a>
-            </Link>
-        )
+        if (link.link === '/team') {
+            return (
+                <RouterLink className={classes.link} to={link.link}>
+                    Команда
+                </RouterLink>
+            )
+        } else {
+            return (
+                <Link style={{ height: '100%' }} to={link.id as string} smooth>
+                    <a
+                        key={link.label}
+                        href={link.link}
+                        className={classes.link}
+                        onClick={(event) => event.preventDefault()}
+                    >
+                        {link.label}
+                    </a>
+                </Link>
+            )
+        }
     })
 
     return (
