@@ -1,7 +1,6 @@
 import { Title, Text, Flex } from '@mantine/core'
 import classes from './Hero.module.css'
 import video from '../../images/video_campus_v7_Perm_short_with_Ufa.mp4'
-import videoMobile from '../../images/bg_video_mobile.mp4'
 import { animated, useSpring } from 'react-spring'
 import { useMediaQuery } from '@mantine/hooks'
 
@@ -44,7 +43,7 @@ export default function HeroBlock() {
                 gap={'50px'}
             >
                 <video
-                    src={isMobile ? videoMobile : video}
+                    src={video}
                     autoPlay
                     muted
                     loop
@@ -143,7 +142,7 @@ export default function HeroBlock() {
                 zIndex={1000}
             /> */}
             <video
-                src={isMobile ? videoMobile : video}
+                src={video}
                 autoPlay
                 muted
                 loop
