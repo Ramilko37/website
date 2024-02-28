@@ -35,6 +35,10 @@ export const Header: FC = () => {
         setMenuOpen((prevState) => !prevState)
     }
 
+    const handleLinkClick = () => {
+        setMenuOpen((prevState) => !prevState)
+    }
+
     useEffect(() => {
         const scrollHandler = () => {
             setWhiteHeader(document.documentElement.scrollTop > 0)
@@ -61,6 +65,7 @@ export const Header: FC = () => {
                 <Link
                     style={{ height: isMobile ? 'fit-content' : '100%' }}
                     to={link.id as string}
+                    onClick={handleLinkClick}
                     smooth
                 >
                     <a
@@ -121,7 +126,7 @@ export const Header: FC = () => {
                         ) : (
                             <div className={classes.right}>
                                 <Burger
-                                    color={'#fff'}
+                                    color={'#233C91'}
                                     onClick={handleHamburgerClick}
                                 />
                             </div>
