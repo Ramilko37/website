@@ -1,6 +1,6 @@
 import { Title, Text, Flex } from '@mantine/core'
 import classes from './Hero.module.css'
-import video from '../../images/video_campus_v7_Perm_short_with_Ufa.mp4'
+import video from '../../images/bg_video.mp4'
 import { animated, useSpring } from 'react-spring'
 import { useMediaQuery } from '@mantine/hooks'
 
