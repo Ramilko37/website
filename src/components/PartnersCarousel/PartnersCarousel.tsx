@@ -12,17 +12,9 @@ export const PartnersCarousel = () => {
             style={{
                 height: 'fit-content',
 
-                padding: '100px 0 100px',
+                padding: '108px 0 108px',
             }}
         >
-            {/* <Title
-                style={{ textAlign: 'center' }}
-                w={'100%'}
-                m={'0 auto 50px'}
-                c={'#002F6D'}
-            >
-                Наши Партнеры
-            </Title> */}
             <Marquee
                 style={{ width: '100%' }}
                 pauseOnHover={true}
@@ -54,7 +46,7 @@ export const PartnersCarousel = () => {
                 >
                     <a href="https://sber.ru" target="blank">
                         <Image
-                            mt={'60px'}
+                            mt={'75px'}
                             src={
                                 'https://thumb.tildacdn.com/tild6334-3733-4234-b962-316366306634/-/resize/320x/-/format/webp/sber_logo_main_7d73a.png'
                             }
@@ -69,7 +61,7 @@ export const PartnersCarousel = () => {
                 >
                     <a href="https://etalongroup.ru/" target="blank">
                         <Image
-                            mt={'60px'}
+                            mt={'90px'}
                             src={
                                 'https://thumb.tildacdn.com/tild6364-3838-4531-a438-613631633131/-/resize/320x/-/format/webp/Etalon_Logo-_svg.png'
                             }
@@ -116,7 +108,7 @@ export const PartnersCarousel = () => {
                 >
                     <a href="https://sber.ru" target="blank">
                         <Image
-                            mt={'60px'}
+                            mt={'75px'}
                             src={
                                 'https://thumb.tildacdn.com/tild6334-3733-4234-b962-316366306634/-/resize/320x/-/format/webp/sber_logo_main_7d73a.png'
                             }
@@ -131,7 +123,7 @@ export const PartnersCarousel = () => {
                 >
                     <a href="https://etalongroup.ru/" target="blank">
                         <Image
-                            mt={'60px'}
+                            mt={'90px'}
                             src={
                                 'https://thumb.tildacdn.com/tild6364-3838-4531-a438-613631633131/-/resize/320x/-/format/webp/Etalon_Logo-_svg.png'
                             }

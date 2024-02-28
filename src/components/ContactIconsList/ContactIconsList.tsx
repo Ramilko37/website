@@ -1,6 +1,7 @@
 import { Text, Stack, Flex } from '@mantine/core'
 import { IconSun, IconPhone, IconMapPin, IconAt } from '@tabler/icons-react'
 import classes from './styles.module.css'
+import { useMediaQuery } from '@mantine/hooks'
 
 interface ContactIconProps
     extends Omit<React.ComponentPropsWithoutRef<'div'>, 'title'> {
@@ -41,11 +42,13 @@ const MOCKDATA = [
 ]
 
 export function ContactIconsList() {
+    const isMobile = useMediaQuery(`(max-width: 640px)`)
     const items = MOCKDATA.map((item, index) => (
         <ContactIcon key={index} {...item} />
     ))
+
     return (
-        <Stack bg={'#fff'} gap={'36px'}>
+        <Stack bg={'#fff'} gap={isMobile ? '16px' : '36px'}>
             {items}
         </Stack>
     )

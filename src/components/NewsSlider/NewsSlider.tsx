@@ -179,7 +179,6 @@ export const MOCKDATA = [
 export const NewsSlider = () => {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
 
-    console.log(styles.swiperBullet, 182)
     const pagination = {
         clickable: true,
         renderBullet: function (index: number, className: any) {
@@ -206,10 +205,9 @@ export const NewsSlider = () => {
             justify={'center'}
             align={'center'}
             pos={'relative'}
+            gap={{ base: '24px', lg: '48px' }}
         >
-            <Title className={styles.title} mb={'40px'}>
-                Пресса о нас
-            </Title>
+            <Title className={styles.title}>Пресса о нас</Title>
             <Swiper
                 pagination={pagination}
                 modules={[Navigation, Pagination]}
@@ -240,8 +238,13 @@ export const NewsSlider = () => {
             </Swiper>
 
             <Button
-                style={{ borderRadius: '30px', backgroundColor: '#233C91' }}
-                mt={'36px'}
+                style={{
+                    fontSize: '22px',
+                    borderRadius: '30px',
+                    backgroundColor: '#233C91',
+                    height: '56px',
+                    width: '220px',
+                }}
             >
                 Все новости
             </Button>

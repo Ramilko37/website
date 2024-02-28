@@ -1,9 +1,10 @@
-import { Group, Burger, Container } from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks'
-import { Link } from 'react-scroll'
+import { FC, useEffect, useRef, useState } from 'react'
 import classes from './Header.module.css'
+import { Box, Burger, CloseIcon } from '@mantine/core'
+import { useMediaQuery } from '@mantine/hooks'
+import { Link } from 'react-scroll'
 import { LogoIcon } from '../../images/icons/logo-icon'
-import { Route, Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink } from 'react-router-dom'
 
 const links = [
     {
@@ -16,51 +17,39 @@ const links = [
     { id: 'contacts', link: '', label: 'Контакты' },
 ]
 
-export const Header = () => {
-    const [opened, { toggle }] = useDisclosure(false)
+export const Header: FC = () => {
+    const headerRef = useRef<HTMLElement>(null)
+    const [whiteHeader, setWhiteHeader] = useState(false)
+    const [menuOpen, setMenuOpen] = useState(false)
+    const isMobile = useMediaQuery('(max-width: 1100px)')
+
+    const handleLogoClick = () => {
+        setMenuOpen(false)
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        })
+    }
+
+    const handleHamburgerClick = () => {
+        setMenuOpen((prevState) => !prevState)
+    }
+
+    useEffect(() => {
+        const scrollHandler = () => {
+            setWhiteHeader(document.documentElement.scrollTop > 0)
+        }
+
+        window.addEventListener('scroll', scrollHandler)
+
+        scrollHandler()
+
+        return () => {
+            window.removeEventListener('scroll', scrollHandler)
+        }
+    }, [])
 
     const items = links.map((link) => {
-        // const menuItems = link.links?.map((item) => (
-        //     <Menu.Item c={'#fff'} className={classes.menuItem} key={item.link}>
-        //         {item.label}
-        //     </Menu.Item>
-        // ))
-
-        // if (menuItems) {
-        //     return (
-        //         <Menu
-        //             key={link.label}
-        //             trigger="hover"
-        //             transitionProps={{ exitDuration: 0 }}
-        //             withinPortal
-        //         >
-        //             <Menu.Target>
-        //                 <a
-        //                     href={link.link}
-        //                     className={classes.link}
-        //                     onClick={(event) => event.preventDefault()}
-        //                 >
-        //                     <Center>
-        //                         <span className={classes.linkLabel}>
-        //                             {link.label}
-        //                         </span>
-        //                     </Center>
-        //                 </a>
-        //             </Menu.Target>
-        //             <Menu.Dropdown
-        //                 styles={{
-        //                     dropdown: {
-        //                         background: 'transparent',
-        //                         border: 'none',
-        //                     },
-        //                 }}
-        //             >
-        //                 {menuItems}
-        //             </Menu.Dropdown>
-        //         </Menu>
-        //     )
-        // }
-
         if (link.link === '/team') {
             return (
                 <RouterLink className={classes.link} to={link.link}>
@@ -69,7 +58,11 @@ export const Header = () => {
             )
         } else {
             return (
-                <Link style={{ height: '100%' }} to={link.id as string} smooth>
+                <Link
+                    style={{ height: isMobile ? 'fit-content' : '100%' }}
+                    to={link.id as string}
+                    smooth
+                >
                     <a
                         key={link.label}
                         href={link.link}
@@ -84,21 +77,57 @@ export const Header = () => {
     })
 
     return (
-        <header className={classes.header}>
-            <LogoIcon />
-            <Container size="lg" m={0} h={'100%'}>
-                <div className={classes.inner}>
-                    <Group h={'100%'} gap={20} visibleFrom="sm">
+        <header
+            className={`${classes.header} ${whiteHeader ? classes.white : ''} ${
+                menuOpen ? classes.open : ''
+            }`}
+            ref={headerRef}
+        >
+            <div style={{ width: '100%' }}>
+                <div className={classes.content}>
+                    {menuOpen ? (
+                        <Box
+                            w={'40px'}
+                            h={'40px'}
+                            style={{ zIndex: 1000 }}
+                            onClick={handleLogoClick}
+                        >
+                            <CloseIcon />
+                        </Box>
+                    ) : (
+                        <a
+                            className={classes.logo}
+                            onClick={handleLogoClick}
+                            style={{ zIndex: 10000 }}
+                        >
+                            <LogoIcon />
+                        </a>
+                    )}
+                    <nav
+                        style={{
+                            display: 'flex',
+                            flexDirection: isMobile ? 'column' : 'row',
+                            gap: '24px',
+                            alignItems: 'center',
+                        }}
+                    >
                         {items}
-                    </Group>
-                    <Burger
-                        opened={opened}
-                        onClick={toggle}
-                        size="sm"
-                        hiddenFrom="sm"
-                    />
+                    </nav>
+                    {isMobile &&
+                        (menuOpen ? (
+                            <Box style={{ zIndex: 1000 }}>
+                                <LogoIcon />
+                            </Box>
+                        ) : (
+                            <div className={classes.right}>
+                                <Burger
+                                    color={'#fff'}
+                                    onClick={handleHamburgerClick}
+                                />
+                            </div>
+                        ))}
                 </div>
-            </Container>
+            </div>
         </header>
     )
 }

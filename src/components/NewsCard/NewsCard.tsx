@@ -36,7 +36,7 @@ export function NewsCard({
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
                 }}
-                p={'50px 46px 50px'}
+                p={'32px 24px 32px'}
                 w={'100%'}
                 h={'436px'}
             >

@@ -298,7 +298,7 @@ export const ProjectsGallery = () => {
                     fz={'30px'}
                     fw={'700'}
                     lh={'130%'}
-                    mb={'40px'}
+                    mb={{ base: '16px', lg: '40px' }}
                     style={{ textAlign: 'center' }}
                 >
                     Наши проекты
@@ -330,7 +330,7 @@ export const ProjectsGallery = () => {
                             >
                                 <Text
                                     c={'#012f6d'}
-                                    fz={'32px'}
+                                    fz={{ base: '22px', lg: '32px' }}
                                     fw={'400'}
                                     lh={'130%'}
                                     style={{ textAlign: 'center' }}
@@ -349,7 +349,12 @@ export const ProjectsGallery = () => {
                 >
                     {mobileSlides}
                 </Carousel>
-                <Flex direction={'column'} w={'100%'} gap={'30px'} mt={'24px'}>
+                <Flex
+                    direction={'column'}
+                    w={'100%'}
+                    gap={{ base: '16px', lg: '30px' }}
+                    mt={'24px'}
+                >
                     {projectsData.map((project, index) => {
                         return (
                             <Flex
@@ -385,7 +390,7 @@ export const ProjectsGallery = () => {
                                     </Text>
                                     <Text
                                         c={'#012f6d'}
-                                        fz={18}
+                                        fz={{ base: '14px', lg: '18px' }}
                                         fw={300}
                                         lh={'130%'}
                                     >

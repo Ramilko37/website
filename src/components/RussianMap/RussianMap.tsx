@@ -54,7 +54,7 @@ export const RussianMap = () => {
             p={{ base: '90px 0 90px', lg: '220px 0 0' }}
             justify={'center'}
             align={'center'}
-            gap={'36px'}
+            gap={{ base: '16px', lg: '36px' }}
         >
             <Text className={styles.title}>География проектов</Text>
             <Flex w={'61wv'} pos={'relative'}>
@@ -169,7 +169,7 @@ export const RussianMap = () => {
             </Flex>
             <Flex
                 w={'100%'}
-                gap={'30px'}
+                gap={'20px'}
                 wrap={{ base: 'wrap', lg: 'nowrap' }}
                 justify={'center'}
             >
@@ -220,7 +220,7 @@ export const RussianMap = () => {
                             <Text
                                 mt={{ base: 10, lg: '22px' }}
                                 c={'#fff'}
-                                fz={{ base: '16px', lg: '20px' }}
+                                fz={{ base: '14px', lg: '20px' }}
                                 fw={300}
                                 lh={'130%'}
                                 style={{

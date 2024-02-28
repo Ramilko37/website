@@ -1,17 +1,5 @@
 export const LogoIcon = (props: any) => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        xmlSpace="preserve"
-        id="svg2"
-        x={0}
-        y={0}
-        style={{
-            width: '241px',
-            enableBackground: 'new 0 0 240 51',
-        }}
-        viewBox="0 0 1280 720"
-        {...props}
-    >
+    <svg viewBox="0 0 1280 720" {...props}>
         <style>
             {'.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#1e4191}'}
         </style>

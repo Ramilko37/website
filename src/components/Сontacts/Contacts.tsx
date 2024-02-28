@@ -16,10 +16,10 @@ export const Contacts = () => {
             direction={'column'}
             justify={'center'}
             align={'center'}
-            gap={'36px'}
+            gap={{ base: '16px', lg: '36px' }}
             p={{ base: '40px', lg: '120px 0 0' }}
         >
-            <Title c={'#012F6D'} fz={42} fw={700}>
+            <Title c={'#012F6D'} fz={{ base: '30px', lg: '42px' }} fw={700}>
                 Контакты
             </Title>
 

@@ -17,6 +17,10 @@
     line-height: 120%;
     /* 60px */
 
+    @media (max-width: 640px) {
+        font-size: 30px;
+    }
+
     @media (max-width: 350px) {
         text-align: left;
     }
