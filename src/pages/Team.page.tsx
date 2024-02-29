@@ -1,5 +1,6 @@
 import { Flex, Title } from '@mantine/core'
 import { TeamComponent } from '../components/TeamComponent/TeamComponent'
+import { Header } from '../components/Header/Header'
 
 export const TeamPage = () => {
     return (
@@ -11,7 +12,9 @@ export const TeamPage = () => {
             align={'center'}
             direction={'column'}
             p={{ base: '96px 20px 96px', md: '120px 40px 120px' }}
+            style={{ border: '1px solid red' }}
         >
+            <Header isTeam />
             <Title
                 style={{ textAlign: 'center' }}
                 mb={'40px'}

@@ -4,7 +4,11 @@ import { Box, Burger, CloseIcon } from '@mantine/core'
 import { useMediaQuery } from '@mantine/hooks'
 import { Link } from 'react-scroll'
 import { LogoIcon } from '../../images/icons/logo-icon'
-import { Link as RouterLink } from 'react-router-dom'
+import { Route, Link as RouterLink, useNavigate } from 'react-router-dom'
+
+interface IHeaderProps {
+    isTeam?: boolean
+}
 
 const links = [
     {
@@ -17,13 +21,18 @@ const links = [
     { id: 'contacts', link: '', label: 'Контакты' },
 ]
 
-export const Header: FC = () => {
+export const Header = ({ isTeam }: IHeaderProps) => {
     const headerRef = useRef<HTMLElement>(null)
     const [whiteHeader, setWhiteHeader] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
     const isMobile = useMediaQuery('(max-width: 1100px)')
+    const navigate = useNavigate()
 
     const handleLogoClick = () => {
+        console.log('click')
+        if (isTeam) {
+            navigate('/')
+        }
         setMenuOpen(false)
         window.scrollTo({
             top: 0,
@@ -105,19 +114,22 @@ export const Header: FC = () => {
                             onClick={handleLogoClick}
                             style={{ zIndex: 10000 }}
                         >
-                            <LogoIcon />
+                            <LogoIcon onClick={handleLogoClick} />
                         </a>
                     )}
-                    <nav
-                        style={{
-                            display: 'flex',
-                            flexDirection: isMobile ? 'column' : 'row',
-                            gap: '24px',
-                            alignItems: 'center',
-                        }}
-                    >
-                        {items}
-                    </nav>
+                    {!isTeam && (
+                        <nav
+                            style={{
+                                display: 'flex',
+                                flexDirection: isMobile ? 'column' : 'row',
+                                gap: '24px',
+                                alignItems: 'center',
+                            }}
+                        >
+                            {items}
+                        </nav>
+                    )}
+
                     {isMobile &&
                         (menuOpen ? (
                             <Box style={{ zIndex: 1000 }}>

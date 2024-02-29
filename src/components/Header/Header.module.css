@@ -42,12 +42,11 @@
 }
 .logo {
     display: block;
-    pointer-events: none;
     width: 205px;
+    cursor: pointer;
 }
 .white .logo {
     cursor: pointer;
-    pointer-events: auto;
 }
 .logo > svg {
     display: block;
@@ -202,14 +201,14 @@
     }
     .language.open > nav {
         opacity: 1;
-        pointer-events: auto;
+
         transform: translate3d(0, 0, 0);
     }
     .right > a:not(.hamburger) {
         bottom: 62px;
         left: 50%;
         opacity: 0;
-        pointer-events: none;
+
         position: fixed;
         transform: translate3d(-50%, 118px, 0);
         min-width: 312px;
