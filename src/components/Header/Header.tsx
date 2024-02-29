@@ -1,10 +1,10 @@
-import { FC, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import classes from './Header.module.css'
 import { Box, Burger, CloseIcon } from '@mantine/core'
 import { useMediaQuery } from '@mantine/hooks'
 import { Link } from 'react-scroll'
 import { LogoIcon } from '../../images/icons/logo-icon'
-import { Route, Link as RouterLink, useNavigate } from 'react-router-dom'
+import { Link as RouterLink, useNavigate } from 'react-router-dom'
 
 interface IHeaderProps {
     isTeam?: boolean
