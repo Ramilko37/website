@@ -90,7 +90,7 @@ export const Header: FC = () => {
         >
             <div style={{ width: '100%' }}>
                 <div className={classes.content}>
-                    {menuOpen ? (
+                    {menuOpen && isMobile ? (
                         <Box
                             w={'40px'}
                             h={'40px'}

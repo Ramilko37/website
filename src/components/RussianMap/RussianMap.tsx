@@ -1,6 +1,12 @@
 import { Box, Flex, Image, Popover, Text } from '@mantine/core'
 import Map from '../../images/russian_map.svg'
 import { useDisclosure, useInViewport } from '@mantine/hooks'
+import perm from '../../images/perm1.webp'
+import ufa from '../../images/ufa1.webp'
+
+import arkhangelsk from '../../images/arhangelsk.webp'
+
+import tumen from '../../images/tumen1.webp'
 
 import styles from './styles.module.css'
 import CountUp from 'react-countup'
@@ -36,15 +42,50 @@ const initialNumbers = [
     },
 ]
 
-export const RussianMap = () => {
-    // const [isFlipped, setIsflipped] = useState<string | undefined>(undefined)
-    const { ref, inViewport } = useInViewport()
-    const [opened, { close, open }] = useDisclosure(false)
+const popoverData = [
+    {
+        id: '1',
+        coordinates: { top: '35%', left: '25%' },
+        img: arkhangelsk,
+        text: 'Кампус Архангельск',
+    },
+    {
+        id: '2',
+        coordinates: { top: '55%', left: '26%' },
+        img: perm,
+        text: 'Кампус Пермь',
+    },
+    {
+        id: '3',
+        coordinates: { top: '65%', left: '33%' },
+        img: tumen,
+        text: 'Кампус Тюмень',
+    },
+    {
+        id: '4',
+        coordinates: { top: '63%', left: '23%' },
+        img: ufa,
+        text: 'Кампус Уфа',
+    },
+]
 
-    // const cardFlipHandler = (id: string) => () => {
-    //     console.log('set os flipped')
-    //     setIsflipped(id)
-    // }
+export const RussianMap = () => {
+    const { ref, inViewport } = useInViewport()
+    const popoverStates = popoverData.map(() => useDisclosure(false))
+
+    const handlePopoverOpen = (index: any) => {
+        popoverStates.forEach((popoverState, i) => {
+            if (i !== index) {
+                popoverState[1].close()
+            } else {
+                popoverState[1].open()
+            }
+        })
+    }
+
+    const handlePopoverClose = (index: any) => {
+        popoverStates[index][1].close()
+    }
 
     return (
         <Flex
@@ -59,113 +100,48 @@ export const RussianMap = () => {
             <Text className={styles.title}>География проектов</Text>
             <Flex w={'61wv'} pos={'relative'}>
                 <Image src={Map} />
-                <Popover
-                    width={200}
-                    position="bottom"
-                    withArrow
-                    shadow="md"
-                    opened={opened}
-                    // styles={{
-                    //     dropdown: {
-                    //         position: 'absolute',
-                    //         top: '35%',
-                    //         left: '25%',
-                    //     },
-                    // }}
-                >
-                    <Popover.Target>
-                        <Box
-                            pos={'absolute'}
-                            top={'35%'}
-                            left={'25%'}
-                            w={'10px'}
-                            h={'10px'}
-                            style={{ borderRadius: '50%' }}
-                            bg={'#233C91'}
-                            onMouseEnter={open}
-                            onMouseLeave={close}
-                        />
-                    </Popover.Target>
-                    <Popover.Dropdown
-                        style={{
-                            position: 'absolute',
-                            top: '35%',
-                            left: '25%',
-                            pointerEvents: 'none',
-                        }}
+
+                {popoverData.map((item, index) => (
+                    <Popover
+                        key={item.id}
+                        width={200}
+                        position="bottom"
+                        withArrow
+                        shadow="md"
+                        opened={popoverStates[index][0]}
+                        onClose={() => handlePopoverClose(index)}
                     >
-                        <Text size="sm">
-                            This popover is shown when user hovers the target
-                            element
-                        </Text>
-                    </Popover.Dropdown>
-                </Popover>
-
-                <Popover>
-                    <Popover.Target>
-                        <Box
-                            pos={'absolute'}
-                            top={'55%'}
-                            left={'26%'}
-                            w={'10px'}
-                            h={'10px'}
-                            style={{ borderRadius: '50%' }}
-                            bg={'#233C91'}
-                            onMouseEnter={open}
-                            onMouseLeave={close}
-                        />
-                    </Popover.Target>
-                    <Popover.Dropdown style={{ pointerEvents: 'none' }}>
-                        <Text size="sm">
-                            This popover is shown when user hovers the target
-                            element
-                        </Text>
-                    </Popover.Dropdown>
-                </Popover>
-
-                <Popover>
-                    <Popover.Target>
-                        <Box
-                            pos={'absolute'}
-                            top={'65%'}
-                            left={'33%'}
-                            w={'10px'}
-                            h={'10px'}
-                            style={{ borderRadius: '50%' }}
-                            bg={'#233C91'}
-                            onMouseEnter={open}
-                            onMouseLeave={close}
-                        />
-                    </Popover.Target>
-                    <Popover.Dropdown style={{ pointerEvents: 'none' }}>
-                        <Text size="sm">
-                            This popover is shown when user hovers the target
-                            element
-                        </Text>
-                    </Popover.Dropdown>
-                </Popover>
-
-                <Popover>
-                    <Popover.Target>
-                        <Box
-                            pos={'absolute'}
-                            top={'63%'}
-                            left={'23%'}
-                            w={'10px'}
-                            h={'10px'}
-                            style={{ borderRadius: '50%' }}
-                            bg={'#233C91'}
-                            onMouseEnter={open}
-                            onMouseLeave={close}
-                        />
-                    </Popover.Target>
-                    <Popover.Dropdown style={{ pointerEvents: 'none' }}>
-                        <Text size="sm">
-                            This popover is shown when user hovers the target
-                            element
-                        </Text>
-                    </Popover.Dropdown>
-                </Popover>
+                        <Popover.Target>
+                            <Box
+                                id={item.id}
+                                pos={'absolute'}
+                                top={item.coordinates.top}
+                                left={item.coordinates.left}
+                                w={'10px'}
+                                h={'10px'}
+                                style={{ borderRadius: '50%' }}
+                                bg={'#233C91'}
+                                onMouseEnter={() => handlePopoverOpen(index)}
+                                onMouseLeave={() => handlePopoverClose(index)}
+                            ></Box>
+                        </Popover.Target>
+                        <Popover.Dropdown
+                            style={{
+                                color: '#fff',
+                                borderRadius: '16px',
+                                padding: '17px 25px',
+                                background: '#233C91',
+                                pointerEvents: 'none',
+                                backdropFilter: 'blur(3px)',
+                            }}
+                        >
+                            <Flex direction={'column'}>
+                                <Image src={item.img} />
+                                <Text size="sm">{item.text}</Text>
+                            </Flex>
+                        </Popover.Dropdown>
+                    </Popover>
+                ))}
             </Flex>
             <Flex
                 w={'100%'}
@@ -193,7 +169,7 @@ export const RussianMap = () => {
                                 {inViewport ? (
                                     <Text
                                         c={'#fff'}
-                                        fz={{ base: '30px', lg: '50px' }}
+                                        fz={{ base: '30px', lg: '56px' }}
                                         fw={700}
                                         lh={'100%'}
                                     >
@@ -211,7 +187,7 @@ export const RussianMap = () => {
                             </Text>
                             <Text
                                 c={'#fff'}
-                                fz={{ base: '30px', lg: '50px' }}
+                                fz={{ base: '30px', lg: '28px' }}
                                 fw={700}
                                 lh={'100%'}
                             >

@@ -200,7 +200,7 @@ export const NewsSlider = () => {
             h={'fit-content'}
             direction={'column'}
             w={isMobile ? '100%' : '80vw'}
-            m={isMobile ? 0 : '220px auto 0'}
+            m={isMobile ? 0 : '0 auto 0'}
             p={{ base: '40px', lg: '220px 0 0' }}
             justify={'center'}
             align={'center'}
