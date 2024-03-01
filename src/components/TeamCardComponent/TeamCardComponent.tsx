@@ -18,21 +18,24 @@ export const TeamCardComponent = ({
             h={'fit-content'}
             m={0}
             direction={'column'}
+            justify={'center'}
             gap={{ base: '8px', lg: '16px' }}
             style={{
                 borderRadius: '12px',
                 backdropFilter: 'grayscale(90%)',
                 cursor: 'pointer',
+                alignItems: 'center',
             }}
             onClick={handleCardClick(id)}
         >
             <Image
-                w={{ base: '40vw', md: '20vw', lg: '15vw' }}
-                mah={{ base: '160px', md: '120px', lg: '270px' }}
+                w={{ base: '40vw', md: '30vw', lg: '15vw' }}
+                mah={{ base: '160px', lg: '270px' }}
                 style={{
                     borderRadius: '12px',
                     backdropFilter: 'grayscale(90%)',
                 }}
+                fit={'contain'}
                 src={image}
             />
             <Text

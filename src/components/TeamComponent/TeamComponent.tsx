@@ -117,7 +117,7 @@ export const TeamComponent = () => {
             <SimpleGrid
                 spacing={{ base: '20px', lg: '30px' }}
                 verticalSpacing={{ base: '24px', md: '36px' }}
-                cols={{ base: 2, lg: 4 }}
+                cols={{ base: 2, md: 4 }}
             >
                 {data.map((teamMember: TeamMember, key) => {
                     return (

@@ -5,10 +5,10 @@ export const TeamMemberComponent = ({ teamMember }: ITeamMemberProps) => {
     console.log(teamMember, 5)
 
     return (
-        <Flex direction={{ base: 'column', lg: 'row' }} w={'100%'} gap={'30px'}>
+        <Flex direction={{ base: 'column', md: 'row' }} w={'100%'} gap={'30px'}>
             <Image
                 style={{ borderRadius: '12px' }}
-                w={{ base: '100%', lg: '470px' }}
+                w={{ base: '100%', md: '470px' }}
                 h={{ base: '100%', lg: '485px' }}
                 src={teamMember.image}
             />
