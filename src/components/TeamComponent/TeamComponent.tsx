@@ -105,7 +105,7 @@ export const TeamComponent = () => {
             <Title
                 style={{ textAlign: 'left' }}
                 c={'#002F6D'}
-                fz={'40px'}
+                fz={{ base: '30px', lg: '40px' }}
                 fw={'100'}
                 w={'100%'}
             >
