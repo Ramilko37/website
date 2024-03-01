@@ -122,7 +122,7 @@ export const TeamComponent = () => {
                 {data.map((teamMember: TeamMember, key) => {
                     return (
                         <TeamCardComponent
-                            key={teamMember.id}
+                            key={key}
                             teamMember={teamMember}
                             handleCardClick={handleCardClick}
                         />
