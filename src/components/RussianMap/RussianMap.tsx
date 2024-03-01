@@ -100,7 +100,6 @@ export const RussianMap = () => {
             <Text className={styles.title}>География проектов</Text>
             <Flex w={'61wv'} pos={'relative'}>
                 <Image src={Map} />
-
                 {popoverData.map((item, index) => (
                     <Popover
                         key={item.id}
@@ -126,18 +125,37 @@ export const RussianMap = () => {
                             ></Box>
                         </Popover.Target>
                         <Popover.Dropdown
+                            w={'200px'}
                             style={{
-                                color: '#fff',
-                                borderRadius: '16px',
-                                padding: '17px 25px',
-                                background: '#233C91',
+                                borderRadius: '12px',
+                                padding: 0,
+                                background: '#fff',
                                 pointerEvents: 'none',
                                 backdropFilter: 'blur(3px)',
                             }}
                         >
-                            <Flex direction={'column'}>
-                                <Image src={item.img} />
-                                <Text size="sm">{item.text}</Text>
+                            <Flex
+                                style={{ borderRadius: '12px' }}
+                                direction={'column'}
+                            >
+                                <Image
+                                    style={{
+                                        borderTopRightRadius: '12px',
+                                        borderTopLeftRadius: '12px',
+                                    }}
+                                    src={item.img}
+                                />
+                                <Flex w={'100%'} p={'8px'} justify={'center'}>
+                                    <Text
+                                        style={{ textAlign: 'center' }}
+                                        fz={'12px'}
+                                        fw={300}
+                                        c={'#233C91'}
+                                        size="sm"
+                                    >
+                                        {item.text}
+                                    </Text>
+                                </Flex>
                             </Flex>
                         </Popover.Dropdown>
                     </Popover>

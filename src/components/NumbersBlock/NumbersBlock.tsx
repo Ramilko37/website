@@ -71,7 +71,6 @@ const NumbersBlock: FC = () => {
             p={{ base: '40px 24px 0', lg: '90px 0 90px' }}
             h={isMobile ? '100dvh' : 'auto'}
             gap={{ base: '24px', lg: '48px' }}
-            style={{ border: '1px solid red' }}
             columnGap={{ base: '24px', lg: '48px' }}
         >
             <Title className={styles.title} m={'0 auto'}>
