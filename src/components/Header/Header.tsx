@@ -29,8 +29,7 @@ export const Header = ({ isTeam }: IHeaderProps) => {
     const navigate = useNavigate()
 
     const handleLogoClick = () => {
-        console.log('click')
-        if (isTeam) {
+        if (window.location.href !== '/') {
             navigate('/')
         }
         setMenuOpen(false)

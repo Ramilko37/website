@@ -108,7 +108,7 @@ export function NewsCard({
                     <Text c={'#fff'} opacity={0.7}>
                         01.01.2023
                     </Text>
-                    <Text c={'#fff'} fz={'32px'}>
+                    <Text c={'#fff'} fz={'32px'} fw={300}>
                         {title}
                     </Text>
                 </Flex>
