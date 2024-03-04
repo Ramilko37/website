@@ -8,6 +8,8 @@ import { Link as RouterLink, useNavigate } from 'react-router-dom'
 
 interface IHeaderProps {
     isTeam?: boolean
+    isNews?: boolean
+    handleNewsBtnClick: () => void
 }
 
 const links = [
@@ -21,14 +23,23 @@ const links = [
     { id: 'contacts', link: '', label: 'Контакты' },
 ]
 
-export const Header = ({ isTeam }: IHeaderProps) => {
+export const Header = ({
+    isTeam,
+    isNews,
+    handleNewsBtnClick,
+}: IHeaderProps) => {
     const headerRef = useRef<HTMLElement>(null)
     const [whiteHeader, setWhiteHeader] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
     const isMobile = useMediaQuery('(max-width: 1100px)')
     const navigate = useNavigate()
 
+    console.log(isNews)
+
     const handleLogoClick = () => {
+        if (isNews) {
+            handleNewsBtnClick()
+        }
         if (window.location.href !== '/') {
             navigate('/')
         }
@@ -68,15 +79,11 @@ export const Header = ({ isTeam }: IHeaderProps) => {
                     Команда
                 </RouterLink>
             )
-        } else if (link.link === '/news') {
+        } else if (link.link === '/news' && !isNews) {
             return (
-                <RouterLink
-                    className={classes.link}
-                    to={link.link}
-                    onClick={() => window.scrollTo(0, 0)}
-                >
+                <a className={classes.link} onClick={handleNewsBtnClick}>
                     Новости
-                </RouterLink>
+                </a>
             )
         }
         {

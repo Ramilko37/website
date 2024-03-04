@@ -5,7 +5,6 @@ import { NewsComponent } from '../components/NewsComponent/NewsComponent'
 export const NewsPage = () => {
     return (
         <Flex direction={'column'} w={'100%'} h={'100%'} justify={'center'}>
-            <Header isTeam />
             <Flex
                 direction={{ base: 'column', lg: 'row' }}
                 m={'180px auto'}

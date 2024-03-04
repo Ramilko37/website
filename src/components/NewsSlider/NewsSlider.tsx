@@ -9,11 +9,13 @@ import 'swiper/css'
 import styles from './styles.module.css'
 import 'swiper/css/pagination'
 import { MOCKDATA } from '../../constants/constants'
-import { useNavigate } from 'react-router-dom'
 
-export const NewsSlider = () => {
+interface INewsSlider {
+    handleNewsBtnClick: () => void
+}
+
+export const NewsSlider = ({ handleNewsBtnClick }: INewsSlider) => {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
-    const navigate = useNavigate()
 
     const pagination = {
         clickable: true,
@@ -28,11 +30,6 @@ export const NewsSlider = () => {
                 '</span>'
             )
         },
-    }
-
-    const handleNewsBtnClick = () => {
-        navigate('/news')
-        window.scrollTo(0, 0)
     }
 
     return (
