@@ -1,5 +1,5 @@
 import { Flex, Text } from '@mantine/core'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MOCKDATA } from '../../constants/constants'
 import { useHover } from '@mantine/hooks'
 
@@ -51,10 +51,15 @@ export const NewsComponent = () => {
     const [activeYear, setActiveYear] = useState<string>('2024')
     const [data, setData] = useState(MOCKDATA)
 
+    console.log(activeYear, 54)
+
     const handleYearClick = (year: string) => () => {
         setActiveYear(year)
-        setData(MOCKDATA.filter((item) => item.date.includes(activeYear)))
     }
+
+    useEffect(() => {
+        setData(MOCKDATA.filter((item) => item.date.includes(activeYear)))
+    }, [activeYear])
 
     return (
         <Flex
