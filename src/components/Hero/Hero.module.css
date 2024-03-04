@@ -27,17 +27,17 @@
     letter-spacing: 0%;
     text-align: right;
     text-transform: uppercase;
-    /* 
-    @media (max-width: 60em) {
-        font-size: rem(40px);
+
+    @media (max-width: 90em) {
+        font-size: 32px;
         line-height: 1.2;
     }
 
     @media (max-width: 36em) {
         margin-top: 40px;
-        font-size: rem(28px);
+        font-size: 32px;
         line-height: 1.3;
-    } */
+    }
 }
 
 .description {

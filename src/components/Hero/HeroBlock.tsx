@@ -164,7 +164,7 @@ export default function HeroBlock() {
                     gap={'24px'}
                     direction={'column'}
                     w={'61vw'}
-                    m={'228px auto'}
+                    m={{ base: '120px auto', lg: '228px auto' }}
                     align={'flex-end'}
                 >
                     <animated.div style={titleAnimation}>
@@ -190,7 +190,7 @@ export default function HeroBlock() {
                 align={'flex-end'}
                 style={{ zIndex: 1000 }}
                 pos={'absolute'}
-                bottom={'135px'}
+                bottom={{ base: '30px', lg: '135px' }}
             >
                 <animated.div style={citateAnimation}>
                     <Flex w={'100%'} direction={'column'} gap={'16px'}>

@@ -62,7 +62,6 @@ export const ProjectsGallery = () => {
     const [galleryType, setGalleryType] = useState<ProjectsGalleryType>(
         ProjectsGalleryType.Perm
     )
-    // const { ref } = useHover()
     const imagesRef = useRef<HTMLDivElement>(null)
 
     const galleryTypeClickHandler = (type: ProjectsGalleryType) => {
@@ -407,7 +406,7 @@ export const ProjectsGallery = () => {
         <Flex
             id={'projects'}
             w={'1175px'}
-            h={'100dvh'}
+            h={'100%'}
             justify={'center'}
             direction={'column'}
             m={'220px auto 0'}
