@@ -1,4 +1,4 @@
-import { Flex, Text, Image as Img } from '@mantine/core'
+import { Flex, Text } from '@mantine/core'
 import permTitleImage from '../../images/campus.png'
 import perm1 from '../../images/perm1.webp'
 import perm2 from '../../images/perm2.webp'
@@ -68,28 +68,28 @@ export const ProjectsGallery = () => {
         setGalleryType(type)
     }
 
-    const mobileProjectsData = [
-        {
-            name: 'Perm',
-            image: perm1,
-            text: 'Проект кампуса в г. Пермь',
-        },
-        {
-            name: 'Ufa',
-            image: ufa1,
-            text: 'Проект кампуса в г. Уфа',
-        },
-        {
-            name: 'Arkhangelsk',
-            image: arhangelskTitleImage,
-            text: 'Проект кампуса в г. Архангельск',
-        },
-        {
-            name: 'Tumen',
-            image: tumen,
-            text: 'Проект кампуса в г. Тюмень',
-        },
-    ]
+    // const mobileProjectsData = [
+    //     {
+    //         name: 'Perm',
+    //         image: perm1,
+    //         text: 'Проект кампуса в г. Пермь',
+    //     },
+    //     {
+    //         name: 'Ufa',
+    //         image: ufa1,
+    //         text: 'Проект кампуса в г. Уфа',
+    //     },
+    //     {
+    //         name: 'Arkhangelsk',
+    //         image: arhangelskTitleImage,
+    //         text: 'Проект кампуса в г. Архангельск',
+    //     },
+    //     {
+    //         name: 'Tumen',
+    //         image: tumen,
+    //         text: 'Проект кампуса в г. Тюмень',
+    //     },
+    // ]
 
     const projectsData = useMemo(() => {
         switch (galleryType) {
@@ -257,28 +257,28 @@ export const ProjectsGallery = () => {
         ))
     }, [galleryType, projectsData])
 
-    const mobileSlides = useMemo(() => {
-        return mobileProjectsData.map((project, index) => (
-            <Carousel.Slide key={index} style={{ borderRadius: '16px' }}>
-                <Flex
-                    direction={'column'}
-                    justify={'center'}
-                    m={'0 auto'}
-                    w={'90%'}
-                    h={'100%'}
-                    style={{ borderRadius: '16px' }}
-                >
-                    <Img
-                        fit={'contain'}
-                        w={'100%'}
-                        h={'auto'}
-                        src={project.image}
-                        style={{ borderRadius: '16px' }}
-                    />
-                </Flex>
-            </Carousel.Slide>
-        ))
-    }, [galleryType, projectsData])
+    // const mobileSlides = useMemo(() => {
+    //     return mobileProjectsData.map((project, index) => (
+    //         <Carousel.Slide key={index} style={{ borderRadius: '16px' }}>
+    //             <Flex
+    //                 direction={'column'}
+    //                 justify={'center'}
+    //                 m={'0 auto'}
+    //                 w={'90%'}
+    //                 h={'100%'}
+    //                 style={{ borderRadius: '16px' }}
+    //             >
+    //                 <Img
+    //                     fit={'contain'}
+    //                     w={'100%'}
+    //                     h={'auto'}
+    //                     src={project.image}
+    //                     style={{ borderRadius: '16px' }}
+    //                 />
+    //             </Flex>
+    //         </Carousel.Slide>
+    //     ))
+    // }, [galleryType, projectsData])
 
     if (isMobile) {
         return (
