@@ -1,4 +1,4 @@
-import { Flex, Text } from '@mantine/core'
+import { Flex, Text, Image as Img } from '@mantine/core'
 import permTitleImage from '../../images/campus.png'
 import perm1 from '../../images/perm1.webp'
 import perm2 from '../../images/perm2.webp'
@@ -249,6 +249,7 @@ export const ProjectsGallery = () => {
                         backgroundImage: `url(${imageSrc})`,
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat',
+                        border: '1px solid red',
                     }}
                     w={'100%'}
                     h={'100%'}
@@ -339,10 +340,10 @@ export const ProjectsGallery = () => {
                     })}
                 </Flex>
                 <Carousel
+                    loop
+                    slideSize={300}
+                    slideGap={0}
                     style={{ borderRadius: '16px' }}
-                    withIndicators
-                    includeGapInSize={false}
-                    loop={true}
                 >
                     {slides}
                 </Carousel>
