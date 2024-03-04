@@ -16,7 +16,7 @@ const links = [
         link: '#1',
         label: 'Проекты',
     },
-    { id: 'news', link: '', label: 'Новости' },
+    { id: '', link: '/news', label: 'Новости' },
     { id: 'team', link: '/team', label: 'Команда' },
     { id: 'contacts', link: '', label: 'Контакты' },
 ]
@@ -68,7 +68,18 @@ export const Header = ({ isTeam }: IHeaderProps) => {
                     Команда
                 </RouterLink>
             )
-        } else {
+        } else if (link.link === '/news') {
+            return (
+                <RouterLink
+                    className={classes.link}
+                    to={link.link}
+                    onClick={() => window.scrollTo(0, 0)}
+                >
+                    Новости
+                </RouterLink>
+            )
+        }
+        {
             return (
                 <Link
                     style={{ height: isMobile ? 'fit-content' : '100%' }}
