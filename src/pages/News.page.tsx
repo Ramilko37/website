@@ -1,5 +1,4 @@
 import { Flex } from '@mantine/core'
-import { Header } from '../components/Header/Header'
 import { NewsComponent } from '../components/NewsComponent/NewsComponent'
 
 export const NewsPage = () => {

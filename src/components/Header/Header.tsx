@@ -34,8 +34,6 @@ export const Header = ({
     const isMobile = useMediaQuery('(max-width: 1100px)')
     const navigate = useNavigate()
 
-    console.log(isNews)
-
     const handleLogoClick = () => {
         if (isNews) {
             handleNewsBtnClick()

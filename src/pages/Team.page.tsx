@@ -13,7 +13,7 @@ export const TeamPage = () => {
             direction={'column'}
             p={{ base: '96px 20px 96px', lg: '180px 40px 120px' }}
         >
-            <Header isTeam />
+            <Header handleNewsBtnClick={() => {}} isTeam />
             <TeamComponent />
         </Flex>
     )
