@@ -51,8 +51,6 @@ export const NewsComponent = () => {
     const [activeYear, setActiveYear] = useState<string>('2024')
     const [data, setData] = useState(MOCKDATA)
 
-    console.log(activeYear, 54)
-
     const handleYearClick = (year: string) => () => {
         setActiveYear(year)
     }
@@ -64,7 +62,7 @@ export const NewsComponent = () => {
     return (
         <Flex
             direction={{ base: 'column', lg: 'row' }}
-            m={'180px auto'}
+            m={{ base: '120px auto', lg: '180px auto' }}
             w={{ base: '90%', lg: '61vw' }}
             gap={'39px'}
         >

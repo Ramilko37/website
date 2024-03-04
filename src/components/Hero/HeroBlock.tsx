@@ -55,6 +55,7 @@ export default function HeroBlock() {
                         zIndex: 10,
                         filter: 'brightness(50%)',
                     }}
+                    controls={false}
                 />
                 <Flex
                     gap={'24px'}

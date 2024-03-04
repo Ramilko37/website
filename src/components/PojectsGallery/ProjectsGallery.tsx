@@ -237,8 +237,8 @@ export const ProjectsGallery = () => {
         const currentImages = imagesData[galleryType] || []
         return currentImages?.map((imageSrc, index) => (
             <Carousel.Slide
-                w={'95%'}
-                h={680}
+                w={'100%'}
+                h={{ base: 300, lg: 680 }}
                 key={index}
                 style={{ borderRadius: '16px' }}
             >
@@ -344,7 +344,7 @@ export const ProjectsGallery = () => {
                     includeGapInSize={false}
                     loop={true}
                 >
-                    {mobileSlides}
+                    {slides}
                 </Carousel>
                 <Flex
                     direction={'column'}
