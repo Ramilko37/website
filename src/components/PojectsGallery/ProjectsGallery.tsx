@@ -540,8 +540,8 @@ export const ProjectsGallery = () => {
                         modules={[Navigation, Pagination]}
                         pagination={{ clickable: true }}
                         navigation={{
-                            nextEl: '.arrow-left',
-                            prevEl: '.arrow-right',
+                            nextEl: '.arrow-right',
+                            prevEl: '.arrow-left',
                         }}
                         scrollbar={{ draggable: true }}
                         loop
