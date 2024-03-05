@@ -1,4 +1,4 @@
-import { Flex, Text } from '@mantine/core'
+import { Flex, Text, Image as Img } from '@mantine/core'
 import permTitleImage from '../../images/campus.png'
 import perm1 from '../../images/perm1.webp'
 import perm2 from '../../images/perm2.webp'
@@ -20,12 +20,17 @@ import arhangelskTitleImage from '../../images/arhangelsk.webp'
 import arhangelskImage from '../../images/arhangelsk2.webp'
 import arhangelskImage2 from '../../images/arhangelsk3.webp'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Carousel } from '@mantine/carousel'
-import { useMediaQuery } from '@mantine/hooks'
+import { useHover, useMediaQuery } from '@mantine/hooks'
 import { SquareIcon } from '../../images/icons/square-icon'
 import { PeopleIcon } from '../../images/icons/people-icon'
 import { СlockIcon } from '../../images/icons/clock-icon'
 import { MoneyIcon } from '../../images/icons/money-icon'
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
+import { MdArrowForwardIos } from 'react-icons/md'
+
+// Import Swiper styles
+import 'swiper/css'
+import { Navigation, Pagination } from 'swiper/modules'
 
 enum ProjectsGalleryType {
     Perm,
@@ -57,39 +62,29 @@ const projectsNavBarData = [
     },
 ]
 
+// const SwiperButtonNext = ({ children }) => {
+//     const swiper = useSwiper()
+//     return <button onClick={() => swiper.slideNext()}>{children}</button>
+// }
+
+// const SwiperButtonPrev = ({ children }) => {
+//     const swiper = useSwiper()
+//     return <button onClick={() => swiper.slideNext()}>{children}</button>
+// }
+
 export const ProjectsGallery = () => {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
     const [galleryType, setGalleryType] = useState<ProjectsGalleryType>(
         ProjectsGalleryType.Perm
     )
     const imagesRef = useRef<HTMLDivElement>(null)
+    const swiperRef = useRef<SwiperClass>()
+
+    const { hovered, ref } = useHover()
 
     const galleryTypeClickHandler = (type: ProjectsGalleryType) => {
         setGalleryType(type)
     }
-
-    // const mobileProjectsData = [
-    //     {
-    //         name: 'Perm',
-    //         image: perm1,
-    //         text: 'Проект кампуса в г. Пермь',
-    //     },
-    //     {
-    //         name: 'Ufa',
-    //         image: ufa1,
-    //         text: 'Проект кампуса в г. Уфа',
-    //     },
-    //     {
-    //         name: 'Arkhangelsk',
-    //         image: arhangelskTitleImage,
-    //         text: 'Проект кампуса в г. Архангельск',
-    //     },
-    //     {
-    //         name: 'Tumen',
-    //         image: tumen,
-    //         text: 'Проект кампуса в г. Тюмень',
-    //     },
-    // ]
 
     const projectsData = useMemo(() => {
         switch (galleryType) {
@@ -236,50 +231,26 @@ export const ProjectsGallery = () => {
     const slides = useMemo(() => {
         const currentImages = imagesData[galleryType] || []
         return currentImages?.map((imageSrc, index) => (
-            <Carousel.Slide
-                w={'100%'}
-                h={{ base: 300, lg: 680 }}
+            <SwiperSlide
                 key={index}
-                style={{ borderRadius: '16px' }}
+                style={{
+                    width: '100%',
+                    height: isMobile ? '300px' : '600px',
+                    borderRadius: '16px',
+                }}
             >
-                <Flex
-                    bg={imageSrc}
+                <Img
+                    src={imageSrc}
                     style={{
                         borderRadius: '16px',
-                        backgroundImage: `url(${imageSrc})`,
-                        backgroundSize: 'cover',
-                        backgroundRepeat: 'no-repeat',
-                        border: '1px solid red',
                     }}
+                    fit={isMobile ? 'scale-down' : 'cover'}
                     w={'100%'}
                     h={'100%'}
                 />
-            </Carousel.Slide>
+            </SwiperSlide>
         ))
     }, [galleryType, projectsData])
-
-    // const mobileSlides = useMemo(() => {
-    //     return mobileProjectsData.map((project, index) => (
-    //         <Carousel.Slide key={index} style={{ borderRadius: '16px' }}>
-    //             <Flex
-    //                 direction={'column'}
-    //                 justify={'center'}
-    //                 m={'0 auto'}
-    //                 w={'90%'}
-    //                 h={'100%'}
-    //                 style={{ borderRadius: '16px' }}
-    //             >
-    //                 <Img
-    //                     fit={'contain'}
-    //                     w={'100%'}
-    //                     h={'auto'}
-    //                     src={project.image}
-    //                     style={{ borderRadius: '16px' }}
-    //                 />
-    //             </Flex>
-    //         </Carousel.Slide>
-    //     ))
-    // }, [galleryType, projectsData])
 
     if (isMobile) {
         return (
@@ -339,14 +310,63 @@ export const ProjectsGallery = () => {
                         )
                     })}
                 </Flex>
-                <Carousel
-                    loop
-                    slideSize={300}
-                    slideGap={0}
-                    style={{ borderRadius: '16px' }}
-                >
-                    {slides}
-                </Carousel>
+                <Flex pos={'relative'}>
+                    <Swiper
+                        modules={[Navigation, Pagination]}
+                        pagination={{ clickable: true }}
+                        navigation={{
+                            nextEl: '.arrow-left',
+                            prevEl: '.arrow-right',
+                        }}
+                        scrollbar={{ draggable: true }}
+                        loop
+                        onSwiper={(swiper) => {
+                            swiperRef.current = swiper
+                        }}
+                    >
+                        {slides}
+                    </Swiper>
+                    <button
+                        style={{
+                            position: 'absolute',
+                            left: '5px',
+                            top: '45%',
+                        }}
+                        className="arrow-left arrow"
+                    >
+                        <MdArrowForwardIos
+                            size={30}
+                            color={'#fff'}
+                            style={{
+                                position: 'absolute',
+                                left: '5px',
+                                top: '45%',
+                                zIndex: 1000,
+                                transform: 'rotate(180deg)',
+                            }}
+                        />
+                    </button>
+
+                    <button
+                        style={{
+                            position: 'absolute',
+                            right: '10px',
+                            top: '45%',
+                        }}
+                        className="arrow-right arrow"
+                    >
+                        <MdArrowForwardIos
+                            size={30}
+                            color={'#fff'}
+                            style={{
+                                position: 'absolute',
+                                right: '10px',
+                                top: '45%',
+                                zIndex: 1000,
+                            }}
+                        />
+                    </button>
+                </Flex>
                 <Flex
                     direction={'column'}
                     w={'100%'}
@@ -506,24 +526,76 @@ export const ProjectsGallery = () => {
                     })}
                 </Flex>
                 <Flex
+                    ref={ref}
                     w={'70%'}
                     h={'680px'}
                     style={{
                         maxWidth: '770px',
                         overflow: 'hidden',
                         borderRadius: '16px',
+                        position: 'relative',
                     }}
                 >
-                    <Carousel
-                        w={'100%'}
-                        h={'100%'}
-                        includeGapInSize={false}
-                        loop={true}
-                        slideGap={'md'}
-                        style={{ borderRadius: '16px' }}
+                    <Swiper
+                        modules={[Navigation, Pagination]}
+                        pagination={{ clickable: true }}
+                        navigation={{
+                            nextEl: '.arrow-left',
+                            prevEl: '.arrow-right',
+                        }}
+                        scrollbar={{ draggable: true }}
+                        loop
+                        onSwiper={(swiper) => {
+                            swiperRef.current = swiper
+                        }}
                     >
                         {slides}
-                    </Carousel>
+                    </Swiper>
+
+                    <button
+                        style={{
+                            opacity: hovered ? '1' : '0',
+                            position: 'absolute',
+                            left: '10px',
+                            top: '40%',
+                            transition: '0.5s',
+                        }}
+                        className="arrow-left arrow"
+                    >
+                        <MdArrowForwardIos
+                            size={50}
+                            color={'#fff'}
+                            style={{
+                                position: 'absolute',
+                                left: '10px',
+                                top: '40%',
+                                zIndex: 1000,
+                                transform: 'rotate(180deg)',
+                            }}
+                        />
+                    </button>
+
+                    <button
+                        style={{
+                            opacity: hovered ? '1' : '0',
+                            position: 'absolute',
+                            right: '10px',
+                            top: '40%',
+                            transition: '0.5s',
+                        }}
+                        className="arrow-right arrow"
+                    >
+                        <MdArrowForwardIos
+                            size={50}
+                            color={'#fff'}
+                            style={{
+                                position: 'absolute',
+                                right: '10px',
+                                top: '40%',
+                                zIndex: 1000,
+                            }}
+                        />
+                    </button>
                 </Flex>
             </Flex>
             <Flex w={'100%'} gap={'30px'}>
