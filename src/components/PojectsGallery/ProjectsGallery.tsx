@@ -235,7 +235,7 @@ export const ProjectsGallery = () => {
                 key={index}
                 style={{
                     width: '100%',
-                    height: isMobile ? '300px' : '600px',
+                    height: isMobile ? '300px' : undefined,
                     borderRadius: '16px',
                 }}
             >
@@ -557,8 +557,8 @@ export const ProjectsGallery = () => {
                             opacity: hovered ? '1' : '0',
                             position: 'absolute',
                             left: '10px',
-                            top: '40%',
-                            transition: '0.5s',
+                            top: '45%',
+                            transition: '0.2s',
                         }}
                         className="arrow-left arrow"
                     >
@@ -568,7 +568,7 @@ export const ProjectsGallery = () => {
                             style={{
                                 position: 'absolute',
                                 left: '10px',
-                                top: '40%',
+                                top: '45%',
                                 zIndex: 1000,
                                 transform: 'rotate(180deg)',
                             }}
@@ -580,8 +580,8 @@ export const ProjectsGallery = () => {
                             opacity: hovered ? '1' : '0',
                             position: 'absolute',
                             right: '10px',
-                            top: '40%',
-                            transition: '0.5s',
+                            top: '45%',
+                            transition: '0.2s',
                         }}
                         className="arrow-right arrow"
                     >
@@ -591,7 +591,7 @@ export const ProjectsGallery = () => {
                             style={{
                                 position: 'absolute',
                                 right: '10px',
-                                top: '40%',
+                                top: '45%',
                                 zIndex: 1000,
                             }}
                         />
