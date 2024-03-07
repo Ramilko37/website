@@ -45,6 +45,7 @@ export default function HeroBlock() {
                 <video
                     src={video}
                     autoPlay
+                    playsInline
                     muted
                     loop
                     style={{
