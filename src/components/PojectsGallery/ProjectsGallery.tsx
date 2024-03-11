@@ -101,7 +101,7 @@ export const ProjectsGallery = () => {
                         icon: <PeopleIcon />,
                     },
                     {
-                        title: '28,6 млрд руб.',
+                        title: '28 млрд руб.',
                         bullet1: 'Объем инвестиций  ',
                         icon: <MoneyIcon />,
                     },
@@ -114,7 +114,7 @@ export const ProjectsGallery = () => {
             case ProjectsGalleryType.Ufa:
                 return [
                     {
-                        title: '152,7 тыс. м2',
+                        title: '152 тыс. м2',
                         bullet1: 'Площадь объекта',
                         icon: <SquareIcon />,
                     },
@@ -124,7 +124,7 @@ export const ProjectsGallery = () => {
                         icon: <PeopleIcon />,
                     },
                     {
-                        title: '21,2 млрд руб.',
+                        title: '21 млрд руб.',
                         bullet1: 'Объем инвестиций  ',
                         icon: <MoneyIcon />,
                     },
@@ -137,7 +137,7 @@ export const ProjectsGallery = () => {
             case ProjectsGalleryType.Tumen:
                 return [
                     {
-                        title: '167,3 тыс. м2',
+                        title: '167 тыс. м2',
                         bullet1: 'Площадь объекта',
                         icon: <SquareIcon />,
                     },
@@ -147,7 +147,7 @@ export const ProjectsGallery = () => {
                         icon: <PeopleIcon />,
                     },
                     {
-                        title: '32,2 млрд руб.',
+                        title: '32 млрд руб.',
                         bullet1: 'Объем инвестиций  ',
                         icon: <MoneyIcon />,
                     },
@@ -160,7 +160,7 @@ export const ProjectsGallery = () => {
             case ProjectsGalleryType.Arhangelsk:
                 return [
                     {
-                        title: '128,8 тыс. м2',
+                        title: '128 тыс. м2',
                         bullet1: 'Площадь объекта',
                         icon: <SquareIcon />,
                     },
@@ -170,7 +170,7 @@ export const ProjectsGallery = () => {
                         icon: <PeopleIcon />,
                     },
                     {
-                        title: '28,9 млрд руб.',
+                        title: '28 млрд руб.',
                         bullet1: 'Объем инвестиций  ',
                         icon: <MoneyIcon />,
                     },
