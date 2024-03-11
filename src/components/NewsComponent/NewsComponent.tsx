@@ -2,6 +2,7 @@ import { Flex, Text } from '@mantine/core'
 import { useEffect, useState } from 'react'
 import { MOCKDATA } from '../../constants/constants'
 import { useHover } from '@mantine/hooks'
+import { MdArrowBack } from 'react-icons/md'
 
 interface INewsRow {
     title: string
@@ -37,7 +38,7 @@ const NewsRow = ({ title, date, link }: INewsRow) => {
             }}
             onClick={handleLinkClick(link)}
         >
-            <Text c={'#012F6D'} fz={'32px'} fw={300} lh={'130%'}>
+            <Text c={'#012F6D'} fz={'32px'} fw={700} lh={'130%'}>
                 {title}
             </Text>
             <Text c={'#012F6D'} fz={'23px'} opacity={0.5} fw={300} lh={'130%'}>
@@ -47,9 +48,10 @@ const NewsRow = ({ title, date, link }: INewsRow) => {
     )
 }
 
-export const NewsComponent = () => {
+export const NewsComponent = ({ onClick }: any) => {
     const [activeYear, setActiveYear] = useState<string>('2024')
     const [data, setData] = useState(MOCKDATA)
+    const { hovered, ref } = useHover()
 
     const handleYearClick = (year: string) => () => {
         setActiveYear(year)
@@ -70,7 +72,28 @@ export const NewsComponent = () => {
                 direction={{ base: 'row', lg: 'column' }}
                 gap={'24px'}
                 m={{ base: '0', lg: '0 auto' }}
+                style={{ cursor: 'pointer' }}
             >
+                <Flex
+                    ref={ref}
+                    w={'170px'}
+                    p={'10px'}
+                    style={{
+                        border: hovered
+                            ? '1px solid #233C91'
+                            : '1px solid #D7DBE4',
+                        cursor: 'pointer',
+                    }}
+                    justify={'center'}
+                    align={'center'}
+                    onClick={onClick}
+                    gap={'20px'}
+                >
+                    <MdArrowBack size={'30px'} color={'#012f6d'} />
+                    <Text fz={'32px'} fw={300} lh={'130%'} c={'#012f6d'}>
+                        Назад
+                    </Text>
+                </Flex>
                 {YEARS.map((year, key) => (
                     <Flex
                         key={key}

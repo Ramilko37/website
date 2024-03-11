@@ -1,4 +1,4 @@
-import { Flex, Image, Text } from '@mantine/core'
+import { Flex, Text } from '@mantine/core'
 import { TeamMember } from '../TeamComponent/TeamComponent'
 
 interface ITeamCardComponentProps {
@@ -24,19 +24,21 @@ export const TeamCardComponent = ({
                 borderRadius: '12px',
                 backdropFilter: 'grayscale(90%)',
                 cursor: 'pointer',
-                alignItems: 'center',
+                alignItems: 'flex-start',
+                textAlign: 'left',
             }}
             onClick={handleCardClick(id)}
         >
-            <Image
-                w={{ base: '40vw', md: '30vw', lg: '15vw' }}
-                mah={{ base: '160px', lg: '270px' }}
+            <Flex
+                w={'100%'}
+                h={{ base: '200px', lg: '270px' }}
                 style={{
                     borderRadius: '12px',
-                    backdropFilter: 'grayscale(90%)',
+                    filter: 'grayscale(1)',
+                    backgroundImage: `url(${image})`,
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
                 }}
-                fit={'contain'}
-                src={image}
             />
             <Text
                 fz={{ base: '18px', lg: '28px' }}

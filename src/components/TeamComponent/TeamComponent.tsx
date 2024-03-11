@@ -1,11 +1,12 @@
-import { Flex, SimpleGrid, Title } from '@mantine/core'
+import { Flex, SimpleGrid, Title, Text } from '@mantine/core'
 import { TeamCardComponent } from '../TeamCardComponent/TeamCardComponent'
-
-import principal from '../../images/bugulov.jpg'
+import principal from '../../images/bugulov.jpeg'
 import financial from '../../images/sozaev.jpg'
 import stolkov from '../../images/stolkov.png'
 import { TeamMemberComponent } from '../TeamMemberComponent/TeamMemberComponent'
 import { useState } from 'react'
+import { useHover } from '@mantine/hooks'
+import { MdArrowBack } from 'react-icons/md'
 
 const data = [
     {
@@ -84,14 +85,15 @@ export type TeamMember = {
 
 export interface ITeamMemberProps {
     teamMember: TeamMember
+    handleCardClick: (id: number | undefined) => () => void
 }
 
 export const TeamComponent = () => {
+    const { hovered, ref } = useHover()
     const [activeMember, setActiveMember] = useState<number | undefined>(
         undefined
     )
-
-    const handleCardClick = (id: number) => () => {
+    const handleCardClick = (id: number | undefined) => () => {
         setActiveMember(id)
     }
 
@@ -102,6 +104,24 @@ export const TeamComponent = () => {
             direction={'column'}
             gap={'36px'}
         >
+            <Flex
+                ref={ref}
+                w={'170px'}
+                p={'10px'}
+                style={{
+                    border: hovered ? '1px solid #233C91' : '1px solid #D7DBE4',
+                    cursor: 'pointer',
+                }}
+                justify={'center'}
+                align={'center'}
+                onClick={() => (window.location.href = '/')}
+                gap={'20px'}
+            >
+                <MdArrowBack size={'30px'} color={'#012f6d'} />
+                <Text fz={'32px'} fw={300} lh={'130%'} c={'#012f6d'}>
+                    Назад
+                </Text>
+            </Flex>
             <Title
                 style={{ textAlign: 'left' }}
                 c={'#002F6D'}
@@ -112,8 +132,12 @@ export const TeamComponent = () => {
                 КОМАНДА
             </Title>
             {activeMember && (
-                <TeamMemberComponent teamMember={data[activeMember - 1]} />
+                <TeamMemberComponent
+                    handleCardClick={handleCardClick}
+                    teamMember={data[activeMember - 1]}
+                />
             )}
+
             <SimpleGrid
                 spacing={{ base: '20px', lg: '30px' }}
                 verticalSpacing={{ base: '24px', md: '36px' }}

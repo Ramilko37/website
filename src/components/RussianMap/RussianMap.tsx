@@ -92,7 +92,6 @@ export const RussianMap = () => {
             direction={'column'}
             w={{ base: '100%', lg: '1171px' }}
             m={'0 auto'}
-            p={{ base: '90px 0 90px', lg: '220px 0 0' }}
             justify={'center'}
             align={'center'}
             gap={{ base: '16px', lg: '36px' }}

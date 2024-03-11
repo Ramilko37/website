@@ -1,12 +1,25 @@
-import { Accordion, Box, Flex, List, SimpleGrid, Text, Timeline, Title } from '@mantine/core';
-import styles from './styles.module.css';
-import { useMediaQuery } from '@mantine/hooks';
-import { MdCurrencyRuble, MdManageAccounts, MdOutlineConstruction } from 'react-icons/md'
+import {
+    Accordion,
+    Box,
+    Flex,
+    List,
+    SimpleGrid,
+    Text,
+    Timeline,
+    Title,
+} from '@mantine/core'
+import styles from './styles.module.css'
+import { useMediaQuery } from '@mantine/hooks'
+import {
+    MdCurrencyRuble,
+    MdManageAccounts,
+    MdOutlineConstruction,
+} from 'react-icons/md'
 import { BsFillPeopleFill } from 'react-icons/bs'
 import { AiOutlineStock } from 'react-icons/ai'
 import { RxRulerSquare } from 'react-icons/rx'
-import { IconChevronDown } from '@tabler/icons-react';
-import { useState } from 'react';
+import { IconChevronDown } from '@tabler/icons-react'
+import { useState } from 'react'
 
 const concessionProjectStages = [
     {
@@ -62,86 +75,98 @@ const concessionProjectStages = [
     },
 ]
 
-
-
 export const Services = () => {
-  const isMobile = useMediaQuery('(max-width: 36em)');
-   const [active, setActive] = useState<number>(1)
+    const isMobile = useMediaQuery('(max-width: 36em)')
+    const [active, setActive] = useState<number>(1)
 
-  const data = [
-  {
-    icon: <MdCurrencyRuble  size={isMobile ? 16 : 32} />,
-    title: `Инвестиции в инфраструктуру`,
-    description:
-      'Холдинг является наиболее опытным инвестором в инфраструктуру на российском рынке и владеет обширным инструментарием для решения полного спектра задач на всех этапах реализации инфраструктурных проектов – от консультирования по созданию концепции проекта и организации конкурса до привлечения финансирования, строительства и последующей эксплуатации.'
-  },
-  {
-    icon:  <BsFillPeopleFill size={isMobile ? 16 : 32} />,
-    title: 'Предпроектная подготовка',
-    description:
-      'Оценка возможности реализовать проект исходя из требований и имеющихся возможностей. Включает разработку финансовой модели, анализ возможных условий финансирования и сроков реализации проекта, подачу конкурсного предложения или частной инициативы.',
-  },
-  {
-    icon:<AiOutlineStock size={isMobile ? 16 : 32} />,
-    title: 'Финансирование',
-    description:
-      'Структурирование финансирования в соответствии с международными стандартами, выбор подходящих видов акционерного и долгового финансирования в зависимости от параметров проекта, получение наилучших условий на рынке.',
-  },
-  {
-    icon: <RxRulerSquare size={isMobile ? 16 : 32} />,
-    title: 'Техническое консультирование',
-    description:
-      'Строительное и инженерное консультирование, анализ и учёт трафика на автодорогах, разработка систем управления дорожным движением и взимания платы.',
-  },
-  {
-    icon: <MdOutlineConstruction size={isMobile ? 16 : 32} />,
-    title: 'Девелопмент',
-    description:
-      'Девелопмент «под ключ» с привлечением внешнего финансирования, включая развитие прилегающих к объектам инфраструктуры территорий, а также организация службы заказчика и осуществление надзора за ходом строительства с целью обеспечения завершения строительства в срок и в рамках бюджета.',
-  },
-  {
-    icon: <MdManageAccounts size={isMobile ? 16 : 32} />,
-    title: 'Эксплуатация объектов',
-    description:
-      'Организация эксплуатации инфраструктурных объектов на мировом уровне и с учетом накопленного российского опыта.',
-  },
-];
+    const data = [
+        {
+            icon: <MdCurrencyRuble size={isMobile ? 16 : 32} />,
+            title: `Инвестиции в инфраструктуру`,
+            description:
+                'Холдинг является наиболее опытным инвестором в инфраструктуру на российском рынке и владеет обширным инструментарием для решения полного спектра задач на всех этапах реализации инфраструктурных проектов – от консультирования по созданию концепции проекта и организации конкурса до привлечения финансирования, строительства и последующей эксплуатации.',
+        },
+        {
+            icon: <BsFillPeopleFill size={isMobile ? 16 : 32} />,
+            title: 'Предпроектная подготовка',
+            description:
+                'Оценка возможности реализовать проект исходя из требований и имеющихся возможностей. Включает разработку финансовой модели, анализ возможных условий финансирования и сроков реализации проекта, подачу конкурсного предложения или частной инициативы.',
+        },
+        {
+            icon: <AiOutlineStock size={isMobile ? 16 : 32} />,
+            title: 'Финансирование',
+            description:
+                'Структурирование финансирования в соответствии с международными стандартами, выбор подходящих видов акционерного и долгового финансирования в зависимости от параметров проекта, получение наилучших условий на рынке.',
+        },
+        {
+            icon: <RxRulerSquare size={isMobile ? 16 : 32} />,
+            title: 'Техническое консультирование',
+            description:
+                'Строительное и инженерное консультирование, анализ и учёт трафика на автодорогах, разработка систем управления дорожным движением и взимания платы.',
+        },
+        {
+            icon: <MdOutlineConstruction size={isMobile ? 16 : 32} />,
+            title: 'Девелопмент',
+            description:
+                'Девелопмент «под ключ» с привлечением внешнего финансирования, включая развитие прилегающих к объектам инфраструктуры территорий, а также организация службы заказчика и осуществление надзора за ходом строительства с целью обеспечения завершения строительства в срок и в рамках бюджета.',
+        },
+        {
+            icon: <MdManageAccounts size={isMobile ? 16 : 32} />,
+            title: 'Эксплуатация объектов',
+            description:
+                'Организация эксплуатации инфраструктурных объектов на мировом уровне и с учетом накопленного российского опыта.',
+        },
+    ]
 
-  const items = data.map((item) => (
-    <Flex className={styles.card} key={item.title} gap={{ base: '16px' }} m={'0 auto'}>
-      <Flex gap={'12px'}>
-        <Box w={'28px'} h={'28px'}>
-          {item.icon}
-        </Box>
-        <Text className={styles.cardTitle} mb={0}>
-          {item.title}
-        </Text>
-      </Flex>
+    const items = data.map((item) => (
+        <Flex
+            className={styles.card}
+            key={item.title}
+            gap={{ base: '16px' }}
+            m={'0 auto'}
+        >
+            <Flex gap={'12px'}>
+                <Box w={'28px'} h={'28px'}>
+                    {item.icon}
+                </Box>
+                <Text className={styles.cardTitle} mb={0}>
+                    {item.title}
+                </Text>
+            </Flex>
 
-      <Text className={styles.cardDescription}>{item.description}</Text>
-    </Flex>
-  ));
-  return (
-    <Flex
-      id={'services'}
-      w={'100%'}
-      p={{ base: '40px 20px 40px', md: '90px 16% 90px' }}
-      direction={'column'}
-      justify={'center'}
-      align={'center'}
-      bg={'#F7F7F7'}
-    >
-      <Text className={styles.title} mb={{ base: '32px', md: '48px' }}>
-        Наши услуги 
-      </Text>
+            <Text className={styles.cardDescription}>{item.description}</Text>
+        </Flex>
+    ))
+    return (
+        <Flex
+            id={'services'}
+            w={'100%'}
+            direction={'column'}
+            justify={'center'}
+            align={'center'}
+            bg={'#F7F7F7'}
+        >
+            <Text className={styles.title} mb={{ base: '32px', md: '48px' }}>
+                Наши услуги
+            </Text>
 
-      <Flex w={'100%'} m={'0 auto'} direction={'column'} justify={'center'} gap={'56px'}>
-        <SimpleGrid cols={{ base: 1, xs: 2 }} verticalSpacing={20} spacing={20}>
-          {items}
-        </SimpleGrid>
-      </Flex>
+            <Flex
+                w={'100%'}
+                m={'0 auto'}
+                direction={'column'}
+                justify={'center'}
+                gap={'56px'}
+            >
+                <SimpleGrid
+                    cols={{ base: 1, xs: 2 }}
+                    verticalSpacing={20}
+                    spacing={20}
+                >
+                    {items}
+                </SimpleGrid>
+            </Flex>
 
-       <Flex
+            <Flex
                 w={'100%'}
                 direction={{ base: 'column', md: 'row' }}
                 gap={{ base: '16px', lg: '24px' }}
@@ -152,7 +177,7 @@ export const Services = () => {
             >
                 <Flex m={'auto'}>
                     <Title c={'#002F6D'} fz={'48px'}>
-                      Этапы реализации проекта
+                        Этапы реализации проекта
                     </Title>
                 </Flex>
                 <Timeline
@@ -239,6 +264,6 @@ export const Services = () => {
                     })}
                 </Timeline>
             </Flex>
-    </Flex>
-  );
-};
+        </Flex>
+    )
+}

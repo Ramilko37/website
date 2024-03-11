@@ -1,7 +1,7 @@
 import { Flex } from '@mantine/core'
 import { NewsComponent } from '../components/NewsComponent/NewsComponent'
 
-export const NewsPage = () => {
+export const NewsPage = ({ onClick }: any) => {
     return (
         <Flex direction={'column'} w={'100%'} h={'100%'} justify={'center'}>
             <Flex
@@ -10,7 +10,7 @@ export const NewsPage = () => {
                 w={{ base: '90%', lg: '61vw' }}
                 gap={'39px'}
             >
-                <NewsComponent />
+                <NewsComponent onClick={onClick} />
             </Flex>
         </Flex>
     )

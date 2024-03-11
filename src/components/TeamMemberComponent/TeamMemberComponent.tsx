@@ -1,19 +1,50 @@
-import { Flex, Text, Image } from '@mantine/core'
+import { Flex, Text, Image, CloseIcon } from '@mantine/core'
 import { ITeamMemberProps } from '../TeamComponent/TeamComponent'
 
-export const TeamMemberComponent = ({ teamMember }: ITeamMemberProps) => {
-    console.log(teamMember, 5)
-
+export const TeamMemberComponent = ({
+    handleCardClick,
+    teamMember,
+}: ITeamMemberProps) => {
     return (
-        <Flex direction={{ base: 'column', md: 'row' }} w={'100%'} gap={'30px'}>
+        <Flex
+            direction={{ base: 'column', md: 'row' }}
+            w={'100%'}
+            h={{ base: 'fit-content', md: '485px' }}
+            gap={'30px'}
+            mb={'36px'}
+            pos={'relative'}
+        >
+            <CloseIcon
+                width={'40px'}
+                height={'40px'}
+                size="40px"
+                style={{
+                    position: 'absolute',
+                    top: '0',
+                    right: '10px',
+
+                    color: '#012F6D',
+                    zIndex: 100,
+                }}
+                cursor={'pointer'}
+                onClick={handleCardClick(undefined)}
+            />
             <Image
-                style={{ borderRadius: '12px' }}
+                style={{ borderRadius: '12px', filter: 'grayscale(1)' }}
                 w={{ base: '100%', md: '470px' }}
                 h={{ base: '100%', lg: '485px' }}
                 src={teamMember.image}
+                fit="contain"
             />
 
-            <Flex direction={'column'} gap={'16px'}>
+            <Flex
+                direction={'column'}
+                gap={'16px'}
+                style={{
+                    WebkitMaskImage:
+                        'linear-gradient(180deg, #000 90%, transparent)',
+                }}
+            >
                 <Text
                     fz={{ base: '18px', lg: '32px' }}
                     fw={300}
@@ -27,6 +58,8 @@ export const TeamMemberComponent = ({ teamMember }: ITeamMemberProps) => {
                     fw={300}
                     lh={'130%'}
                     c={'#012F6D'}
+                    style={{ overflow: 'scroll' }}
+                    opacity={0.5}
                 >
                     {teamMember.description}
                 </Text>

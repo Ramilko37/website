@@ -12,6 +12,30 @@ import vsluh2 from '../images/vsluh2.jpeg'
 export const MOCKDATA = [
     {
         linkProps: {
+            href: 'https://argumenti.ru/society/2024/03/886850',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+        date: '2024-03-04',
+        image: 'https://img.argumenti.ru/news/news_id/886850.JPG',
+        title: 'Кампус для всех',
+        description:
+            'В Перми продолжается реализация масштабного проекта межвузовского студенческого кампуса. При использовании материала просим указывать источник argumenti.ru',
+    },
+    {
+        linkProps: {
+            href: 'https://www.cnews.ru/news/line/2024-03-07_sitronics_group_i_etalonnye_kontsessii?ysclid=ltl9foqkdk744797831',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+        date: '2024-03-07',
+        image: '',
+        title: 'Sitronics Group и «Эталонные Концессии» реализовывают проекты по созданию умных кампусов в рамках нового федерального стандарта',
+        description:
+            'Обновленный «Стандарт инновационной образовательной среды (кампусов)» утвердило Минобрнауки РФ. Документ устанавливает единые требования к кампусам, создаваемым в рамках национального проекта «Наука и университеты».',
+    },
+    {
+        linkProps: {
             href: 'https://vetta.tv/news/society/v-permi-moskovskaya-kompaniya-postroit-mezhvuzovskiy-kampus/',
             target: '_blank',
             rel: 'noopener noreferrer',

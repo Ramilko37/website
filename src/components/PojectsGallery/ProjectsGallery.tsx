@@ -1,4 +1,4 @@
-import { Flex, Text, Image as Img } from '@mantine/core'
+import { Flex, Text, Image as Img, Divider } from '@mantine/core'
 import permTitleImage from '../../images/campus.png'
 import perm1 from '../../images/perm1.webp'
 import perm2 from '../../images/perm2.webp'
@@ -430,7 +430,7 @@ export const ProjectsGallery = () => {
             h={'100%'}
             justify={'center'}
             direction={'column'}
-            m={'220px auto 0'}
+            m={'0 auto'}
         >
             <Flex
                 ref={imagesRef}
@@ -440,7 +440,6 @@ export const ProjectsGallery = () => {
                 align={'center'}
                 m={'0 auto'}
                 gap={'40px'}
-                pt={isMobile ? '120px' : '120px'}
             >
                 <Text c={'#012f6d'} fz={'42px'} fw={'700'} lh={'130%'}>
                     Наши проекты
@@ -453,12 +452,9 @@ export const ProjectsGallery = () => {
                                 onClick={() =>
                                     galleryTypeClickHandler(project.type)
                                 }
+                                direction={'column'}
                                 style={{
-                                    borderBottom:
-                                        galleryType === project.type
-                                            ? '3px solid rgb(35, 60, 145)'
-                                            : '',
-                                    transition: 'border-bottom 0.3s',
+                                    cursor: 'pointer',
                                 }}
                             >
                                 <Text
@@ -469,6 +465,19 @@ export const ProjectsGallery = () => {
                                 >
                                     {project.title}
                                 </Text>
+
+                                <Divider
+                                    bg={'#012f6d'}
+                                    w={
+                                        galleryType === project.type
+                                            ? '100%'
+                                            : '0px'
+                                    }
+                                    h={'5px'}
+                                    style={{
+                                        transition: 'width 0.3s',
+                                    }}
+                                />
                             </Flex>
                         )
                     })}
@@ -571,6 +580,7 @@ export const ProjectsGallery = () => {
                                 top: '45%',
                                 zIndex: 1000,
                                 transform: 'rotate(180deg)',
+                                cursor: 'pointer',
                             }}
                         />
                     </button>
@@ -593,6 +603,7 @@ export const ProjectsGallery = () => {
                                 right: '10px',
                                 top: '45%',
                                 zIndex: 1000,
+                                cursor: 'pointer',
                             }}
                         />
                     </button>

@@ -3,6 +3,7 @@ import classes from './Hero.module.css'
 import video from '../../images/bg_video.mp4'
 import { animated, useSpring } from 'react-spring'
 import { useMediaQuery } from '@mantine/hooks'
+import { About } from '../About/About'
 
 export default function HeroBlock() {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
@@ -45,9 +46,9 @@ export default function HeroBlock() {
                 <video
                     src={video}
                     autoPlay
-                    playsInline
                     muted
                     loop
+                    playsInline
                     style={{
                         width: '100%',
                         height: '100%',
@@ -131,96 +132,100 @@ export default function HeroBlock() {
     }
 
     return (
-        <Flex
-            id={'hero'}
-            bg={'#f9fafc'}
-            direction={'column'}
-            className={classes.hero}
-            pos={'relative'}
-        >
-            {/* <Overlay
+        <Flex w={'100%'} direction={'column'}>
+            <Flex
+                id={'hero'}
+                bg={'#f9fafc'}
+                direction={'column'}
+                className={classes.hero}
+                pos={'relative'}
+            >
+                {/* <Overlay
                 gradient="linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, .15) 90%)"
                 opacity={1}
                 zIndex={1000}
             /> */}
-            <video
-                src={video}
-                autoPlay
-                muted
-                loop
-                style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    position: 'absolute',
-                    zIndex: 10,
-                    filter: 'brightness(50%)',
-                }}
-            />
-            <Flex
-                style={{ zIndex: 20 }}
-                className={classes.container}
-                h={'100%'}
-            >
+                <video
+                    src={video}
+                    autoPlay
+                    muted
+                    loop
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        position: 'absolute',
+                        zIndex: 10,
+                        filter: 'brightness(50%)',
+                    }}
+                />
                 <Flex
+                    style={{ zIndex: 20 }}
+                    className={classes.container}
+                    h={'100%'}
+                >
+                    <Flex
+                        gap={'24px'}
+                        direction={'column'}
+                        w={'61vw'}
+                        m={{ base: '120px auto', lg: '228px auto' }}
+                        align={'flex-end'}
+                    >
+                        <animated.div style={titleAnimation}>
+                            <Title className={classes.title}>
+                                ЭТАЛОННЫЕ КОНЦЕССИИ - Центр
+                                <br /> компетенций ГЧП в группе «Эталон»
+                            </Title>
+                        </animated.div>
+                        <animated.div style={textAnimation}>
+                            <Text className={classes.description}>
+                                Комплексный подход к реализации крупных
+                                инфраструктурных проектов
+                            </Text>
+                        </animated.div>
+                    </Flex>
+                </Flex>
+
+                <Flex
+                    p={'0 10% 0'}
                     gap={'24px'}
                     direction={'column'}
-                    w={'61vw'}
-                    m={{ base: '120px auto', lg: '228px auto' }}
+                    w={'100%'}
                     align={'flex-end'}
+                    style={{ zIndex: 1000 }}
+                    pos={'absolute'}
+                    bottom={{ base: '30px', lg: '135px' }}
                 >
-                    <animated.div style={titleAnimation}>
-                        <Title className={classes.title}>
-                            ЭТАЛОННЫЕ КОНЦЕССИИ - Центр
-                            <br /> компетенций ГЧП в группе «Эталон»
-                        </Title>
-                    </animated.div>
-                    <animated.div style={textAnimation}>
-                        <Text className={classes.description}>
-                            Комплексный подход к реализации крупных
-                            инфраструктурных проектов
-                        </Text>
+                    <animated.div style={citateAnimation}>
+                        <Flex w={'100%'} direction={'column'} gap={'16px'}>
+                            <Text
+                                w={'600px'}
+                                mt={'40px'}
+                                c={'#fff'}
+                                style={{ zIndex: 1000 }}
+                                fz={'23px'}
+                                fw={300}
+                                lh={'130%'}
+                            >
+                                “Цель создания современных кампусов как раз в
+                                этом и заключается - создать эталонные
+                                пространства”
+                            </Text>
+                            <Text
+                                c={'#fff'}
+                                fz={'20px'}
+                                fw={300}
+                                lh={'130%'}
+                                opacity={'0.5'}
+                            >
+                                Президент Российской Федерации Владимир
+                                Владимирович Путин
+                            </Text>
+                        </Flex>
                     </animated.div>
                 </Flex>
             </Flex>
-
-            <Flex
-                p={'0 10% 0'}
-                gap={'24px'}
-                direction={'column'}
-                w={'100%'}
-                align={'flex-end'}
-                style={{ zIndex: 1000 }}
-                pos={'absolute'}
-                bottom={{ base: '30px', lg: '135px' }}
-            >
-                <animated.div style={citateAnimation}>
-                    <Flex w={'100%'} direction={'column'} gap={'16px'}>
-                        <Text
-                            w={'600px'}
-                            mt={'40px'}
-                            c={'#fff'}
-                            style={{ zIndex: 1000 }}
-                            fz={'23px'}
-                            fw={300}
-                            lh={'130%'}
-                        >
-                            “Цель создания современных кампусов как раз в этом и
-                            заключается - создать эталонные пространства”
-                        </Text>
-                        <Text
-                            c={'#fff'}
-                            fz={'20px'}
-                            fw={300}
-                            lh={'130%'}
-                            opacity={'0.5'}
-                        >
-                            Президент Российской Федерации Владимир Владимирович
-                            Путин
-                        </Text>
-                    </Flex>
-                </animated.div>
-            </Flex>
+            <About />
         </Flex>
     )
 }
