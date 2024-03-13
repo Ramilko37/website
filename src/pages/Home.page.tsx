@@ -10,11 +10,25 @@ import { NewsSlider } from '../components/NewsSlider/NewsSlider'
 import { useState } from 'react'
 import { NewsComponent } from '../components/NewsComponent/NewsComponent'
 
+export enum ProjectsGalleryType {
+    Perm,
+    Ufa,
+    Tumen,
+    Arhangelsk,
+}
+
 export const HomePage = () => {
+    const [galleryType, setGalleryType] = useState<ProjectsGalleryType>(
+        ProjectsGalleryType.Perm
+    )
     const [isNews, setIsNews] = useState<boolean>(false)
 
     const handleNewsBtnClick = () => {
         setIsNews(!isNews)
+    }
+
+    const galleryTypeClickHandler = (type: ProjectsGalleryType) => {
+        setGalleryType(type)
     }
 
     return (
@@ -31,8 +45,13 @@ export const HomePage = () => {
                 <>
                     <HeroBlock />
                     {/* <About /> */}
-                    <RussianMap />
-                    <ProjectsGallery />
+                    <RussianMap
+                        galleryTypeClickHandler={galleryTypeClickHandler}
+                    />
+                    <ProjectsGallery
+                        galleryType={galleryType}
+                        galleryTypeClickHandler={galleryTypeClickHandler}
+                    />
                     <NewsSlider handleNewsBtnClick={handleNewsBtnClick} />
                     <Contacts />
                     <PartnersCarousel />

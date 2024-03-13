@@ -2,7 +2,6 @@ import { FC, useState } from 'react'
 import styles from './styles.module.css'
 import { Flex, Box, Title, Text, BackgroundImage } from '@mantine/core'
 import ReactCardFlip from 'react-card-flip'
-import { RussianMap } from '../RussianMap/RussianMap'
 import { useInViewport, useMediaQuery } from '@mantine/hooks'
 import permBack from '../../images/perm6.webp'
 import tyumenBack from '../../images/tumen4.webp'
@@ -79,9 +78,6 @@ const NumbersBlock: FC = () => {
             <Box>
                 <div className={styles.content}>
                     <div className={styles.cards}>
-                        <Flex className={styles.left}>
-                            <RussianMap />
-                        </Flex>
                         <div className={styles.right}>
                             <div className={styles.list} ref={ref}>
                                 {initialNumbers.map((item, index) => {

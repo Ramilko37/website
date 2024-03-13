@@ -1,7 +1,5 @@
 import { Text, Flex } from '@mantine/core'
 import { useMediaQuery } from '@mantine/hooks'
-// import classes from './styles.module.css'
-// import { useHover } from '@mantine/hooks'
 
 interface INewsCardProps {
     linkProps: { href: string; target: string; rel: string }
@@ -9,7 +7,8 @@ interface INewsCardProps {
     title: React.ReactNode
     description: React.ReactNode
     nextTitle: string | undefined
-    // nextDescription: any
+    date: string
+    nextDate: string
 }
 
 export function NewsCard({
@@ -17,8 +16,9 @@ export function NewsCard({
     image,
     title,
     nextTitle,
+    date,
+    nextDate,
 }: INewsCardProps) {
-    // const { hovered, ref } = useHover()
     const isMobile = useMediaQuery(`(max-width: 640px)`)
 
     const buttonClickHandler = () => {
@@ -62,7 +62,7 @@ export function NewsCard({
                     onClick={buttonClickHandler}
                 >
                     <Text c={'#fff'} opacity={0.7}>
-                        01.01.2023
+                        {date}
                     </Text>
                     <Text c={'#fff'} fz={{ base: '22px', lg: '32px' }}>
                         {title}
@@ -106,7 +106,7 @@ export function NewsCard({
                     onClick={buttonClickHandler}
                 >
                     <Text c={'#fff'} opacity={0.7}>
-                        01.01.2023
+                        {date}
                     </Text>
                     <Text c={'#fff'} fz={'32px'} fw={300}>
                         {title}
@@ -129,7 +129,7 @@ export function NewsCard({
             >
                 <Flex direction={'column'} gap={'50px'}>
                     <Text c={'#012F6D'} opacity={0.5}>
-                        01.01.2023
+                        {nextDate}
                     </Text>
                     <Text
                         style={{ textAlign: 'left' }}

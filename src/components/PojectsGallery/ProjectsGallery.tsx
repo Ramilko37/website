@@ -19,7 +19,7 @@ import tumenTitleImage from '../../images/tumen1.webp'
 import arhangelskTitleImage from '../../images/arhangelsk.webp'
 import arhangelskImage from '../../images/arhangelsk2.webp'
 import arhangelskImage2 from '../../images/arhangelsk3.webp'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { useHover, useMediaQuery } from '@mantine/hooks'
 import { SquareIcon } from '../../images/icons/square-icon'
 import { PeopleIcon } from '../../images/icons/people-icon'
@@ -31,6 +31,11 @@ import { MdArrowForwardIos } from 'react-icons/md'
 // Import Swiper styles
 import 'swiper/css'
 import { Navigation, Pagination } from 'swiper/modules'
+
+interface IProjectsGalleryProps {
+    galleryType: ProjectsGalleryType
+    galleryTypeClickHandler: (type: ProjectsGalleryType) => void
+}
 
 enum ProjectsGalleryType {
     Perm,
@@ -72,19 +77,14 @@ const projectsNavBarData = [
 //     return <button onClick={() => swiper.slideNext()}>{children}</button>
 // }
 
-export const ProjectsGallery = () => {
+export const ProjectsGallery = ({
+    galleryType,
+    galleryTypeClickHandler,
+}: IProjectsGalleryProps) => {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
-    const [galleryType, setGalleryType] = useState<ProjectsGalleryType>(
-        ProjectsGalleryType.Perm
-    )
     const imagesRef = useRef<HTMLDivElement>(null)
     const swiperRef = useRef<SwiperClass>()
-
     const { hovered, ref } = useHover()
-
-    const galleryTypeClickHandler = (type: ProjectsGalleryType) => {
-        setGalleryType(type)
-    }
 
     const projectsData = useMemo(() => {
         switch (galleryType) {

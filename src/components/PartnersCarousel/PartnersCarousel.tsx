@@ -12,7 +12,7 @@ export const PartnersCarousel = () => {
             style={{
                 height: 'fit-content',
 
-                padding: '108px 0 108px',
+                paddingBottom: '108px',
             }}
         >
             <Marquee

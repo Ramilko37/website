@@ -1,15 +1,20 @@
-import { Box, Flex, Image, Popover, Text } from '@mantine/core'
+import { Flex, HoverCard, Image, Text } from '@mantine/core'
 import Map from '../../images/russian_map.svg'
 import { useDisclosure, useInViewport } from '@mantine/hooks'
 import perm from '../../images/perm1.webp'
 import ufa from '../../images/ufa1.webp'
-
 import arkhangelsk from '../../images/arhangelsk.webp'
-
 import tumen from '../../images/tumen1.webp'
-
 import styles from './styles.module.css'
 import CountUp from 'react-countup'
+import { Link } from 'react-scroll'
+
+enum ProjectsGalleryType {
+    Perm,
+    Ufa,
+    Tumen,
+    Arhangelsk,
+}
 
 const initialNumbers = [
     {
@@ -41,39 +46,47 @@ const initialNumbers = [
         text: 'новых  площадей',
     },
 ]
-
 const popoverData = [
     {
         id: '1',
         coordinates: { top: '35%', left: '25%' },
         img: arkhangelsk,
         text: 'Кампус Архангельск',
+        type: ProjectsGalleryType.Arhangelsk,
     },
     {
         id: '2',
         coordinates: { top: '55%', left: '26%' },
         img: perm,
         text: 'Кампус Пермь',
+        type: ProjectsGalleryType.Perm,
     },
     {
         id: '3',
         coordinates: { top: '65%', left: '33%' },
         img: tumen,
         text: 'Кампус Тюмень',
+        type: ProjectsGalleryType.Tumen,
     },
     {
         id: '4',
         coordinates: { top: '63%', left: '23%' },
         img: ufa,
         text: 'Кампус Уфа',
+        type: ProjectsGalleryType.Ufa,
     },
 ]
 
-export const RussianMap = () => {
+interface IRussianMapProps {
+    galleryTypeClickHandler: (type: ProjectsGalleryType) => void
+}
+
+export const RussianMap = ({ galleryTypeClickHandler }: IRussianMapProps) => {
     const { ref, inViewport } = useInViewport()
     const popoverStates = popoverData.map(() => useDisclosure(false))
 
     const handlePopoverOpen = (index: any) => {
+        console.log('open')
         popoverStates.forEach((popoverState, i) => {
             if (i !== index) {
                 popoverState[1].close()
@@ -86,6 +99,12 @@ export const RussianMap = () => {
     const handlePopoverClose = (index: any) => {
         popoverStates[index][1].close()
     }
+
+    const handleLocationHover =
+        (index: any, type: ProjectsGalleryType) => () => {
+            handlePopoverOpen(index)
+            galleryTypeClickHandler(type)
+        }
 
     return (
         <Flex
@@ -100,17 +119,17 @@ export const RussianMap = () => {
             <Flex w={'61wv'} pos={'relative'}>
                 <Image src={Map} />
                 {popoverData.map((item, index) => (
-                    <Popover
+                    <HoverCard
                         key={item.id}
                         width={200}
                         position="bottom"
-                        withArrow
                         shadow="md"
-                        opened={popoverStates[index][0]}
+                        openDelay={200}
+                        closeDelay={400}
                         onClose={() => handlePopoverClose(index)}
                     >
-                        <Popover.Target>
-                            <Box
+                        <HoverCard.Target>
+                            <Flex
                                 id={item.id}
                                 pos={'absolute'}
                                 top={item.coordinates.top}
@@ -119,31 +138,38 @@ export const RussianMap = () => {
                                 h={'10px'}
                                 style={{ borderRadius: '50%' }}
                                 bg={'#233C91'}
-                                onMouseEnter={() => handlePopoverOpen(index)}
+                                onMouseEnter={handleLocationHover(
+                                    index,
+                                    item.type
+                                )}
                                 onMouseLeave={() => handlePopoverClose(index)}
-                            ></Box>
-                        </Popover.Target>
-                        <Popover.Dropdown
+                            ></Flex>
+                        </HoverCard.Target>
+                        <HoverCard.Dropdown
                             w={'200px'}
                             style={{
                                 borderRadius: '12px',
                                 padding: 0,
                                 background: '#fff',
-                                pointerEvents: 'none',
+                                cursor: 'pointer',
                                 backdropFilter: 'blur(3px)',
                             }}
                         >
                             <Flex
-                                style={{ borderRadius: '12px' }}
+                                style={{
+                                    borderRadius: '12px',
+                                }}
                                 direction={'column'}
                             >
-                                <Image
-                                    style={{
-                                        borderTopRightRadius: '12px',
-                                        borderTopLeftRadius: '12px',
-                                    }}
-                                    src={item.img}
-                                />
+                                <Link to="projects" smooth>
+                                    <Image
+                                        style={{
+                                            borderTopRightRadius: '12px',
+                                            borderTopLeftRadius: '12px',
+                                        }}
+                                        src={item.img}
+                                    />
+                                </Link>
                                 <Flex w={'100%'} p={'8px'} justify={'center'}>
                                     <Text
                                         style={{ textAlign: 'center' }}
@@ -156,8 +182,8 @@ export const RussianMap = () => {
                                     </Text>
                                 </Flex>
                             </Flex>
-                        </Popover.Dropdown>
-                    </Popover>
+                        </HoverCard.Dropdown>
+                    </HoverCard>
                 ))}
             </Flex>
             <Flex
@@ -223,78 +249,6 @@ export const RussianMap = () => {
                                 {item.text}
                             </Text>
                         </Flex>
-                        // <ReactCardFlip
-                        //     key={index}
-                        //     isFlipped={isFlipped === item.id}
-                        //     flipDirection="horizontal"
-                        // >
-                        //     <Flex
-                        //         ref={ref}
-                        //         direction={'column'}
-                        //         w={'270px'}
-                        //         h={'196px'}
-                        //         bg={'rgb(35, 60, 145)'}
-                        //         p={'32px 20px'}
-                        //         style={{
-                        //             borderRadius: '16px',
-                        //         }}
-                        //         onClick={cardFlipHandler(item.id)}
-                        //         key={`join-${index}`}
-                        //     >
-                        //         <Text
-                        //             c={'#fff'}
-                        //             fz={'50px'}
-                        //             fw={700}
-                        //             lh={'100%'}
-                        //         >
-                        //             {inViewport ? (
-                        //                 <Text
-                        //                     c={'#fff'}
-                        //                     fz={'50px'}
-                        //                     fw={700}
-                        //                     lh={'100%'}
-                        //                 >
-                        //                     <CountUp
-                        //                         end={parseFloat(
-                        //                             item.num.replace(
-                        //                                 /[^0-9.]/g,
-                        //                                 ''
-                        //                             )
-                        //                         )}
-                        //                         duration={3}
-                        //                     />
-                        //                     +
-                        //                 </Text>
-                        //             ) : (
-                        //                 item.num
-                        //             )}
-                        //         </Text>
-                        //         <Text
-                        //             c={'#fff'}
-                        //             fz={'30px'}
-                        //             fw={700}
-                        //             lh={'100%'}
-                        //         >
-                        //             {item.sign}
-                        //         </Text>
-                        //         <Text
-                        //             mt={'22px'}
-                        //             c={'#fff'}
-                        //             fz={'20px'}
-                        //             fw={300}
-                        //             lh={'130%'}
-                        //             style={{
-                        //                 alignItems: 'flex-end',
-                        //             }}
-                        //         >
-                        //             {item.text}
-                        //         </Text>
-                        //     </Flex>
-
-                        //     <Flex >
-                        //         <Text>Prompt</Text>
-                        //     </Flex>
-                        // </ReactCardFlip>
                     )
                 })}
             </Flex>

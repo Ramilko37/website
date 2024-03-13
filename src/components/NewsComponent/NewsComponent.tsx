@@ -73,6 +73,7 @@ export const NewsComponent = ({ onClick }: any) => {
                 gap={'24px'}
                 m={{ base: '0', lg: '0 auto' }}
                 style={{ cursor: 'pointer' }}
+                wrap={'wrap'}
             >
                 <Flex
                     ref={ref}

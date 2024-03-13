@@ -69,6 +69,8 @@ export const NewsSlider = ({ handleNewsBtnClick }: INewsSlider) => {
                             title={feature.title}
                             nextTitle={MOCKDATA[index + 1]?.title}
                             description={feature.description}
+                            date={feature.date}
+                            nextDate={MOCKDATA[index + 1]?.date}
                         />
                     </SwiperSlide>
                 ))}
