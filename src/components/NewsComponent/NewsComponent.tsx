@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { MOCKDATA } from '../../constants/constants'
 import { useHover } from '@mantine/hooks'
 import { MdArrowBack } from 'react-icons/md'
+import { useNavigate } from 'react-router-dom'
 
 interface INewsRow {
     title: string
@@ -48,10 +49,12 @@ const NewsRow = ({ title, date, link }: INewsRow) => {
     )
 }
 
-export const NewsComponent = ({ onClick }: any) => {
+export const NewsComponent = () => {
+    const sortedMockData = MOCKDATA.sort((a, b) => b.date.localeCompare(a.date))
     const [activeYear, setActiveYear] = useState<string>('2024')
-    const [data, setData] = useState(MOCKDATA)
+    const [data, setData] = useState(sortedMockData)
     const { hovered, ref } = useHover()
+    const navigate = useNavigate()
 
     const handleYearClick = (year: string) => () => {
         setActiveYear(year)
@@ -64,7 +67,7 @@ export const NewsComponent = ({ onClick }: any) => {
     return (
         <Flex
             direction={{ base: 'column', lg: 'row' }}
-            m={{ base: '120px auto', lg: '180px auto' }}
+            m={{ base: '120px auto', lg: '0 auto' }}
             w={{ base: '90%', lg: '61vw' }}
             gap={'39px'}
         >
@@ -87,7 +90,7 @@ export const NewsComponent = ({ onClick }: any) => {
                     }}
                     justify={'center'}
                     align={'center'}
-                    onClick={onClick}
+                    onClick={() => navigate('/')}
                     gap={'20px'}
                 >
                     <MdArrowBack size={'30px'} color={'#012f6d'} />

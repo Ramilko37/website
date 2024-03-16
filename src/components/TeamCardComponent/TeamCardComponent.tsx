@@ -1,5 +1,6 @@
 import { Flex, Text } from '@mantine/core'
 import { TeamMember } from '../TeamComponent/TeamComponent'
+import styles from './styles.module.css'
 
 interface ITeamCardComponentProps {
     teamMember: TeamMember
@@ -32,6 +33,7 @@ export const TeamCardComponent = ({
             <Flex
                 w={'100%'}
                 h={{ base: '200px', lg: '270px' }}
+                className={styles.teamImage}
                 style={{
                     borderRadius: '12px',
                     filter: 'grayscale(1)',

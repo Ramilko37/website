@@ -7,7 +7,7 @@ export const About = () => {
             w={'100%'}
             direction={'column'}
             gap={{ base: '16px', lg: '24px' }}
-            p={{ base: '44px 20px 44px', lg: '168px 0 40px' }}
+            p={{ base: '44px 20px 44px', lg: '20px 0 20px' }}
             bg={'linear-gradient(90deg, #DAE1ED 0%, #BCD2EB 100%)'}
         >
             {/* <AboutBanner /> */}

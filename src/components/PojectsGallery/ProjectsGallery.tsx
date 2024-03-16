@@ -91,12 +91,12 @@ export const ProjectsGallery = ({
             case ProjectsGalleryType.Perm:
                 return [
                     {
-                        title: '159 тыс. м2',
+                        title: '164 тыс. м2',
                         bullet1: 'Площадь объекта',
                         icon: <SquareIcon />,
                     },
                     {
-                        title: '4760 мест',
+                        title: '5089 человек',
                         bullet1: 'Вместимость',
                         icon: <PeopleIcon />,
                     },
@@ -114,12 +114,12 @@ export const ProjectsGallery = ({
             case ProjectsGalleryType.Ufa:
                 return [
                     {
-                        title: '152 тыс. м2',
+                        title: '145 тыс. м2',
                         bullet1: 'Площадь объекта',
                         icon: <SquareIcon />,
                     },
                     {
-                        title: '3004 мест',
+                        title: '4133 человека',
                         bullet1: 'Вместимость',
                         icon: <PeopleIcon />,
                     },
@@ -142,7 +142,7 @@ export const ProjectsGallery = ({
                         icon: <SquareIcon />,
                     },
                     {
-                        title: '4980 мест',
+                        title: '5100 человек',
                         bullet1: 'Вместимость',
                         icon: <PeopleIcon />,
                     },
@@ -160,12 +160,12 @@ export const ProjectsGallery = ({
             case ProjectsGalleryType.Arhangelsk:
                 return [
                     {
-                        title: '128 тыс. м2',
+                        title: '152 тыс. м2',
                         bullet1: 'Площадь объекта',
                         icon: <SquareIcon />,
                     },
                     {
-                        title: '4124 мест',
+                        title: '4124 человека',
                         bullet1: 'Вместимость',
                         icon: <PeopleIcon />,
                     },
@@ -258,7 +258,7 @@ export const ProjectsGallery = ({
                 id={'projects'}
                 direction={'column'}
                 w={'100%'}
-                h={isMobile ? '100%' : '100dvh'}
+                h={'fit-content'}
                 justify={'center'}
                 px={'40px'}
             >
@@ -427,8 +427,7 @@ export const ProjectsGallery = ({
         <Flex
             id={'projects'}
             w={'1175px'}
-            h={'100%'}
-            justify={'center'}
+            h={'fit-content'}
             direction={'column'}
             m={'0 auto'}
         >
@@ -460,7 +459,11 @@ export const ProjectsGallery = ({
                                 <Text
                                     c={'#012f6d'}
                                     fz={'32px'}
-                                    fw={'400'}
+                                    fw={
+                                        galleryType === project.type
+                                            ? '700'
+                                            : '400'
+                                    }
                                     lh={'130%'}
                                 >
                                     {project.title}

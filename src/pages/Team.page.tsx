@@ -1,6 +1,5 @@
 import { Flex } from '@mantine/core'
 import { TeamComponent } from '../components/TeamComponent/TeamComponent'
-import { Header } from '../components/Header/Header'
 
 export const TeamPage = () => {
     return (
@@ -13,7 +12,6 @@ export const TeamPage = () => {
             direction={'column'}
             p={{ base: '96px 20px 96px', lg: '180px 40px 120px' }}
         >
-            <Header handleNewsBtnClick={() => {}} isTeam />
             <TeamComponent />
         </Flex>
     )

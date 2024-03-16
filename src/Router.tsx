@@ -1,24 +1,27 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { HomePage } from './pages/Home.page'
 import { TeamPage } from './pages/Team.page'
-import { ServicesPage } from './pages/Services.page'
 import { NewsPage } from './pages/News.page'
+import { Layout } from './components/Layout/Layout'
+import { HomePage } from './pages/Home.page'
+
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <HomePage />,
-    },
-    {
-        path: '/services',
-        element: <ServicesPage />,
-    },
-    {
-        path: '/team',
-        element: <TeamPage />,
-    },
-    {
-        path: '/news',
-        element: <NewsPage />,
+        element: <Layout />,
+        children: [
+            {
+                path: '/',
+                element: <HomePage />,
+            },
+            {
+                path: '/news',
+                element: <NewsPage />,
+            },
+            {
+                path: '/team',
+                element: <TeamPage />,
+            },
+        ],
     },
 ])
 

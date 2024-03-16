@@ -16,6 +16,7 @@ interface INewsSlider {
 
 export const NewsSlider = ({ handleNewsBtnClick }: INewsSlider) => {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
+    const newsData = MOCKDATA.sort((a, b) => b.date.localeCompare(a.date))
 
     const pagination = {
         clickable: true,
@@ -39,7 +40,6 @@ export const NewsSlider = ({ handleNewsBtnClick }: INewsSlider) => {
             direction={'column'}
             w={isMobile ? '100%' : '80vw'}
             m={isMobile ? 0 : '0 auto 0'}
-            justify={'center'}
             align={'center'}
             pos={'relative'}
             gap={{ base: '24px', lg: '48px' }}
@@ -51,6 +51,7 @@ export const NewsSlider = ({ handleNewsBtnClick }: INewsSlider) => {
                 style={{
                     width: isMobile ? '100%' : '1170px',
                     paddingBottom: '40px',
+                    borderRadius: '20px',
                 }}
                 spaceBetween={50}
                 navigation={{
@@ -61,7 +62,7 @@ export const NewsSlider = ({ handleNewsBtnClick }: INewsSlider) => {
                 slidesPerView={1}
                 autoHeight={true}
             >
-                {MOCKDATA.map((feature, index) => (
+                {newsData.map((feature, index) => (
                     <SwiperSlide key={index}>
                         <NewsCard
                             linkProps={feature.linkProps}

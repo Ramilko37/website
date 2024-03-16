@@ -2,45 +2,20 @@ import { useEffect, useRef, useState } from 'react'
 import classes from './Header.module.css'
 import { Box, Burger, CloseIcon } from '@mantine/core'
 import { useMediaQuery } from '@mantine/hooks'
-import { Link } from 'react-scroll'
+import { HashLink } from 'react-router-hash-link'
 import { LogoIcon } from '../../images/icons/logo-icon'
-import { Link as RouterLink, useNavigate } from 'react-router-dom'
+import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom'
 
-interface IHeaderProps {
-    isTeam?: boolean
-    isNews?: boolean
-    handleNewsBtnClick: () => void
-}
-
-const links = [
-    {
-        id: 'projects',
-        link: '#1',
-        label: 'Проекты',
-    },
-    { id: '', link: '/news', label: 'Новости' },
-    { id: 'team', link: '/team', label: 'Команда' },
-    { id: 'contacts', link: '', label: 'Контакты' },
-]
-
-export const Header = ({
-    isTeam,
-    isNews,
-    handleNewsBtnClick,
-}: IHeaderProps) => {
+export const Header = () => {
     const headerRef = useRef<HTMLElement>(null)
     const [whiteHeader, setWhiteHeader] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
     const isMobile = useMediaQuery('(max-width: 1100px)')
     const navigate = useNavigate()
+    const { pathname } = useLocation()
 
     const handleLogoClick = () => {
-        if (isNews) {
-            handleNewsBtnClick()
-        }
-        if (window.location.href !== '/') {
-            navigate('/')
-        }
+        navigate('/')
         setMenuOpen(false)
         window.scrollTo({
             top: 0,
@@ -52,8 +27,11 @@ export const Header = ({
         setMenuOpen((prevState) => !prevState)
     }
 
-    const handleLinkClick = () => {
-        setMenuOpen((prevState) => !prevState)
+    const handleMobileClick = () => {
+        if (pathname !== '/') {
+            navigate('/')
+        }
+        setMenuOpen(false)
     }
 
     useEffect(() => {
@@ -69,41 +47,6 @@ export const Header = ({
             window.removeEventListener('scroll', scrollHandler)
         }
     }, [])
-
-    const items = links.map((link) => {
-        if (link.link === '/team') {
-            return (
-                <RouterLink className={classes.link} to={link.link}>
-                    Команда
-                </RouterLink>
-            )
-        } else if (link.link === '/news' && !isNews) {
-            return (
-                <a className={classes.link} onClick={handleNewsBtnClick}>
-                    Новости
-                </a>
-            )
-        }
-        {
-            return (
-                <Link
-                    style={{ height: isMobile ? 'fit-content' : '100%' }}
-                    to={link.id as string}
-                    onClick={handleLinkClick}
-                    smooth
-                >
-                    <a
-                        key={link.label}
-                        href={link.link}
-                        className={classes.link}
-                        onClick={(event) => event.preventDefault()}
-                    >
-                        {link.label}
-                    </a>
-                </Link>
-            )
-        }
-    })
 
     return (
         <header
@@ -132,18 +75,64 @@ export const Header = ({
                             <LogoIcon onClick={handleLogoClick} />
                         </a>
                     )}
-                    {!isTeam && (
-                        <nav
+
+                    <nav
+                        style={{
+                            display: 'flex',
+                            flexDirection: isMobile ? 'column' : 'row',
+                            gap: '24px',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <HashLink
                             style={{
-                                display: 'flex',
-                                flexDirection: isMobile ? 'column' : 'row',
-                                gap: '24px',
-                                alignItems: 'center',
+                                height: isMobile ? 'fit-content' : '100%',
+                                textDecoration: 'none',
                             }}
+                            to={'/#projects'}
+                            onClick={handleMobileClick}
+                            smooth
                         >
-                            {items}
-                        </nav>
-                    )}
+                            <a
+                                key={'projects'}
+                                href={'/projects'}
+                                className={classes.link}
+                            >
+                                Проекты
+                            </a>
+                        </HashLink>
+                        <RouterLink
+                            onClick={handleMobileClick}
+                            style={{
+                                height: isMobile ? 'fit-content' : '100%',
+                                textDecoration: 'none',
+                            }}
+                            to={'/news'}
+                        >
+                            <a className={classes.link}>Новости</a>
+                        </RouterLink>
+                        <RouterLink
+                            onClick={handleMobileClick}
+                            style={{
+                                height: isMobile ? 'fit-content' : '100%',
+                                textDecoration: 'none',
+                            }}
+                            to={'/team'}
+                        >
+                            <a className={classes.link}>Команда</a>
+                        </RouterLink>
+                        <HashLink
+                            style={{
+                                height: isMobile ? 'fit-content' : '100%',
+                                textDecoration: 'none',
+                            }}
+                            to={'/#contacts'}
+                            onClick={handleMobileClick}
+                            smooth
+                        >
+                            <a className={classes.link}>Контакты</a>
+                        </HashLink>
+                    </nav>
 
                     {isMobile &&
                         (menuOpen ? (
