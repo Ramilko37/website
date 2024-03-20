@@ -11,6 +11,7 @@ export const TeamPage = () => {
             align={'center'}
             direction={'column'}
             p={{ base: '96px 20px 96px', lg: '180px 40px 120px' }}
+            style={{ overflow: 'scroll' }}
         >
             <TeamComponent />
         </Flex>

@@ -5,12 +5,11 @@ import perm2 from '../../images/perm2.webp'
 import perm3 from '../../images/perm3.webp'
 import perm4 from '../../images/perm4.webp'
 import perm5 from '../../images/perm5.webp'
-import ufa1 from '../../images/ufa1.webp'
 import ufa2 from '../../images/ufa2.webp'
 import ufa3 from '../../images/ufa3.webp'
 import ufa4 from '../../images/ufa4.webp'
 import ufa5 from '../../images/ufa5.webp'
-import tumen from '../../images/tumen1.webp'
+
 import tumen2 from '../../images/tumen2.webp'
 import tumen3 from '../../images/tumen3.webp'
 import tumen4 from '../../images/tumen4.webp'
@@ -91,22 +90,26 @@ export const ProjectsGallery = ({
             case ProjectsGalleryType.Perm:
                 return [
                     {
-                        title: '164 тыс. м2',
+                        num: '164',
+                        letters: 'тыс. м2',
                         bullet1: 'Площадь объекта',
                         icon: <SquareIcon />,
                     },
                     {
-                        title: '5089 человек',
+                        num: '5089',
+                        letters: 'человек',
                         bullet1: 'Вместимость',
                         icon: <PeopleIcon />,
                     },
                     {
-                        title: '28 млрд руб.',
+                        num: '28',
+                        letters: 'млрд руб.',
                         bullet1: 'Объем инвестиций  ',
                         icon: <MoneyIcon />,
                     },
                     {
-                        title: '22 года',
+                        num: '22',
+                        letters: 'года',
                         bullet1: 'Срок реализации',
                         icon: <СlockIcon />,
                     },
@@ -114,22 +117,26 @@ export const ProjectsGallery = ({
             case ProjectsGalleryType.Ufa:
                 return [
                     {
-                        title: '145 тыс. м2',
+                        num: '145',
+                        letters: 'тыс. м2',
                         bullet1: 'Площадь объекта',
                         icon: <SquareIcon />,
                     },
                     {
-                        title: '4133 человека',
+                        num: '4133',
+                        letters: 'человека',
                         bullet1: 'Вместимость',
                         icon: <PeopleIcon />,
                     },
                     {
-                        title: '21 млрд руб.',
+                        num: '21',
+                        letters: 'млрд руб.',
                         bullet1: 'Объем инвестиций  ',
                         icon: <MoneyIcon />,
                     },
                     {
-                        title: '25 лет',
+                        num: '25',
+                        letters: 'лет',
                         bullet1: 'Срок реализации',
                         icon: <СlockIcon />,
                     },
@@ -137,22 +144,26 @@ export const ProjectsGallery = ({
             case ProjectsGalleryType.Tumen:
                 return [
                     {
-                        title: '167 тыс. м2',
+                        num: '167',
+                        letters: 'тыс. м2',
                         bullet1: 'Площадь объекта',
                         icon: <SquareIcon />,
                     },
                     {
-                        title: '5100 человек',
+                        num: '5100',
+                        letters: 'человек',
                         bullet1: 'Вместимость',
                         icon: <PeopleIcon />,
                     },
                     {
-                        title: '32 млрд руб.',
+                        num: '32',
+                        letters: 'млрд руб.',
                         bullet1: 'Объем инвестиций  ',
                         icon: <MoneyIcon />,
                     },
                     {
-                        title: '22 года',
+                        num: '22',
+                        letters: 'года',
                         bullet1: 'Срок реализации',
                         icon: <СlockIcon />,
                     },
@@ -160,22 +171,26 @@ export const ProjectsGallery = ({
             case ProjectsGalleryType.Arhangelsk:
                 return [
                     {
-                        title: '152 тыс. м2',
+                        num: '152',
+                        letters: 'тыс. м2',
                         bullet1: 'Площадь объекта',
                         icon: <SquareIcon />,
                     },
                     {
-                        title: '4124 человека',
+                        num: '4124',
+                        letters: 'человека',
                         bullet1: 'Вместимость',
                         icon: <PeopleIcon />,
                     },
                     {
-                        title: '28 млрд руб.',
+                        num: '28',
+                        letters: 'млрд руб.',
                         bullet1: 'Объем инвестиций  ',
                         icon: <MoneyIcon />,
                     },
                     {
-                        title: '22 года',
+                        num: '22',
+                        letters: 'года',
                         bullet1: 'Срок реализации',
                         icon: <СlockIcon />,
                     },
@@ -192,21 +207,8 @@ export const ProjectsGallery = ({
             perm5,
             permTitleImage,
         ],
-        [ProjectsGalleryType.Ufa]: [
-            ufa1,
-            ufa2,
-            ufa3,
-            ufa4,
-            ufa5,
-            ufaTitleImage,
-        ],
-        [ProjectsGalleryType.Tumen]: [
-            tumen,
-            tumen2,
-            tumen3,
-            tumen4,
-            tumenTitleImage,
-        ],
+        [ProjectsGalleryType.Ufa]: [ufa2, ufa3, ufa4, ufa5, ufaTitleImage],
+        [ProjectsGalleryType.Tumen]: [tumen2, tumen3, tumen4, tumenTitleImage],
         [ProjectsGalleryType.Arhangelsk]: [
             arhangelskImage,
             arhangelskImage2,
@@ -270,7 +272,7 @@ export const ProjectsGallery = ({
                     mb={{ base: '16px', lg: '40px' }}
                     style={{ textAlign: 'center' }}
                 >
-                    Наши проекты
+                    НАШИ ПРОЕКТЫ
                 </Text>
                 <Flex
                     direction={'column'}
@@ -404,7 +406,7 @@ export const ProjectsGallery = ({
                                         fw={700}
                                         lh={'130%'}
                                     >
-                                        {project.title}
+                                        {project.num}
                                     </Text>
                                     <Text
                                         c={'#012f6d'}
@@ -425,194 +427,224 @@ export const ProjectsGallery = ({
 
     return (
         <Flex
-            id={'projects'}
-            w={'1175px'}
-            h={'fit-content'}
-            direction={'column'}
-            m={'0 auto'}
+            w={'100%'}
+            bg={
+                'linear-gradient(90deg, rgba(218, 225, 237, 0.10) 0%, rgba(188, 210, 235, 0.10) 100%)'
+            }
+            pt={'90px'}
         >
             <Flex
-                ref={imagesRef}
+                id={'projects'}
+                w={'1175px'}
+                h={'fit-content'}
                 direction={'column'}
-                w={'100%'}
-                justify={'center'}
-                align={'center'}
                 m={'0 auto'}
-                gap={'40px'}
             >
-                <Text c={'#012f6d'} fz={'42px'} fw={'700'} lh={'130%'}>
-                    Наши проекты
-                </Text>
-                <Flex w={'100%'} m={'0 auto'} justify={'space-between'}>
-                    {projectsNavBarData.map((project, index) => {
-                        return (
-                            <Flex
-                                key={index}
-                                onClick={() =>
-                                    galleryTypeClickHandler(project.type)
-                                }
-                                direction={'column'}
-                                style={{
-                                    cursor: 'pointer',
-                                }}
-                            >
-                                <Text
-                                    c={'#012f6d'}
-                                    fz={'32px'}
-                                    fw={
-                                        galleryType === project.type
-                                            ? '700'
-                                            : '400'
-                                    }
-                                    lh={'130%'}
-                                >
-                                    {project.title}
-                                </Text>
-
-                                <Divider
-                                    bg={'#012f6d'}
-                                    w={
-                                        galleryType === project.type
-                                            ? '100%'
-                                            : '0px'
-                                    }
-                                    h={'5px'}
-                                    style={{
-                                        transition: 'width 0.3s',
-                                    }}
-                                />
-                            </Flex>
-                        )
-                    })}
-                </Flex>
-            </Flex>
-
-            <Flex
-                m={'37px auto 24px'}
-                w={'100%'}
-                gap={'24px'}
-                justify={'space-between'}
-                align={'center'}
-            >
-                <Flex direction={'column'} w={'30%'} gap={'24px'}>
-                    {projectsData.slice(0, 2).map((project, index) => {
-                        return (
-                            <Flex
-                                key={index}
-                                direction={'column'}
-                                justify={'center'}
-                                align={'center'}
-                                w={'370px'}
-                                h={'328px'}
-                                style={{
-                                    borderRadius: '16px',
-                                    border: '1px solid rgb(188, 210, 235)',
-                                }}
-                            >
+                <Flex
+                    ref={imagesRef}
+                    direction={'column'}
+                    w={'100%'}
+                    justify={'center'}
+                    align={'center'}
+                    m={'0 auto'}
+                    gap={'40px'}
+                >
+                    <Text c={'#012f6d'} fz={'42px'} fw={'700'} lh={'130%'}>
+                        НАШИ ПРОЕКТЫ
+                    </Text>
+                    <Flex w={'100%'} m={'0 auto'} justify={'space-between'}>
+                        {projectsNavBarData.map((project, index) => {
+                            return (
                                 <Flex
-                                    w={'80px'}
-                                    h={'80px'}
+                                    key={index}
+                                    onClick={() =>
+                                        galleryTypeClickHandler(project.type)
+                                    }
+                                    direction={'column'}
+                                    style={{
+                                        cursor: 'pointer',
+                                    }}
+                                >
+                                    <Text
+                                        c={'#012f6d'}
+                                        fz={'32px'}
+                                        fw={
+                                            galleryType === project.type
+                                                ? '700'
+                                                : '400'
+                                        }
+                                        opacity={
+                                            galleryType === project.type
+                                                ? '1'
+                                                : '0.5'
+                                        }
+                                        lh={'130%'}
+                                    >
+                                        {project.title}
+                                    </Text>
+
+                                    <Divider
+                                        bg={'#012f6d'}
+                                        w={
+                                            galleryType === project.type
+                                                ? '100%'
+                                                : '0px'
+                                        }
+                                        h={'5px'}
+                                        style={{
+                                            transition: 'width 0.3s',
+                                        }}
+                                    />
+                                </Flex>
+                            )
+                        })}
+                    </Flex>
+                </Flex>
+
+                <Flex
+                    m={'37px auto 24px'}
+                    w={'100%'}
+                    gap={'24px'}
+                    justify={'space-between'}
+                    align={'center'}
+                >
+                    <Flex direction={'column'} w={'30%'} gap={'24px'}>
+                        {projectsData.map((project, index) => {
+                            return (
+                                <Flex
+                                    key={index}
+                                    direction={'column'}
                                     justify={'center'}
                                     align={'center'}
+                                    w={'370px'}
+                                    h={'156px'}
+                                    p={'16px 24px 16px'}
+                                    style={{
+                                        borderRadius: '16px',
+                                        border: '1px solid rgb(188, 210, 235)',
+                                    }}
                                 >
-                                    {project.icon}
-                                </Flex>
-                                <Text
-                                    c={'#012f6d'}
-                                    fz={'50px'}
-                                    fw={700}
-                                    lh={'130%'}
-                                >
-                                    {project.title}
-                                </Text>
-                                <Text
-                                    c={'#012f6d'}
-                                    fz={'32px'}
-                                    fw={300}
-                                    lh={'130%'}
-                                >
-                                    {project.bullet1}
-                                </Text>
-                            </Flex>
-                        )
-                    })}
-                </Flex>
-                <Flex
-                    ref={ref}
-                    w={'70%'}
-                    h={'680px'}
-                    style={{
-                        maxWidth: '770px',
-                        overflow: 'hidden',
-                        borderRadius: '16px',
-                        position: 'relative',
-                    }}
-                >
-                    <Swiper
-                        modules={[Navigation, Pagination]}
-                        pagination={{ clickable: true }}
-                        navigation={{
-                            nextEl: '.arrow-right',
-                            prevEl: '.arrow-left',
-                        }}
-                        scrollbar={{ draggable: true }}
-                        loop
-                        onSwiper={(swiper) => {
-                            swiperRef.current = swiper
-                        }}
-                    >
-                        {slides}
-                    </Swiper>
+                                    <Flex
+                                        w={'100%'}
+                                        gap={'16px'}
+                                        align={'center'}
+                                    >
+                                        <Flex
+                                            w={'112px'}
+                                            h={'112px'}
+                                            justify={'center'}
+                                            align={'center'}
+                                        >
+                                            {project.icon}
+                                        </Flex>
 
-                    <button
+                                        <Flex direction={'column'}>
+                                            <Text
+                                                c={'#012f6d'}
+                                                fz={'56px'}
+                                                fw={700}
+                                                lh={'100%'}
+                                            >
+                                                {project.num}
+                                            </Text>
+                                            <Text
+                                                c={'#012f6d'}
+                                                fz={'28px'}
+                                                fw={700}
+                                                lh={'130%'}
+                                            >
+                                                {project.letters}
+                                            </Text>
+                                            <Text
+                                                c={'#012f6d'}
+                                                fz={'20px'}
+                                                fw={300}
+                                                lh={'130%'}
+                                            >
+                                                {project.bullet1}
+                                            </Text>
+                                        </Flex>
+                                    </Flex>
+                                </Flex>
+                            )
+                        })}
+                    </Flex>
+                    <Flex
+                        ref={ref}
+                        w={'70%'}
+                        h={'680px'}
                         style={{
-                            opacity: hovered ? '1' : '0',
-                            position: 'absolute',
-                            left: '10px',
-                            top: '45%',
-                            transition: '0.2s',
+                            maxWidth: '770px',
+                            overflow: 'hidden',
+                            borderRadius: '16px',
+                            position: 'relative',
                         }}
-                        className="arrow-left arrow"
                     >
-                        <MdArrowForwardIos
-                            size={50}
-                            color={'#fff'}
+                        <Swiper
+                            modules={[Navigation, Pagination]}
+                            pagination={{ clickable: true }}
+                            navigation={{
+                                nextEl: '.arrow-right',
+                                prevEl: '.arrow-left',
+                            }}
+                            scrollbar={{ draggable: true }}
+                            loop
+                            onSwiper={(swiper) => {
+                                swiperRef.current = swiper
+                            }}
+                        >
+                            {slides}
+                        </Swiper>
+
+                        <button
                             style={{
+                                opacity: hovered ? '1' : '0',
                                 position: 'absolute',
                                 left: '10px',
                                 top: '45%',
-                                zIndex: 1000,
-                                transform: 'rotate(180deg)',
-                                cursor: 'pointer',
+                                transition: '0.2s',
                             }}
-                        />
-                    </button>
+                            className="arrow-left arrow"
+                        >
+                            <MdArrowForwardIos
+                                size={50}
+                                color={'#fff'}
+                                style={{
+                                    position: 'absolute',
+                                    left: '10px',
+                                    top: '45%',
+                                    zIndex: 1000,
+                                    transform: 'rotate(180deg)',
+                                    cursor: 'pointer',
+                                }}
+                            />
+                        </button>
 
-                    <button
-                        style={{
-                            opacity: hovered ? '1' : '0',
-                            position: 'absolute',
-                            right: '10px',
-                            top: '45%',
-                            transition: '0.2s',
-                        }}
-                        className="arrow-right arrow"
-                    >
-                        <MdArrowForwardIos
-                            size={50}
-                            color={'#fff'}
+                        <button
                             style={{
+                                opacity: hovered ? '1' : '0',
                                 position: 'absolute',
                                 right: '10px',
                                 top: '45%',
-                                zIndex: 1000,
-                                cursor: 'pointer',
+                                transition: '0.2s',
                             }}
-                        />
-                    </button>
+                            className="arrow-right arrow"
+                        >
+                            <MdArrowForwardIos
+                                size={50}
+                                color={'#fff'}
+                                style={{
+                                    position: 'absolute',
+                                    right: '10px',
+                                    top: '45%',
+                                    zIndex: 1000,
+                                    cursor: 'pointer',
+                                }}
+                            />
+                        </button>
+                    </Flex>
                 </Flex>
-            </Flex>
-            <Flex w={'100%'} gap={'30px'}>
+                {/* <Flex w={'100%'} gap={'30px'}>
                 {projectsData
                     .slice(2, projectsData.length)
                     .map((project, index) => {
@@ -629,15 +661,26 @@ export const ProjectsGallery = ({
                                     border: '1px solid rgb(188, 210, 235)',
                                 }}
                             >
-                                <Flex
-                                    w={'80px'}
-                                    h={'80px'}
-                                    justify={'center'}
-                                    align={'center'}
-                                    gap={'32px'}
-                                >
-                                    {project.icon}
+                                <Flex>
+                                    <Flex
+                                        w={'80px'}
+                                        h={'80px'}
+                                        justify={'center'}
+                                        align={'center'}
+                                        gap={'32px'}
+                                    >
+                                        {project.icon}
+                                    </Flex>
+                                    <Text
+                                        c={'#012f6d'}
+                                        fz={'50px'}
+                                        fw={700}
+                                        lh={'130%'}
+                                    >
+                                        {project.title}
+                                    </Text>
                                 </Flex>
+
                                 <Flex direction={'column'}>
                                     <Text
                                         c={'#012f6d'}
@@ -659,6 +702,7 @@ export const ProjectsGallery = ({
                             </Flex>
                         )
                     })}
+            </Flex> */}
             </Flex>
         </Flex>
     )

@@ -8,7 +8,9 @@ export const About = () => {
             direction={'column'}
             gap={{ base: '16px', lg: '24px' }}
             p={{ base: '44px 20px 44px', lg: '20px 0 20px' }}
-            bg={'linear-gradient(90deg, #DAE1ED 0%, #BCD2EB 100%)'}
+            bg={
+                'linear-gradient(90deg, rgba(218, 225, 237, 0.10) 0%, rgba(188, 210, 235, 0.10) 100%)'
+            }
         >
             {/* <AboutBanner /> */}
             <Flex
@@ -24,7 +26,7 @@ export const About = () => {
                     background: 'transparent',
                 }}
             >
-                <Title className={styles.title}>О нас</Title>
+                <Title className={styles.title}>О НАС</Title>
                 <Text className={styles.description}>
                     Частная инвестиционная компания, специализирующаяся на
                     реализации крупных инфраструктурных проектов на принципах

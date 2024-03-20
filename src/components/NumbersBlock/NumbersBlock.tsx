@@ -73,7 +73,7 @@ const NumbersBlock: FC = () => {
             columnGap={{ base: '24px', lg: '48px' }}
         >
             <Title className={styles.title} m={'0 auto'}>
-                География проектов
+                ГЕОГРАФИЯ ПРОЕКТОВ
             </Title>
             <Box>
                 <div className={styles.content}>

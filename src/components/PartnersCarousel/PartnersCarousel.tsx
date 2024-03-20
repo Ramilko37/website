@@ -8,8 +8,14 @@ export const PartnersCarousel = () => {
 
     return (
         <Flex direction={'column'} justify={'center'}>
-            <Text c={'#012F6D'} fz={'42px'} fw={700} lh={'130%'} m={'0 auto'}>
-                Наши Партнеры
+            <Text
+                c={'#012F6D'}
+                fz={'42px'}
+                fw={700}
+                lh={'130%'}
+                m={'0 auto 90px'}
+            >
+                НАШИ ПАРТНЕРЫ
             </Text>
             <div
                 id="marquee"

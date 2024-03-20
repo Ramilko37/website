@@ -8,105 +8,124 @@ export const Contacts = () => {
 
     return (
         <Flex
-            id={'contacts'}
-            w={{ base: '100%', lg: '61vw' }}
-            h={'900px'}
-            m={{ base: '0 auto', lg: '0 auto 132px' }}
-            style={{ borderRadius: '16px', overflow: 'hidden' }}
-            direction={'column'}
-            justify={'center'}
-            align={'center'}
-            gap={{ base: '16px', lg: '36px' }}
+            w={'100%'}
+            bg={
+                'linear-gradient(90deg, rgba(218, 225, 237, 0.10) 0%, rgba(188, 210, 235, 0.10) 100%)'
+            }
+            pt={'90px'}
         >
-            <Title c={'#012F6D'} fz={{ base: '30px', lg: '42px' }} fw={700}>
-                Контакты
-            </Title>
+            <Flex
+                id={'contacts'}
+                w={{ base: '100%', lg: '61vw' }}
+                h={'900px'}
+                m={{ base: '0 auto', lg: '0 auto 132px' }}
+                style={{ borderRadius: '16px', overflow: 'hidden' }}
+                direction={'column'}
+                justify={'center'}
+                align={'center'}
+                gap={{ base: '16px', lg: '36px' }}
+            >
+                <Title c={'#012F6D'} fz={{ base: '30px', lg: '42px' }} fw={700}>
+                    КОНТАКТЫ
+                </Title>
 
-            {isMobile ? (
-                <Flex direction={'column'} w={'100%'} h={'100%'} gap={'24px'}>
+                {isMobile ? (
                     <Flex
-                        bg={'#fff'}
+                        direction={'column'}
                         w={'100%'}
                         h={'100%'}
-                        p={'24px'}
-                        pos={'relative'}
-                        style={{ borderRadius: '16px' }}
+                        gap={'24px'}
                     >
-                        <ContactIconsList />
-                    </Flex>
+                        <Flex
+                            bg={'#fff'}
+                            w={'100%'}
+                            h={'100%'}
+                            p={'24px'}
+                            pos={'relative'}
+                            style={{ borderRadius: '16px' }}
+                        >
+                            <ContactIconsList />
+                        </Flex>
 
-                    <YMaps>
-                        <Map
-                            overlay={true}
-                            instanceRef={(ref) => {
-                                ref && ref.behaviors.disable('scrollZoom')
-                            }}
-                            defaultState={{
-                                center: [55.768355, 37.670241],
-                                zoom: 15,
-                                controls: ['zoomControl', 'fullscreenControl'],
-                            }}
-                            modules={[
-                                'control.ZoomControl',
-                                'control.FullscreenControl',
-                            ]}
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                borderRadius: '16px',
-                                filter: 'grayscale(1)',
-                            }}
-                        >
-                            <Placemark
-                                defaultGeometry={[55.768355, 37.670241]}
-                            />
-                        </Map>
-                    </YMaps>
-                </Flex>
-            ) : (
-                <Flex
-                    w={'100%'}
-                    h={'100%'}
-                    style={{ borderRadius: '16px', overflow: 'hidden' }}
-                >
-                    <YMaps>
-                        <Map
-                            overlay={true}
-                            instanceRef={(ref) => {
-                                ref && ref.behaviors.disable('scrollZoom')
-                            }}
-                            defaultState={{
-                                center: [55.768355, 37.670241],
-                                zoom: 15,
-                                controls: ['zoomControl', 'fullscreenControl'],
-                            }}
-                            modules={[
-                                'control.ZoomControl',
-                                'control.FullscreenControl',
-                            ]}
-                            style={{
-                                width: '770px',
-                                height: '100%',
-                                borderRadius: '16px',
-                                filter: 'grayscale(1)',
-                            }}
-                        >
-                            <Placemark
-                                defaultGeometry={[55.768355, 37.670241]}
-                            />
-                        </Map>
-                    </YMaps>
-                    <Flex
-                        bg={'#fff'}
-                        w={'40%'}
-                        h={'100%'}
-                        p={'44px 32px'}
-                        pos={'relative'}
-                    >
-                        <ContactIconsList />
+                        <YMaps>
+                            <Map
+                                overlay={true}
+                                instanceRef={(ref) => {
+                                    ref && ref.behaviors.disable('scrollZoom')
+                                }}
+                                defaultState={{
+                                    center: [55.768355, 37.670241],
+                                    zoom: 15,
+                                    controls: [
+                                        'zoomControl',
+                                        'fullscreenControl',
+                                    ],
+                                }}
+                                modules={[
+                                    'control.ZoomControl',
+                                    'control.FullscreenControl',
+                                ]}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    borderRadius: '16px',
+                                    filter: 'grayscale(1)',
+                                }}
+                            >
+                                <Placemark
+                                    defaultGeometry={[55.768355, 37.670241]}
+                                />
+                            </Map>
+                        </YMaps>
                     </Flex>
-                </Flex>
-            )}
+                ) : (
+                    <Flex
+                        w={'100%'}
+                        h={'100%'}
+                        style={{ borderRadius: '16px', overflow: 'hidden' }}
+                    >
+                        <YMaps>
+                            <Map
+                                overlay={true}
+                                instanceRef={(ref) => {
+                                    ref && ref.behaviors.disable('scrollZoom')
+                                }}
+                                defaultState={{
+                                    center: [55.768355, 37.670241],
+                                    zoom: 15,
+                                    controls: [
+                                        'zoomControl',
+                                        'fullscreenControl',
+                                    ],
+                                }}
+                                modules={[
+                                    'control.ZoomControl',
+                                    'control.FullscreenControl',
+                                ]}
+                                style={{
+                                    width: '770px',
+                                    height: '100%',
+                                    borderRadius: '16px',
+                                    filter: 'grayscale(1)',
+                                }}
+                            >
+                                <Placemark
+                                    defaultGeometry={[55.768355, 37.670241]}
+                                />
+                            </Map>
+                        </YMaps>
+                        <Flex
+                            bg={'#fff'}
+                            w={'40%'}
+                            h={'100%'}
+                            p={'44px 32px'}
+                            pos={'relative'}
+                        >
+                            <ContactIconsList />
+                        </Flex>
+                    </Flex>
+                )}
+            </Flex>
         </Flex>
     )
 }

@@ -1,5 +1,5 @@
 import { Flex, HoverCard, Image, Text } from '@mantine/core'
-import Map from '../../images/russian_map.svg'
+import Map from '../../images/map.png'
 import { useDisclosure, useInViewport } from '@mantine/hooks'
 import perm from '../../images/perm1.webp'
 import ufa from '../../images/ufa1.webp'
@@ -20,57 +20,58 @@ const initialNumbers = [
     {
         id: 'perm',
         num: '120+',
-        sign: 'млрд',
+        sign: 'млрд руб.',
         label: 'ПЕРМЬ',
-        text: 'Инвестиций',
+        text: 'инвестиций',
     },
     {
         id: 'ufa',
         num: '20+',
-        sign: 'тыс',
+        sign: 'тыс.',
         label: 'УФА',
         text: 'мест проживания',
     },
     {
         id: 'arkhangelsk',
         num: '300+',
-        sign: 'млрд',
+        sign: 'млрд руб.',
         label: 'АРХАНГЕЛЬСК',
-        text: 'Вклад в ВВП',
+        text: 'вклад в ВВП',
     },
     {
         id: 'tumen',
         num: '450+',
-        sign: 'тыс м²',
+        sign: 'тыс. м²',
         label: 'ТЮМЕНЬ',
         text: 'новых  площадей',
     },
 ]
+
 const popoverData = [
     {
         id: '1',
-        coordinates: { top: '35%', left: '25%' },
+        coordinates: { top: '47%', left: '25%' },
         img: arkhangelsk,
         text: 'Кампус Архангельск',
         type: ProjectsGalleryType.Arhangelsk,
     },
     {
         id: '2',
-        coordinates: { top: '55%', left: '26%' },
+        coordinates: { top: '63%', left: '29%' },
         img: perm,
         text: 'Кампус Пермь',
         type: ProjectsGalleryType.Perm,
     },
     {
         id: '3',
-        coordinates: { top: '65%', left: '33%' },
+        coordinates: { top: '70%', left: '35%' },
         img: tumen,
         text: 'Кампус Тюмень',
         type: ProjectsGalleryType.Tumen,
     },
     {
         id: '4',
-        coordinates: { top: '63%', left: '23%' },
+        coordinates: { top: '70%', left: '26%' },
         img: ufa,
         text: 'Кампус Уфа',
         type: ProjectsGalleryType.Ufa,
@@ -114,8 +115,9 @@ export const RussianMap = ({ galleryTypeClickHandler }: IRussianMapProps) => {
             justify={'center'}
             align={'center'}
             gap={{ base: '16px', lg: '36px' }}
+            bg={'#F8F9FB'}
         >
-            <Text className={styles.title}>География проектов</Text>
+            <Text className={styles.title}>ГЕОГРАФИЯ ПРОЕКТОВ</Text>
             <Flex w={'61wv'} pos={'relative'}>
                 <Image src={Map} />
                 {popoverData.map((item, index) => (

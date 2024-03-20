@@ -1,5 +1,6 @@
 import { Flex, Text, Image, CloseIcon } from '@mantine/core'
 import { ITeamMemberProps } from '../TeamComponent/TeamComponent'
+import Markdown from 'react-markdown'
 
 export const TeamMemberComponent = ({
     handleCardClick,
@@ -61,7 +62,7 @@ export const TeamMemberComponent = ({
                     style={{ overflow: 'scroll' }}
                     opacity={0.5}
                 >
-                    {teamMember.description}
+                    <Markdown>{teamMember.description}</Markdown>
                 </Text>
             </Flex>
         </Flex>

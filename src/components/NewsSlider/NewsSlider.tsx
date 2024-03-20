@@ -43,8 +43,9 @@ export const NewsSlider = ({ handleNewsBtnClick }: INewsSlider) => {
             align={'center'}
             pos={'relative'}
             gap={{ base: '24px', lg: '48px' }}
+            bg={'rgb(248, 249, 251)'}
         >
-            <Title className={styles.title}>Пресса о нас</Title>
+            <Title className={styles.title}>ПРЕССА О НАС</Title>
             <Swiper
                 pagination={pagination}
                 modules={[Navigation, Pagination]}

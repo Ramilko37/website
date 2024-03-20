@@ -54,6 +54,7 @@ export const Header = () => {
                 menuOpen ? classes.open : ''
             }`}
             ref={headerRef}
+            style={{ zIndex: 10000 }}
         >
             <div style={{ width: '100%' }}>
                 <div className={classes.content}>
