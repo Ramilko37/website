@@ -66,16 +66,6 @@ const projectsNavBarData = [
     },
 ]
 
-// const SwiperButtonNext = ({ children }) => {
-//     const swiper = useSwiper()
-//     return <button onClick={() => swiper.slideNext()}>{children}</button>
-// }
-
-// const SwiperButtonPrev = ({ children }) => {
-//     const swiper = useSwiper()
-//     return <button onClick={() => swiper.slideNext()}>{children}</button>
-// }
-
 export const ProjectsGallery = ({
     galleryType,
     galleryTypeClickHandler,
@@ -406,8 +396,9 @@ export const ProjectsGallery = ({
                                         fw={700}
                                         lh={'130%'}
                                     >
-                                        {project.num}
+                                        {project.num + ' ' + project.letters}
                                     </Text>
+
                                     <Text
                                         c={'#012f6d'}
                                         fz={{ base: '14px', lg: '18px' }}

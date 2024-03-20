@@ -19,11 +19,6 @@ export const HomePage = () => {
     const [galleryType, setGalleryType] = useState<ProjectsGalleryType>(
         ProjectsGalleryType.Perm
     )
-    const [isNews, setIsNews] = useState<boolean>(false)
-
-    const handleNewsBtnClick = () => {
-        setIsNews(!isNews)
-    }
 
     const galleryTypeClickHandler = (type: ProjectsGalleryType) => {
         setGalleryType(type)
@@ -42,7 +37,7 @@ export const HomePage = () => {
                 galleryType={galleryType}
                 galleryTypeClickHandler={galleryTypeClickHandler}
             />
-            <NewsSlider handleNewsBtnClick={handleNewsBtnClick} />
+            <NewsSlider />
             <Contacts />
             <PartnersCarousel />
         </Flex>

@@ -9,14 +9,12 @@ import 'swiper/css'
 import styles from './styles.module.css'
 import 'swiper/css/pagination'
 import { MOCKDATA } from '../../constants/constants'
+import { useNavigate } from 'react-router-dom'
 
-interface INewsSlider {
-    handleNewsBtnClick: () => void
-}
-
-export const NewsSlider = ({ handleNewsBtnClick }: INewsSlider) => {
+export const NewsSlider = () => {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
     const newsData = MOCKDATA.sort((a, b) => b.date.localeCompare(a.date))
+    const navigate = useNavigate()
 
     const pagination = {
         clickable: true,
@@ -86,7 +84,9 @@ export const NewsSlider = ({ handleNewsBtnClick }: INewsSlider) => {
                     height: '56px',
                     width: '220px',
                 }}
-                onClick={handleNewsBtnClick}
+                onClick={() => {
+                    navigate('/news')
+                }}
             >
                 Все новости
             </Button>

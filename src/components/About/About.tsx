@@ -1,5 +1,6 @@
 import { Flex, Title, Text } from '@mantine/core'
 import styles from './About.module.css'
+import bgSvg from '../../images/about_bg.svg'
 
 export const About = () => {
     return (
@@ -8,9 +9,12 @@ export const About = () => {
             direction={'column'}
             gap={{ base: '16px', lg: '24px' }}
             p={{ base: '44px 20px 44px', lg: '20px 0 20px' }}
-            bg={
-                'linear-gradient(90deg, rgba(218, 225, 237, 0.10) 0%, rgba(188, 210, 235, 0.10) 100%)'
-            }
+            style={{
+                borderRadius: '12px',
+                backgroundImage: `url(${bgSvg})`,
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat',
+            }}
         >
             {/* <AboutBanner /> */}
             <Flex
@@ -23,7 +27,6 @@ export const About = () => {
                 gap={{ base: '16px', lg: '24px' }}
                 style={{
                     borderRadius: '12px',
-                    background: 'transparent',
                 }}
             >
                 <Title className={styles.title}>О НАС</Title>

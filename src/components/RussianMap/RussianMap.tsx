@@ -201,20 +201,26 @@ export const RussianMap = ({ galleryTypeClickHandler }: IRussianMapProps) => {
                             direction={'column'}
                             w={{ base: '140px', lg: '270px' }}
                             h={{ base: '140px', lg: '196px' }}
-                            bg={'rgb(35, 60, 145)'}
+                            bg={'#fff'}
                             p={{ base: '32px 0 32px', lg: '32px 20px' }}
                             style={{
                                 borderRadius: '16px',
                                 textAlign: 'center',
+                                border: '3px solid rgb(35, 60, 145)',
                             }}
                             // onClick={cardFlipHandler(item.id)}
                             key={`join-${index}`}
                         >
-                            <Text c={'#fff'} fz={'50px'} fw={700} lh={'100%'}>
+                            <Text
+                                c={'rgb(35, 60, 145)'}
+                                fz={'50px'}
+                                fw={700}
+                                lh={'100%'}
+                            >
                                 {inViewport ? (
                                     <Text
-                                        c={'#fff'}
-                                        fz={{ base: '30px', lg: '56px' }}
+                                        c={'rgb(35, 60, 145)'}
+                                        fz={{ base: '22px', lg: '56px' }}
                                         fw={700}
                                         lh={'100%'}
                                     >
@@ -231,8 +237,8 @@ export const RussianMap = ({ galleryTypeClickHandler }: IRussianMapProps) => {
                                 )}
                             </Text>
                             <Text
-                                c={'#fff'}
-                                fz={{ base: '30px', lg: '28px' }}
+                                c={'rgb(35, 60, 145)'}
+                                fz={{ base: '22px', lg: '28px' }}
                                 fw={700}
                                 lh={'100%'}
                             >
@@ -240,7 +246,7 @@ export const RussianMap = ({ galleryTypeClickHandler }: IRussianMapProps) => {
                             </Text>
                             <Text
                                 mt={{ base: 10, lg: '22px' }}
-                                c={'#fff'}
+                                c={'rgb(35, 60, 145)'}
                                 fz={{ base: '14px', lg: '20px' }}
                                 fw={300}
                                 lh={'130%'}
