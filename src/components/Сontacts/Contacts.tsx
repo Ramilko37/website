@@ -2,6 +2,7 @@ import { Flex, Title } from '@mantine/core'
 import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps'
 import { ContactIconsList } from '../ContactIconsList/ContactIconsList'
 import { useMediaQuery } from '@mantine/hooks'
+import { SkyrimLeft, SkyrimRight } from '../../images/icons/skyrim-icon'
 
 export const Contacts = () => {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
@@ -25,9 +26,18 @@ export const Contacts = () => {
                 align={'center'}
                 gap={{ base: '16px', lg: '36px' }}
             >
-                <Title c={'#012F6D'} fz={{ base: '30px', lg: '42px' }} fw={700}>
-                    КОНТАКТЫ
-                </Title>
+                <Flex justify={'space-between'} align={'center'}>
+                    <SkyrimLeft />
+                    <Title
+                        m={'0 20px 0'}
+                        c={'#012F6D'}
+                        fz={{ base: '30px', lg: '42px' }}
+                        fw={700}
+                    >
+                        КОНТАКТЫ
+                    </Title>
+                    <SkyrimRight />
+                </Flex>
 
                 {isMobile ? (
                     <Flex

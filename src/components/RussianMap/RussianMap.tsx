@@ -1,5 +1,5 @@
-import { Flex, HoverCard, Image, Text } from '@mantine/core'
-import Map from '../../images/map.png'
+import { Flex, HoverCard, Image, Text, Title } from '@mantine/core'
+import Map from '../../images/mapNew.svg'
 import { useDisclosure, useInViewport } from '@mantine/hooks'
 import perm from '../../images/perm1.webp'
 import ufa from '../../images/ufa1.webp'
@@ -8,6 +8,7 @@ import tumen from '../../images/tumen1.webp'
 import styles from './styles.module.css'
 import CountUp from 'react-countup'
 import { Link } from 'react-scroll'
+import { SkyrimLeft, SkyrimRight } from '../../images/icons/skyrim-icon'
 
 enum ProjectsGalleryType {
     Perm,
@@ -50,28 +51,28 @@ const initialNumbers = [
 const popoverData = [
     {
         id: '1',
-        coordinates: { top: '47%', left: '25%' },
+        coordinates: { top: '52%', left: '23%' },
         img: arkhangelsk,
         text: 'Кампус Архангельск',
         type: ProjectsGalleryType.Arhangelsk,
     },
     {
         id: '2',
-        coordinates: { top: '63%', left: '29%' },
+        coordinates: { top: '69%', left: '28%' },
         img: perm,
         text: 'Кампус Пермь',
         type: ProjectsGalleryType.Perm,
     },
     {
         id: '3',
-        coordinates: { top: '70%', left: '35%' },
+        coordinates: { top: '75%', left: '36%' },
         img: tumen,
         text: 'Кампус Тюмень',
         type: ProjectsGalleryType.Tumen,
     },
     {
         id: '4',
-        coordinates: { top: '70%', left: '26%' },
+        coordinates: { top: '78%', left: '26%' },
         img: ufa,
         text: 'Кампус Уфа',
         type: ProjectsGalleryType.Ufa,
@@ -117,9 +118,16 @@ export const RussianMap = ({ galleryTypeClickHandler }: IRussianMapProps) => {
             gap={{ base: '16px', lg: '36px' }}
             bg={'#F8F9FB'}
         >
-            <Text className={styles.title}>ГЕОГРАФИЯ ПРОЕКТОВ</Text>
+            <Flex justify={'space-between'} align={'center'}>
+                <SkyrimLeft />
+                <Title m={'0 20px 0'} className={styles.title}>
+                    ГЕОГРАФИЯ ПРОЕКТОВ
+                </Title>
+                <SkyrimRight />
+            </Flex>
+
             <Flex w={'61wv'} pos={'relative'}>
-                <Image src={Map} />
+                <Image style={{ scale: '1.3' }} src={Map} />
                 {popoverData.map((item, index) => (
                     <HoverCard
                         key={item.id}
@@ -201,12 +209,12 @@ export const RussianMap = ({ galleryTypeClickHandler }: IRussianMapProps) => {
                             direction={'column'}
                             w={{ base: '140px', lg: '270px' }}
                             h={{ base: '140px', lg: '196px' }}
-                            bg={'#fff'}
+                            bg={'rgb(248, 249, 251)'}
                             p={{ base: '32px 0 32px', lg: '32px 20px' }}
                             style={{
                                 borderRadius: '16px',
                                 textAlign: 'center',
-                                border: '3px solid rgb(35, 60, 145)',
+                                border: '1px solid rgb(188, 210, 235)',
                             }}
                             // onClick={cardFlipHandler(item.id)}
                             key={`join-${index}`}

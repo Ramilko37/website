@@ -9,7 +9,6 @@ import ufa2 from '../../images/ufa2.webp'
 import ufa3 from '../../images/ufa3.webp'
 import ufa4 from '../../images/ufa4.webp'
 import ufa5 from '../../images/ufa5.webp'
-
 import tumen2 from '../../images/tumen2.webp'
 import tumen3 from '../../images/tumen3.webp'
 import tumen4 from '../../images/tumen4.webp'
@@ -30,6 +29,7 @@ import { MdArrowForwardIos } from 'react-icons/md'
 // Import Swiper styles
 import 'swiper/css'
 import { Navigation, Pagination } from 'swiper/modules'
+import { SkyrimLeft, SkyrimRight } from '../../images/icons/skyrim-icon'
 
 interface IProjectsGalleryProps {
     galleryType: ProjectsGalleryType
@@ -440,9 +440,20 @@ export const ProjectsGallery = ({
                     m={'0 auto'}
                     gap={'40px'}
                 >
-                    <Text c={'#012f6d'} fz={'42px'} fw={'700'} lh={'130%'}>
-                        НАШИ ПРОЕКТЫ
-                    </Text>
+                    <Flex justify={'space-between'} align={'center'}>
+                        <SkyrimLeft />
+                        <Text
+                            c={'#012f6d'}
+                            fz={'42px'}
+                            fw={'700'}
+                            lh={'130%'}
+                            m={'0 20px 0'}
+                        >
+                            НАШИ ПРОЕКТЫ
+                        </Text>
+                        <SkyrimRight />
+                    </Flex>
+
                     <Flex w={'100%'} m={'0 auto'} justify={'space-between'}>
                         {projectsNavBarData.map((project, index) => {
                             return (

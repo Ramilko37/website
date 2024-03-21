@@ -1,22 +1,38 @@
-import { Flex, Title, Text } from '@mantine/core'
+import { Flex, Title, Text, Box } from '@mantine/core'
 import styles from './About.module.css'
-import bgSvg from '../../images/about_bg.svg'
+import { RightAboutIcon } from '../../images/icons/right-about-icon'
+import { LeftAboutIcon } from '../../images/icons/left-about-icon'
+import { SkyrimLeft, SkyrimRight } from '../../images/icons/skyrim-icon'
 
 export const About = () => {
     return (
         <Flex
             w={'100%'}
             direction={'column'}
+            h={'auto'}
             gap={{ base: '16px', lg: '24px' }}
             p={{ base: '44px 20px 44px', lg: '20px 0 20px' }}
             style={{
+                position: 'relative',
                 borderRadius: '12px',
-                backgroundImage: `url(${bgSvg})`,
-                backgroundSize: 'contain',
-                backgroundRepeat: 'no-repeat',
+                background:
+                    'linear-gradient(90deg, rgba(218, 225, 237, 0.10) 0%, rgba(188, 210, 235, 0.10) 100%)',
             }}
         >
             {/* <AboutBanner /> */}
+
+            <Box
+                style={{ position: 'absolute', top: '20%', left: '0' }}
+                w={'fit-content'}
+            >
+                <LeftAboutIcon />
+            </Box>
+            <Box
+                style={{ position: 'absolute', top: '20%', right: '0' }}
+                w={'fit-content'}
+            >
+                <RightAboutIcon />
+            </Box>
             <Flex
                 w={{ base: '100%', lg: '61vw' }}
                 m={'0 auto'}
@@ -29,7 +45,14 @@ export const About = () => {
                     borderRadius: '12px',
                 }}
             >
-                <Title className={styles.title}>О НАС</Title>
+                <Flex justify={'space-between'} align={'center'}>
+                    <SkyrimLeft />
+                    <Title m={'0 20px 0'} className={styles.title}>
+                        О НАС
+                    </Title>
+                    <SkyrimRight />
+                </Flex>
+
                 <Text className={styles.description}>
                     Частная инвестиционная компания, специализирующаяся на
                     реализации крупных инфраструктурных проектов на принципах

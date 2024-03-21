@@ -15,7 +15,7 @@ export const TeamCardComponent = ({
 
     return (
         <Flex
-            w={teamMember.size}
+            w={{ base: '100%', lg: teamMember.size }}
             h={'fit-content'}
             m={0}
             direction={'column'}

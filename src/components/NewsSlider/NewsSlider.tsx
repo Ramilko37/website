@@ -10,6 +10,7 @@ import styles from './styles.module.css'
 import 'swiper/css/pagination'
 import { MOCKDATA } from '../../constants/constants'
 import { useNavigate } from 'react-router-dom'
+import { SkyrimLeft, SkyrimRight } from '../../images/icons/skyrim-icon'
 
 export const NewsSlider = () => {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
@@ -43,7 +44,14 @@ export const NewsSlider = () => {
             gap={{ base: '24px', lg: '48px' }}
             bg={'rgb(248, 249, 251)'}
         >
-            <Title className={styles.title}>ПРЕССА О НАС</Title>
+            <Flex justify={'space-between'} align={'center'}>
+                <SkyrimLeft />
+                <Title m={'0 20px 0'} className={styles.title}>
+                    ПРЕССА О НАС
+                </Title>
+                <SkyrimRight />
+            </Flex>
+
             <Swiper
                 pagination={pagination}
                 modules={[Navigation, Pagination]}

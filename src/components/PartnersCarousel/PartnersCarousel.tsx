@@ -1,5 +1,6 @@
 import Marquee from 'react-fast-marquee'
 import { Box, Flex, Image, Text } from '@mantine/core'
+import { SkyrimLeft, SkyrimRight } from '../../images/icons/skyrim-icon'
 
 export const PartnersCarousel = () => {
     const handleClick = (url: string) => {
@@ -8,15 +9,20 @@ export const PartnersCarousel = () => {
 
     return (
         <Flex direction={'column'} justify={'center'}>
-            <Text
-                c={'#012F6D'}
-                fz={'42px'}
-                fw={700}
-                lh={'130%'}
-                m={'0 auto 90px'}
-            >
-                НАШИ ПАРТНЕРЫ
-            </Text>
+            <Flex justify={'center'} align={'center'}>
+                <SkyrimLeft />
+                <Text
+                    c={'#012F6D'}
+                    fz={{ base: '30px', lg: '42px' }}
+                    fw={700}
+                    lh={'130%'}
+                    m={'0 20px 0'}
+                >
+                    НАШИ ПАРТНЕРЫ
+                </Text>
+                <SkyrimRight />
+            </Flex>
+
             <div
                 id="marquee"
                 style={{
