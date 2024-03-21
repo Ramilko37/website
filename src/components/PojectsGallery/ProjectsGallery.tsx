@@ -574,7 +574,7 @@ export const ProjectsGallery = ({
                     <Flex
                         ref={ref}
                         w={'70%'}
-                        h={'680px'}
+                        h={'696px'}
                         style={{
                             maxWidth: '770px',
                             overflow: 'hidden',

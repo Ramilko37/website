@@ -8,7 +8,9 @@ interface INewsCardProps {
     description: React.ReactNode
     nextTitle: string | undefined
     date: string
+    calendarDate: string
     nextDate: string
+    nextCalendarDate: string
 }
 
 export function NewsCard({
@@ -16,8 +18,8 @@ export function NewsCard({
     image,
     title,
     nextTitle,
-    date,
-    nextDate,
+    calendarDate,
+    nextCalendarDate,
 }: INewsCardProps) {
     const isMobile = useMediaQuery(`(max-width: 640px)`)
 
@@ -34,7 +36,7 @@ export function NewsCard({
                     border: '1px solid rgb(188, 210, 235)',
                     backgroundImage: `url(${image})`,
                     backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'cover',
+                    backgroundSize: 'contain',
                 }}
                 p={'32px 24px 32px'}
                 w={'100%'}
@@ -62,7 +64,7 @@ export function NewsCard({
                     onClick={buttonClickHandler}
                 >
                     <Text c={'#fff'} opacity={0.7}>
-                        {date}
+                        {calendarDate}
                     </Text>
                     <Text c={'#fff'} fz={{ base: '22px', lg: '32px' }}>
                         {title}
@@ -106,7 +108,7 @@ export function NewsCard({
                     onClick={buttonClickHandler}
                 >
                     <Text c={'#fff'} opacity={0.7}>
-                        {date}
+                        {calendarDate}
                     </Text>
                     <Text c={'#fff'} fz={'32px'} fw={300}>
                         {title}
@@ -129,7 +131,7 @@ export function NewsCard({
             >
                 <Flex direction={'column'} gap={'50px'}>
                     <Text c={'#012F6D'} opacity={0.5}>
-                        {nextDate}
+                        {nextCalendarDate}
                     </Text>
                     <Text
                         style={{ textAlign: 'left' }}

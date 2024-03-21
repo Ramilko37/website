@@ -3,7 +3,7 @@ import kommersant from '../images/kommersant.png'
 import ura from '../images/ura.webp'
 import properm from '../images/properm.webp'
 import kommersant2 from '../images/kommersant2.jpeg'
-import sitronics from '../images/Sitronics-Group.png'
+import sitronicsLogo from '../images/sitronics_group_logo.png'
 import dvinanews from '../images/dvinanews.jpeg'
 import arkhangelsk from '../images/arkhangelsk_news.webp'
 import vsluh from '../images/vsluh.jpeg'
@@ -17,6 +17,7 @@ export const MOCKDATA = [
             rel: 'noopener noreferrer',
         },
         date: '2024-03-04',
+        calendarDate: '04 марта 2024',
         image: 'https://img.argumenti.ru/news/news_id/886850.JPG',
         title: 'Кампус для всех',
         description:
@@ -29,7 +30,8 @@ export const MOCKDATA = [
             rel: 'noopener noreferrer',
         },
         date: '2024-03-07',
-        image: '',
+        calendarDate: '07 марта 2024',
+        image: sitronicsLogo,
         title: 'Sitronics Group и «Эталонные Концессии» реализовывают проекты по созданию умных кампусов в рамках нового федерального стандарта',
         description:
             'Обновленный «Стандарт инновационной образовательной среды (кампусов)» утвердило Минобрнауки РФ. Документ устанавливает единые требования к кампусам, создаваемым в рамках национального проекта «Наука и университеты».',
@@ -41,6 +43,7 @@ export const MOCKDATA = [
             rel: 'noopener noreferrer',
         },
         date: '2023-07-31',
+        calendarDate: '31 июля 2023',
         image: vettaNewsImg,
         title: 'В Перми московская компания построит межвузовский кампус',
         description:
@@ -53,6 +56,7 @@ export const MOCKDATA = [
             rel: 'noopener noreferrer',
         },
         date: '2023-07-30',
+        calendarDate: '30 июля 2023',
         image: kommersant,
         title: 'Для строительства межвузовского кампуса в Перми привлекли федерального девелопера «Эталон» ',
         description:
@@ -65,6 +69,7 @@ export const MOCKDATA = [
             rel: 'noopener noreferrer',
         },
         date: '2023-11-28',
+        calendarDate: '18 ноября 2023',
         image: ura,
         title: 'Межвузовский кампус в Перми будут строить студенты',
         description:
@@ -77,6 +82,7 @@ export const MOCKDATA = [
             rel: 'noopener noreferrer',
         },
         date: '2023-12-21',
+        calendarDate: '21 декабря 2023',
         image: properm,
         title: 'Рисовали-рисовали, теперь строим-построим. Что там с зоопарком, вокзалом, галереей?',
         description:
@@ -89,6 +95,7 @@ export const MOCKDATA = [
             rel: 'noopener noreferrer',
         },
         date: '2024-01-22',
+        calendarDate: '22 января 2024',
         image: vsluh,
         title: 'Тюменский кампус создается не только для студентов',
         description:
@@ -101,6 +108,7 @@ export const MOCKDATA = [
             rel: 'noopener noreferrer',
         },
         date: '2024-01-21',
+        calendarDate: '21 января 2024',
         image: dvinanews,
         title: 'Аспиранты САФУ рассчитывают продолжить научную работу на базе кампуса «Арктическая звезда»',
         description:
@@ -113,7 +121,8 @@ export const MOCKDATA = [
             rel: 'noopener noreferrer',
         },
         date: '2023-09-21',
-        image: sitronics,
+        calendarDate: '21 сентября 2023',
+        image: sitronicsLogo,
         title: 'Sitronics Group разработала концепцию цифровизации университетских кампусов',
         description:
             'Проект "Умный кампус" в том числе позволяет обеспечить безопасность учебного пространства, начиная от входа на территорию образовательного учреждения до электронных сервисов для студентов и преподавателей',
@@ -125,6 +134,7 @@ export const MOCKDATA = [
             rel: 'noopener noreferrer',
         },
         date: '2023-11-15',
+        calendarDate: '15 ноября 2023',
         image: kommersant2,
         title: 'Кампус для всех',
         description:
@@ -137,6 +147,7 @@ export const MOCKDATA = [
             rel: 'noopener noreferrer',
         },
         date: '2024-01-04',
+        calendarDate: '04 января 2024',
         image: arkhangelsk,
         title: 'Появление кампуса «Арктическая звезда» станет стимулом для развития в Поморье медицинской науки',
         description:
@@ -149,6 +160,7 @@ export const MOCKDATA = [
             rel: 'noopener noreferrer',
         },
         date: '2023-01-05',
+        calendarDate: '05 января 2023',
         image: vsluh2,
         title: 'Владимир Плоткин - главный архитектор проекта Межуниверситетского кампуса в Тюмени',
         description:

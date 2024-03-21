@@ -78,6 +78,8 @@ export const NewsSlider = () => {
                             nextTitle={MOCKDATA[index + 1]?.title}
                             description={feature.description}
                             date={feature.date}
+                            calendarDate={feature.calendarDate}
+                            nextCalendarDate={MOCKDATA[index + 1]?.calendarDate}
                             nextDate={MOCKDATA[index + 1]?.date}
                         />
                     </SwiperSlide>

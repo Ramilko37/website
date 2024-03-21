@@ -7,8 +7,9 @@ import { useNavigate } from 'react-router-dom'
 
 interface INewsRow {
     title: string
-    date: string
+    calendarDate: string
     link: string
+    image?: string
 }
 
 const YEARS = [
@@ -20,31 +21,45 @@ const YEARS = [
     },
 ]
 
-const NewsRow = ({ title, date, link }: INewsRow) => {
+const NewsRow = ({ title, calendarDate, link }: INewsRow) => {
     const { hovered, ref } = useHover()
 
     const handleLinkClick = (link: string) => () => {
         window.open(link)
     }
     return (
-        <Flex
-            ref={ref}
-            direction={'column'}
-            w={'100%'}
-            gap={'16px'}
-            pb={'36px'}
-            style={{
-                borderBottom: hovered ? '2px solid #233C91' : '',
-                cursor: 'pointer',
-            }}
-            onClick={handleLinkClick(link)}
-        >
-            <Text c={'#012F6D'} fz={'32px'} fw={700} lh={'130%'}>
-                {title}
-            </Text>
-            <Text c={'#012F6D'} fz={'23px'} opacity={0.5} fw={300} lh={'130%'}>
-                {date}
-            </Text>
+        <Flex w={'100%'}>
+            <Flex
+                flex={1}
+                ref={ref}
+                direction={'column'}
+                w={'80%'}
+                gap={'16px'}
+                pb={'36px'}
+                style={{
+                    borderBottom: hovered ? '2px solid #233C91' : '',
+                    cursor: 'pointer',
+                }}
+                onClick={handleLinkClick(link)}
+            >
+                <Text
+                    c={'#012F6D'}
+                    fz={'32px'}
+                    fw={hovered ? 700 : 300}
+                    lh={'130%'}
+                >
+                    {title}
+                </Text>
+                <Text
+                    c={'#012F6D'}
+                    fz={'23px'}
+                    opacity={0.5}
+                    fw={300}
+                    lh={'130%'}
+                >
+                    {calendarDate}
+                </Text>
+            </Flex>
         </Flex>
     )
 }
@@ -123,8 +138,9 @@ export const NewsComponent = () => {
                         <NewsRow
                             key={key}
                             title={item.title}
-                            date={item.date}
+                            calendarDate={item.calendarDate}
                             link={item.linkProps.href}
+                            image={item.image}
                         />
                     )
                 })}
