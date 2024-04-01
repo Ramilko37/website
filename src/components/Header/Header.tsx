@@ -71,7 +71,7 @@ export const Header = () => {
                         <a
                             className={classes.logo}
                             onClick={handleLogoClick}
-                            style={{ zIndex: 10000 }}
+                            style={{ zIndex: 10000, scale: 1.5 }}
                         >
                             <LogoIcon onClick={handleLogoClick} />
                         </a>

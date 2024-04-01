@@ -45,7 +45,11 @@ export const About = () => {
                     borderRadius: '12px',
                 }}
             >
-                <Flex justify={'space-between'} align={'center'}>
+                <Flex
+                    w={{ base: '80vw', lg: 'fit-content' }}
+                    justify={{ base: 'center', lg: 'space-between' }}
+                    align={'center'}
+                >
                     <SkyrimLeft />
                     <Title m={'0 20px 0'} className={styles.title}>
                         О НАС

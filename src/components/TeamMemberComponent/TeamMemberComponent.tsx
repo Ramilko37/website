@@ -6,10 +6,11 @@ export const TeamMemberComponent = ({
     handleCardClick,
     teamMember,
 }: ITeamMemberProps) => {
+    console.log(teamMember, 'member')
     return (
         <Flex
             direction={{ base: 'column', md: 'row' }}
-            w={'100%'}
+            w={'60%'}
             h={{ base: 'fit-content', md: '485px' }}
             gap={'30px'}
             mb={'36px'}

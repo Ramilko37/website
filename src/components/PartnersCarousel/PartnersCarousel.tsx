@@ -13,7 +13,7 @@ export const PartnersCarousel = () => {
                 <SkyrimLeft />
                 <Text
                     c={'#012F6D'}
-                    fz={{ base: '30px', lg: '42px' }}
+                    fz={{ base: '24px', lg: '30px' }}
                     fw={700}
                     lh={'130%'}
                     m={'0 20px 0'}

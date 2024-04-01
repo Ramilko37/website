@@ -117,10 +117,11 @@ export const RussianMap = ({ galleryTypeClickHandler }: IRussianMapProps) => {
             align={'center'}
             gap={{ base: '16px', lg: '36px' }}
             bg={'#F8F9FB'}
+            style={{ overflow: 'hidden' }}
         >
             <Flex justify={'space-between'} align={'center'}>
                 <SkyrimLeft />
-                <Title m={'0 20px 0'} className={styles.title}>
+                <Title m={'0'} className={styles.title}>
                     ГЕОГРАФИЯ ПРОЕКТОВ
                 </Title>
                 <SkyrimRight />

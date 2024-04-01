@@ -1,6 +1,7 @@
-import { Flex, Text } from '@mantine/core'
+import { Flex, Text, Image } from '@mantine/core'
 import { TeamMember } from '../TeamComponent/TeamComponent'
 import styles from './styles.module.css'
+import { useMediaQuery } from '@mantine/hooks'
 
 interface ITeamCardComponentProps {
     teamMember: TeamMember
@@ -11,6 +12,7 @@ export const TeamCardComponent = ({
     teamMember,
     handleCardClick,
 }: ITeamCardComponentProps) => {
+    const isMobile = useMediaQuery(`(max-width: 640px)`)
     const { id, image, name, position } = teamMember
 
     return (
@@ -30,18 +32,33 @@ export const TeamCardComponent = ({
             }}
             onClick={handleCardClick(id)}
         >
-            <Flex
-                w={'100%'}
-                h={{ base: '200px', lg: '270px' }}
-                className={styles.teamImage}
-                style={{
-                    borderRadius: '12px',
-                    filter: 'grayscale(1)',
-                    backgroundImage: `url(${image})`,
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                }}
-            />
+            {isMobile ? (
+                <Image
+                    src={teamMember.image}
+                    style={{ borderRadius: '12px' }}
+                />
+            ) : (
+                <Flex
+                    w={'100%'}
+                    h={{
+                        base: '200px',
+                        lg:
+                            teamMember.id === 1 ||
+                            teamMember.id === 2 ||
+                            teamMember.id === 3
+                                ? '500px'
+                                : '270px',
+                    }}
+                    className={styles.teamImage}
+                    style={{
+                        borderRadius: '12px',
+
+                        backgroundImage: `url(${image})`,
+                        backgroundSize: 'cover',
+                        backgroundRepeat: 'no-repeat',
+                    }}
+                />
+            )}
             <Text
                 fz={{ base: '18px', lg: '28px' }}
                 fw={300}

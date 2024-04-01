@@ -1,5 +1,5 @@
-import { Flex, Text } from '@mantine/core'
-import { useEffect, useState } from 'react'
+import { Flex, Text, Image } from '@mantine/core'
+import { useState } from 'react'
 import { MOCKDATA } from '../../constants/constants'
 import { useHover } from '@mantine/hooks'
 import { MdArrowBack } from 'react-icons/md'
@@ -10,55 +10,74 @@ interface INewsRow {
     calendarDate: string
     link: string
     image?: string
+    description?: string
 }
 
-const YEARS = [
-    {
-        year: '2024',
-    },
-    {
-        year: '2023',
-    },
-]
+// const YEARS = [
+//     {
+//         year: '2024',
+//     },
+//     {
+//         year: '2023',
+//     },
+// ]
 
-const NewsRow = ({ title, calendarDate, link }: INewsRow) => {
+const NewsRow = ({
+    title,
+    description,
+    calendarDate,
+    link,
+    image,
+}: INewsRow) => {
     const { hovered, ref } = useHover()
 
     const handleLinkClick = (link: string) => () => {
         window.open(link)
     }
     return (
-        <Flex w={'100%'}>
+        <Flex w={'100%'} justify={'space-between'}>
             <Flex
                 flex={1}
                 ref={ref}
-                direction={'column'}
-                w={'80%'}
-                gap={'16px'}
+                w={'100%'}
+                gap={'40px'}
                 pb={'36px'}
                 style={{
                     borderBottom: hovered ? '2px solid #233C91' : '',
                     cursor: 'pointer',
                 }}
                 onClick={handleLinkClick(link)}
+                direction={{ base: 'column', md: 'row' }}
             >
-                <Text
-                    c={'#012F6D'}
-                    fz={'32px'}
-                    fw={hovered ? 700 : 300}
-                    lh={'130%'}
-                >
-                    {title}
-                </Text>
-                <Text
-                    c={'#012F6D'}
-                    fz={'23px'}
-                    opacity={0.5}
-                    fw={300}
-                    lh={'130%'}
-                >
-                    {calendarDate}
-                </Text>
+                <Image w={{ base: '100%', md: '20%' }} h={'100%'} src={image} />
+                <Flex direction={'column'} gap={'16px'}>
+                    <Text
+                        c={'#012F6D'}
+                        fz={'24px'}
+                        fw={hovered ? 700 : 300}
+                        lh={'130%'}
+                    >
+                        {title}
+                    </Text>
+                    <Text
+                        c={'#012F6D'}
+                        fz={'18px'}
+                        opacity={0.5}
+                        fw={hovered ? 700 : 300}
+                        lh={'130%'}
+                    >
+                        {description}
+                    </Text>
+                    <Text
+                        c={'#012F6D'}
+                        fz={'18px'}
+                        opacity={0.5}
+                        fw={300}
+                        lh={'130%'}
+                    >
+                        {calendarDate}
+                    </Text>
+                </Flex>
             </Flex>
         </Flex>
     )
@@ -66,27 +85,28 @@ const NewsRow = ({ title, calendarDate, link }: INewsRow) => {
 
 export const NewsComponent = () => {
     const sortedMockData = MOCKDATA.sort((a, b) => b.date.localeCompare(a.date))
-    const [activeYear, setActiveYear] = useState<string>('2024')
-    const [data, setData] = useState(sortedMockData)
+
+    const [data] = useState(sortedMockData)
     const { hovered, ref } = useHover()
     const navigate = useNavigate()
 
-    const handleYearClick = (year: string) => () => {
-        setActiveYear(year)
-    }
+    // const handleYearClick = (year: string) => () => {
+    //     setActiveYear(year)
+    // }
 
-    useEffect(() => {
-        setData(MOCKDATA.filter((item) => item.date.includes(activeYear)))
-    }, [activeYear])
+    // useEffect(() => {
+    //     setData(MOCKDATA.filter((item) => item.date.includes(activeYear)))
+    // }, [activeYear])
 
     return (
         <Flex
             direction={{ base: 'column', lg: 'row' }}
             m={{ base: '120px auto', lg: '0 auto' }}
-            w={{ base: '90%', lg: '61vw' }}
+            w={{ base: '90%', lg: '100%' }}
             gap={'39px'}
         >
             <Flex
+                w={'fit-content'}
                 direction={{ base: 'row', lg: 'column' }}
                 gap={'24px'}
                 m={{ base: '0', lg: '0 auto' }}
@@ -113,7 +133,7 @@ export const NewsComponent = () => {
                         Назад
                     </Text>
                 </Flex>
-                {YEARS.map((year, key) => (
+                {/* {YEARS.map((year, key) => (
                     <Flex
                         key={key}
                         w={'170px'}
@@ -130,7 +150,7 @@ export const NewsComponent = () => {
                             {year.year}
                         </Text>
                     </Flex>
-                ))}
+                ))} */}
             </Flex>
             <Flex direction={'column'} w={'100%'} gap={'36px'}>
                 {data.map((item, key) => {
@@ -141,6 +161,7 @@ export const NewsComponent = () => {
                             calendarDate={item.calendarDate}
                             link={item.linkProps.href}
                             image={item.image}
+                            description={item.description}
                         />
                     )
                 })}

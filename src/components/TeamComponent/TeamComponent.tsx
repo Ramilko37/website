@@ -1,14 +1,16 @@
-import { Flex, Title, Text } from '@mantine/core'
+import { Flex, Title, Text, Image } from '@mantine/core'
 import { TeamCardComponent } from '../TeamCardComponent/TeamCardComponent'
 import principal from '../../images/bugulov.jpeg'
-import financial from '../../images/sozaev.jpg'
+import financial from '../../images/soslan_cat.jpg'
 import stolkov from '../../images/stolkov.png'
 import eremin from '../../images/eremin.png'
 import kiselev from '../../images/kiselev.jpg'
-import { TeamMemberComponent } from '../TeamMemberComponent/TeamMemberComponent'
 import { useState } from 'react'
 import { useHover } from '@mantine/hooks'
 import { MdArrowBack } from 'react-icons/md'
+import { useDisclosure } from '@mantine/hooks'
+import { Modal } from '@mantine/core'
+import Markdown from 'react-markdown'
 
 const data = [
     {
@@ -56,7 +58,7 @@ const data = [
         size: '22%',
     },
     {
-        id: 4,
+        id: 6,
         name: 'Зарубин Евгений Валерьевич',
         position: 'Директор правового управления',
         description:
@@ -65,7 +67,7 @@ const data = [
         size: '22%',
     },
     {
-        id: 5,
+        id: 7,
         name: 'Белошевский Николай Викторович',
         position: 'Заместитель Директора финансово-юридического департамента',
         description:
@@ -91,19 +93,26 @@ export interface ITeamMemberProps {
 
 export const TeamComponent = () => {
     const { hovered, ref } = useHover()
-    const [activeMember, setActiveMember] = useState<number | undefined>(
-        undefined
-    )
-    const handleCardClick = (id: number | undefined) => () => {
-        setActiveMember(id)
+    const [opened, { open, close }] = useDisclosure(false)
+    const [activeMemberId, setActiveMemberId] = useState<number | null>(null)
+    const handleCardClick = (id: number) => () => {
+        console.log(activeMember, 104)
+        setActiveMemberId(id)
+        open()
     }
+
+    const activeMember =
+        activeMemberId !== null
+            ? data.find((member) => member.id === activeMemberId)
+            : null
 
     return (
         <Flex
-            w={{ base: '100%', lg: '70vw' }}
+            w={{ base: '80%', lg: '70vw' }}
             h={'100%'}
             direction={'column'}
             gap={'36px'}
+            m={'0 auto'}
         >
             <Flex
                 ref={ref}
@@ -133,10 +142,59 @@ export const TeamComponent = () => {
                 КОМАНДА
             </Title>
             {activeMember && (
-                <TeamMemberComponent
-                    handleCardClick={handleCardClick}
-                    teamMember={data[activeMember - 1]}
-                />
+                <Modal
+                    size="80%"
+                    opened={opened}
+                    onClose={close}
+                    centered
+                    styles={{
+                        content: {
+                            height: '80dvh',
+                            marginTop: '100px',
+                            scrollbarColor: 'transparent',
+                        },
+                    }}
+                >
+                    <Modal.Body>
+                        <Flex
+                            w={'100%'}
+                            gap={'24px'}
+                            direction={{ base: 'column', md: 'row' }}
+                        >
+                            {activeMember.image && (
+                                <Image
+                                    w={{ base: '100%', md: '30%' }}
+                                    h={'100%'}
+                                    style={{ borderRadius: '12px' }}
+                                    src={activeMember.image}
+                                    alt={activeMember.name}
+                                />
+                            )}
+                            <Flex direction={'column'} gap={'16px'}>
+                                <Text
+                                    fz={{ base: '18px', lg: '32px' }}
+                                    fw={300}
+                                    lh={'130%'}
+                                    c={'#012F6D'}
+                                >
+                                    {activeMember.name}
+                                </Text>
+                                <Text
+                                    fz={{ base: '14px', lg: '20px' }}
+                                    fw={300}
+                                    lh={'130%'}
+                                    c={'#012F6D'}
+                                    style={{ overflow: 'auto' }}
+                                    opacity={0.5}
+                                >
+                                    <Markdown>
+                                        {activeMember.description}
+                                    </Markdown>
+                                </Text>
+                            </Flex>
+                        </Flex>
+                    </Modal.Body>
+                </Modal>
             )}
 
             <Flex

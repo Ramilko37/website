@@ -31,7 +31,7 @@ export const Contacts = () => {
                     <Title
                         m={'0 20px 0'}
                         c={'#012F6D'}
-                        fz={{ base: '30px', lg: '42px' }}
+                        fz={{ base: '24px', lg: '30px' }}
                         fw={700}
                     >
                         КОНТАКТЫ

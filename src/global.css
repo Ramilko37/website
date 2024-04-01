@@ -13,6 +13,9 @@ body {
     height: 100dvh;
     background: #f8f9fb;
     font-family: 'Gilroy', sans-serif;
+    ::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 span,

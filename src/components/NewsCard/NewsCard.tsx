@@ -37,6 +37,7 @@ export function NewsCard({
                     backgroundImage: `url(${image})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
+                    backgroundPosition: 'center',
                 }}
                 p={'32px 24px 32px'}
                 w={'100%'}

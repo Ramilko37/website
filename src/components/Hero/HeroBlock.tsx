@@ -36,97 +36,102 @@ export default function HeroBlock() {
 
     if (isMobile) {
         return (
-            <Flex
-                pos={'relative'}
-                direction={'column'}
-                w={'100%'}
-                h={'100dvh'}
-                gap={'50px'}
-            >
-                <video
-                    src={video}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        position: 'absolute',
-                        zIndex: 10,
-                        filter: 'brightness(50%)',
-                    }}
-                    controls={false}
-                />
+            <Flex direction={'column'}>
                 <Flex
-                    gap={'24px'}
+                    pos={'relative'}
                     direction={'column'}
                     w={'100%'}
-                    h={'100%'}
-                    align={'flex-end'}
-                    style={{ zIndex: 20 }}
-                    p={'120px 20px 50px'}
-                    mt={'50px'}
+                    h={'100dvh'}
+                    gap={'50px'}
                 >
-                    <animated.div style={titleAnimation}>
-                        <Title
-                            c={'#fff'}
-                            fz={32}
-                            fw={700}
-                            style={{
-                                textAlign: 'center',
-                                textTransform: 'uppercase',
-                            }}
-                        >
-                            ЭТАЛОННЫЕ КОНЦЕССИИ - Центр
-                            <br /> компетенций ГЧП в группе «Эталон»
-                        </Title>
-                    </animated.div>
-                    <animated.div style={textAnimation}>
-                        <Text
-                            c={'#fff'}
-                            fz={20}
-                            fw={300}
-                            style={{ textAlign: 'center' }}
-                        >
-                            Комплексный подход к реализации крупных
-                            инфраструктурных проектов
-                        </Text>
-                    </animated.div>
+                    <video
+                        src={video}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            position: 'absolute',
+                            zIndex: 10,
+                            filter: 'brightness(50%)',
+                        }}
+                        controls={false}
+                    />
+                    <Flex
+                        gap={'24px'}
+                        direction={'column'}
+                        w={'100%'}
+                        h={'100%'}
+                        align={'flex-end'}
+                        style={{ zIndex: 20 }}
+                        p={'120px 20px 50px'}
+                        mt={'50px'}
+                    >
+                        <animated.div style={titleAnimation}>
+                            <Title
+                                c={'#fff'}
+                                fz={32}
+                                fw={700}
+                                style={{
+                                    textAlign: 'center',
+                                    textTransform: 'uppercase',
+                                }}
+                            >
+                                ЭТАЛОННЫЕ КОНЦЕССИИ -
+                                <br /> № 1 в стране в сфере строительства
+                                кампусов
+                            </Title>
+                        </animated.div>
+                        <animated.div style={textAnimation}>
+                            <Text
+                                c={'#fff'}
+                                fz={20}
+                                fw={300}
+                                style={{ textAlign: 'center' }}
+                            >
+                                Комплексный подход к реализации крупных
+                                инфраструктурных проектов
+                            </Text>
+                        </animated.div>
+                    </Flex>
+                    <Flex
+                        w={'100%'}
+                        direction={'column'}
+                        style={{ zIndex: 20 }}
+                        p={'0 20px 50px'}
+                    >
+                        <animated.div style={citateAnimation}>
+                            <Text
+                                mt={'40px'}
+                                c={'#fff'}
+                                style={{ zIndex: 1000, textAlign: 'center' }}
+                                fz={16}
+                                fw={300}
+                                lh={'130%'}
+                            >
+                                “Цель создания современных кампусов как раз в
+                                этом и заключается - создать эталонные
+                                пространства”
+                            </Text>
+                            <Text
+                                c={'#fff'}
+                                fz={16}
+                                fw={300}
+                                lh={'130%'}
+                                opacity={'0.5'}
+                                mt={'20px'}
+                                style={{ textAlign: 'center' }}
+                            >
+                                Президент Российской Федерации Владимир
+                                Владимирович Путин
+                            </Text>
+                        </animated.div>
+                    </Flex>
                 </Flex>
-                <Flex
-                    w={'100%'}
-                    direction={'column'}
-                    style={{ zIndex: 20 }}
-                    p={'0 20px 50px'}
-                >
-                    <animated.div style={citateAnimation}>
-                        <Text
-                            mt={'40px'}
-                            c={'#fff'}
-                            style={{ zIndex: 1000, textAlign: 'center' }}
-                            fz={16}
-                            fw={300}
-                            lh={'130%'}
-                        >
-                            “Цель создания современных кампусов как раз в этом и
-                            заключается - создать эталонные пространства”
-                        </Text>
-                        <Text
-                            c={'#fff'}
-                            fz={16}
-                            fw={300}
-                            lh={'130%'}
-                            opacity={'0.5'}
-                            mt={'20px'}
-                            style={{ textAlign: 'center' }}
-                        >
-                            Президент Российской Федерации Владимир Владимирович
-                            Путин
-                        </Text>
-                    </animated.div>
-                </Flex>
+                <About />
             </Flex>
         )
     }
@@ -173,8 +178,9 @@ export default function HeroBlock() {
                     >
                         <animated.div style={titleAnimation}>
                             <Title className={classes.title}>
-                                ЭТАЛОННЫЕ КОНЦЕССИИ - Центр
-                                <br /> компетенций ГЧП в группе «Эталон»
+                                ЭТАЛОННЫЕ КОНЦЕССИИ -
+                                <br /> № 1 в стране в сфере строительства
+                                кампусов
                             </Title>
                         </animated.div>
                         <animated.div style={textAnimation}>
@@ -203,7 +209,7 @@ export default function HeroBlock() {
                                 mt={'40px'}
                                 c={'#fff'}
                                 style={{ zIndex: 1000 }}
-                                fz={'23px'}
+                                fz={'32px'}
                                 fw={300}
                                 lh={'130%'}
                             >
@@ -214,9 +220,9 @@ export default function HeroBlock() {
                             <Text
                                 c={'#fff'}
                                 fz={'20px'}
-                                fw={300}
+                                fw={700}
                                 lh={'130%'}
-                                opacity={'0.5'}
+                                opacity={'1'}
                             >
                                 Президент Российской Федерации Владимир
                                 Владимирович Путин

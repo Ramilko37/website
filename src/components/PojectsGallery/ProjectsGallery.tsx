@@ -254,16 +254,24 @@ export const ProjectsGallery = ({
                 justify={'center'}
                 px={'40px'}
             >
-                <Text
-                    c={'#012f6d'}
-                    fz={'30px'}
-                    fw={'700'}
-                    lh={'130%'}
+                <Flex
+                    justify={'space-between'}
+                    align={'center'}
                     mb={{ base: '16px', lg: '40px' }}
-                    style={{ textAlign: 'center' }}
                 >
-                    НАШИ ПРОЕКТЫ
-                </Text>
+                    <SkyrimLeft />
+                    <Text
+                        c={'#012f6d'}
+                        fz={{ base: '24px', lg: '30px' }}
+                        fw={'700'}
+                        lh={'130%'}
+                        style={{ textAlign: 'center' }}
+                    >
+                        НАШИ ПРОЕКТЫ
+                    </Text>
+                    <SkyrimRight />
+                </Flex>
+
                 <Flex
                     direction={'column'}
                     w={'100%'}

@@ -31,14 +31,14 @@ function ContactIcon({ title, description }: ContactIconProps) {
 }
 
 const MOCKDATA = [
-    { title: 'Email:', description: 'info@etalon-campus.ru', icon: IconAt },
-    { title: 'Телефон:', description: '+495 335 35 35', icon: IconPhone },
+    { title: 'Email:', description: 'info@system-ko.ru', icon: IconAt },
+    { title: 'Телефон:', description: '+7 495 921 49 69', icon: IconPhone },
     {
         title: 'Адрес:',
-        description: 'Москва, пер Токмаков, д. 5, стр. 1, помещ. 1/5',
+        description: 'Москва, БЦ Токмаков, пер. Токмаков, д. 5 стр 1 этаж 5-6',
         icon: IconMapPin,
     },
-    { title: 'Время работы:', description: '9 00 – 18 00', icon: IconSun },
+    { title: 'Время работы:', description: '9:00 – 18:00', icon: IconSun },
 ]
 
 export function ContactIconsList() {
