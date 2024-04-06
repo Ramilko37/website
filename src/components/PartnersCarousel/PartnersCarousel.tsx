@@ -16,7 +16,7 @@ export const PartnersCarousel = () => {
                     fz={{ base: '24px', lg: '30px' }}
                     fw={700}
                     lh={'130%'}
-                    m={'0 20px 0'}
+                    m={'0 10px 0'}
                 >
                     НАШИ ПАРТНЕРЫ
                 </Text>

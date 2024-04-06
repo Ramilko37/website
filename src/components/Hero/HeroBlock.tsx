@@ -119,9 +119,9 @@ export default function HeroBlock() {
                             <Text
                                 c={'#fff'}
                                 fz={16}
-                                fw={300}
+                                fw={700}
                                 lh={'130%'}
-                                opacity={'0.5'}
+                                opacity={'1'}
                                 mt={'20px'}
                                 style={{ textAlign: 'center' }}
                             >

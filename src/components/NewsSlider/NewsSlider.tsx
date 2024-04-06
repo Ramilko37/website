@@ -46,7 +46,7 @@ export const NewsSlider = () => {
         >
             <Flex justify={'space-between'} align={'center'}>
                 <SkyrimLeft />
-                <Title m={'0 20px 0'} className={styles.title}>
+                <Title m={'0 10px 0'} className={styles.title}>
                     ПРЕССА О НАС
                 </Title>
                 <SkyrimRight />

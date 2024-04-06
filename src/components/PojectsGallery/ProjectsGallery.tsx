@@ -455,7 +455,7 @@ export const ProjectsGallery = ({
                             fz={'42px'}
                             fw={'700'}
                             lh={'130%'}
-                            m={'0 20px 0'}
+                            m={'0 10px 0'}
                         >
                             НАШИ ПРОЕКТЫ
                         </Text>

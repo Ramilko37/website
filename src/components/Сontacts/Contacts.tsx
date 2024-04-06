@@ -29,7 +29,7 @@ export const Contacts = () => {
                 <Flex justify={'space-between'} align={'center'}>
                     <SkyrimLeft />
                     <Title
-                        m={'0 20px 0'}
+                        m={'0 10px 0'}
                         c={'#012F6D'}
                         fz={{ base: '24px', lg: '30px' }}
                         fw={700}

@@ -51,7 +51,7 @@ export const About = () => {
                     align={'center'}
                 >
                     <SkyrimLeft />
-                    <Title m={'0 20px 0'} className={styles.title}>
+                    <Title mr={'10px'} className={styles.title}>
                         О НАС
                     </Title>
                     <SkyrimRight />

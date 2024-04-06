@@ -135,6 +135,8 @@
     .logo {
         width: 122px;
         z-index: 2;
+        scale: 1.5;
+        overflow: hidden;
     }
     .content > nav {
         background-color: white;

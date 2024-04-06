@@ -121,7 +121,7 @@ export const RussianMap = ({ galleryTypeClickHandler }: IRussianMapProps) => {
         >
             <Flex justify={'space-between'} align={'center'}>
                 <SkyrimLeft />
-                <Title m={'0'} className={styles.title}>
+                <Title mr={'10px'} className={styles.title}>
                     ГЕОГРАФИЯ ПРОЕКТОВ
                 </Title>
                 <SkyrimRight />
