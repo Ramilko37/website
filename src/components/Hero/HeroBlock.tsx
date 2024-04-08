@@ -15,13 +15,13 @@ export default function HeroBlock() {
         // delay: 1000
     })
 
-    const textAnimation = useSpring({
-        opacity: 1,
-        transform: 'translateX(0)',
-        from: { opacity: 0, transform: 'translateX(-100%)' },
-        config: { duration: 1000 },
-        delay: 2000,
-    })
+    // const textAnimation = useSpring({
+    //     opacity: 1,
+    //     transform: 'translateX(0)',
+    //     from: { opacity: 0, transform: 'translateX(-100%)' },
+    //     config: { duration: 1000 },
+    //     delay: 2000,
+    // })
 
     const citateAnimation = useSpring({
         opacity: 1,
@@ -85,7 +85,7 @@ export default function HeroBlock() {
                                 кампусов
                             </Title>
                         </animated.div>
-                        <animated.div style={textAnimation}>
+                        {/* <animated.div style={textAnimation}>
                             <Text
                                 c={'#fff'}
                                 fz={20}
@@ -95,7 +95,7 @@ export default function HeroBlock() {
                                 Комплексный подход к реализации крупных
                                 инфраструктурных проектов
                             </Text>
-                        </animated.div>
+                        </animated.div> */}
                     </Flex>
                     <Flex
                         w={'100%'}
@@ -172,9 +172,12 @@ export default function HeroBlock() {
                     <Flex
                         gap={'24px'}
                         direction={'column'}
-                        w={'61vw'}
-                        m={{ base: '120px auto', lg: '228px auto' }}
+                        w={'100%'}
+                        h={'100%'}
+                        p={'48px 24px 24px'}
+                        m={'0 auto'}
                         align={'flex-end'}
+                        justify={'space-between'}
                     >
                         <animated.div style={titleAnimation}>
                             <Title className={classes.title}>
@@ -183,52 +186,35 @@ export default function HeroBlock() {
                                 кампусов
                             </Title>
                         </animated.div>
-                        <animated.div style={textAnimation}>
-                            <Text className={classes.description}>
-                                Комплексный подход к реализации крупных
-                                инфраструктурных проектов
-                            </Text>
+
+                        <animated.div style={citateAnimation}>
+                            <Flex w={'100%'} direction={'column'} gap={'16px'}>
+                                <Text
+                                    w={'600px'}
+                                    mt={'40px'}
+                                    c={'#fff'}
+                                    style={{ zIndex: 1000 }}
+                                    fz={'32px'}
+                                    fw={300}
+                                    lh={'130%'}
+                                >
+                                    “Цель создания современных кампусов как раз
+                                    в этом и заключается - создать эталонные
+                                    пространства”
+                                </Text>
+                                <Text
+                                    c={'#fff'}
+                                    fz={'20px'}
+                                    fw={700}
+                                    lh={'130%'}
+                                    opacity={'1'}
+                                >
+                                    Президент Российской Федерации Владимир
+                                    Владимирович Путин
+                                </Text>
+                            </Flex>
                         </animated.div>
                     </Flex>
-                </Flex>
-
-                <Flex
-                    p={'0 10% 0'}
-                    gap={'24px'}
-                    direction={'column'}
-                    w={'100%'}
-                    align={'flex-end'}
-                    style={{ zIndex: 1000 }}
-                    pos={'absolute'}
-                    bottom={{ base: '30px', lg: '135px' }}
-                >
-                    <animated.div style={citateAnimation}>
-                        <Flex w={'100%'} direction={'column'} gap={'16px'}>
-                            <Text
-                                w={'600px'}
-                                mt={'40px'}
-                                c={'#fff'}
-                                style={{ zIndex: 1000 }}
-                                fz={'32px'}
-                                fw={300}
-                                lh={'130%'}
-                            >
-                                “Цель создания современных кампусов как раз в
-                                этом и заключается - создать эталонные
-                                пространства”
-                            </Text>
-                            <Text
-                                c={'#fff'}
-                                fz={'20px'}
-                                fw={700}
-                                lh={'130%'}
-                                opacity={'1'}
-                            >
-                                Президент Российской Федерации Владимир
-                                Владимирович Путин
-                            </Text>
-                        </Flex>
-                    </animated.div>
                 </Flex>
             </Flex>
             <About />
