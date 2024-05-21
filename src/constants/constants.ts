@@ -1,11 +1,12 @@
-import vettaNewsImg from '../images/vettaNews.png'
-import kommersant from '../images/kommersant.png'
-import ura from '../images/ura.webp'
-import properm from '../images/properm.webp'
-import kommersant2 from '../images/kommersant2.jpeg'
-import sitronicsLogo from '../images/sitronics_group_logo.png'
-import dvinanews from '../images/dvinanews.jpeg'
 import arkhangelsk from '../images/arkhangelsk_news.webp'
+import dvinanews from '../images/dvinanews.jpeg'
+import kommersant from '../images/kommersant.png'
+import kommersant2 from '../images/kommersant2.jpeg'
+import newsko from '../images/perm3.webp'
+import properm from '../images/properm.webp'
+import sitronicsLogo from '../images/sitronics_group_logo.png'
+import ura from '../images/ura.webp'
+import vettaNewsImg from '../images/vettaNews.png'
 import vsluh from '../images/vsluh.jpeg'
 import vsluh2 from '../images/vsluh2.jpeg'
 
@@ -165,5 +166,70 @@ export const MOCKDATA = [
         title: 'Владимир Плоткин - главный архитектор проекта Межуниверситетского кампуса в Тюмени',
         description:
             'Проектированием тюменского кампуса займутся столичные специалисты. Работы будут вести компания «Параметрика» совместно с творческим производственным объединением «Резерв». Главным архитектором выступит Владимир Плоткин. Он и его команда известны такими масштабными проектами, как концертный зал «Зарядье», больница с родильным домом в Коммунарке, штаб-квартира Олимпийского комитета России и не только.',
+    },
+    {
+        linkProps: {
+            href: 'https://www.newsko.ru/news/nk-8110472.html',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+        date: '2024-04-05',
+        calendarDate: '05 апреля 2024',
+        image: newsko,
+        title: 'Минимущества утвердило проект планировки территории студенческого кампуса в Перми',
+        description:
+            'Министерство по управлению имуществом и градостроительной деятельности Пермского края утвердило 29 марта документацию по планировке территории в Перми под строительство современного межвузовского многофункционального студенческого кампуса «Будущее Пармы». Согласованы параметры планировки и межевания территории, а также характеристики объектов капитального строительства.',
+    },
+    {
+        linkProps: {
+            href: 'https://rosinfra.ru/news/proekt-genomnogo-tsentra-v-mezhvuzovskom-kampuse-v-ufe-proshel-ekspertizu',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+        date: '2024-04-16',
+        calendarDate: '16 апреля 2024',
+        image: 'https://rosinfra.ru/files/news/233126/525e4379-3285-495e-9379-da1488738a84.jpeg',
+        title: 'Проект геномного центра в межвузовском кампусе в Уфе прошел экспертизу',
+        description:
+            'Проект строительства геномного центра межвузовского кампуса Евразийского научно-образовательного центра в Уфе получил положительное заключение Главгосэкспертизы. Застройщиком выступает компания «Кампус». Проект разрабатывали московский градостроительный институт «Мирпроект», уфимская фирма «Уфастройизыскания» и брянское ООО «Атомное проектирование «Защита».',
+    },
+    {
+        linkProps: {
+            href: 'https://www.kp.ru/daily/27600/4924923/',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+        date: '2024-04-27',
+        calendarDate: '27 апреля 2024',
+        image: 'https://s10.stc.yc.kpcdn.net/share/i/12/13777377/wr-960.webp',
+        title: 'Города знаний: какими будут университетские кампусы',
+        description:
+            'Молодежи предлагают постигать науку в максимально комфортных условиях',
+    },
+    {
+        linkProps: {
+            href: 'https://argumenti.ru/society/2024/03/886850',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+        date: '2024-03-04',
+        calendarDate: '04 марта 2024',
+        image: 'https://img.argumenti.ru/news/news_id/886850.JPG',
+        title: 'Кампус для всех',
+        description:
+            'В Перми продолжается реализация масштабного проекта межвузовского студенческого кампуса. При использовании материала просим указывать источник argumenti.ru',
+    },
+    {
+        linkProps: {
+            href: 'https://www.interfax-russia.ru/ural/news/pervyy-etap-sozdaniya-mezhuniversitetskogo-kampusa-v-tyumeni-planiruetsya-zavershit-do-konca-goda?utm_source=yxnews&utm_medium=desktop&utm_referrer=https%3A%2F%2Fdzen.ru%2Fnews%2Fsearch%3Ftext%3D',
+            target: '_blank',
+            rel: 'noopener noreferrer',
+        },
+        date: '2024-05-17',
+        calendarDate: '17 мая 2024',
+        image: '',
+        title: 'Первый этап создания межуниверситетского кампуса в Тюмени планируется завершить до конца года',
+        description:
+            'Инженерная подготовка земельного участка для строительства межуниверситетского кампуса мирового уровня ведется в Тюмени, сообщает информационный центр правительства Тюменской области.',
     },
 ]

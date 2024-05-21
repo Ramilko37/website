@@ -1,30 +1,30 @@
-import { Flex, Text, Image as Img, Divider } from '@mantine/core'
+import { Divider, Flex, Image as Img, Text } from '@mantine/core'
+import { useHover, useMediaQuery } from '@mantine/hooks'
+import { useEffect, useMemo, useRef } from 'react'
+import { MdArrowForwardIos } from 'react-icons/md'
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
+import arhangelskTitleImage from '../../images/arhangelsk.webp'
+import arhangelskImage from '../../images/arhangelsk2.webp'
+import arhangelskImage2 from '../../images/arhangelsk3.webp'
 import permTitleImage from '../../images/campus.png'
+import { СlockIcon } from '../../images/icons/clock-icon'
+import { MoneyIcon } from '../../images/icons/money-icon'
+import { PeopleIcon } from '../../images/icons/people-icon'
+import { SquareIcon } from '../../images/icons/square-icon'
 import perm1 from '../../images/perm1.webp'
 import perm2 from '../../images/perm2.webp'
 import perm3 from '../../images/perm3.webp'
 import perm4 from '../../images/perm4.webp'
 import perm5 from '../../images/perm5.webp'
-import ufa2 from '../../images/ufa2.webp'
-import ufa3 from '../../images/ufa3.webp'
-import ufa4 from '../../images/ufa4.webp'
-import ufa5 from '../../images/ufa5.webp'
+import tumenTitleImage from '../../images/tumen1.webp'
 import tumen2 from '../../images/tumen2.webp'
 import tumen3 from '../../images/tumen3.webp'
 import tumen4 from '../../images/tumen4.webp'
 import ufaTitleImage from '../../images/ufa1.webp'
-import tumenTitleImage from '../../images/tumen1.webp'
-import arhangelskTitleImage from '../../images/arhangelsk.webp'
-import arhangelskImage from '../../images/arhangelsk2.webp'
-import arhangelskImage2 from '../../images/arhangelsk3.webp'
-import { useEffect, useMemo, useRef } from 'react'
-import { useHover, useMediaQuery } from '@mantine/hooks'
-import { SquareIcon } from '../../images/icons/square-icon'
-import { PeopleIcon } from '../../images/icons/people-icon'
-import { СlockIcon } from '../../images/icons/clock-icon'
-import { MoneyIcon } from '../../images/icons/money-icon'
-import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
-import { MdArrowForwardIos } from 'react-icons/md'
+import ufa2 from '../../images/ufa2.webp'
+import ufa3 from '../../images/ufa3.webp'
+import ufa4 from '../../images/ufa4.webp'
+import ufa5 from '../../images/ufa5.webp'
 
 // Import Swiper styles
 import 'swiper/css'
@@ -92,7 +92,7 @@ export const ProjectsGallery = ({
                         icon: <PeopleIcon />,
                     },
                     {
-                        num: '28',
+                        num: '29',
                         letters: 'млрд руб.',
                         bullet1: 'Объем инвестиций  ',
                         icon: <MoneyIcon />,
@@ -119,7 +119,7 @@ export const ProjectsGallery = ({
                         icon: <PeopleIcon />,
                     },
                     {
-                        num: '21',
+                        num: '27',
                         letters: 'млрд руб.',
                         bullet1: 'Объем инвестиций  ',
                         icon: <MoneyIcon />,
@@ -173,7 +173,7 @@ export const ProjectsGallery = ({
                         icon: <PeopleIcon />,
                     },
                     {
-                        num: '28',
+                        num: '31',
                         letters: 'млрд руб.',
                         bullet1: 'Объем инвестиций  ',
                         icon: <MoneyIcon />,

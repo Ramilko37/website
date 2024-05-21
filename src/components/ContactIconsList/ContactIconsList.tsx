@@ -1,7 +1,7 @@
-import { Text, Stack, Flex } from '@mantine/core'
-import { IconSun, IconPhone, IconMapPin, IconAt } from '@tabler/icons-react'
-import classes from './styles.module.css'
+import { Flex, Stack, Text } from '@mantine/core'
 import { useMediaQuery } from '@mantine/hooks'
+import { IconAt, IconMapPin, IconPhone, IconSun } from '@tabler/icons-react'
+import classes from './styles.module.css'
 
 interface ContactIconProps
     extends Omit<React.ComponentPropsWithoutRef<'div'>, 'title'> {
@@ -35,7 +35,7 @@ const MOCKDATA = [
     { title: 'Телефон:', description: '+7 495 921 49 69', icon: IconPhone },
     {
         title: 'Адрес:',
-        description: 'Москва, БЦ Токмаков, пер. Токмаков, д. 5 стр 1 этаж 5-6',
+        description: 'Москва, БЦ Токмаков, пер. Токмаков, д. 5 стр 1, этаж 5-6',
         icon: IconMapPin,
     },
     { title: 'Время работы:', description: '9:00 – 18:00', icon: IconSun },
