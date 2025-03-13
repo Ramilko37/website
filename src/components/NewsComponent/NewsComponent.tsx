@@ -1,17 +1,18 @@
-import { Flex, Text, Image } from '@mantine/core'
-import { useState } from 'react'
-import { MOCKDATA } from '../../constants/constants'
+import { Accordion, Flex, Image, Text } from '@mantine/core'
 import { useHover } from '@mantine/hooks'
+import { useState } from 'react'
 import { MdArrowBack } from 'react-icons/md'
+import Markdown from 'react-markdown'
 import { useNavigate } from 'react-router-dom'
+import { MOCKDATA } from '../../constants/constants'
 
-interface INewsRow {
-    title: string
-    calendarDate: string
-    link: string
-    image?: string
-    description?: string
-}
+// interface INewsRow {
+//     title: string
+//     calendarDate: string
+//     link: string
+//     image?: string
+//     description?: string
+// }
 
 // const YEARS = [
 //     {
@@ -22,66 +23,66 @@ interface INewsRow {
 //     },
 // ]
 
-const NewsRow = ({
-    title,
-    description,
-    calendarDate,
-    link,
-    image,
-}: INewsRow) => {
-    const { hovered, ref } = useHover()
+// const NewsRow = ({
+//     title,
+//     description,
+//     calendarDate,
+//     link,
+//     image,
+// }: INewsRow) => {
+//     const { hovered, ref } = useHover()
 
-    const handleLinkClick = (link: string) => () => {
-        window.open(link)
-    }
-    return (
-        <Flex w={'100%'} justify={'space-between'}>
-            <Flex
-                flex={1}
-                ref={ref}
-                w={'100%'}
-                gap={'40px'}
-                pb={'36px'}
-                style={{
-                    borderBottom: hovered ? '2px solid #233C91' : '',
-                    cursor: 'pointer',
-                }}
-                onClick={handleLinkClick(link)}
-                direction={{ base: 'column', md: 'row' }}
-            >
-                <Image w={{ base: '100%', md: '20%' }} h={'100%'} src={image} />
-                <Flex direction={'column'} gap={'16px'}>
-                    <Text
-                        c={'#012F6D'}
-                        fz={'24px'}
-                        fw={hovered ? 700 : 300}
-                        lh={'130%'}
-                    >
-                        {title}
-                    </Text>
-                    <Text
-                        c={'#012F6D'}
-                        fz={'18px'}
-                        opacity={0.5}
-                        fw={hovered ? 700 : 300}
-                        lh={'130%'}
-                    >
-                        {description}
-                    </Text>
-                    <Text
-                        c={'#012F6D'}
-                        fz={'18px'}
-                        opacity={0.5}
-                        fw={300}
-                        lh={'130%'}
-                    >
-                        {calendarDate}
-                    </Text>
-                </Flex>
-            </Flex>
-        </Flex>
-    )
-}
+//     const handleLinkClick = (link: string) => () => {
+//         window.open(link)
+//     }
+//     return (
+//         <Flex w={'100%'} justify={'space-between'}>
+//             <Flex
+//                 flex={1}
+//                 ref={ref}
+//                 w={'100%'}
+//                 gap={'40px'}
+//                 pb={'36px'}
+//                 style={{
+//                     borderBottom: hovered ? '2px solid #233C91' : '',
+//                     cursor: 'pointer',
+//                 }}
+//                 onClick={handleLinkClick(link)}
+//                 direction={{ base: 'column', md: 'row' }}
+//             >
+//                 <Image w={{ base: '100%', md: '20%' }} h={'100%'} src={image} />
+//                 <Flex direction={'column'} gap={'16px'}>
+//                     <Text
+//                         c={'#012F6D'}
+//                         fz={'24px'}
+//                         fw={hovered ? 700 : 300}
+//                         lh={'130%'}
+//                     >
+//                         {title}
+//                     </Text>
+//                     <Text
+//                         c={'#012F6D'}
+//                         fz={'18px'}
+//                         opacity={0.5}
+//                         fw={hovered ? 700 : 300}
+//                         lh={'130%'}
+//                     >
+//                         {description}
+//                     </Text>
+//                     <Text
+//                         c={'#012F6D'}
+//                         fz={'18px'}
+//                         opacity={0.5}
+//                         fw={300}
+//                         lh={'130%'}
+//                     >
+//                         {calendarDate}
+//                     </Text>
+//                 </Flex>
+//             </Flex>
+//         </Flex>
+//     )
+// }
 
 export const NewsComponent = () => {
     const sortedMockData = MOCKDATA.sort((a, b) => b.date.localeCompare(a.date))
@@ -153,16 +154,52 @@ export const NewsComponent = () => {
                 ))} */}
             </Flex>
             <Flex direction={'column'} w={'100%'} gap={'36px'}>
-                {data.map((item, key) => {
+                {data.map((item) => {
+                    console.log(item)
                     return (
-                        <NewsRow
-                            key={key}
-                            title={item.title}
-                            calendarDate={item.calendarDate}
-                            link={item.linkProps.href}
-                            image={item.image}
-                            description={item.description}
-                        />
+                        <Accordion>
+                            <Accordion.Item key={item.title} value={item.title}>
+                                <Accordion.Control icon={null}>
+                                    <Text fw={'bold'}>{item.title}</Text>
+                                </Accordion.Control>
+                                <Accordion.Panel
+                                    onClick={() =>
+                                        item.linkProps.href !== ''
+                                            ? window.open(item.linkProps.href)
+                                            : null
+                                    }
+                                >
+                                    <Flex
+                                        gap={'24px'}
+                                        w={'100%'}
+                                        h={'100%'}
+                                        style={{
+                                            textWrap: 'balance',
+                                            textAlign: 'justify',
+                                            cursor: 'pointer',
+                                        }}
+                                    >
+                                        <Image
+                                            style={{
+                                                scale: 0.1,
+                                                width: '30%',
+                                                height: '100%',
+                                            }}
+                                            src={item.image}
+                                        />
+                                        <Markdown>{item.description}</Markdown>
+                                    </Flex>
+                                </Accordion.Panel>
+                            </Accordion.Item>
+                        </Accordion>
+                        // <NewsRow
+                        //     key={key}
+                        //     title={item.title}
+                        //     calendarDate={item.calendarDate}
+                        //     link={item.linkProps.href}
+                        //     image={item.image}
+                        //     description={item.description}
+                        // />
                     )
                 })}
             </Flex>

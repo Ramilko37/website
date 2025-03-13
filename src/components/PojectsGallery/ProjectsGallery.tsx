@@ -6,6 +6,11 @@ import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import arhangelskTitleImage from '../../images/arhangelsk.webp'
 import arhangelskImage from '../../images/arhangelsk2.webp'
 import arhangelskImage2 from '../../images/arhangelsk3.webp'
+import bychiha1 from '../../images/bychiha_1.png'
+import bychiha2 from '../../images/bychiha_2.png'
+import bychiha3 from '../../images/bychiha_3.png'
+import bychiha4 from '../../images/bychiha_4.png'
+import BychihaTitleImage from '../../images/BychihaTitleImage.png'
 import permTitleImage from '../../images/campus.png'
 import { СlockIcon } from '../../images/icons/clock-icon'
 import { MoneyIcon } from '../../images/icons/money-icon'
@@ -16,6 +21,12 @@ import perm2 from '../../images/perm2.webp'
 import perm3 from '../../images/perm3.webp'
 import perm4 from '../../images/perm4.webp'
 import perm5 from '../../images/perm5.webp'
+import shibai1 from '../../images/shibai_1.png'
+import shibai2 from '../../images/shibai_2.png'
+import shibai3 from '../../images/shibai_3.png'
+import shibai4 from '../../images/shibai_4.png'
+import shibai5 from '../../images/shibai_5.png'
+import shibaiTitleImage from '../../images/shibaiTitleImage.png'
 import tumenTitleImage from '../../images/tumen1.webp'
 import tumen2 from '../../images/tumen2.webp'
 import tumen3 from '../../images/tumen3.webp'
@@ -36,11 +47,13 @@ interface IProjectsGalleryProps {
     galleryTypeClickHandler: (type: ProjectsGalleryType) => void
 }
 
-enum ProjectsGalleryType {
+export enum ProjectsGalleryType {
     Perm,
     Ufa,
     Tumen,
     Arhangelsk,
+    Shibai,
+    Bychiha,
 }
 
 const projectsNavBarData = [
@@ -63,6 +76,16 @@ const projectsNavBarData = [
         type: ProjectsGalleryType.Arhangelsk,
         title: 'Кампус Архангельск',
         image: arhangelskTitleImage,
+    },
+    {
+        type: ProjectsGalleryType.Shibai,
+        title: 'Детский лагерь Шифа',
+        image: arhangelskTitleImage,
+    },
+    {
+        type: ProjectsGalleryType.Bychiha,
+        title: `Детский лагерь в г. Хабаровск`,
+        image: BychihaTitleImage,
     },
 ]
 
@@ -185,6 +208,60 @@ export const ProjectsGallery = ({
                         icon: <СlockIcon />,
                     },
                 ]
+            case ProjectsGalleryType.Shibai:
+                return [
+                    {
+                        num: '215',
+                        letters: 'тыс. м2',
+                        bullet1: 'Площадь объекта',
+                        icon: <SquareIcon />,
+                    },
+                    {
+                        num: '21000',
+                        letters: 'человек',
+                        bullet1: 'Вместимость',
+                        icon: <PeopleIcon />,
+                    },
+                    {
+                        num: '3,5',
+                        letters: 'млрд руб.',
+                        bullet1: 'Объем инвестиций  ',
+                        icon: <MoneyIcon />,
+                    },
+                    {
+                        num: '12',
+                        letters: 'лет',
+                        bullet1: 'Срок реализации',
+                        icon: <СlockIcon />,
+                    },
+                ]
+            case ProjectsGalleryType.Bychiha:
+                return [
+                    {
+                        num: '73',
+                        letters: 'тыс. м2',
+                        bullet1: 'Площадь объекта',
+                        icon: <SquareIcon />,
+                    },
+                    {
+                        num: '20000',
+                        letters: 'человек',
+                        bullet1: 'Вместимость',
+                        icon: <PeopleIcon />,
+                    },
+                    {
+                        num: '5,5',
+                        letters: 'млрд руб.',
+                        bullet1: 'Объем инвестиций  ',
+                        icon: <MoneyIcon />,
+                    },
+                    {
+                        num: '12',
+                        letters: 'лет',
+                        bullet1: 'Срок реализации',
+                        icon: <СlockIcon />,
+                    },
+                ]
         }
     }, [galleryType])
 
@@ -203,6 +280,21 @@ export const ProjectsGallery = ({
             arhangelskImage,
             arhangelskImage2,
             arhangelskTitleImage,
+        ],
+        [ProjectsGalleryType.Shibai]: [
+            shibai1,
+            shibai2,
+            shibai3,
+            shibai4,
+            shibai5,
+            shibaiTitleImage,
+        ],
+        [ProjectsGalleryType.Bychiha]: [
+            BychihaTitleImage,
+            bychiha1,
+            bychiha2,
+            bychiha3,
+            bychiha4,
         ],
     }
 
@@ -302,7 +394,9 @@ export const ProjectsGallery = ({
                                     fz={{ base: '22px', lg: '32px' }}
                                     fw={'400'}
                                     lh={'130%'}
-                                    style={{ textAlign: 'center' }}
+                                    style={{
+                                        textAlign: 'center',
+                                    }}
                                 >
                                     {project.title}
                                 </Text>
@@ -477,7 +571,7 @@ export const ProjectsGallery = ({
                                 >
                                     <Text
                                         c={'#012f6d'}
-                                        fz={'32px'}
+                                        fz={'24px'}
                                         fw={
                                             galleryType === project.type
                                                 ? '700'

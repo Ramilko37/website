@@ -1,19 +1,15 @@
-import '@mantine/core/styles.css'
 import { Flex } from '@mantine/core'
-import HeroBlock from '../components/Hero/HeroBlock'
-import { Contacts } from '../components/Сontacts/Contacts'
-import { ProjectsGallery } from '../components/PojectsGallery/ProjectsGallery'
-import { PartnersCarousel } from '../components/PartnersCarousel/PartnersCarousel'
-import { RussianMap } from '../components/RussianMap/RussianMap'
-import { NewsSlider } from '../components/NewsSlider/NewsSlider'
+import '@mantine/core/styles.css'
 import { useState } from 'react'
-
-export enum ProjectsGalleryType {
-    Perm,
-    Ufa,
-    Tumen,
-    Arhangelsk,
-}
+import HeroBlock from '../components/Hero/HeroBlock'
+import { NewsSlider } from '../components/NewsSlider/NewsSlider'
+import { PartnersCarousel } from '../components/PartnersCarousel/PartnersCarousel'
+import {
+    ProjectsGallery,
+    ProjectsGalleryType,
+} from '../components/PojectsGallery/ProjectsGallery'
+import { RussianMap } from '../components/RussianMap/RussianMap'
+import { Contacts } from '../components/Сontacts/Contacts'
 
 export const HomePage = () => {
     const [galleryType, setGalleryType] = useState<ProjectsGalleryType>(
